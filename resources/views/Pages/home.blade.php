@@ -16,7 +16,7 @@
                 <a href="#" class="bg-blue-600 text-white font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-blue-700 transition">
                     Make Resume
                 </a>
-                <a href="#" class="border border-blue-600 text-blue-600 font-semibold px-8 py-3 rounded-lg hover:bg-blue-50 transition">
+                <a href="{{route('home.AllTools')}}" class="border border-blue-600 text-blue-600 font-semibold px-8 py-3 rounded-lg hover:bg-blue-50 transition">
                     Explore All Tools
                 </a>
             </div>
@@ -104,7 +104,7 @@
             </div>
 
             <div class="mt-12">
-                <a href="#" class="inline-block underline text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-text-700 transition">
+                <a href="{{route('home.AllTools')}}" class="inline-block underline text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-text-700 transition">
                     Explore All PDF Tools
                 </a>
             </div>

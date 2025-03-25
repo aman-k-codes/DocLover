@@ -1,5 +1,5 @@
 @extends('Layout.master')
-
+@section('title','DocLover - All Tools')
 @section('content')
     <section class="py-12 bg-white">
         <div class="max-w-6xl mx-auto text-center px-4">
