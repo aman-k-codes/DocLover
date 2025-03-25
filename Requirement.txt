@@ -1,0 +1,29 @@
+1. File Conversions:
+
+    PDF to ZIP, DOC, JPG, HTML, XL
+
+    JPG to PNG, PNG to JPG
+
+    JPG to DOC and XL
+
+
+2. Image and Document Processing (Multiple Image):
+
+    Crop, collage
+
+    Resize
+
+    Passport-size photo creation
+
+    Photo clarity enhancement
+
+    Background change
+
+    Resume maker
+
+    Photo size compression
+
+    Image to text conversion
+
+    Sign Picker
+
