@@ -2,11 +2,11 @@
     <div class="max-w-9xl mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
         <!-- Logo & Tools -->
         <div class="flex items-center space-x-4">
-            <h1 class="text-xl sm:text-2xl font-extrabold text-yellow-600">DocLover</h1>
+            <h1 class="text-xl sm:text-2xl font-extrabold text-blue-600">DocLover</h1>
 
             <!-- Tools Dropdown -->
             <div class="relative hidden sm:block">
-                <div class="inline-flex items-center space-x-2">
+                <div class="inline-flex items-center mt-2 space-x-2">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="w-5 h-5">
                         <path fill="currentColor" fill-rule="evenodd"
                             d="M4 5.125C4 4.504 4.504 4 5.125 4h1.75C7.496 4 8 4.504 8 5.125v1.75C8 7.496 7.496 8 6.875 8h-1.75A1.125 1.125 0 0 1 4 6.875zm6 0C10 4.504 10.504 4 11.125 4h1.75C13.496 4 14 4.504 14 5.125v1.75C14 7.496 13.496 8 12.875 8h-1.75A1.125 1.125 0 0 1 10 6.875zM17.25 4C16.56 4 16 4.56 16 5.25v1.5c0 .69.56 1.25 1.25 1.25h1.5C19.44 8 20 7.44 20 6.75v-1.5C20 4.56 19.44 4 18.75 4zM16 11.125c0-.621.504-1.125 1.125-1.125h1.75c.621 0 1.125.504 1.125 1.125v1.75c0 .621-.504 1.125-1.125 1.125h-1.75A1.125 1.125 0 0 1 16 12.875zM17.125 16c-.621 0-1.125.504-1.125 1.125v1.75c0 .621.504 1.125 1.125 1.125h1.75c.621 0 1.125-.504 1.125-1.125v-1.75c0-.621-.504-1.125-1.125-1.125zM10 11.125c0-.621.504-1.125 1.125-1.125h1.75c.621 0 1.125.504 1.125 1.125v1.75c0 .621-.504 1.125-1.125 1.125h-1.75A1.125 1.125 0 0 1 10 12.875zM11.125 16c-.621 0-1.125.504-1.125 1.125v1.75c0 .621.504 1.125 1.125 1.125h1.75c.621 0 1.125-.504 1.125-1.125v-1.75c0-.621-.504-1.125-1.125-1.125zM4 11.125C4 10.504 4.504 10 5.125 10h1.75C7.496 10 8 10.504 8 11.125v1.75C8 13.496 7.496 14 6.875 14h-1.75A1.125 1.125 0 0 1 4 12.875zM5.125 16C4.504 16 4 16.504 4 17.125v1.75C4 19.496 4.504 20 5.125 20h1.75C7.496 20 8 19.496 8 18.875v-1.75C8 16.504 7.496 16 6.875 16z"
@@ -108,8 +108,8 @@
             <a href="#" class="hover:text-yellow-600 transition">Edit</a>
             <a href="#" class="hover:text-yellow-600 transition">Pricing</a>
             <a href="#"
-                class="bg-blue-600 text-white px-4 py-1.5 rounded hover:bg-blue-700 transition whitespace-nowrap">Free
-                Trial</a>
+                class="bg-blue-600 text-white px-4 py-1.5 rounded hover:bg-blue-700 transition whitespace-nowrap">Make
+                Resume</a>
         </nav>
     </div>
 
@@ -120,8 +120,8 @@
         <a href="#" class="block hover:text-yellow-600 transition">Edit</a>
         <a href="#" class="block hover:text-yellow-600 transition">Pricing</a>
         <a href="#"
-            class="block bg-blue-600 text-white px-4 py-1.5 rounded hover:bg-blue-700 transition text-center">Free
-            Trial</a>
+            class="block bg-blue-600 text-white px-4 py-1.5 rounded hover:bg-blue-700 transition text-center">Make
+            Resume</a>
     </div>
 
     <script>
@@ -130,13 +130,13 @@
             const button = document.getElementById(buttonId);
             const menu = document.getElementById(menuId);
 
-            button.addEventListener('click', function (event) {
+            button.addEventListener('click', function(event) {
                 event.stopPropagation(); // Prevents event from bubbling to `document`
                 menu.classList.toggle('hidden');
             });
 
             // Click outside to hide menu
-            document.addEventListener('click', function (event) {
+            document.addEventListener('click', function(event) {
                 if (!menu.contains(event.target) && !button.contains(event.target)) {
                     menu.classList.add('hidden');
                 }

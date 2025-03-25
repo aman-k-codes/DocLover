@@ -14,7 +14,7 @@
 
             <div class="mt-6 flex gap-4">
                 <a href="#" class="bg-blue-600 text-white font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-blue-700 transition">
-                    Start Free Trial
+                    Make Resume
                 </a>
                 <a href="#" class="border border-blue-600 text-blue-600 font-semibold px-8 py-3 rounded-lg hover:bg-blue-50 transition">
                     Explore All Tools
