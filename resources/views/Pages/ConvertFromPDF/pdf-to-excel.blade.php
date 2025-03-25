@@ -1,13 +1,13 @@
 @extends('Layout.master')
 
-@section('title', 'DocLover - pdf-to-excel')
+@section('title', 'DocLover - PDF to Excel')
 
-@section('meta_description', 'Convert pdf-to-excel easily with DocLover.')
-@section('meta_keywords', 'pdf-to-excel, Document Conversion, File Conversion')
+@section('meta_description', 'Convert PDF to Excel easily with DocLover.')
+@section('meta_keywords', 'PDF to Excel, Document Conversion, File Conversion')
 
 @section('content')
     <div class="container">
-        <h1 class="text-center">pdf-to-excel</h1>
-        <p>Use this tool to pdf-to-excel efficiently.</p>
+        <h1 class="text-center">PDF to Excel</h1>
+        <p>Use this tool to PDF to Excel efficiently.</p>
     </div>
 @endsection

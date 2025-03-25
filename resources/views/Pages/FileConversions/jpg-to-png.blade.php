@@ -1,13 +1,13 @@
 @extends('Layout.master')
 
-@section('title', 'DocLover - jpg-to-png')
+@section('title', 'DocLover - JPG to PNG')
 
-@section('meta_description', 'Convert jpg-to-png easily with DocLover.')
-@section('meta_keywords', 'jpg-to-png, Document Conversion, File Conversion')
+@section('meta_description', 'Convert JPG to PNG easily with DocLover.')
+@section('meta_keywords', 'JPG to PNG, Document Conversion, File Conversion')
 
 @section('content')
     <div class="container">
-        <h1 class="text-center">jpg-to-png</h1>
-        <p>Use this tool to jpg-to-png efficiently.</p>
+        <h1 class="text-center">JPG to PNG</h1>
+        <p>Use this tool to JPG to PNG efficiently.</p>
     </div>
 @endsection

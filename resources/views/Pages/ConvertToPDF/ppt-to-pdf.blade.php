@@ -1,13 +1,13 @@
 @extends('Layout.master')
 
-@section('title', 'DocLover - ppt-to-pdf')
+@section('title', 'DocLover - PPT to PDF')
 
-@section('meta_description', 'Convert ppt-to-pdf easily with DocLover.')
-@section('meta_keywords', 'ppt-to-pdf, Document Conversion, File Conversion')
+@section('meta_description', 'Convert PPT to PDF easily with DocLover.')
+@section('meta_keywords', 'PPT to PDF, Document Conversion, File Conversion')
 
 @section('content')
     <div class="container">
-        <h1 class="text-center">ppt-to-pdf</h1>
-        <p>Use this tool to ppt-to-pdf efficiently.</p>
+        <h1 class="text-center">PPT to PDF</h1>
+        <p>Use this tool to PPT to PDF efficiently.</p>
     </div>
 @endsection

@@ -1,13 +1,13 @@
 @extends('Layout.master')
 
-@section('title', 'DocLover - jpg-to-doc')
+@section('title', 'DocLover - JPG to Doc')
 
-@section('meta_description', 'Convert jpg-to-doc easily with DocLover.')
-@section('meta_keywords', 'jpg-to-doc, Document Conversion, File Conversion')
+@section('meta_description', 'Convert JPG to Doc easily with DocLover.')
+@section('meta_keywords', 'JPG to Doc, Document Conversion, File Conversion')
 
 @section('content')
     <div class="container">
-        <h1 class="text-center">jpg-to-doc</h1>
-        <p>Use this tool to jpg-to-doc efficiently.</p>
+        <h1 class="text-center">JPG to Doc</h1>
+        <p>Use this tool to JPG to Doc efficiently.</p>
     </div>
 @endsection
