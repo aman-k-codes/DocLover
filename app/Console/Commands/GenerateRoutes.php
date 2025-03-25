@@ -5,13 +5,16 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
 
-class CreateBladeFiles extends Command
+class GenerateRoutes extends Command
 {
-    protected $signature = 'make:blades';
-    protected $description = 'Create Blade template files for document conversion tools';
+    protected $signature = 'make:routes {controller=DocumentController} {--web}';
+    protected $description = 'Generate routes for all view functions inside the specified controller';
 
     public function handle()
     {
+        $controllerName = $this->argument('controller');
+        $routeFile = $this->option('web') ? base_path('routes/web.php') : base_path('routes/api.php');
+
         $folders = [
             'FileConversions' => [
                 'pdf-to-zip',
@@ -59,35 +62,19 @@ class CreateBladeFiles extends Command
             ]
         ];
 
+        $routes = "\n// Auto-generated routes for {$controllerName}\n";
         foreach ($folders as $folder => $files) {
             foreach ($files as $file) {
-                $path = resource_path("views/Pages/{$folder}/{$file}.blade.php");
-                if (!File::exists($path)) {
-                    File::ensureDirectoryExists(dirname($path));
+                $functionName = str_replace('-', '_', $file);
+                $routePath = str_replace('_', '-', $functionName);
 
-                    // Define a basic HTML structure
-                    $content = <<<HTML
-                    @extends('Layout.master')
-
-                    @section('title', 'DocLover - {$file}')
-
-                    @section('meta_description', 'Convert {$file} easily with DocLover.')
-                    @section('meta_keywords', '{$file}, Document Conversion, File Conversion')
-
-                    @section('content')
-                        <div class="container">
-                            <h1 class="text-center">{$file}</h1>
-                            <p>Use this tool to {$file} efficiently.</p>
-                        </div>
-                    @endsection
-                    HTML;
-
-                    File::put($path, $content);
-                    $this->info("Created: resources/views/Pages/{$folder}/{$file}.blade.php");
-                } else {
-                    $this->warn("Already exists: {$file}.blade.php");
-                }
+                $routes .= "Route::get('/{$routePath}', [{$controllerName}::class, '{$functionName}'])->name('{$routePath}');\n";
             }
         }
+
+        // Append routes to web.php or api.php
+        File::append($routeFile, $routes);
+
+        $this->info("Routes added to " . ($this->option('web') ? 'web.php' : 'api.php'));
     }
 }

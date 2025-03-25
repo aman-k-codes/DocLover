@@ -5,13 +5,21 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
 
-class CreateBladeFiles extends Command
+class GenerateControllerViews extends Command
 {
-    protected $signature = 'make:blades';
-    protected $description = 'Create Blade template files for document conversion tools';
+    protected $signature = 'make:controller-views {controller=DocumentController}';
+    protected $description = 'Generate view functions inside a specified controller';
 
     public function handle()
     {
+        $controllerName = $this->argument('controller');
+        $controllerPath = app_path("Http/Controllers/{$controllerName}.php");
+
+        if (!File::exists($controllerPath)) {
+            $this->error("Controller {$controllerName} does not exist.");
+            return;
+        }
+
         $folders = [
             'FileConversions' => [
                 'pdf-to-zip',
@@ -59,35 +67,29 @@ class CreateBladeFiles extends Command
             ]
         ];
 
+        $functions = "";
         foreach ($folders as $folder => $files) {
             foreach ($files as $file) {
-                $path = resource_path("views/Pages/{$folder}/{$file}.blade.php");
-                if (!File::exists($path)) {
-                    File::ensureDirectoryExists(dirname($path));
+                $functionName = str_replace('-', '_', $file);
+                $functions .= <<<PHP
 
-                    // Define a basic HTML structure
-                    $content = <<<HTML
-                    @extends('Layout.master')
-
-                    @section('title', 'DocLover - {$file}')
-
-                    @section('meta_description', 'Convert {$file} easily with DocLover.')
-                    @section('meta_keywords', '{$file}, Document Conversion, File Conversion')
-
-                    @section('content')
-                        <div class="container">
-                            <h1 class="text-center">{$file}</h1>
-                            <p>Use this tool to {$file} efficiently.</p>
-                        </div>
-                    @endsection
-                    HTML;
-
-                    File::put($path, $content);
-                    $this->info("Created: resources/views/Pages/{$folder}/{$file}.blade.php");
-                } else {
-                    $this->warn("Already exists: {$file}.blade.php");
-                }
+    public function {$functionName}()
+    {
+        return view('Pages.{$folder}.{$file}');
+    }
+PHP;
             }
         }
+
+        // Read the current controller file
+        $controllerContent = File::get($controllerPath);
+
+        // Insert functions before the closing bracket of the class
+        $controllerContent = preg_replace('/}\s*$/', $functions . "\n}", $controllerContent);
+
+        // Save the modified controller
+        File::put($controllerPath, $controllerContent);
+
+        $this->info("View functions added to {$controllerName}.php");
     }
 }

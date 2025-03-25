@@ -3,24 +3,33 @@
     <div>
         <h3 class="text-lg font-semibold text-gray-900 mb-4">File Conversions</h3>
         <ul class="space-y-3">
-            <li class="flex items-center space-x-2"><i class="fas fa-file-archive text-red-500"></i><span>PDF to
-                    ZIP</span></li>
-            <li class="flex items-center space-x-2"><i class="fas fa-file-word text-blue-500"></i><span>PDF to DOC</span>
+            <li class="flex items-center space-x-2"><i class="fas fa-file-archive text-red-500"></i><a
+                    href="{{ route('pdf-to-zip') }}"><span>PDF to
+                        ZIP</span></a></li>
+            <li class="flex items-center space-x-2"><i class="fas fa-file-word text-blue-500"></i><a
+                    href="{{ route('pdf-to-doc') }}"><span>PDF to DOC</span></a>
             </li>
-            <li class="flex items-center space-x-2"><i class="fas fa-file-image text-yellow-500"></i><span>PDF to
-                    JPG</span></li>
-            <li class="flex items-center space-x-2"><i class="fas fa-file-code text-green-600"></i><span>PDF to
-                    HTML</span></li>
-            <li class="flex items-center space-x-2"><i class="fas fa-file-excel text-blue-600"></i><span>PDF to
-                    XL</span></li>
-            <li class="flex items-center space-x-2"><i class="fas fa-image text-purple-500"></i><span>JPG to PNG</span>
+            <li class="flex items-center space-x-2"><i class="fas fa-file-image text-yellow-500"></i><a
+                    href="{{ route('pdf-to-jpg') }}"><span>PDF to
+                        JPG</span></a></li>
+            <li class="flex items-center space-x-2"><i class="fas fa-file-code text-green-600"></i><a
+                    href="{{ route('pdf-to-html') }}"><span>PDF to
+                        HTML</span></a></li>
+            <li class="flex items-center space-x-2"><i class="fas fa-file-excel text-blue-600"></i><a
+                    href="{{ route('pdf-to-xl') }}"><span>PDF to
+                        XL</span></a></li>
+            <li class="flex items-center space-x-2"><i class="fas fa-image text-purple-500"></i><a
+                    href="{{ route('jpg-to-png') }}"><span>JPG to PNG</span></a>
             </li>
-            <li class="flex items-center space-x-2"><i class="fas fa-image text-indigo-500"></i><span>PNG to JPG</span>
+            <li class="flex items-center space-x-2"><i class="fas fa-image text-indigo-500"></i><a
+                    href="{{ route('png-to-jpg') }}"><span>PNG to JPG</span></a>
             </li>
-            <li class="flex items-center space-x-2"><i class="fas fa-file-word text-red-500"></i><span>JPG to DOC</span>
+            <li class="flex items-center space-x-2"><i class="fas fa-file-word text-red-500"></i><a
+                    href="{{ route('jpg-to-doc') }}"><span>JPG to DOC</span></a>
             </li>
-            <li class="flex items-center space-x-2"><i class="fas fa-file-excel text-green-500"></i><span>JPG to
-                    XL</span></li>
+            <li class="flex items-center space-x-2"><i class="fas fa-file-excel text-green-500"></i><a
+                    href="{{ route('jpg-to-xl') }}"><span>JPG to
+                        XL</span></a></li>
         </ul>
     </div>
 
