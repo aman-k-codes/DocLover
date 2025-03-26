@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link rel="icon" type="image/png" href="{{ asset('public/assets/imgs/fav.png') }}">
     <!-- Primary Meta Tags -->
     <title>@yield('title', 'DocLover - Document Conversion, Editing & Resume Maker')</title>
     <meta name="description" content="@yield('meta_description', 'DocLover is an all-in-one platform for document conversion, editing, image processing, and resume creation. Convert PDFs, edit documents, process images, and build resumes effortlessly.')">

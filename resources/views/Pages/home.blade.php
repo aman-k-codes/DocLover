@@ -2,7 +2,7 @@
 @section('content')
     <!-- Hero Section -->
     <section
-        class="bg-gradient-to-r from-blue-50 to-white py-20 px-8 flex flex-col md:flex-row items-center justify-between">
+        class="bg-gradient-to-r from-blue-50 to-white py-5 px-8 flex flex-col md:flex-row items-center justify-between">
         <!-- Text Content -->
         <div class="md:w-1/2 mb-12 md:mb-0">
             <h1 class=" text-3xl md:text-5xl font-extrabold text-gray-900 leading-tight">

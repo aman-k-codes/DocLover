@@ -50,3 +50,4 @@ composer require dompdf/dompdf
 composer require mpdf/mpdf
 composer require phpoffice/phpword
 composer require phpoffice/phpspreadsheet
+composer require thiagoalessio/tesseract_ocr

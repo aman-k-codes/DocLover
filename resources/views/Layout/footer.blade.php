@@ -3,7 +3,9 @@
         <!-- Brand & Tagline -->
         <div class="col-span-1">
             <div class="flex items-center space-x-2">
-                <div class="w-6 h-6 bg-gradient-to-br from-yellow-400 via-pink-500 to-purple-600 rounded"></div>
+                <div class="w-8 h-8 bg-gradient-to-br rounded">
+                    <img src="{{asset('public/assets/imgs/fav.png')}}" alt="">
+                </div>
                 <span class="text-xl font-bold">DocLover</span>
             </div>
             <p class="mt-2 text-gray-600">Simplifying PDFs for everyone.</p>
