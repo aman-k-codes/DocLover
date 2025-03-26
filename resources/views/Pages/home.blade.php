@@ -1,25 +1,37 @@
 @extends('Layout.master')
 @section('content')
     <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-blue-50 to-white py-20 px-8 flex flex-col md:flex-row items-center justify-between">
+    <section
+        class="bg-gradient-to-r from-blue-50 to-white py-20 px-8 flex flex-col md:flex-row items-center justify-between">
         <!-- Text Content -->
         <div class="md:w-1/2 mb-12 md:mb-0">
-            <h1 class="text-5xl font-extrabold text-gray-900 leading-tight">
+            <h1 class=" text-3xl md:text-5xl font-extrabold text-gray-900 leading-tight">
                 The Smartest Way to <span class="text-blue-600">Manage PDFs</span>
             </h1>
 
-            <p class="text-lg text-gray-600 mt-4">
+            <p class="text-md md:text-lg text-gray-600 mt-4">
                 Powerful, easy-to-use tools for converting, editing, and securing your PDFs—completely online.
             </p>
 
-            <div class="mt-6 flex gap-4">
-                <a href="#" class="bg-blue-600 text-white font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-blue-700 transition">
+            <div class="mt-6 flex flex-wrap gap-4">
+                <a href="#" class="bg-blue-600 text-white font-semibold
+                                  px-4 py-2 text-sm
+                                  sm:px-6 sm:py-2.5 sm:text-base
+                                  md:px-8 md:py-3 md:text-lg
+                                  rounded-lg shadow-lg
+                                  hover:bg-blue-700 transition">
                     Make Resume
                 </a>
-                <a href="{{route('home.AllTools')}}" class="border border-blue-600 text-blue-600 font-semibold px-8 py-3 rounded-lg hover:bg-blue-50 transition">
+                <a href="{{ route('home.AllTools') }}" class="border border-blue-600 text-blue-600 font-semibold
+                                  px-4 py-2 text-sm
+                                  sm:px-6 sm:py-2.5 sm:text-base
+                                  md:px-8 md:py-3 md:text-lg
+                                  rounded-lg
+                                  hover:bg-blue-50 transition">
                     Explore All Tools
                 </a>
             </div>
+
         </div>
 
         <!-- Image / Graphic Section -->
@@ -37,7 +49,8 @@
 
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                 <!-- PDF to Word -->
-                <div class="flex items-start bg-white shadow-lg border border-gray-200 rounded-xl p-6 text-left hover:shadow-xl transition">
+                <div
+                    class="flex items-start bg-white shadow-lg border border-gray-200 rounded-xl p-6 text-left hover:shadow-xl transition">
                     <div class="bg-blue-100 text-blue-600 rounded-full p-3 mr-4">
                         <i class="fas fa-file-word text-2xl"></i>
                     </div>
@@ -48,7 +61,8 @@
                 </div>
 
                 <!-- Merge PDF -->
-                <div class="flex items-start bg-white shadow-lg border border-gray-200 rounded-xl p-6 text-left hover:shadow-xl transition">
+                <div
+                    class="flex items-start bg-white shadow-lg border border-gray-200 rounded-xl p-6 text-left hover:shadow-xl transition">
                     <div class="bg-purple-100 text-purple-600 rounded-full p-3 mr-4">
                         <i class="fas fa-file-pdf text-2xl"></i>
                     </div>
@@ -59,7 +73,8 @@
                 </div>
 
                 <!-- JPG to PDF -->
-                <div class="flex items-start bg-white shadow-lg border border-gray-200 rounded-xl p-6 text-left hover:shadow-xl transition">
+                <div
+                    class="flex items-start bg-white shadow-lg border border-gray-200 rounded-xl p-6 text-left hover:shadow-xl transition">
                     <div class="bg-yellow-100 text-yellow-600 rounded-full p-3 mr-4">
                         <i class="fas fa-image text-2xl"></i>
                     </div>
@@ -70,7 +85,8 @@
                 </div>
 
                 <!-- Sign PDF -->
-                <div class="flex items-start bg-white shadow-lg border border-gray-200 rounded-xl p-6 text-left hover:shadow-xl transition">
+                <div
+                    class="flex items-start bg-white shadow-lg border border-gray-200 rounded-xl p-6 text-left hover:shadow-xl transition">
                     <div class="bg-pink-100 text-pink-600 rounded-full p-3 mr-4">
                         <i class="fas fa-signature text-2xl"></i>
                     </div>
@@ -81,7 +97,8 @@
                 </div>
 
                 <!-- Edit PDF -->
-                <div class="flex items-start bg-white shadow-lg border border-gray-200 rounded-xl p-6 text-left hover:shadow-xl transition">
+                <div
+                    class="flex items-start bg-white shadow-lg border border-gray-200 rounded-xl p-6 text-left hover:shadow-xl transition">
                     <div class="bg-teal-100 text-teal-600 rounded-full p-3 mr-4">
                         <i class="fas fa-edit text-2xl"></i>
                     </div>
@@ -92,7 +109,8 @@
                 </div>
 
                 <!-- Compress PDF -->
-                <div class="flex items-start bg-white shadow-lg border border-gray-200 rounded-xl p-6 text-left hover:shadow-xl transition">
+                <div
+                    class="flex items-start bg-white shadow-lg border border-gray-200 rounded-xl p-6 text-left hover:shadow-xl transition">
                     <div class="bg-red-100 text-red-600 rounded-full p-3 mr-4">
                         <i class="fas fa-compress-alt text-2xl"></i>
                     </div>
@@ -104,7 +122,8 @@
             </div>
 
             <div class="mt-12">
-                <a href="{{route('home.AllTools')}}" class="inline-block underline text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-text-700 transition">
+                <a href="{{route('home.AllTools')}}"
+                    class="inline-block underline text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-text-700 transition">
                     Explore All PDF Tools
                 </a>
             </div>
@@ -121,7 +140,8 @@
 
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
                 <!-- Fast & Secure -->
-                <div class="p-8 bg-white shadow-lg border border-gray-200 rounded-xl transition transform hover:-translate-y-1 hover:shadow-xl">
+                <div
+                    class="p-8 bg-white shadow-lg border border-gray-200 rounded-xl transition transform hover:-translate-y-1 hover:shadow-xl">
                     <div class="mb-4 text-blue-600 text-4xl">
                         <i class="fas fa-shield-alt"></i>
                     </div>
@@ -130,7 +150,8 @@
                 </div>
 
                 <!-- Works on Any Device -->
-                <div class="p-8 bg-white shadow-lg border border-gray-200 rounded-xl transition transform hover:-translate-y-1 hover:shadow-xl">
+                <div
+                    class="p-8 bg-white shadow-lg border border-gray-200 rounded-xl transition transform hover:-translate-y-1 hover:shadow-xl">
                     <div class="mb-4 text-green-600 text-4xl">
                         <i class="fas fa-laptop"></i>
                     </div>
@@ -139,12 +160,14 @@
                 </div>
 
                 <!-- Free to Use -->
-                <div class="p-8 bg-white shadow-lg border border-gray-200 rounded-xl transition transform hover:-translate-y-1 hover:shadow-xl">
+                <div
+                    class="p-8 bg-white shadow-lg border border-gray-200 rounded-xl transition transform hover:-translate-y-1 hover:shadow-xl">
                     <div class="mb-4 text-yellow-600 text-4xl">
                         <i class="fas fa-gift"></i>
                     </div>
                     <h3 class="text-xl font-semibold text-gray-900 mb-2">Free to Use</h3>
-                    <p class="text-gray-600">Enjoy powerful features at no cost, with premium upgrades available anytime.</p>
+                    <p class="text-gray-600">Enjoy powerful features at no cost, with premium upgrades available anytime.
+                    </p>
                 </div>
             </div>
         </div>

@@ -2,7 +2,7 @@
     <div class="max-w-9xl mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
         <!-- Logo & Tools -->
         <div class="flex items-center space-x-4">
-            <h1 class="text-xl sm:text-2xl font-extrabold text-blue-600">DocLover</h1>
+            <h1 class="text-xl sm:text-2xl font-extrabold text-blue-600"><a href="{{url('/')}}">DocLover</a></h1>
 
             <!-- Tools Dropdown -->
             <div class="relative hidden sm:block">
@@ -22,49 +22,52 @@
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-sm text-gray-800">
                         <!-- Column 1 -->
                         <div>
-                            <h3 class="font-semibold mb-3 text-gray-600">Compress</h3>
+                            <h3 class="font-semibold mb-3 text-gray-600">File Conversions</h3>
                             <ul class="space-y-2">
-                                <li><i class="fas fa-compress text-red-500 mr-2"></i>Compress PDF</li>
-                            </ul>
-
-                            <h3 class="font-semibold mt-6 mb-3 text-gray-600">Convert</h3>
-                            <ul class="space-y-2">
-                                <li><i class="fas fa-sync-alt text-blue-500 mr-2"></i>PDF Converter</li>
-                            </ul>
-
-                            <h3 class="font-semibold mt-6 mb-3 text-gray-600">AI PDF</h3>
-                            <ul class="space-y-2">
-                                <li><i class="fas fa-comments text-indigo-500 mr-2"></i>Chat with PDF</li>
-                                <li><i class="fas fa-brain text-purple-500 mr-2"></i>AI PDF Summarizer</li>
-                                <li><i class="fas fa-globe text-green-600 mr-2"></i>Translate PDF</li>
-                                <li><i class="fas fa-question-circle text-pink-600 mr-2"></i>AI Question Generator
-                                </li>
+                                <li><i class="fas fa-file-archive text-blue-600 mr-2"></i><a href="{{ route('pdf-to-zip') }}"><span>PDF to ZIP</span></a></li>
+                                <li><i class="fas fa-file-word text-indigo-600 mr-2"></i><a href="{{ route('pdf-to-doc') }}"><span>PDF to DOC</span></a></li>
+                                <li><i class="fas fa-image text-yellow-600 mr-2"></i><a href="{{ route('pdf-to-jpg') }}"><span>PDF to JPG</span></a></li>
+                                <li><i class="fas fa-code text-green-600 mr-2"></i><a href="{{ route('pdf-to-html') }}"><span>PDF to HTML</span></a></li>
+                                <li><i class="fas fa-file-excel text-green-700 mr-2"></i><a href="{{ route('pdf-to-xl') }}"><span>PDF to XL</span></a></li>
+                                <li><i class="fas fa-file-image text-pink-600 mr-2"></i><a href="{{ route('jpg-to-png') }}"><span>JPG to PNG</span></a></li>
+                                <li><i class="fas fa-image text-purple-600 mr-2"></i><a href="{{ route('png-to-jpg') }}"><span>PNG to JPG</span></a></li>
+                                <li><i class="fas fa-file-word text-blue-600 mr-2"></i><a href="{{ route('jpg-to-doc') }}"><span>JPG to DOC</span></a></li>
+                                <li><i class="fas fa-file-excel text-green-600 mr-2"></i><a href="{{ route('jpg-to-xl') }}"><span>JPG to XL</span></a></li>
                             </ul>
                         </div>
 
                         <!-- Column 2 -->
                         <div>
-                            <h3 class="font-semibold mb-3 text-gray-600">Organize</h3>
+                            <h3 class="font-semibold mb-3 text-gray-600">Image & Document Processing</h3>
                             <ul class="space-y-2">
-                                <li><i class="fas fa-paperclip text-orange-500 mr-2"></i>Merge PDF</li>
-                                <li><i class="fas fa-cut text-pink-500 mr-2"></i>Split PDF</li>
-                                <li><i class="fas fa-sync-alt text-yellow-600 mr-2"></i>Rotate PDF</li>
-                                <li><i class="fas fa-trash-alt text-red-600 mr-2"></i>Delete Pages</li>
-                                <li><i class="fas fa-upload text-teal-600 mr-2"></i>Extract Pages</li>
+                                <li><i class="fas fa-crop-alt text-yellow-700 mr-2"></i><a href="{{ route('crop') }}"><span>Crop</span></a></li>
+                                <li><i class="fas fa-th-large text-pink-600 mr-2"></i><a href="{{ route('collage') }}"><span>Collage</span></a></li>
+                                <li><i class="fas fa-expand-arrows-alt text-green-700 mr-2"></i><a href="{{ route('resize') }}"><span>Resize</span></a></li>
+                                <li><i class="fas fa-id-card text-purple-600 mr-2"></i><a href="{{ route('passport-size-photo') }}"><span>Passport-size Photo</span></a></li>
+                                <li><i class="fas fa-magic text-indigo-600 mr-2"></i><a href="{{ route('photo-clarity-enhancement') }}"><span>Photo Clarity Enhancement</span></a></li>
+                                <li><i class="fas fa-image text-orange-600 mr-2"></i><a href="{{ route('background-change') }}"><span>Background Change</span></a></li>
+                                <li><i class="fas fa-file-alt text-blue-500 mr-2"></i><a href="{{ route('resume-maker') }}"><span>Resume Maker</span></a></li>
+                                <li><i class="fas fa-compress-alt text-red-600 mr-2"></i><a href="{{ route('photo-size-compression') }}"><span>Photo Size Compression</span></a></li>
+                                <li><i class="fas fa-file-signature text-teal-600 mr-2"></i><a href="{{ route('image-to-text-conversion') }}"><span>Image to Text Conversion</span></a></li>
+                                <li><i class="fas fa-signature text-pink-700 mr-2"></i><a href="{{ route('sign-picker') }}"><span>Sign Picker</span></a></li>
                             </ul>
                         </div>
 
                         <!-- Column 3 -->
                         <div>
-                            <h3 class="font-semibold mb-3 text-gray-600">View & Edit</h3>
+                            <h3 class="font-semibold mb-3 text-gray-600">Organize PDF</h3>
                             <ul class="space-y-2">
-                                <li><i class="fas fa-pen-square text-purple-600 mr-2"></i>Edit PDF</li>
-                                <li><i class="fas fa-pencil-alt text-indigo-600 mr-2"></i>Annotator</li>
-                                <li><i class="fas fa-book-open text-green-700 mr-2"></i>Reader</li>
-                                <li><i class="fas fa-sort-numeric-down text-pink-600 mr-2"></i>Number Pages</li>
-                                <li><i class="fas fa-crop text-yellow-700 mr-2"></i>Crop PDF</li>
-                                <li><i class="fas fa-eraser text-red-500 mr-2"></i>Redact</li>
-                                <li><i class="fas fa-tint text-blue-600 mr-2"></i>Watermark</li>
+                                <li><i class="fas fa-paperclip text-orange-500 mr-2"></i><a href="{{ route('merge-pdf') }}"><span>Merge PDF</span></a></li>
+                                <li><i class="fas fa-cut text-pink-500 mr-2"></i><a href="{{ route('split-pdf') }}"><span>Split PDF</span></a></li>
+                                <li><i class="fas fa-sync-alt text-yellow-600 mr-2"></i><a href="{{ route('rotate-pdf') }}"><span>Rotate PDF</span></a></li>
+                                <li><i class="fas fa-trash-alt text-red-600 mr-2"></i><a href="{{ route('delete-pdf-pages') }}"><span>Delete PDF Pages</span></a></li>
+                            </ul>
+
+                            <h3 class="font-semibold mt-6 mb-3 text-gray-600">Sign & Secure</h3>
+                            <ul class="space-y-2">
+                                <li><i class="fas fa-signature text-blue-700 mr-2"></i><a href="{{ route('sign-pdf') }}"><span>Sign PDF</span></a></li>
+                                <li><i class="fas fa-lock text-red-700 mr-2"></i><a href="{{ route('protect-pdf') }}"><span>Protect PDF</span></a></li>
+                                <li><i class="fas fa-lock-open text-green-600 mr-2"></i><a href="{{ route('unlock-pdf') }}"><span>Unlock PDF</span></a></li>
                             </ul>
                         </div>
 
@@ -72,25 +75,22 @@
                         <div>
                             <h3 class="font-semibold mb-3 text-gray-600">Convert from PDF</h3>
                             <ul class="space-y-2">
-                                <li><i class="fas fa-file-word text-blue-600 mr-2"></i>PDF to Word</li>
-                                <li><i class="fas fa-file-excel text-green-600 mr-2"></i>PDF to Excel</li>
-                                <li><i class="fas fa-file-powerpoint text-red-500 mr-2"></i>PDF to PPT</li>
-                                <li class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded flex items-center">
-                                    <i class="fas fa-image text-yellow-600 mr-2"></i>PDF to JPG
-                                </li>
+                                <li><i class="fas fa-file-word text-blue-600 mr-2"></i><a href="{{ route('pdf-to-word') }}"><span>PDF to Word</span></a></li>
+                                <li><i class="fas fa-file-excel text-green-600 mr-2"></i><a href="{{ route('pdf-to-excel') }}"><span>PDF to Excel</span></a></li>
+                                <li><i class="fas fa-file-powerpoint text-red-500 mr-2"></i><a href="{{ route('pdf-to-ppt') }}"><span>PDF to PPT</span></a></li>
+                                {{-- <li><i class="fas fa-image text-yellow-600 mr-2"></i><a><span>PDF to JPG</span></a></li> --}}
                             </ul>
 
                             <h3 class="font-semibold mt-6 mb-3 text-gray-600">Convert to PDF</h3>
                             <ul class="space-y-2">
-                                <li><i class="fas fa-file-alt text-gray-600 mr-2"></i>Word to PDF</li>
-                                <li><i class="fas fa-chart-line text-blue-600 mr-2"></i>Excel to PDF</li>
-                                <li><i class="fas fa-file-powerpoint text-orange-600 mr-2"></i>PPT to PDF</li>
-                                <li><i class="fas fa-image text-pink-500 mr-2"></i>JPG to PDF</li>
-                                <li><i class="fas fa-search text-green-500 mr-2"></i>PDF OCR</li>
+                                <li><i class="fas fa-file-alt text-gray-600 mr-2"></i><a href="{{ route('word-to-pdf') }}"><span>Word to PDF</span></a></li>
+                                <li><i class="fas fa-chart-line text-blue-600 mr-2"></i><a href="{{ route('excel-to-pdf') }}"><span>Excel to PDF</span></a></li>
+                                <li><i class="fas fa-file-powerpoint text-orange-600 mr-2"></i><a href="{{ route('ppt-to-pdf') }}"><span>PPT to PDF</span></a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
 
@@ -130,13 +130,13 @@
             const button = document.getElementById(buttonId);
             const menu = document.getElementById(menuId);
 
-            button.addEventListener('click', function(event) {
+            button.addEventListener('click', function (event) {
                 event.stopPropagation(); // Prevents event from bubbling to `document`
                 menu.classList.toggle('hidden');
             });
 
             // Click outside to hide menu
-            document.addEventListener('click', function(event) {
+            document.addEventListener('click', function (event) {
                 if (!menu.contains(event.target) && !button.contains(event.target)) {
                     menu.classList.add('hidden');
                 }
