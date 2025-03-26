@@ -27,3 +27,15 @@
 
     Sign Picker
 
+
+------------------------------------------------------------------------------
+Operation Type	                Tool/Library
+------------------------------------------------------------------------------
+Image	                        Intervention Image, GD, Imagick
+PDF	                            setasign/fpdi, smalot/pdfparser, dompdf, mpdf
+Office Conversions              PhpWord, PhpSpreadsheet, LibreOffice CLI
+OCR	                            Tesseract OCR, OCR.space API
+Signing	                        setasign/fpdi + digital signature support
+AI Background Removal	        remove.bg API, Erase.bg API
+APIs	                        Zamzar, PDF.co, CloudConvert, Adobe PDF Services API
+-------------------------------------------------------------------------------
