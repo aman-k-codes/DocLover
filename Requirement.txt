@@ -39,3 +39,14 @@ Signing	                        setasign/fpdi + digital signature support
 AI Background Removal	        remove.bg API, Erase.bg API
 APIs	                        Zamzar, PDF.co, CloudConvert, Adobe PDF Services API
 -------------------------------------------------------------------------------
+
+
+
+
+composer require intervention/image
+composer require setasign/fpdi
+composer require smalot/pdfparser
+composer require dompdf/dompdf
+composer require mpdf/mpdf
+composer require phpoffice/phpword
+composer require phpoffice/phpspreadsheet
