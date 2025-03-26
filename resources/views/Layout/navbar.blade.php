@@ -1,5 +1,5 @@
-<header class="bg-white shadow-md sticky top-0 z-50">
-    <div class="max-w-9xl mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
+<header class="bg-white border-b sticky top-0 z-50">
+    <div class="max-w-9xl mx-auto px-4 sm:px-6 py-2 flex justify-between items-center">
         <!-- Logo & Tools -->
         <div class="flex items-center space-x-4">
             <h1 class="text-xl sm:text-2xl font-extrabold text-blue-600"><a href="{{url('/')}}">DocLover</a></h1>
@@ -102,7 +102,7 @@
         </div>
 
         <!-- Nav links -->
-        <nav class="hidden sm:flex items-center space-x-4 text-sm font-medium">
+        <nav class="hidden sm:flex items-center space-x-4 text-sm ">
             <a href="#" class="hover:text-yellow-600 transition">Compress</a>
             <a href="#" class="hover:text-yellow-600 transition">Convert</a>
             <a href="#" class="hover:text-yellow-600 transition">Edit</a>
@@ -114,7 +114,7 @@
     </div>
 
     <!-- Mobile Menu -->
-    <div id="mobileMenu" class="sm:hidden hidden px-6 pb-4 space-y-3 text-sm font-medium">
+    <div id="mobileMenu" class="sm:hidden hidden px-6 pb-4 space-y-3 text-sm ">
         <a href="#" class="block hover:text-yellow-600 transition">Compress</a>
         <a href="#" class="block hover:text-yellow-600 transition">Convert</a>
         <a href="#" class="block hover:text-yellow-600 transition">Edit</a>
