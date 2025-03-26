@@ -1,13 +1,13 @@
 @extends('Layout.master')
 
-@section('title', 'DocLover - delete-pdf-pages')
+@section('title', 'DocLover - Delete PDF Pages')
 
-@section('meta_description', 'Convert delete-pdf-pages easily with DocLover.')
-@section('meta_keywords', 'delete-pdf-pages, Document Conversion, File Conversion')
+@section('meta_description', 'Convert Delete PDF Pages easily with DocLover.')
+@section('meta_keywords', 'Delete PDF Pages, Document Conversion, File Conversion')
 
 @section('content')
     <div class="container">
-        <h1 class="text-center">delete-pdf-pages</h1>
-        <p>Use this tool to delete-pdf-pages efficiently.</p>
+        <h1 class="text-center">Delete PDF Pages</h1>
+        <p>Use this tool to Delete PDF Pages efficiently.</p>
     </div>
 @endsection

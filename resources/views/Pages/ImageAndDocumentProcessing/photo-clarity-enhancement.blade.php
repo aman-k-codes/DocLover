@@ -1,13 +1,13 @@
 @extends('Layout.master')
 
-@section('title', 'DocLover - photo-clarity-enhancement')
+@section('title', 'DocLover - Photo Clarity Enhancement')
 
-@section('meta_description', 'Convert photo-clarity-enhancement easily with DocLover.')
-@section('meta_keywords', 'photo-clarity-enhancement, Document Conversion, File Conversion')
+@section('meta_description', 'Convert Photo Clarity Enhancement easily with DocLover.')
+@section('meta_keywords', 'Photo Clarity Enhancement, Document Conversion, File Conversion')
 
 @section('content')
     <div class="container">
-        <h1 class="text-center">photo-clarity-enhancement</h1>
-        <p>Use this tool to photo-clarity-enhancement efficiently.</p>
+        <h1 class="text-center">Photo Clarity Enhancement</h1>
+        <p>Use this tool to Photo Clarity Enhancement efficiently.</p>
     </div>
 @endsection

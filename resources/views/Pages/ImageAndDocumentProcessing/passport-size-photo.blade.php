@@ -1,13 +1,13 @@
 @extends('Layout.master')
 
-@section('title', 'DocLover - passport-size-photo')
+@section('title', 'DocLover - Passport Size Photo')
 
-@section('meta_description', 'Convert passport-size-photo easily with DocLover.')
-@section('meta_keywords', 'passport-size-photo, Document Conversion, File Conversion')
+@section('meta_description', 'Convert Passport Size Photo easily with DocLover.')
+@section('meta_keywords', 'Passport Size Photo, Document Conversion, File Conversion')
 
 @section('content')
     <div class="container">
-        <h1 class="text-center">passport-size-photo</h1>
-        <p>Use this tool to passport-size-photo efficiently.</p>
+        <h1 class="text-center">Passport Size Photo</h1>
+        <p>Use this tool to Passport Size Photo efficiently.</p>
     </div>
 @endsection

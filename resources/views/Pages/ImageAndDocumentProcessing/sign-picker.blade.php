@@ -1,13 +1,13 @@
 @extends('Layout.master')
 
-@section('title', 'DocLover - sign-picker')
+@section('title', 'DocLover - Sign Picker')
 
-@section('meta_description', 'Convert sign-picker easily with DocLover.')
-@section('meta_keywords', 'sign-picker, Document Conversion, File Conversion')
+@section('meta_description', 'Convert Sign Picker easily with DocLover.')
+@section('meta_keywords', 'Sign Picker, Document Conversion, File Conversion')
 
 @section('content')
     <div class="container">
-        <h1 class="text-center">sign-picker</h1>
-        <p>Use this tool to sign-picker efficiently.</p>
+        <h1 class="text-center">Sign Picker</h1>
+        <p>Use this tool to Sign Picker efficiently.</p>
     </div>
 @endsection

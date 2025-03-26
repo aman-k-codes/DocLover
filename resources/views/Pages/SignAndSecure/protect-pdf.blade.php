@@ -1,13 +1,13 @@
 @extends('Layout.master')
 
-@section('title', 'DocLover - protect-pdf')
+@section('title', 'DocLover - Protect PDF')
 
-@section('meta_description', 'Convert protect-pdf easily with DocLover.')
-@section('meta_keywords', 'protect-pdf, Document Conversion, File Conversion')
+@section('meta_description', 'Convert Protect PDF easily with DocLover.')
+@section('meta_keywords', 'Protect PDF, Document Conversion, File Conversion')
 
 @section('content')
     <div class="container">
-        <h1 class="text-center">protect-pdf</h1>
-        <p>Use this tool to protect-pdf efficiently.</p>
+        <h1 class="text-center">Protect PDF</h1>
+        <p>Use this tool to Protect PDF efficiently.</p>
     </div>
 @endsection
