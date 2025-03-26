@@ -6,7 +6,7 @@
         <!-- Text Content -->
         <div class="md:w-1/2 mb-12 md:mb-0">
             <h1 class=" text-3xl md:text-5xl font-extrabold text-gray-900 leading-tight">
-                The Smartest Way to <span class="text-blue-600">Manage PDFs</span>
+                The Smartest Way to <span class="text-blue-600">Manage PDFs1</span>
             </h1>
 
             <p class="text-md md:text-lg text-gray-600 mt-4">
