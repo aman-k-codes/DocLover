@@ -6,29 +6,29 @@
         <!-- Text Content -->
         <div class="md:w-1/2 mb-12 md:mb-0">
             <h1 class=" text-3xl md:text-5xl font-extrabold text-gray-900 leading-tight">
-                The Smartest Way to <span class="text-blue-600">Manage PDFs</span>
+                Build Your <span class="text-blue-600">Professional Resume</span> Instantly
             </h1>
 
             <p class="text-md md:text-lg text-gray-600 mt-4">
-                Powerful, easy-to-use tools for converting, editing, and securing your PDFs—completely online.
+                Create polished, job-ready resumes with ease using our smart and intuitive resume builder—100% free.
             </p>
 
             <div class="mt-6 flex flex-wrap gap-4">
                 <a href="{{ route('resume.index') }}" class="bg-blue-600 text-white font-semibold
-                                  px-4 py-2 text-sm
-                                  sm:px-6 sm:py-2.5 sm:text-base
-                                  md:px-8 md:py-3 md:text-lg
-                                  rounded-lg shadow-lg
-                                  hover:bg-blue-700 transition">
-                    Make Resume
+                                      px-4 py-2 text-sm
+                                      sm:px-6 sm:py-2.5 sm:text-base
+                                      md:px-8 md:py-3 md:text-lg
+                                      rounded-lg shadow-lg
+                                      hover:bg-blue-700 transition">
+                    Document Editor
                 </a>
                 <a href="{{ route('home.AllTools') }}" class="border border-blue-600 text-blue-600 font-semibold
-                                  px-4 py-2 text-sm
-                                  sm:px-6 sm:py-2.5 sm:text-base
-                                  md:px-8 md:py-3 md:text-lg
-                                  rounded-lg
-                                  hover:bg-blue-50 transition">
-                    Explore All Tools
+                                      px-4 py-2 text-sm
+                                      sm:px-6 sm:py-2.5 sm:text-base
+                                      md:px-8 md:py-3 md:text-lg
+                                      rounded-lg
+                                      hover:bg-blue-50 transition">
+                    Build Resume
                 </a>
             </div>
 
@@ -44,87 +44,48 @@
 
     <section class="py-20 bg-gray-50 text-center">
         <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-4xl font-extrabold text-gray-900 mb-4">Most Popular PDF Tools</h2>
-            <p class="text-gray-600 text-lg mb-12">21 powerful tools to convert, compress, and edit PDFs seamlessly.</p>
+            <h2 class="text-4xl font-extrabold text-gray-900 mb-4">Key Resume Features</h2>
+            <p class="text-gray-600 text-lg mb-12">Design and customize your resume to stand out in the job market.</p>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                <!-- PDF to Word -->
-                <div
-                    class="flex items-start bg-white shadow-lg border border-gray-200 rounded-xl p-6 text-left hover:shadow-xl transition">
+                <!-- Templates -->
+                <div class="flex items-start bg-white shadow-lg border border-gray-200 rounded-xl p-6 text-left hover:shadow-xl transition">
                     <div class="bg-blue-100 text-blue-600 rounded-full p-3 mr-4">
-                        <i class="fas fa-file-word text-2xl"></i>
+                        <i class="fas fa-file-alt text-2xl"></i>
                     </div>
                     <div>
-                        <h3 class="font-semibold text-gray-900">PDF to Word</h3>
-                        <p class="text-gray-600 text-sm">Convert PDFs into editable Word documents effortlessly.</p>
+                        <h3 class="font-semibold text-gray-900">Modern Templates</h3>
+                        <p class="text-gray-600 text-sm">Choose from a wide variety of professionally designed resume templates.</p>
                     </div>
                 </div>
 
-                <!-- Merge PDF -->
-                <div
-                    class="flex items-start bg-white shadow-lg border border-gray-200 rounded-xl p-6 text-left hover:shadow-xl transition">
+                <!-- Auto Formatting -->
+                <div class="flex items-start bg-white shadow-lg border border-gray-200 rounded-xl p-6 text-left hover:shadow-xl transition">
                     <div class="bg-purple-100 text-purple-600 rounded-full p-3 mr-4">
-                        <i class="fas fa-file-pdf text-2xl"></i>
+                        <i class="fas fa-magic text-2xl"></i>
                     </div>
                     <div>
-                        <h3 class="font-semibold text-gray-900">Merge PDF</h3>
-                        <p class="text-gray-600 text-sm">Easily combine multiple PDFs into a single document.</p>
+                        <h3 class="font-semibold text-gray-900">Auto Formatting</h3>
+                        <p class="text-gray-600 text-sm">Focus on your content, we'll handle the layout and formatting for you.</p>
                     </div>
                 </div>
 
-                <!-- JPG to PDF -->
-                <div
-                    class="flex items-start bg-white shadow-lg border border-gray-200 rounded-xl p-6 text-left hover:shadow-xl transition">
-                    <div class="bg-yellow-100 text-yellow-600 rounded-full p-3 mr-4">
-                        <i class="fas fa-image text-2xl"></i>
+                <!-- Download Options -->
+                <div class="flex items-start bg-white shadow-lg border border-gray-200 rounded-xl p-6 text-left hover:shadow-xl transition">
+                    <div class="bg-green-100 text-green-600 rounded-full p-3 mr-4">
+                        <i class="fas fa-download text-2xl"></i>
                     </div>
                     <div>
-                        <h3 class="font-semibold text-gray-900">JPG to PDF</h3>
-                        <p class="text-gray-600 text-sm">Convert JPG, PNG, BMP, GIF, and TIFF images into PDF format.</p>
-                    </div>
-                </div>
-
-                <!-- Sign PDF -->
-                <div
-                    class="flex items-start bg-white shadow-lg border border-gray-200 rounded-xl p-6 text-left hover:shadow-xl transition">
-                    <div class="bg-pink-100 text-pink-600 rounded-full p-3 mr-4">
-                        <i class="fas fa-signature text-2xl"></i>
-                    </div>
-                    <div>
-                        <h3 class="font-semibold text-gray-900">Sign PDF</h3>
-                        <p class="text-gray-600 text-sm">E-sign your documents securely and effortlessly.</p>
-                    </div>
-                </div>
-
-                <!-- Edit PDF -->
-                <div
-                    class="flex items-start bg-white shadow-lg border border-gray-200 rounded-xl p-6 text-left hover:shadow-xl transition">
-                    <div class="bg-teal-100 text-teal-600 rounded-full p-3 mr-4">
-                        <i class="fas fa-edit text-2xl"></i>
-                    </div>
-                    <div>
-                        <h3 class="font-semibold text-gray-900">Edit PDF</h3>
-                        <p class="text-gray-600 text-sm">Add text, images, and annotations to your PDF with ease.</p>
-                    </div>
-                </div>
-
-                <!-- Compress PDF -->
-                <div
-                    class="flex items-start bg-white shadow-lg border border-gray-200 rounded-xl p-6 text-left hover:shadow-xl transition">
-                    <div class="bg-red-100 text-red-600 rounded-full p-3 mr-4">
-                        <i class="fas fa-compress-alt text-2xl"></i>
-                    </div>
-                    <div>
-                        <h3 class="font-semibold text-gray-900">Compress PDF</h3>
-                        <p class="text-gray-600 text-sm">Reduce PDF file size while maintaining quality.</p>
+                        <h3 class="font-semibold text-gray-900">Download PDF</h3>
+                        <p class="text-gray-600 text-sm">Instantly download your resume in high-quality PDF format.</p>
                     </div>
                 </div>
             </div>
 
             <div class="mt-12">
-                <a href="{{route('home.AllTools')}}"
+                <a href="{{ route('resume.ResumeTemplate') }}"
                     class="inline-block underline text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-text-700 transition">
-                    Explore All PDF Tools
+                    Try Resume Builder Now
                 </a>
             </div>
         </div>

@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DocsController;
 use App\Http\Controllers\DocumentController;
+use App\Http\Controllers\ResumeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -59,5 +60,8 @@ Route::prefix('/')->group(function () {
         Route::get('/sign-pdf', [DocumentController::class, 'sign_pdf'])->name('sign-pdf');
         Route::get('/protect-pdf', [DocumentController::class, 'protect_pdf'])->name('protect-pdf');
         Route::get('/unlock-pdf', [DocumentController::class, 'unlock_pdf'])->name('unlock-pdf');
+    });
+    Route::prefix('/resume')->group(function () {
+        Route::get('/', [ResumeController::class, 'index'])->name('resume.index');
     });
 });

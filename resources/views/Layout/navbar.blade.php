@@ -107,7 +107,7 @@
             <a href="#" class="hover:text-yellow-600 transition">Convert</a>
             <a href="#" class="hover:text-yellow-600 transition">Edit</a>
             <a href="#" class="hover:text-yellow-600 transition">Pricing</a>
-            <a href="#"
+            <a href="{{ route('resume.index') }}"
                 class="bg-blue-600 text-white px-4 py-1.5 rounded hover:bg-blue-700 transition whitespace-nowrap">Make
                 Resume</a>
         </nav>
