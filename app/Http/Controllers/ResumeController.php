@@ -11,4 +11,8 @@ class ResumeController extends Controller
         return view('pages.ResumeMaker.resume-home');
     }
 
+    public function ResumeTemplate()
+    {
+        return view('pages.ResumeMaker.resume-template');
+    }
 }

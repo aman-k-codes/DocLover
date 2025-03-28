@@ -63,5 +63,6 @@ Route::prefix('/')->group(function () {
     });
     Route::prefix('/resume')->group(function () {
         Route::get('/', [ResumeController::class, 'index'])->name('resume.index');
+        Route::get('/templates', [ResumeController::class, 'ResumeTemplate'])->name('resume.ResumeTemplate');
     });
 });

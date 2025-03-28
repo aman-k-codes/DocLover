@@ -1,4 +1,9 @@
 @extends('Layout.master')
+
+@section('title', 'DocLover - Free Resume Builder Online')
+@section('meta_description', 'Create professional resumes effortlessly with DocLover. Use our free resume builder to design, customize, and download your resume in minutes.')
+@section('meta_keywords', 'Resume Builder, Free Resume Maker, Online Resume Creator, CV Builder, Create Resume, Download Resume')
+
 @section('content')
     <!-- Hero Section -->
     <section
@@ -15,19 +20,19 @@
 
             <div class="mt-6 flex flex-wrap gap-4">
                 <a href="{{ route('resume.index') }}" class="bg-blue-600 text-white font-semibold
-                                      px-4 py-2 text-sm
-                                      sm:px-6 sm:py-2.5 sm:text-base
-                                      md:px-8 md:py-3 md:text-lg
-                                      rounded-lg shadow-lg
-                                      hover:bg-blue-700 transition">
+                                          px-4 py-2 text-sm
+                                          sm:px-6 sm:py-2.5 sm:text-base
+                                          md:px-8 md:py-3 md:text-lg
+                                          rounded-lg shadow-lg
+                                          hover:bg-blue-700 transition">
                     Document Editor
                 </a>
                 <a href="{{ route('home.AllTools') }}" class="border border-blue-600 text-blue-600 font-semibold
-                                      px-4 py-2 text-sm
-                                      sm:px-6 sm:py-2.5 sm:text-base
-                                      md:px-8 md:py-3 md:text-lg
-                                      rounded-lg
-                                      hover:bg-blue-50 transition">
+                                          px-4 py-2 text-sm
+                                          sm:px-6 sm:py-2.5 sm:text-base
+                                          md:px-8 md:py-3 md:text-lg
+                                          rounded-lg
+                                          hover:bg-blue-50 transition">
                     Build Resume
                 </a>
             </div>
@@ -49,29 +54,34 @@
 
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                 <!-- Templates -->
-                <div class="flex items-start bg-white shadow-lg border border-gray-200 rounded-xl p-6 text-left hover:shadow-xl transition">
+                <div
+                    class="flex items-start bg-white shadow-lg border border-gray-200 rounded-xl p-6 text-left hover:shadow-xl transition">
                     <div class="bg-blue-100 text-blue-600 rounded-full p-3 mr-4">
                         <i class="fas fa-file-alt text-2xl"></i>
                     </div>
                     <div>
                         <h3 class="font-semibold text-gray-900">Modern Templates</h3>
-                        <p class="text-gray-600 text-sm">Choose from a wide variety of professionally designed resume templates.</p>
+                        <p class="text-gray-600 text-sm">Choose from a wide variety of professionally designed resume
+                            templates.</p>
                     </div>
                 </div>
 
                 <!-- Auto Formatting -->
-                <div class="flex items-start bg-white shadow-lg border border-gray-200 rounded-xl p-6 text-left hover:shadow-xl transition">
+                <div
+                    class="flex items-start bg-white shadow-lg border border-gray-200 rounded-xl p-6 text-left hover:shadow-xl transition">
                     <div class="bg-purple-100 text-purple-600 rounded-full p-3 mr-4">
                         <i class="fas fa-magic text-2xl"></i>
                     </div>
                     <div>
                         <h3 class="font-semibold text-gray-900">Auto Formatting</h3>
-                        <p class="text-gray-600 text-sm">Focus on your content, we'll handle the layout and formatting for you.</p>
+                        <p class="text-gray-600 text-sm">Focus on your content, we'll handle the layout and formatting for
+                            you.</p>
                     </div>
                 </div>
 
                 <!-- Download Options -->
-                <div class="flex items-start bg-white shadow-lg border border-gray-200 rounded-xl p-6 text-left hover:shadow-xl transition">
+                <div
+                    class="flex items-start bg-white shadow-lg border border-gray-200 rounded-xl p-6 text-left hover:shadow-xl transition">
                     <div class="bg-green-100 text-green-600 rounded-full p-3 mr-4">
                         <i class="fas fa-download text-2xl"></i>
                     </div>
