@@ -29,6 +29,49 @@
                                 <li><i class="fas fa-image text-yellow-600 mr-2"></i><a href="{{ route('pdf-to-jpg') }}"><span>PDF to JPG</span></a></li>
                                 <li><i class="fas fa-code text-green-600 mr-2"></i><a href="{{ route('pdf-to-html') }}"><span>PDF to HTML</span></a></li>
                                 <li><i class="fas fa-file-excel text-green-700 mr-2"></i><a href="{{ route('pdf-to-xl') }}"><span>PDF to XL</span></a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold mb-3 text-gray-600">Image Conversions</h3>
+                            <ul class="space-y-2">
+                                <li><i class="fas fa-file-image text-pink-600 mr-2"></i><a href="{{ route('jpg-to-png') }}"><span>JPG to PNG</span></a></li>
+                                <li><i class="fas fa-image text-purple-600 mr-2"></i><a href="{{ route('png-to-jpg') }}"><span>PNG to JPG</span></a></li>
+                                <li><i class="fas fa-file-word text-blue-600 mr-2"></i><a href="{{ route('jpg-to-doc') }}"><span>JPG to DOC</span></a></li>
+                                <li><i class="fas fa-file-excel text-green-600 mr-2"></i><a href="{{ route('jpg-to-xl') }}"><span>JPG to XL</span></a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Column 2 -->
+                        <div>
+                            <h3 class="font-semibold mb-3 text-gray-600">Image & Document Processing</h3>
+                            <ul class="space-y-2">
+                                <li><i class="fas fa-crop-alt text-yellow-700 mr-2"></i><a href="{{ route('crop') }}"><span>Crop</span></a></li>
+                                <li><i class="fas fa-th-large text-pink-600 mr-2"></i><a href="{{ route('collage') }}"><span>Collage</span></a></li>
+                                <li><i class="fas fa-expand-arrows-alt text-green-700 mr-2"></i><a href="{{ route('resize') }}"><span>Resize</span></a></li>
+                                <li><i class="fas fa-id-card text-purple-600 mr-2"></i><a href="{{ route('passport-size-photo') }}"><span>Passport-size Photo</span></a></li>
+                                <li><i class="fas fa-magic text-indigo-600 mr-2"></i><a href="{{ route('photo-clarity-enhancement') }}"><span>Photo Clarity Enhancement</span></a></li>
+                                <li><i class="fas fa-image text-orange-600 mr-2"></i><a href="{{ route('background-change') }}"><span>Background Change</span></a></li>
+                                <li><i class="fas fa-file-alt text-blue-500 mr-2"></i><a href="{{ route('resume-maker') }}"><span>Resume Maker</span></a></li>
+                                <li><i class="fas fa-compress-alt text-red-600 mr-2"></i><a href="{{ route('photo-size-compression') }}"><span>Photo Size Compression</span></a></li>
+                                <li><i class="fas fa-file-signature text-teal-600 mr-2"></i><a href="{{ route('image-to-text-conversion') }}"><span>Image to Text Conversion</span></a></li>
+                                <li><i class="fas fa-signature text-pink-700 mr-2"></i><a href="{{ route('sign-picker') }}"><span>Sign Picker</span></a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+                {{-- <div id="toolsMenu"
+                    class="absolute top-full mt-2 hidden bg-white shadow-lg border border-gray-200 rounded-lg p-6 w-full sm:w-[900px] z-50 overflow-y-auto max-h-[80vh]">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-sm text-gray-800">
+                        <!-- Column 1 -->
+                        <div>
+                            <h3 class="font-semibold mb-3 text-gray-600">File Conversions</h3>
+                            <ul class="space-y-2">
+                                <li><i class="fas fa-file-archive text-blue-600 mr-2"></i><a href="{{ route('pdf-to-zip') }}"><span>PDF to ZIP</span></a></li>
+                                <li><i class="fas fa-file-word text-indigo-600 mr-2"></i><a href="{{ route('pdf-to-doc') }}"><span>PDF to DOC</span></a></li>
+                                <li><i class="fas fa-image text-yellow-600 mr-2"></i><a href="{{ route('pdf-to-jpg') }}"><span>PDF to JPG</span></a></li>
+                                <li><i class="fas fa-code text-green-600 mr-2"></i><a href="{{ route('pdf-to-html') }}"><span>PDF to HTML</span></a></li>
+                                <li><i class="fas fa-file-excel text-green-700 mr-2"></i><a href="{{ route('pdf-to-xl') }}"><span>PDF to XL</span></a></li>
                                 <li><i class="fas fa-file-image text-pink-600 mr-2"></i><a href="{{ route('jpg-to-png') }}"><span>JPG to PNG</span></a></li>
                                 <li><i class="fas fa-image text-purple-600 mr-2"></i><a href="{{ route('png-to-jpg') }}"><span>PNG to JPG</span></a></li>
                                 <li><i class="fas fa-file-word text-blue-600 mr-2"></i><a href="{{ route('jpg-to-doc') }}"><span>JPG to DOC</span></a></li>
@@ -78,7 +121,6 @@
                                 <li><i class="fas fa-file-word text-blue-600 mr-2"></i><a href="{{ route('pdf-to-word') }}"><span>PDF to Word</span></a></li>
                                 <li><i class="fas fa-file-excel text-green-600 mr-2"></i><a href="{{ route('pdf-to-excel') }}"><span>PDF to Excel</span></a></li>
                                 <li><i class="fas fa-file-powerpoint text-red-500 mr-2"></i><a href="{{ route('pdf-to-ppt') }}"><span>PDF to PPT</span></a></li>
-                                {{-- <li><i class="fas fa-image text-yellow-600 mr-2"></i><a><span>PDF to JPG</span></a></li> --}}
                             </ul>
 
                             <h3 class="font-semibold mt-6 mb-3 text-gray-600">Convert to PDF</h3>
@@ -89,7 +131,7 @@
                             </ul>
                         </div>
                     </div>
-                </div>
+                </div> --}}
 
             </div>
         </div>
