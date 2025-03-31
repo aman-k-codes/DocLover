@@ -59,7 +59,12 @@
 </head>
 
 <body class="bg-gray-50 text-gray-800">
-
+    <script>
+        var localUrl = '{{ asset('') }}';
+        var CSRF = '{{ csrf_token() }}';
+        var routeName = '{{ Route::currentRouteName() }}';
+        var pagination  = '';
+    </script>
     <!-- Header -->
     @include('Layout.navbar')
 

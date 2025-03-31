@@ -61,6 +61,9 @@ Route::prefix('/')->group(function () {
         Route::get('/protect-pdf', [DocumentController::class, 'protect_pdf'])->name('protect-pdf');
         Route::get('/unlock-pdf', [DocumentController::class, 'unlock_pdf'])->name('unlock-pdf');
     });
+    Route::prefix('/convert')->group(function () {
+        Route::post('/pdf-to-zip', [DocsController::class, 'PDFtoZIP'])->name('convert.PDFtoZIP');
+    });
     Route::prefix('/resume')->group(function () {
         Route::get('/', [ResumeController::class, 'index'])->name('resume.index');
         Route::get('/templates', [ResumeController::class, 'ResumeTemplate'])->name('resume.ResumeTemplate');
