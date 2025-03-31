@@ -27,7 +27,7 @@
                                           hover:bg-blue-700 transition">
                     Document Editor
                 </a>
-                <a href="{{ route('home.AllTools') }}" class="border border-blue-600 text-blue-600 font-semibold
+                <a href="{{ route('resume.ResumeTemplate') }}" class="border border-blue-600 text-blue-600 font-semibold
                                           px-4 py-2 text-sm
                                           sm:px-6 sm:py-2.5 sm:text-base
                                           md:px-8 md:py-3 md:text-lg

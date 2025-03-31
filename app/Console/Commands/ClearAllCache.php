@@ -16,6 +16,8 @@ class ClearAllCache extends Command
         $this->call('route:clear');
         $this->call('view:clear');
         $this->call('clear-compiled');
+        $this->call('storage:link');
+
 
         $this->info('All caches cleared successfully.');
     }

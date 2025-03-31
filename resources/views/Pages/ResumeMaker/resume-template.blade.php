@@ -8,8 +8,7 @@
 
 @section('content')
     <!-- Hero Section -->
-    <section
-        class="bg-gradient-to-r from-blue-50 to-white py-16 px-6 flex flex-col items-center justify-center text-center">
+    <section class="min-h-screen bg-gradient-to-r from-blue-50 to-white py-16 px-6 flex flex-col items-center justify-center text-center">
         <h1 class="text-4xl md:text-5xl font-extrabold text-gray-800 mb-4">
             <i class="fas fa-file-alt text-blue-600 mr-2"></i>
             Professional Resume Templates
@@ -24,6 +23,7 @@
             Create My Resume
         </button>
     </section>
+    
 
 
     <!-- Resume Templates -->
@@ -36,65 +36,56 @@
                 Explore our curated selection of resume templates that blend creativity and professionalism to help you
                 stand out.
             </p>
-
+    
             <!-- Category Buttons -->
             <div class="flex flex-wrap justify-center gap-4 px-4 mb-5">
-                <button class="category-btn active text-blue-600 border-b-2 border-blue-600 font-semibold" data-category="all">
+                <button class="category-btn active text-blue-600 border-b-2 border-blue-600 font-semibold px-4 py-2 transition duration-300" data-category="all">
                     <i class="fas fa-file-alt"></i> All Templates
                 </button>
-                <button class="category-btn" data-category="picture">
+                <button class="category-btn text-gray-700 hover:text-blue-600 px-4 py-2 transition duration-300" data-category="picture">
                     <i class="fas fa-image"></i> Picture
                 </button>
-                <button class="category-btn" data-category="word">
+                <button class="category-btn text-gray-700 hover:text-blue-600 px-4 py-2 transition duration-300" data-category="word">
                     <i class="fas fa-file-word"></i> Word
                 </button>
-                <button class="category-btn" data-category="simple">
+                <button class="category-btn text-gray-700 hover:text-blue-600 px-4 py-2 transition duration-300" data-category="simple">
                     <i class="fas fa-magic"></i> Simple
                 </button>
-                <button class="category-btn" data-category="ats">
+                <button class="category-btn text-gray-700 hover:text-blue-600 px-4 py-2 transition duration-300" data-category="ats">
                     <i class="fas fa-cogs"></i> ATS
                 </button>
-                <button class="category-btn" data-category="two-column">
+                <button class="category-btn text-gray-700 hover:text-blue-600 px-4 py-2 transition duration-300" data-category="two-column">
                     <i class="fas fa-columns"></i> Two-column
                 </button>
-                <button class="category-btn" data-category="google-docs">
+                <button class="category-btn text-gray-700 hover:text-blue-600 px-4 py-2 transition duration-300" data-category="google-docs">
                     <i class="fab fa-google-drive"></i> Google Docs
                 </button>
             </div>
-
+    
             <!-- Templates -->
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 border-t pt-5" id="templateContainer">
-                <div class="template-item border rounded-2xl overflow-hidden shadow transition duration-300"
-                    data-category="picture">
-                    <img src="https://via.placeholder.com/300x400?text=Picture+Template" alt="Picture Template"
-                        class="w-full" />
+                <div class="template-item border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300" data-category="picture">
+                    <img src="https://via.placeholder.com/300x400?text=Picture+Template" alt="Picture Template" class="w-full" />
                 </div>
-                <div class="template-item border rounded-2xl overflow-hidden shadow transition duration-300"
-                    data-category="word">
+                <div class="template-item border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300" data-category="word">
                     <img src="https://via.placeholder.com/300x400?text=Word+Template" alt="Word Template" class="w-full" />
                 </div>
-                <div class="template-item border rounded-2xl overflow-hidden shadow transition duration-300"
-                    data-category="simple">
-                    <img src="https://via.placeholder.com/300x400?text=Simple+Template" alt="Simple Template"
-                        class="w-full" />
+                <div class="template-item border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300" data-category="simple">
+                    <img src="https://via.placeholder.com/300x400?text=Simple+Template" alt="Simple Template" class="w-full" />
                 </div>
-                <div class="template-item border rounded-2xl overflow-hidden shadow transition duration-300"
-                    data-category="ats">
+                <div class="template-item border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300" data-category="ats">
                     <img src="https://via.placeholder.com/300x400?text=ATS+Template" alt="ATS Template" class="w-full" />
                 </div>
-                <div class="template-item border rounded-2xl overflow-hidden shadow transition duration-300"
-                    data-category="two-column">
-                    <img src="https://via.placeholder.com/300x400?text=Two+Column+Template" alt="Two-column Template"
-                        class="w-full" />
+                <div class="template-item border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300" data-category="two-column">
+                    <img src="https://via.placeholder.com/300x400?text=Two+Column+Template" alt="Two-column Template" class="w-full" />
                 </div>
-                <div class="template-item border rounded-2xl overflow-hidden shadow transition duration-300"
-                    data-category="google-docs">
-                    <img src="https://via.placeholder.com/300x400?text=Google+Docs+Template" alt="Google Docs Template"
-                        class="w-full" />
+                <div class="template-item border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300" data-category="google-docs">
+                    <img src="https://via.placeholder.com/300x400?text=Google+Docs+Template" alt="Google Docs Template" class="w-full" />
                 </div>
             </div>
         </div>
     </section>
+    
 @endsection
 @section('script')
     <script>
