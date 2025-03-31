@@ -126,7 +126,6 @@
     </script>
 
 
-    
     <!-- Features -->
     <section class="py-18 bg-gray-50">
         <div class="max-w-6xl mx-auto px-6">

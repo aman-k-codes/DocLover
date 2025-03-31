@@ -15,35 +15,106 @@
     </section>
 
     <!-- Step indicator -->
-    <section class="py-10 px-4">
-        <div class="flex flex-col sm:flex-row sm:justify-center sm:space-x-8 space-y-4 sm:space-y-0 bg-indigo-50 rounded-2xl p-6 max-w-2xl mx-auto mb-8 shadow">
-            <div class="flex items-center space-x-2">
-                <div class="w-8 h-8 flex items-center justify-center bg-indigo-700 text-white rounded-full font-bold">1</div>
-                <span class="text-gray-800 font-semibold">Upload JPG</span>
-            </div>
-            <div class="flex items-center space-x-2">
-                <div class="w-8 h-8 flex items-center justify-center bg-indigo-700 text-white rounded-full font-bold">2</div>
-                <span class="text-gray-800 font-semibold">Convert to PNG</span>
-            </div>
-            <div class="flex items-center space-x-2">
-                <div class="w-8 h-8 flex items-center justify-center bg-indigo-700 text-white rounded-full font-bold">3</div>
-                <span class="text-gray-800 font-semibold">Download PNG File</span>
-            </div>
+<section class="py-10 px-4">
+    <div class="flex flex-col sm:flex-row sm:justify-center sm:space-x-8 space-y-4 sm:space-y-0 bg-indigo-50 rounded-2xl p-6 max-w-2xl mx-auto mb-8 shadow">
+        <div class="flex items-center space-x-2">
+            <div class="w-8 h-8 flex items-center justify-center bg-indigo-700 text-white rounded-full font-bold">1</div>
+            <span class="text-gray-800 font-semibold">Upload JPG</span>
         </div>
+        <div class="flex items-center space-x-2">
+            <div class="w-8 h-8 flex items-center justify-center bg-indigo-700 text-white rounded-full font-bold">2</div>
+            <span class="text-gray-800 font-semibold">Convert to PNG</span>
+        </div>
+        <div class="flex items-center space-x-2">
+            <div class="w-8 h-8 flex items-center justify-center bg-indigo-700 text-white rounded-full font-bold">3</div>
+            <span class="text-gray-800 font-semibold">Download PNG File</span>
+        </div>
+    </div>
 
-        <!-- Upload area -->
-        <div class="border-2 border-dashed border-gray-300 rounded-2xl p-10 max-w-3xl mx-auto text-center bg-white shadow-md">
-            <p class="text-lg font-medium mb-4">Drop your JPG file here <span class="text-gray-500">or</span></p>
-            <label class="inline-flex items-center bg-indigo-700 text-white font-semibold px-6 py-3 rounded-md cursor-pointer hover:bg-indigo-800">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                    <path d="M3 3a2 2 0 012-2h10a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V3zm2 0v14h10V3H5zm4 4h2v5h2l-3 3-3-3h2V7z" />
-                </svg>
-                Upload JPG
-                <input type="file" class="hidden" accept=".jpg,.jpeg" />
-            </label>
-            <p class="text-sm text-gray-500 mt-4">Max file size: 10MB. Only JPG files supported.</p>
-        </div>
-    </section>
+    <!-- Upload area -->
+    <div class="border-2 border-dashed border-gray-300 rounded-2xl p-10 max-w-3xl mx-auto text-center bg-white shadow-md">
+        <p class="text-lg font-medium mb-4">Drop your JPG file here <span class="text-gray-500">or</span></p>
+        <label class="inline-flex items-center bg-indigo-700 text-white font-semibold px-6 py-3 rounded-md cursor-pointer hover:bg-indigo-800">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M3 3a2 2 0 012-2h10a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V3zm2 0v14h10V3H5zm4 4h2v5h2l-3 3-3-3h2V7z" />
+            </svg>
+            Upload JPG
+            <input type="file" id="imageInput" class="hidden" accept="image/jpeg" onchange="previewImage(event)" />
+        </label>
+        <p class="text-sm text-gray-500 mt-4">Max file size: 10MB. Only JPG files supported.</p>
+    </div>
+
+    <!-- Image Preview -->
+    <div id="imagePreviewContainer" class="hidden mt-6 max-w-3xl mx-auto text-center">
+        <h3 class="text-lg font-semibold text-gray-800">Image Preview</h3>
+        <img id="imagePreview" class="w-auto h-64 border mt-4 mx-auto" />
+    </div>
+
+    <!-- Convert Button -->
+    <div class="mt-6 max-w-3xl mx-auto text-center">
+        <button id="convertBtn" class="bg-green-600 text-white font-semibold px-6 py-3 rounded-md hover:bg-green-700 cursor-pointer hidden"
+            onclick="convertImage()">
+            Convert to PNG
+        </button>
+    </div>
+</section>
+
+<script>
+    function previewImage(event) {
+        const file = event.target.files[0];
+        if (file && file.type === "image/jpeg") {
+            const fileURL = URL.createObjectURL(file);
+            document.getElementById("imagePreview").src = fileURL;
+            document.getElementById("imagePreviewContainer").classList.remove("hidden");
+            document.getElementById("convertBtn").classList.remove("hidden");
+        } else {
+            alert("Please select a valid JPG file.");
+        }
+    }
+
+    function convertImage() {
+        const fileInput = document.getElementById('imageInput');
+        if (fileInput.files.length === 0) {
+            alert("Please upload a JPG file first.");
+            return;
+        }
+
+        const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
+        const formData = new FormData();
+        formData.append("_token", csrfToken);
+        formData.append("image", fileInput.files[0]);
+
+        fetch("{{ route('convert.JPGtoPNG') }}", {
+            method: "POST",
+            headers: {
+                "X-CSRF-TOKEN": csrfToken
+            },
+            body: formData
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Conversion failed. Please try again.");
+            }
+            return response.blob(); // Get PNG file as a blob
+        })
+        .then(blob => {
+            const downloadLink = document.createElement("a");
+            downloadLink.href = URL.createObjectURL(blob);
+            downloadLink.download = "converted.png";
+
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+            document.body.removeChild(downloadLink);
+            URL.revokeObjectURL(downloadLink.href);
+        })
+        .catch(error => {
+            console.error("Error:", error);
+            alert("An error occurred while converting the file.");
+        });
+    }
+</script>
+
 
     <!-- Features -->
     <section class="py-18 bg-gray-50">

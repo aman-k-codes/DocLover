@@ -63,6 +63,8 @@ Route::prefix('/')->group(function () {
     });
     Route::prefix('/convert')->group(function () {
         Route::post('/pdf-to-zip', [DocsController::class, 'PDFtoZIP'])->name('convert.PDFtoZIP');
+        Route::post('/jpg-to-png', [DocsController::class, 'JPGtoPNG'])->name('convert.JPGtoPNG');
+
     });
     Route::prefix('/resume')->group(function () {
         Route::get('/', [ResumeController::class, 'index'])->name('resume.index');
