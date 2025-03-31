@@ -41,7 +41,7 @@
 
         <!-- Image / Graphic Section -->
         <div class="md:w-1/2 flex justify-center">
-            <img src="{{ asset('public/assets/imgs/home-hero.svg') }}" alt="PDF Tool Preview"
+            <img src="{{ asset('public/assets/imgs/resume-hero.svg') }}" alt="PDF Tool Preview"
                 class="w-full max-w-lg mx-auto drop-shadow-2xl">
         </div>
     </section>
