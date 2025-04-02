@@ -14,7 +14,7 @@
         </div>
     </section>
 
-    <!-- Step indicator -->
+<!-- Step indicator -->
 <section class="py-10 px-4">
     <div class="flex flex-col sm:flex-row sm:justify-center sm:space-x-8 space-y-4 sm:space-y-0 bg-indigo-50 rounded-2xl p-6 max-w-2xl mx-auto mb-8 shadow">
         <div class="flex items-center space-x-2">
@@ -31,60 +31,87 @@
         </div>
     </div>
 
-    <!-- Upload area -->
-    <div class="border-2 border-dashed border-gray-300 rounded-2xl p-10 max-w-3xl mx-auto text-center bg-white shadow-md">
+    <!-- Upload Area -->
+    <div id="uploadSection" class="border-2 border-dashed border-gray-300 rounded-2xl p-10 max-w-3xl mx-auto text-center bg-white shadow-md">
         <p class="text-lg font-medium mb-4">Drop your JPG file here <span class="text-gray-500">or</span></p>
         <label class="inline-flex items-center bg-indigo-700 text-white font-semibold px-6 py-3 rounded-md cursor-pointer hover:bg-indigo-800">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                <path d="M3 3a2 2 0 012-2h10a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V3zm2 0v14h10V3H5zm4 4h2v5h2l-3 3-3-3h2V7z" />
-            </svg>
+            <i class="fas fa-upload mr-2"></i>
             Upload JPG
-            <input type="file" id="imageInput" class="hidden" accept="image/jpeg" onchange="previewImage(event)" />
+            <input type="file" id="jpgInput" class="hidden" accept="image/jpeg" onchange="previewJPG(event)" />
         </label>
-        <p class="text-sm text-gray-500 mt-4">Max file size: 10MB. Only JPG files supported.</p>
+        <p class="text-sm text-gray-500 mt-4">Max file size: 25MB. Only JPG files supported.</p>
     </div>
 
-    <!-- Image Preview -->
-    <div id="imagePreviewContainer" class="hidden mt-6 max-w-3xl mx-auto text-center">
-        <h3 class="text-lg font-semibold text-gray-800">Image Preview</h3>
-        <img id="imagePreview" class="w-auto h-64 border mt-4 mx-auto" />
+    <!-- JPG Preview -->
+    <div id="jpgPreviewContainer" class="hidden mt-8 max-w-3xl mx-auto text-center bg-white shadow-lg rounded-2xl p-6">
+        <h3 class="text-xl font-bold text-gray-900 mb-4">JPG Preview</h3>
+        <div class="border-2 border-gray-300 rounded-lg overflow-hidden">
+            <img id="jpgPreview" class="w-full max-h-96 object-contain" />
+        </div>
     </div>
 
     <!-- Convert Button -->
-    <div class="mt-6 max-w-3xl mx-auto text-center">
-        <button id="convertBtn" class="bg-green-600 text-white font-semibold px-6 py-3 rounded-md hover:bg-green-700 cursor-pointer hidden"
-            onclick="convertImage()">
-            Convert to PNG
+    <div id="convertSection" class="mt-8 max-w-3xl mx-auto text-center">
+        <button id="convertBtn" class="bg-gray-800 text-white font-semibold px-8 py-3 rounded-lg shadow-md transition-all hover:bg-green-700 hover:shadow-lg cursor-pointer hidden" onclick="convertJPG()">
+            <span class="inline-flex items-center">
+                <i class="fas fa-file-image mr-2"></i>
+                Convert to PNG
+            </span>
         </button>
+    </div>
+
+    <!-- Download Section (Hidden Initially) -->
+    <div id="downloadSection" class="hidden mt-8 max-w-3xl mx-auto text-center bg-white shadow-lg rounded-2xl p-6 border border-gray-200">
+        <div class="flex flex-col items-center">
+            <div class="w-16 h-16 flex items-center justify-center bg-green-100 text-green-600 rounded-full mb-4">
+                <i class="fas fa-check-circle text-4xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900">Conversion Successful!</h3>
+            <p class="text-gray-600 mt-2">Your PNG file is ready for download.</p>
+            <div class="flex flex-wrap justify-center mt-6 space-x-4">
+                <button id="downloadBtn" class="bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 shadow-md transition duration-200" onclick="downloadPNG()">
+                    <i class="fas fa-download mr-2"></i>
+                    Download PNG
+                </button>
+                <button id="convertAgainBtn" class="bg-gray-700 text-white font-semibold px-6 py-3 rounded-lg hover:bg-gray-800 shadow-md transition duration-200" onclick="convertAgain()">
+                    <i class="fas fa-sync-alt mr-2"></i>
+                    Convert Again
+                </button>
+            </div>
+        </div>
     </div>
 </section>
 
 <script>
-    function previewImage(event) {
+    let pngBlobUrl = null;
+
+    function previewJPG(event) {
         const file = event.target.files[0];
         if (file && file.type === "image/jpeg") {
             const fileURL = URL.createObjectURL(file);
-            document.getElementById("imagePreview").src = fileURL;
-            document.getElementById("imagePreviewContainer").classList.remove("hidden");
+            document.getElementById("jpgPreview").src = fileURL;
+            document.getElementById("jpgPreviewContainer").classList.remove("hidden");
             document.getElementById("convertBtn").classList.remove("hidden");
-        } else {
-            alert("Please select a valid JPG file.");
         }
     }
 
-    function convertImage() {
-        const fileInput = document.getElementById('imageInput');
+    function convertJPG() {
+        alert('clicked');
+        const fileInput = document.getElementById('jpgInput');
         if (fileInput.files.length === 0) {
             alert("Please upload a JPG file first.");
             return;
         }
 
-        const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+        document.getElementById("uploadSection").classList.add("hidden");
+        document.getElementById("jpgPreviewContainer").classList.add("hidden");
+        document.getElementById("convertBtn").classList.add("hidden");
 
+        const csrfToken = CSRF;
         const formData = new FormData();
         formData.append("_token", csrfToken);
-        formData.append("image", fileInput.files[0]);
-
+        formData.append("jpg", fileInput.files[0]);
+        
         fetch("{{ route('convert.JPGtoPNG') }}", {
             method: "POST",
             headers: {
@@ -96,24 +123,52 @@
             if (!response.ok) {
                 throw new Error("Conversion failed. Please try again.");
             }
-            return response.blob(); // Get PNG file as a blob
+            console.log(response);
+            // return response.blob();
         })
-        .then(blob => {
-            const downloadLink = document.createElement("a");
-            downloadLink.href = URL.createObjectURL(blob);
-            downloadLink.download = "converted.png";
-
-            document.body.appendChild(downloadLink);
-            downloadLink.click();
-            document.body.removeChild(downloadLink);
-            URL.revokeObjectURL(downloadLink.href);
-        })
+        // .then(blob => {
+            
+        //     pngBlobUrl = URL.createObjectURL(blob);
+        //     document.getElementById("downloadSection").classList.remove("hidden");
+        // })
         .catch(error => {
             console.error("Error:", error);
             alert("An error occurred while converting the file.");
+            document.getElementById("uploadSection").classList.remove("hidden");
+            document.getElementById("jpgPreviewContainer").classList.remove("hidden");
+            document.getElementById("convertBtn").classList.remove("hidden");
         });
     }
+
+    function downloadPNG() {
+        if (pngBlobUrl) {
+            const fileInput = document.getElementById("jpgInput");
+            if (fileInput.files.length > 0) {
+                let fileName = fileInput.files[0].name.replace(/\.[^/.]+$/, "");
+                fileName = fileName.replace(/\s+/g, "_");
+                const finalFileName = fileName + "_converted.png";
+
+                const downloadLink = document.createElement("a");
+                downloadLink.href = pngBlobUrl;
+                downloadLink.download = finalFileName;
+                document.body.appendChild(downloadLink);
+                downloadLink.click();
+                document.body.removeChild(downloadLink);
+                URL.revokeObjectURL(pngBlobUrl);
+                pngBlobUrl = null;
+            }
+        }
+    }
+
+    function convertAgain() {
+        document.getElementById("downloadSection").classList.add("hidden");
+        document.getElementById("uploadSection").classList.remove("hidden");
+        document.getElementById("jpgPreviewContainer").classList.add("hidden");
+        document.getElementById("convertBtn").classList.add("hidden");
+        document.getElementById("jpgInput").value = "";
+    }
 </script>
+
 
 
     <!-- Features -->

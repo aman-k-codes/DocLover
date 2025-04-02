@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use ZipArchive;
 use Illuminate\Support\Facades\Storage;
+use ConvertApi\ConvertApi;
 
 class DocsController extends Controller
 {
@@ -33,23 +34,40 @@ class DocsController extends Controller
 
     public function JPGtoPNG(Request $request)
     {
+        // Validate input image
         $request->validate([
-            'image' => 'required|mimes:jpeg|max:10240', // Max size 10MB
+            'image' => 'required|mimes:jpeg,jpg|max:10240', // Accept both .jpeg and .jpg
         ]);
 
         $jpgFile = $request->file('image');
-        $pngName = pathinfo($jpgFile->getClientOriginalName(), PATHINFO_FILENAME) . '.png';
 
+        // Generate PNG filename
+        $pngName = 'Converted_' . time() . '_' . ($request->id ?? 'user') . '.png';
+
+        // Ensure directory exists
+        $pngDirectory = storage_path("app/public/jpg-to-png/");
+        if (!file_exists($pngDirectory)) {
+            mkdir($pngDirectory, 0777, true);
+        }
+
+        // Convert JPG to PNG
         $image = imagecreatefromjpeg($jpgFile->getRealPath());
         if (!$image) {
             return response()->json(['error' => 'Failed to process image.'], 500);
         }
 
-        $pngPath = storage_path("app/public/{$pngName}");
+        $pngPath = $pngDirectory . $pngName;
         imagepng($image, $pngPath);
         imagedestroy($image);
 
-        return response()->download($pngPath)->deleteFileAfterSend(true);
+        // Generate a public URL for the converted image
+        $fileUrl = asset("storage/jpg-to-png/{$pngName}");
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Image converted successfully.',
+            'file_url' => $fileUrl,
+        ]);
     }
 
 }
