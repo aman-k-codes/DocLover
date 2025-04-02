@@ -36,8 +36,8 @@
             </div>
         </div>
 
-        <!-- Upload area -->
-        <div
+        <!-- Upload Area -->
+        <div id="uploadSection"
             class="border-2 border-dashed border-gray-300 rounded-2xl p-10 max-w-3xl mx-auto text-center bg-white shadow-md">
             <p class="text-lg font-medium mb-4">Drop your PDF file here <span class="text-gray-500">or</span></p>
             <label
@@ -53,22 +53,69 @@
         </div>
 
         <!-- PDF Preview -->
-        <div id="pdfPreviewContainer" class="hidden mt-6 max-w-3xl mx-auto text-center">
-            <h3 class="text-lg font-semibold text-gray-800">PDF Preview</h3>
-            <iframe id="pdfPreview" class="w-full h-96 border mt-4"></iframe>
+        <div id="pdfPreviewContainer" class="hidden mt-8 max-w-3xl mx-auto text-center bg-white shadow-lg rounded-2xl p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-4">PDF Preview</h3>
+            <div class="border-2 border-gray-300 rounded-lg overflow-hidden">
+                <iframe id="pdfPreview" class="w-full h-96"></iframe>
+            </div>
         </div>
 
         <!-- Convert Button -->
-        <div class="mt-6 max-w-3xl mx-auto text-center">
+        <div id="convertSection" class="mt-8 max-w-3xl mx-auto text-center">
             <button id="convertBtn"
-                class="bg-green-600 text-white font-semibold px-6 py-3 rounded-md hover:bg-green-700 cursor-pointer hidden"
+                class="bg-gray-800 text-white font-semibold px-8 py-3 rounded-lg shadow-md transition-all hover:from-green-700 hover:to-green-600 hover:shadow-lg cursor-pointer hidden"
                 onclick="convertPDF()">
-                Convert to ZIP
+                <span class="inline-flex items-center">
+                    <svg class="h-5 w-5 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M10 3a1 1 0 011 1v8.59l2.3-2.3a1 1 0 011.4 1.42l-4 4a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.42l2.3 2.3V4a1 1 0 011-1z"/>
+                    </svg>
+                    Convert to ZIP
+                </span>
             </button>
         </div>
+
+        <!-- Download Section (Hidden Initially) -->
+        <div id="downloadSection" class="hidden mt-8 max-w-3xl mx-auto text-center bg-white shadow-lg rounded-2xl p-6 border border-gray-200">
+            <div class="flex flex-col items-center">
+                <!-- Success Icon -->
+                <div class="w-16 h-16 flex items-center justify-center bg-green-100 text-green-600 rounded-full mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414L8 15.414l-4.707-4.707a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                    </svg>
+                </div>
+        
+                <!-- Title -->
+                <h3 class="text-xl font-bold text-gray-900">Conversion Successful!</h3>
+                <p class="text-gray-600 mt-2">Your ZIP file is ready for download.</p>
+        
+                <!-- Buttons -->
+                <div class="flex flex-wrap justify-center mt-6 space-x-4">
+                    <button id="downloadBtn"
+                        class="bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 shadow-md transition duration-200"
+                        onclick="downloadZIP()">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block mr-2" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M3 10a1 1 0 011-1h3V4a1 1 0 112 0v5h3a1 1 0 110 2h-3v5a1 1 0 11-2 0v-5H4a1 1 0 01-1-1z" clip-rule="evenodd"/>
+                        </svg>
+                        Download ZIP
+                    </button>
+                    <button id="convertAgainBtn"
+                        class="bg-gray-700 text-white font-semibold px-6 py-3 rounded-lg hover:bg-gray-800 shadow-md transition duration-200"
+                        onclick="convertAgain()">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block mr-2" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 2a8 8 0 00-8 8h2.5l-3 3-3-3H2a10 10 0 0110-10v2zm6.5 8h2a10 10 0 01-10 10v-2a8 8 0 008-8h-2.5l3-3 3 3z" clip-rule="evenodd"/>
+                        </svg>
+                        Convert Again
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+
     </section>
 
     <script>
+        let zipBlobUrl = null;
+
         function previewPDF(event) {
             const file = event.target.files[0];
             if (file && file.type === "application/pdf") {
@@ -86,8 +133,12 @@
                 return;
             }
 
-            const csrfToken = CSRF;
+            // Hide upload, preview & convert sections, show loading message
+            document.getElementById("uploadSection").classList.add("hidden");
+            document.getElementById("pdfPreviewContainer").classList.add("hidden"); // Hide preview section
+            document.getElementById("convertBtn").classList.add("hidden");
 
+            const csrfToken = CSRF;
             const formData = new FormData();
             formData.append("_token", csrfToken);
             formData.append("pdf", fileInput.files[0]);
@@ -103,77 +154,95 @@
                     if (!response.ok) {
                         throw new Error("Conversion failed. Please try again.");
                     }
-                    return response.blob(); // Get ZIP file as a blob
+                    return response.blob();
                 })
                 .then(blob => {
-                    const downloadLink = document.createElement("a");
-                    downloadLink.href = URL.createObjectURL(blob);
-                    downloadLink.download = "converted.zip";
-
-                    document.body.appendChild(downloadLink);
-                    downloadLink.click();
-                    document.body.removeChild(downloadLink);
-                    URL.revokeObjectURL(downloadLink.href);
+                    zipBlobUrl = URL.createObjectURL(blob);
+                    document.getElementById("downloadSection").classList.remove("hidden"); // Show download section
                 })
                 .catch(error => {
                     console.error("Error:", error);
                     alert("An error occurred while converting the file.");
+                    document.getElementById("uploadSection").classList.remove("hidden");
+                    document.getElementById("pdfPreviewContainer").classList.remove("hidden"); // Restore preview section
+                    document.getElementById("convertBtn").classList.remove("hidden");
                 });
         }
 
 
+        function downloadZIP() {
+            if (zipBlobUrl) {
+                const fileInput = document.getElementById("pdfInput");
+                if (fileInput.files.length > 0) {
+                    let fileName = fileInput.files[0].name.replace(/\.[^/.]+$/, ""); // Remove file extension
+                    fileName = fileName.replace(/\s+/g, "_"); // Replace spaces with underscores
+                    const finalFileName = fileName + "_doc_lover.zip";
+
+                    const downloadLink = document.createElement("a");
+                    downloadLink.href = zipBlobUrl;
+                    downloadLink.download = finalFileName;
+                    document.body.appendChild(downloadLink);
+                    downloadLink.click();
+                    document.body.removeChild(downloadLink);
+                    URL.revokeObjectURL(zipBlobUrl);
+                    zipBlobUrl = null; // Reset after download
+                }
+            }
+        }
+
+
+        function convertAgain() {
+            document.getElementById("downloadSection").classList.add("hidden"); // Hide download section
+            document.getElementById("uploadSection").classList.remove("hidden"); // Show upload section
+            document.getElementById("pdfPreviewContainer").classList.add("hidden"); // Hide preview section
+            document.getElementById("convertBtn").classList.add("hidden"); // Hide convert button
+
+            // Reset file input
+            const fileInput = document.getElementById("pdfInput");
+            fileInput.value = "";
+        }
 
     </script>
+
 
 
     <!-- Features -->
     <section class="py-18 bg-gray-50">
         <div class="max-w-6xl mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
-                @foreach([
-                ['🚀', 'Fast & Simple', 'Upload your PDF and get a ZIP file instantly.'],
-                ['🔒', 'Highly Secure', 'Your files are encrypted and never stored.'],
-                ['💻', 'Cross-Device Access', 'Works perfectly on desktop, tablet, and mobile.']
-                ] as $feature)
-                <div class="p-6 rounded-lg">
-                    <div class="text-4xl">{{ $feature[0] }}</div>
-                    <h3 class="text-xl font-bold text-gray-900 mt-4">{{ $feature[1] }}</h3>
-                    <p class="text-gray-600 mt-2">{{ $feature[2] }}</p>
-                </div>
+                @foreach([['🚀', 'Fast & Simple', 'Upload your PDF and get a ZIP file instantly.'], ['🔒', 'Highly Secure', 'Your files are encrypted and never stored.'], ['💻', 'Cross-Device Access', 'Works perfectly on desktop, tablet, and mobile.']] as $feature)
+                    <div class="p-6 rounded-lg">
+                        <div class="text-4xl">{{ $feature[0] }}</div>
+                        <h3 class="text-xl font-bold text-gray-900 mt-4">{{ $feature[1] }}</h3>
+                        <p class="text-gray-600 mt-2">{{ $feature[2] }}</p>
+                    </div>
                 @endforeach
             </div>
         </div>
     </section>
-
     <!-- How to Convert -->
     <section class="bg-white py-16">
         <div class="max-w-4xl mx-auto px-6 text-center">
             <h2 class="text-3xl font-extrabold text-gray-900 mb-4">How to Convert PDF to ZIP</h2>
             <p class="text-lg text-gray-600 mb-8">Follow these easy steps to compress your PDF into a ZIP archive.</p>
-
             <div class="text-left max-w-2xl mx-auto">
                 <ol class="space-y-6 list-none">
-                    @foreach([
-                    ['Upload your PDF file', 'Drag & drop or browse your device to upload.'],
-                    ['Start conversion', 'Click the convert button to zip your file.'],
-                    ['Download the ZIP', 'Get your compressed ZIP file instantly.']
-                    ] as $index => $step)
-                    <li class="flex items-start space-x-4">
-                        <div
-                            class="flex-shrink-0 w-10 h-10 flex items-center justify-center bg-indigo-600 text-white font-bold rounded-full">
-                            {{ $index + 1 }}
-                        </div>
-                        <div>
-                            <h3 class="text-lg font-semibold text-gray-900">{{ $step[0] }}</h3>
-                            <p class="text-gray-600">{{ $step[1] }}</p>
-                        </div>
-                    </li>
+                    @foreach([['Upload your PDF file', 'Drag & drop or browse your device to upload.'], ['Start conversion', 'Click the convert button to zip your file.'], ['Download the ZIP', 'Get your compressed ZIP file instantly.']] as $index => $step)
+                        <li class="flex items-start space-x-4">
+                            <div
+                                class="flex-shrink-0 w-10 h-10 flex items-center justify-center bg-indigo-600 text-white font-bold rounded-full">
+                                {{ $index + 1 }}
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900">{{ $step[0] }}</h3>
+                                <p class="text-gray-600">{{ $step[1] }}</p>
+                            </div>
+                        </li>
                     @endforeach
                 </ol>
             </div>
         </div>
     </section>
-
     <!-- FAQs -->
     <section class="py-12 bg-gray-100">
         <div class="bg-white p-6 md:p-12">

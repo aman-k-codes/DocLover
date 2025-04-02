@@ -27,6 +27,8 @@
 
     Sign Picker
 
+    Jpg to crop I'd card size , Aage pichhe alag alag ho jay
+
 
 ------------------------------------------------------------------------------
 Operation Type	                Tool/Library
@@ -51,3 +53,18 @@ composer require mpdf/mpdf
 composer require phpoffice/phpword
 composer require phpoffice/phpspreadsheet
 composer require thiagoalessio/tesseract_ocr
+
+-------------------------------
+Project Names 
+-------------------------------
+DocGenie.com
+DocMaster.io
+FileFlex.io
+SwiftDocs.com
+DocForge.com
+ResumeCraft.io
+AllinOneDocs.com
+EditNConvert.com
+SmartDocsHub.com
+FileWizard.io
+----------------------------------
