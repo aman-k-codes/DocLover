@@ -42,10 +42,7 @@
             <p class="text-lg font-medium mb-4">Drop your PDF file here <span class="text-gray-500">or</span></p>
             <label
                 class="inline-flex items-center bg-indigo-700 text-white font-semibold px-6 py-3 rounded-md cursor-pointer hover:bg-indigo-800">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                    <path
-                        d="M3 3a2 2 0 012-2h10a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V3zm2 0v14h10V3H5zm4 4h2v5h2l-3 3-3-3h2V7z" />
-                </svg>
+                <i class="fas fa-upload mr-2"></i>
                 Upload PDF
                 <input type="file" id="pdfInput" class="hidden" accept="application/pdf" onchange="previewPDF(event)" />
             </label>
@@ -63,53 +60,45 @@
         <!-- Convert Button -->
         <div id="convertSection" class="mt-8 max-w-3xl mx-auto text-center">
             <button id="convertBtn"
-                class="bg-gray-800 text-white font-semibold px-8 py-3 rounded-lg shadow-md transition-all hover:from-green-700 hover:to-green-600 hover:shadow-lg cursor-pointer hidden"
+                class="bg-gray-800 text-white font-semibold px-8 py-3 rounded-lg shadow-md transition-all hover:bg-green-700 hover:shadow-lg cursor-pointer hidden"
                 onclick="convertPDF()">
                 <span class="inline-flex items-center">
-                    <svg class="h-5 w-5 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                        <path d="M10 3a1 1 0 011 1v8.59l2.3-2.3a1 1 0 011.4 1.42l-4 4a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.42l2.3 2.3V4a1 1 0 011-1z"/>
-                    </svg>
+                    <i class="fas fa-file-archive mr-2"></i>
                     Convert to ZIP
                 </span>
             </button>
         </div>
 
         <!-- Download Section (Hidden Initially) -->
-        <div id="downloadSection" class="hidden mt-8 max-w-3xl mx-auto text-center bg-white shadow-lg rounded-2xl p-6 border border-gray-200">
+        <div id="downloadSection"
+            class="hidden mt-8 max-w-3xl mx-auto text-center bg-white shadow-lg rounded-2xl p-6 border border-gray-200">
             <div class="flex flex-col items-center">
                 <!-- Success Icon -->
                 <div class="w-16 h-16 flex items-center justify-center bg-green-100 text-green-600 rounded-full mb-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414L8 15.414l-4.707-4.707a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                    </svg>
+                    <i class="fas fa-check-circle text-4xl"></i>
                 </div>
-        
+
                 <!-- Title -->
                 <h3 class="text-xl font-bold text-gray-900">Conversion Successful!</h3>
                 <p class="text-gray-600 mt-2">Your ZIP file is ready for download.</p>
-        
+
                 <!-- Buttons -->
                 <div class="flex flex-wrap justify-center mt-6 space-x-4">
                     <button id="downloadBtn"
                         class="bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 shadow-md transition duration-200"
                         onclick="downloadZIP()">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block mr-2" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M3 10a1 1 0 011-1h3V4a1 1 0 112 0v5h3a1 1 0 110 2h-3v5a1 1 0 11-2 0v-5H4a1 1 0 01-1-1z" clip-rule="evenodd"/>
-                        </svg>
+                        <i class="fas fa-download mr-2"></i>
                         Download ZIP
                     </button>
                     <button id="convertAgainBtn"
                         class="bg-gray-700 text-white font-semibold px-6 py-3 rounded-lg hover:bg-gray-800 shadow-md transition duration-200"
                         onclick="convertAgain()">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block mr-2" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M10 2a8 8 0 00-8 8h2.5l-3 3-3-3H2a10 10 0 0110-10v2zm6.5 8h2a10 10 0 01-10 10v-2a8 8 0 008-8h-2.5l3-3 3 3z" clip-rule="evenodd"/>
-                        </svg>
+                        <i class="fas fa-sync-alt mr-2"></i>
                         Convert Again
                     </button>
                 </div>
             </div>
         </div>
-        
 
     </section>
 
