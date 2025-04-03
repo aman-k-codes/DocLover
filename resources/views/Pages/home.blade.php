@@ -1,11 +1,12 @@
 @extends('Layout.master')
 @section('content')
     <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-blue-50 to-white py-5 px-8 flex flex-col md:flex-row items-center justify-between">
+    <section
+        class="bg-gradient-to-r from-blue-50 to-white py-5 px-8 flex flex-col md:flex-row items-center justify-between">
         <!-- Text Content -->
         <div class="md:w-1/2 mb-12 md:mb-0">
             <h1 class=" text-3xl md:text-5xl font-extrabold text-gray-900 leading-tight">
-                The Smartest Way to <span class="text-blue-600">Manage PDFs1</span>
+                The Smartest Way to <span class="text-blue-600">Manage PDFs</span>
             </h1>
 
             <p class="text-md md:text-lg text-gray-600 mt-4">
@@ -13,8 +14,7 @@
             </p>
 
             <div class="mt-6 flex flex-wrap gap-4">
-                <a href="{{ route('resume.index') }}"
-                    class="bg-blue-600 text-white font-semibold
+                <a href="{{ route('resume.index') }}" class="bg-blue-600 text-white font-semibold
                                   px-4 py-2 text-sm
                                   sm:px-6 sm:py-2.5 sm:text-base
                                   md:px-8 md:py-3 md:text-lg
@@ -22,8 +22,7 @@
                                   hover:bg-blue-700 transition">
                     Make Resume
                 </a>
-                <a href="{{ route('home.AllTools') }}"
-                    class="border border-blue-600 text-blue-600 font-semibold
+                <a href="{{ route('home.AllTools') }}" class="border border-blue-600 text-blue-600 font-semibold
                                   px-4 py-2 text-sm
                                   sm:px-6 sm:py-2.5 sm:text-base
                                   md:px-8 md:py-3 md:text-lg
@@ -123,7 +122,7 @@
             </div>
 
             <div class="mt-12">
-                <a href="{{ route('home.AllTools') }}"
+                <a href="{{route('home.AllTools')}}"
                     class="inline-block underline text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-text-700 transition">
                     Explore All PDF Tools
                 </a>
@@ -214,4 +213,5 @@
             </div>
         </div>
     </section>
+
 @endsection
