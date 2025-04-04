@@ -8,11 +8,11 @@ class ResumeController extends Controller
 {
     public function index()
     {
-        return view('pages.ResumeMaker.resume-home');
+        return view('pages.resume_maker.resume-home');
     }
 
     public function ResumeTemplate()
     {
-        return view('pages.ResumeMaker.resume-template');
+        return view('pages.resume_maker.resume-template');
     }
 }
