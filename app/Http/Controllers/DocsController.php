@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Storage;
 use ConvertApi\ConvertApi;
 use Symfony\Component\Process\Process;
 use Symfony\Component\Process\Exception\ProcessFailedException;
+use PhpOffice\PhpWord\PhpWord;
+use Spatie\PdfToText\Pdf;
 
 
 class DocsController extends Controller
@@ -100,5 +102,25 @@ class DocsController extends Controller
         return response()->download($outputPath, 'no-bg.png', [
             'Content-Type' => 'image/png'
         ])->deleteFileAfterSend(true);
+    }
+
+
+
+    public function convertPDFtoWord(Request $request)
+    {
+        $request->validate([
+            'pdf_file' => 'required|file|mimes:pdf|max:25600',
+        ]);
+
+        $pdf = $request->file('pdf_file');
+
+        // Temporary logic – replace with real PDF-to-Word logic
+        $wordContent = '<h1>This is dummy Word content from PDF</h1>';
+        $fileName = 'converted_' . time() . '.docx';
+
+        $tempPath = storage_path("app/public/$fileName");
+        file_put_contents($tempPath, $wordContent);
+
+        return response()->download($tempPath)->deleteFileAfterSend(true);
     }
 }

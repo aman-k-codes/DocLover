@@ -64,7 +64,8 @@ Route::prefix('/')->group(function () {
     Route::prefix('/convert')->group(function () {
         Route::post('/pdf-to-zip', [DocsController::class, 'PDFtoZIP'])->name('convert.PDFtoZIP');
         Route::post('/jpg-to-png', [DocsController::class, 'JPGtoPNG'])->name('convert.JPGtoPNG');
-        Route::post('/jpg-to-png', [DocsController::class, 'removeBG'])->name('background.remove');
+        Route::post('/remove-background', [DocsController::class, 'removeBG'])->name('background.remove');
+        Route::post('/pdf-to-word', [DocsController::class, 'convertPDFtoWord'])->name('convert.convertPDFtoWord');
 
     });
     Route::prefix('/resume')->group(function () {
