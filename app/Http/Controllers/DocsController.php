@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use ZipArchive;
 use Illuminate\Support\Facades\Storage;
 use ConvertApi\ConvertApi;
+use Symfony\Component\Process\Process;
+use Symfony\Component\Process\Exception\ProcessFailedException;
+
 
 class DocsController extends Controller
 {
@@ -70,4 +73,32 @@ class DocsController extends Controller
         ]);
     }
 
+
+    public function removeBG(Request $request)
+    {
+        $request->validate([
+            'image' => 'required|image|max:25600', // max 25MB
+        ]);
+
+        $image = $request->file('image');
+        $inputPath = storage_path('app/temp_input.png');
+        $outputPath = storage_path('app/temp_output.png');
+
+        $image->move(storage_path('app'), 'temp_input.png');
+
+        $rembgPath = 'C:\\Users\\amans\\AppData\\Roaming\\Python\\Python313\\Scripts\\rembg.exe';
+        $process = new Process([$rembgPath, 'i', $inputPath, $outputPath]);
+        $process->run();
+
+        if (!$process->isSuccessful()) {
+            return response()->json([
+                'error' => 'Background removal failed.',
+                'message' => $process->getErrorOutput()
+            ], 500);
+        }
+
+        return response()->download($outputPath, 'no-bg.png', [
+            'Content-Type' => 'image/png'
+        ])->deleteFileAfterSend(true);
+    }
 }
