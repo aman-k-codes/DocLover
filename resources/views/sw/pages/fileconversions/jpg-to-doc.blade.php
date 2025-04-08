@@ -17,7 +17,8 @@
         <div
             class="flex flex-col sm:flex-row sm:justify-center sm:space-x-8 space-y-4 sm:space-y-0 bg-indigo-50 rounded-2xl p-6 max-w-2xl mx-auto mb-8 shadow">
             <div class="flex items-center space-x-2">
-                <div class="w-8 h-8 flex items-center justify-center bg-indigo-700 text-white rounded-full font-bold">1</div>
+                <div class="w-8 h-8 flex items-center justify-center bg-indigo-700 text-white rounded-full font-bold">1
+                </div>
                 <span class="text-gray-800 font-semibold">Upload Image</span>
             </div>
             <div class="flex items-center space-x-2">
@@ -167,7 +168,7 @@
             const imageFile = fileInput.files[0];
             const reader = new FileReader();
 
-            reader.onload = function(e) {
+            reader.onload = function (e) {
                 const imageData = e.target.result;
 
                 // Show loading
@@ -183,15 +184,14 @@
                     }
                 }) => {
                     const htmlContent = `
-                <html xmlns:o='urn:schemas-microsoft-com:office:office'
-                      xmlns:w='urn:schemas-microsoft-com:office:word'
-                      xmlns='http://www.w3.org/TR/REC-html40'>
-                <head><meta charset="utf-8"><title>Image to Word</title></head>
-                <body>
-                    <h2>Extracted Text</h2>
-                    <pre style="font-family: Arial, sans-serif; font-size: 14px;">${text}</pre>
-                </body>
-                </html>`;
+                    <html xmlns:o='urn:schemas-microsoft-com:office:office'
+                          xmlns:w='urn:schemas-microsoft-com:office:word'
+                          xmlns='http://www.w3.org/TR/REC-html40'>
+                    <head><meta charset="utf-8"><title>Image to Word</title></head>
+                    <body>
+                        <pre style="font-family: Arial, sans-serif; font-size: 14px;">${text}</pre>
+                    </body>
+                    </html>`;
 
                     const blob = new Blob(['\ufeff', htmlContent], {
                         type: 'application/msword'
@@ -234,5 +234,17 @@
                 URL.revokeObjectURL(docBlobUrl);
             }
         }
+
+        function convertAgain() {
+            document.getElementById("downloadSection").classList.add("hidden"); // Hide download section
+            document.getElementById("uploadSection").classList.remove("hidden"); // Show upload section
+            document.getElementById("imagePreviewContainer").classList.add("hidden"); // Hide preview section
+            document.getElementById("convertBtn").classList.add("hidden"); // Hide convert button
+
+            // Reset file input (Corrected ID)
+            const fileInput = document.getElementById("imageInput");
+            fileInput.value = "";
+        }
+
     </script>
 @endsection

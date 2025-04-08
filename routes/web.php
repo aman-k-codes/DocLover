@@ -18,9 +18,6 @@ use App\Http\Controllers\ResumeController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('sw.layout.master');
-// });
 
 Route::prefix('/')->group(function () {
     Route::prefix('/')->group(function () {
