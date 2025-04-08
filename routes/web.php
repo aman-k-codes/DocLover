@@ -25,6 +25,10 @@ use App\Http\Controllers\ResumeController;
 Route::prefix('/')->group(function () {
     Route::prefix('/')->group(function () {
         Route::get('/', [HomeController::class, 'Home'])->name('home.index');
+        Route::get('/about-us', [HomeController::class, 'AboutUs'])->name('home.AboutUs');
+        Route::get('/contact', [HomeController::class, 'Contact'])->name('home.Contact');
+        Route::get('/privacy-policy', [HomeController::class, 'Privacy'])->name('home.Privacy');
+        Route::get('/terms-and-conditions', [HomeController::class, 'Terms'])->name('home.Terms');
         Route::get('/all-tools', [HomeController::class, 'AllTools'])->name('home.AllTools');
     });
     Route::prefix('/docs')->group(function () {

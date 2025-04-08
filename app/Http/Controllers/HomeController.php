@@ -15,4 +15,19 @@ class HomeController extends Controller
     {
         return view('Pages.alltools');
     }
+
+    public function AboutUs(){
+        return view('Pages.Footer.about');
+    }
+
+    public function Contact(){
+        return view('Pages.Footer.contact');
+    }
+
+    public function Privacy(){
+        return view('Pages.Footer.privacy-policy');
+    }
+    public function Terms(){
+        return view('Pages.Footer.terms');
+    }
 }
