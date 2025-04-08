@@ -8,26 +8,26 @@ class HomeController extends Controller
 {
     public function Home()
     {
-        return view('Pages.home');
+        return view('pages.home');
     }
 
     public function AllTools()
     {
-        return view('Pages.alltools');
+        return view('pages.alltools');
     }
 
     public function AboutUs(){
-        return view('Pages.footer.about');
+        return view('pages.footer.about-us');
     }
 
     public function Contact(){
-        return view('Pages.footer.contact');
+        return view('pages.footer.contact-us');
     }
 
     public function Privacy(){
-        return view('Pages.footer.privacy-policy');
+        return view('pages.footer.privacy-policy');
     }
     public function Terms(){
-        return view('Pages.footer.terms');
+        return view('pages.footer.terms');
     }
 }
