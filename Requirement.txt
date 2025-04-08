@@ -55,7 +55,7 @@ composer require phpoffice/phpspreadsheet
 composer require thiagoalessio/tesseract_ocr
 
 -------------------------------
-Project Names 
+Project Names
 -------------------------------
 DocGenie.com
 DocMaster.io
@@ -68,3 +68,40 @@ EditNConvert.com
 SmartDocsHub.com
 FileWizard.io
 ----------------------------------
+
+
+
+
+
+
+
+
+
+
+
+I have done -
+
+PDF Conversions
+PDF to ZIP - Done
+PDF to DOC - Pending
+PDF to JPG - Pending
+PDF to HTML - Pending
+PDF to XL - Pending
+
+Image Conversions
+JPG to PNG - Done
+PNG to JPG - Done
+JPG to DOC - Done
+JPG to XL - Done
+
+Image & Document Tools
+Crop - Pending
+Collage - Pending
+Resize - Pending
+Passport-size Photo - Pending
+Photo Clarity Enhancement - Pending
+Background Change - Pending
+Resume Maker - Pending
+Photo Size Compression - Done
+Image to Text Conversion - Pending
+Sign Picker - Pending
