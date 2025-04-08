@@ -84,7 +84,8 @@
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
-                        <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Use
+                        <button onclick="gotoFillData(base64encoded('pitcher-1'));"
+                            class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Use
                             Template</button>
                     </div>
                 </div>
@@ -183,6 +184,14 @@
             document.getElementById("resumeSection").scrollIntoView({
                 behavior: "smooth"
             });
+        }
+    </script>
+    <script>
+        function gotoFillData(id) {
+            window.location.href = "";
+        }
+        function base64encoded(text) {
+            return btoa(text);
         }
     </script>
 @endsection
