@@ -16,18 +16,18 @@ class HomeController extends Controller
         return view('sw.pages.alltools');
     }
 
-    public function AboutUs(){
+    public function aboutus(){
         return view('sw.pages.footer.about-us');
     }
 
-    public function Contact(){
+    public function contact(){
         return view('sw.pages.footer.contact-us');
     }
 
-    public function Privacy(){
+    public function privacy(){
         return view('sw.pages.footer.privacy-policy');
     }
-    public function Terms(){
+    public function terms(){
         return view('sw.pages.footer.terms');
     }
 }

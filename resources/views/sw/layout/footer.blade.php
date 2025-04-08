@@ -87,10 +87,10 @@
         <div>
             <h3 class="font-semibold mb-2 text-gray-800">Quick Links</h3>
             <ul class="space-y-1">
-                <li><a href="{{route('home.AboutUs')}}" class="hover:text-yellow-600 transition">About</a></li>
-                <li><a href="{{route('home.Contact')}}" class="hover:text-yellow-600 transition">Contact</a></li>
-                <li><a href="{{route('home.Privacy')}}" class="hover:text-yellow-600 transition">Privacy Policy</a></li>
-                <li><a href="{{route('home.Terms')}}" class="hover:text-yellow-600 transition">Terms of Use</a></li>
+                <li><a href="{{route('home.aboutus')}}" class="hover:text-yellow-600 transition">About</a></li>
+                <li><a href="{{route('home.contact')}}" class="hover:text-yellow-600 transition">Contact</a></li>
+                <li><a href="{{route('home.privacy')}}" class="hover:text-yellow-600 transition">Privacy Policy</a></li>
+                <li><a href="{{route('home.terms')}}" class="hover:text-yellow-600 transition">Terms of Use</a></li>
             </ul>
         </div>
 
