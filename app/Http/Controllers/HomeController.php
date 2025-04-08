@@ -17,17 +17,17 @@ class HomeController extends Controller
     }
 
     public function AboutUs(){
-        return view('Pages.Footer.about');
+        return view('Pages.footer.about');
     }
 
     public function Contact(){
-        return view('Pages.Footer.contact');
+        return view('Pages.footer.contact');
     }
 
     public function Privacy(){
-        return view('Pages.Footer.privacy-policy');
+        return view('Pages.footer.privacy-policy');
     }
     public function Terms(){
-        return view('Pages.Footer.terms');
+        return view('Pages.footer.terms');
     }
 }
