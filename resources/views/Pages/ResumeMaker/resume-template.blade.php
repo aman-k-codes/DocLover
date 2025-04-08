@@ -74,10 +74,11 @@
 
             <!-- Templates -->
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 border-t pt-5" id="templateContainer">
+
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="picture">
                     <!-- Image -->
-                    <img src="{{ asset('public/assets/temp-imgs/temp-1.jpg') }}" alt="Picture Template"
+                    <img src="{{ asset('public/assets/temp-imgs/pitcher-1.png') }}" alt="Picture Template"
                         class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
 
                     <!-- Overlay -->
@@ -87,9 +88,11 @@
                             Template</button>
                     </div>
                 </div>
+
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="picture">
-                    <img src="{{asset('public/assets/temp-imgs/temp-1.jpg')}}" alt="Picture Template"
+                    <!-- Image -->
+                    <img src="{{ asset('public/assets/temp-imgs/pitcher-2.jpg') }}" alt="Picture Template"
                         class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
 
                     <!-- Overlay -->
@@ -99,9 +102,10 @@
                             Template</button>
                     </div>
                 </div>
+
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="word">
-                    <img src="{{asset('public/assets/temp-imgs/temp-1.jpg')}}" alt="Word Template"
+                    <img src="{{asset('public/assets/temp-imgs/word-1.png')}}" alt="Word Template"
                         class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
@@ -110,9 +114,10 @@
                             Template</button>
                     </div>
                 </div>
+
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="simple">
-                    <img src="{{asset('public/assets/temp-imgs/temp-1.jpg')}}" alt="Simple Template"
+                    <img src="{{asset('public/assets/temp-imgs/simple-1.jpg')}}" alt="Simple Template"
                         class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
@@ -121,9 +126,10 @@
                             Template</button>
                     </div>
                 </div>
+
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="ats">
-                    <img src="{{asset('public/assets/temp-imgs/temp-1.jpg')}}" alt="ATS Template"
+                    <img src="{{asset('public/assets/temp-imgs/ats-1.jpg')}}" alt="ATS Template"
                         class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
@@ -132,9 +138,10 @@
                             Template</button>
                     </div>
                 </div>
+
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="two-column">
-                    <img src="{{asset('public/assets/temp-imgs/temp-1.jpg')}}" alt="Two-column Template"
+                    <img src="{{asset('public/assets/temp-imgs/two-column-1.jpg')}}" alt="Two-column Template"
                         class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
@@ -143,9 +150,22 @@
                             Template</button>
                     </div>
                 </div>
+
+                <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
+                    data-category="two-column">
+                    <img src="{{asset('public/assets/temp-imgs/two-column-2.png')}}" alt="Two-column Template"
+                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                    <!-- Overlay -->
+                    <div
+                        class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
+                        <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Use
+                            Template</button>
+                    </div>
+                </div>
+
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="google-docs">
-                    <img src="{{asset('public/assets/temp-imgs/temp-1.jpg')}}" alt="Google Docs Template"
+                    <img src="{{asset('public/assets/temp-imgs/google-drive-1.png')}}" alt="Google Docs Template"
                         class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
@@ -154,6 +174,7 @@
                             Template</button>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
