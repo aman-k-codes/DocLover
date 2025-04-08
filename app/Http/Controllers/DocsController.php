@@ -10,6 +10,7 @@ use Symfony\Component\Process\Process;
 use Symfony\Component\Process\Exception\ProcessFailedException;
 use PhpOffice\PhpWord\PhpWord;
 use Spatie\PdfToText\Pdf;
+use Illuminate\Support\Facades\Http;
 
 
 class DocsController extends Controller
@@ -79,29 +80,29 @@ class DocsController extends Controller
     public function removeBG(Request $request)
     {
         $request->validate([
-            'image' => 'required|image|max:25600', // max 25MB
+            'image' => 'required|image|mimes:jpeg,jpg,png|max:25600', // 25MB max
         ]);
 
         $image = $request->file('image');
-        $inputPath = storage_path('app/temp_input.png');
-        $outputPath = storage_path('app/temp_output.png');
+        $apiKey = '9zosz9RpvWKsLadUuM1iHSfN';
 
-        $image->move(storage_path('app'), 'temp_input.png');
+        $response = Http::withHeaders([
+            'X-Api-Key' => $apiKey,
+        ])->attach(
+                'image_file',
+                file_get_contents($image),
+                $image->getClientOriginalName()
+            )->post('https://api.remove.bg/v1.0/removebg');
 
-        $rembgPath = 'C:\\Users\\amans\\AppData\\Roaming\\Python\\Python313\\Scripts\\rembg.exe';
-        $process = new Process([$rembgPath, 'i', $inputPath, $outputPath]);
-        $process->run();
-
-        if (!$process->isSuccessful()) {
+        if ($response->successful()) {
+            return response($response->body(), 200)
+                ->header('Content-Type', 'image/png');
+        } else {
             return response()->json([
-                'error' => 'Background removal failed.',
-                'message' => $process->getErrorOutput()
-            ], 500);
+                'error' => 'Failed to remove background.',
+                'details' => $response->json(),
+            ], $response->status());
         }
-
-        return response()->download($outputPath, 'no-bg.png', [
-            'Content-Type' => 'image/png'
-        ])->deleteFileAfterSend(true);
     }
 
 
