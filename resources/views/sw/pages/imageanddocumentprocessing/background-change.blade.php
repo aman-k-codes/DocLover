@@ -21,7 +21,8 @@
             @foreach (['Upload Image', 'Remove Background', 'Download Image'] as $i => $step)
                 <div class="flex items-center space-x-2">
                     <div class="w-8 h-8 flex items-center justify-center bg-indigo-700 text-white rounded-full font-bold">
-                        {{ $i + 1 }}</div>
+                        {{ $i + 1 }}
+                    </div>
                     <span class="text-gray-800 font-medium">{{ $step }}</span>
                 </div>
             @endforeach
@@ -157,4 +158,3 @@
         }
     </script>
 @endsection
-

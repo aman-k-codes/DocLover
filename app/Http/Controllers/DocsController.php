@@ -84,7 +84,8 @@ class DocsController extends Controller
         ]);
 
         $image = $request->file('image');
-        $apiKey = '9zosz9RpvWKsLadUuM1iHSfN';
+        $apiKey = env('REMOVE_BG_API_KEY');
+
 
         $response = Http::withHeaders([
             'X-Api-Key' => $apiKey,
