@@ -84,7 +84,7 @@ I have done -
 PDF Conversions
 PDF to ZIP - Done
 PDF to DOC - Pending
-PDF to JPG - Pending
+PDF to JPG - Done
 PDF to HTML - Pending
 PDF to XL - Pending
 
@@ -103,5 +103,5 @@ Photo Clarity Enhancement - Pending
 Background Change - Pending
 Resume Maker - Pending
 Photo Size Compression - Done
-Image to Text Conversion - Pending
+Image to Text Conversion - Done
 Sign Picker - Pending
