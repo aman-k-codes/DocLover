@@ -1,4 +1,4 @@
-@extends('Layout.master')
+@extends('sw.layout.master')
 @section('title', 'DocLover - All Tools')
 @section('content')
     <section class="py-12 bg-white">

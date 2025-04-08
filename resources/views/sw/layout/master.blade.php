@@ -54,7 +54,7 @@
     </script>
 
     <!-- Stylesheets -->
-    @include('Layout.head')
+    @include('sw.layout.head')
 
 </head>
 
@@ -66,16 +66,16 @@
         var pagination  = '';
     </script>
     <!-- Header -->
-    @include('Layout.navbar')
+    @include('sw.layout.navbar')
 
     <div>
         @yield('content')
     </div>
 
     <!-- Footer -->
-    @include('Layout.footer')
+    @include('sw.layout.footer')
 
-    @include('Layout.scripts')
+    @include('sw.layout.scripts')
 
 </body>
 

@@ -1,4 +1,4 @@
-@extends('Layout.master')
+@extends('sw.layout.master')
 
 @section('title', 'DocLover - PDF to HTML')
 
@@ -107,7 +107,7 @@
                 </div>
             </div>
 
-            @include('Components.tools')
+            @include('sw.components.tools')
         </div>
     </section>
 @endsection

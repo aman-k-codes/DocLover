@@ -1,4 +1,4 @@
-@extends('Layout.master')
+@extends('sw.layout.master')
 
 @section('title', 'DocLover - PDF to Word')
 

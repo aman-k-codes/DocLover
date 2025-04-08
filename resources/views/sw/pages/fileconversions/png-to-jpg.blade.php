@@ -1,4 +1,4 @@
-@extends('Layout.master')
+@extends('sw.layout.master')
 
 @section('title', 'DocLover - PNG to JPG')
 
@@ -152,7 +152,7 @@
                 </div>
             </div>
 
-            @include('Components.tools')
+            @include('sw.components.tools')
         </div>
     </section>
 

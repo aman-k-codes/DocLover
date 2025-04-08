@@ -1,4 +1,4 @@
-@extends('Layout.master')
+@extends('sw.layout.master')
 
 @section('title', 'DocLover - Image Compressor')
 @section('meta_description', 'Compress your images quickly and easily with DocLover.')
@@ -75,7 +75,7 @@
                     <span class="text-gray-700 ml-2 font-medium">4.9 / 5 - 90,000+ users</span>
                 </div>
             </div>
-            @include('Components.tools')
+            @include('sw.components.tools')
         </div>
     </section>
 

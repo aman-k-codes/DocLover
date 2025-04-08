@@ -1,4 +1,4 @@
-@extends('Layout.master')
+@extends('sw.layout.master')
 
 @section('title', 'DocLover - Free Resume Builder Online')
 @section('meta_description', 'Create professional resumes effortlessly with DocLover. Use our free resume builder to design, customize, and download your resume in minutes.')
@@ -74,7 +74,7 @@
                     </div>
                     <div>
                         <h3 class="font-semibold text-gray-900">Auto Formatting</h3>
-                        <p class="text-gray-600 text-sm">Focus on your content, we'll handle the layout and formatting for
+                        <p class="text-gray-600 text-sm">Focus on your content, we'll handle the sw.layout and formatting for
                             you.</p>
                     </div>
                 </div>
@@ -158,7 +158,7 @@
                 </div>
             </div>
 
-            @include('Components.tools')
+            @include('sw.components.tools')
         </div>
     </section>
 

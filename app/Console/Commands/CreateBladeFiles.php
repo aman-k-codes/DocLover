@@ -67,7 +67,7 @@ class CreateBladeFiles extends Command
 
                     // Define a basic HTML structure
                     $content = <<<HTML
-                    @extends('Layout.master')
+                    @extends('sw.layout.master')
 
                     @section('title', 'DocLover - {$file}')
 
