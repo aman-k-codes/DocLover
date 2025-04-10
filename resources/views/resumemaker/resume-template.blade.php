@@ -75,7 +75,7 @@
                     data-category="picture">
                     <!-- Image -->
                     <img src="{{ asset('public/assets/temp-imgs/pitcher/ptr (1).jpg') }}" alt="Picture Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3 w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
 
                     <!-- Overlay -->
                     <div
@@ -88,7 +88,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="two-column">
                     <img src="{{asset('public/assets/temp-imgs/two-column/tclm (1).jpg')}}" alt="Two-column Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -99,7 +99,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="google-docs">
                     <img src="{{asset('public/assets/temp-imgs/google-docs/gd (1).jpg')}}" alt="Google Docs Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -110,7 +110,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="two-column">
                     <img src="{{asset('public/assets/temp-imgs/two-column/tclm (1).png')}}" alt="Two-column Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -121,7 +121,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="ats">
                     <img src="{{asset('public/assets/temp-imgs/ats/ats (1).jpg')}}" alt="ATS Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -132,7 +132,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="two-column">
                     <img src="{{asset('public/assets/temp-imgs/two-column/tclm (2).jpg')}}" alt="Two-column Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -143,7 +143,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="google-docs">
                     <img src="{{asset('public/assets/temp-imgs/google-docs/gd (1).png')}}" alt="Google Docs Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -154,7 +154,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="two-column">
                     <img src="{{asset('public/assets/temp-imgs/two-column/tclm (2).png')}}" alt="Two-column Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -165,7 +165,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="simple">
                     <img src="{{asset('public/assets/temp-imgs/simple/smpl (1).jpg')}}" alt="Simple Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -176,7 +176,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="two-column">
                     <img src="{{asset('public/assets/temp-imgs/two-column/tclm (3).jpg')}}" alt="Two-column Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -187,7 +187,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="google-docs">
                     <img src="{{asset('public/assets/temp-imgs/google-docs/gd (2).png')}}" alt="Google Docs Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -198,7 +198,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="two-column">
                     <img src="{{asset('public/assets/temp-imgs/two-column/tclm (3).png')}}" alt="Two-column Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -209,7 +209,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="ats">
                     <img src="{{asset('public/assets/temp-imgs/ats/ats (1).png')}}" alt="ATS Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -220,7 +220,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="two-column">
                     <img src="{{asset('public/assets/temp-imgs/two-column/tclm (4).jpg')}}" alt="Two-column Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -231,7 +231,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="google-docs">
                     <img src="{{asset('public/assets/temp-imgs/google-docs/gd (2).jpg')}}" alt="Google Docs Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -242,7 +242,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="two-column">
                     <img src="{{asset('public/assets/temp-imgs/two-column/tclm (4).png')}}" alt="Two-column Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -254,7 +254,7 @@
                     data-category="picture">
                     <!-- Image -->
                     <img src="{{ asset('public/assets/temp-imgs/pitcher/ptr (2).jpg') }}" alt="Picture Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
 
                     <!-- Overlay -->
                     <div
@@ -267,7 +267,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="two-column">
                     <img src="{{asset('public/assets/temp-imgs/two-column/tclm (5).png')}}" alt="Two-column Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -278,7 +278,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="google-docs">
                     <img src="{{asset('public/assets/temp-imgs/google-docs/gd (3).png')}}" alt="Google Docs Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -289,7 +289,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="two-column">
                     <img src="{{asset('public/assets/temp-imgs/two-column/tclm (6).png')}}" alt="Two-column Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -300,7 +300,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="ats">
                     <img src="{{asset('public/assets/temp-imgs/ats/ats (2).jpg')}}" alt="ATS Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -311,7 +311,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="two-column">
                     <img src="{{asset('public/assets/temp-imgs/two-column/tclm (7).png')}}" alt="Two-column Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -322,7 +322,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="google-docs">
                     <img src="{{asset('public/assets/temp-imgs/google-docs/gd (4).png')}}" alt="Google Docs Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -333,7 +333,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="two-column">
                     <img src="{{asset('public/assets/temp-imgs/two-column/tclm (8).png')}}" alt="Two-column Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -344,7 +344,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="simple">
                     <img src="{{asset('public/assets/temp-imgs/simple/smpl (1).png')}}" alt="Simple Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -355,7 +355,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="two-column">
                     <img src="{{asset('public/assets/temp-imgs/two-column/tclm (9).png')}}" alt="Two-column Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -366,7 +366,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="google-docs">
                     <img src="{{asset('public/assets/temp-imgs/google-docs/gd (5).png')}}" alt="Google Docs Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -377,7 +377,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="two-column">
                     <img src="{{asset('public/assets/temp-imgs/two-column/tclm (10).png')}}" alt="Two-column Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -388,7 +388,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="ats">
                     <img src="{{asset('public/assets/temp-imgs/ats/ats (2).png')}}" alt="ATS Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -399,7 +399,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="two-column">
                     <img src="{{asset('public/assets/temp-imgs/two-column/tclm (11).png')}}" alt="Two-column Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -410,7 +410,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="google-docs">
                     <img src="{{asset('public/assets/temp-imgs/google-docs/gd (6).png')}}" alt="Google Docs Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -421,7 +421,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="two-column">
                     <img src="{{asset('public/assets/temp-imgs/two-column/tclm (12).png')}}" alt="Two-column Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -433,7 +433,7 @@
                     data-category="picture">
                     <!-- Image -->
                     <img src="{{ asset('public/assets/temp-imgs/pitcher/ptr (3).jpg') }}" alt="Picture Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
 
                     <!-- Overlay -->
                     <div
@@ -446,7 +446,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="two-column">
                     <img src="{{asset('public/assets/temp-imgs/two-column/tclm (13).png')}}" alt="Two-column Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -457,7 +457,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="google-docs">
                     <img src="{{asset('public/assets/temp-imgs/google-docs/gd (7).png')}}" alt="Google Docs Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -468,7 +468,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="two-column">
                     <img src="{{asset('public/assets/temp-imgs/two-column/tclm (14).png')}}" alt="Two-column Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -479,7 +479,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="ats">
                     <img src="{{asset('public/assets/temp-imgs/ats/ats (3).png')}}" alt="ATS Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -490,7 +490,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="two-column">
                     <img src="{{asset('public/assets/temp-imgs/two-column/tclm (15).png')}}" alt="Two-column Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -501,7 +501,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="google-docs">
                     <img src="{{asset('public/assets/temp-imgs/google-docs/gd (8).png')}}" alt="Google Docs Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -512,7 +512,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="two-column">
                     <img src="{{asset('public/assets/temp-imgs/two-column/tclm (16).png')}}" alt="Two-column Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -523,7 +523,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="simple">
                     <img src="{{asset('public/assets/temp-imgs/simple/smpl (2).png')}}" alt="Simple Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -534,7 +534,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="google-docs">
                     <img src="{{asset('public/assets/temp-imgs/google-docs/gd (9).png')}}" alt="Google Docs Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -545,7 +545,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="two-column">
                     <img src="{{asset('public/assets/temp-imgs/two-column/tclm (18).png')}}" alt="Two-column Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -556,7 +556,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="ats">
                     <img src="{{asset('public/assets/temp-imgs/ats/ats (4).png')}}" alt="ATS Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -567,7 +567,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="two-column">
                     <img src="{{asset('public/assets/temp-imgs/two-column/tclm (19).png')}}" alt="Two-column Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -578,7 +578,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="google-docs">
                     <img src="{{asset('public/assets/temp-imgs/google-docs/gd (10).png')}}" alt="Google Docs Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -590,7 +590,7 @@
                     data-category="picture">
                     <!-- Image -->
                     <img src="{{ asset('public/assets/temp-imgs/pitcher/ptr (4).jpg') }}" alt="Picture Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
 
                     <!-- Overlay -->
                     <div
@@ -603,7 +603,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="two-column">
                     <img src="{{asset('public/assets/temp-imgs/two-column/tclm (20).png')}}" alt="Two-column Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -614,7 +614,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="google-docs">
                     <img src="{{asset('public/assets/temp-imgs/google-docs/gd (11).png')}}" alt="Google Docs Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -625,7 +625,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="two-column">
                     <img src="{{asset('public/assets/temp-imgs/two-column/tclm (21).png')}}" alt="Two-column Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -636,7 +636,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="google-docs">
                     <img src="{{asset('public/assets/temp-imgs/google-docs/gd (12).png')}}" alt="Google Docs Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -647,7 +647,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="two-column">
                     <img src="{{asset('public/assets/temp-imgs/two-column/tclm (22).png')}}" alt="Two-column Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -658,7 +658,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="ats">
                     <img src="{{asset('public/assets/temp-imgs/ats/ats (5).png')}}" alt="ATS Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -669,7 +669,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="two-column">
                     <img src="{{asset('public/assets/temp-imgs/two-column/tclm (23).png')}}" alt="Two-column Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -680,7 +680,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="google-docs">
                     <img src="{{asset('public/assets/temp-imgs/google-docs/gd (13).png')}}" alt="Google Docs Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -691,7 +691,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="two-column">
                     <img src="{{asset('public/assets/temp-imgs/two-column/tclm (24).png')}}" alt="Two-column Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -702,7 +702,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="simple">
                     <img src="{{asset('public/assets/temp-imgs/simple/smpl (3).png')}}" alt="Simple Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -713,7 +713,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="google-docs">
                     <img src="{{asset('public/assets/temp-imgs/google-docs/gd (14).png')}}" alt="Google Docs Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -724,7 +724,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="two-column">
                     <img src="{{asset('public/assets/temp-imgs/two-column/tclm (25).png')}}" alt="Two-column Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -735,7 +735,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="ats">
                     <img src="{{asset('public/assets/temp-imgs/ats/ats (6).png')}}" alt="ATS Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -746,7 +746,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="two-column">
                     <img src="{{asset('public/assets/temp-imgs/two-column/tclm (26).png')}}" alt="Two-column Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -757,7 +757,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="google-docs">
                     <img src="{{asset('public/assets/temp-imgs/google-docs/gd (15).png')}}" alt="Google Docs Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -768,7 +768,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="two-column">
                     <img src="{{asset('public/assets/temp-imgs/two-column/tclm (27).png')}}" alt="Two-column Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -780,7 +780,7 @@
                     data-category="picture">
                     <!-- Image -->
                     <img src="{{ asset('public/assets/temp-imgs/pitcher/ptr (5).jpg') }}" alt="Picture Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
 
                     <!-- Overlay -->
                     <div
@@ -793,7 +793,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="google-docs">
                     <img src="{{asset('public/assets/temp-imgs/google-docs/gd (16).png')}}" alt="Google Docs Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -804,7 +804,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="ats">
                     <img src="{{asset('public/assets/temp-imgs/ats/ats (7).png')}}" alt="ATS Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -815,7 +815,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="google-docs">
                     <img src="{{asset('public/assets/temp-imgs/google-docs/gd (17).png')}}" alt="Google Docs Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -826,7 +826,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="simple">
                     <img src="{{asset('public/assets/temp-imgs/simple/smpl (4).png')}}" alt="Simple Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -837,7 +837,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="google-docs">
                     <img src="{{asset('public/assets/temp-imgs/google-docs/gd (18).png')}}" alt="Google Docs Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -848,7 +848,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="ats">
                     <img src="{{asset('public/assets/temp-imgs/ats/ats (8).png')}}" alt="ATS Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -860,7 +860,7 @@
                     data-category="picture">
                     <!-- Image -->
                     <img src="{{ asset('public/assets/temp-imgs/pitcher/ptr (6).jpg') }}" alt="Picture Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
 
                     <!-- Overlay -->
                     <div
@@ -873,7 +873,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="ats">
                     <img src="{{asset('public/assets/temp-imgs/ats/ats (9).png')}}" alt="ATS Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -884,7 +884,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="simple">
                     <img src="{{asset('public/assets/temp-imgs/simple/smpl (5).png')}}" alt="Simple Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -895,7 +895,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="ats">
                     <img src="{{asset('public/assets/temp-imgs/ats/ats (10).png')}}" alt="ATS Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -906,7 +906,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="simple">
                     <img src="{{asset('public/assets/temp-imgs/simple/smpl (6).png')}}" alt="Simple Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -917,7 +917,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="ats">
                     <img src="{{asset('public/assets/temp-imgs/ats/ats (11).png')}}" alt="ATS Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -928,7 +928,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="simple">
                     <img src="{{asset('public/assets/temp-imgs/simple/smpl (7).png')}}" alt="Simple Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -939,7 +939,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="ats">
                     <img src="{{asset('public/assets/temp-imgs/ats/ats (12).png')}}" alt="ATS Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -950,7 +950,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="simple">
                     <img src="{{asset('public/assets/temp-imgs/simple/smpl (8).png')}}" alt="Simple Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -961,7 +961,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="simple">
                     <img src="{{asset('public/assets/temp-imgs/simple/smpl (9).png')}}" alt="Simple Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -972,7 +972,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="simple">
                     <img src="{{asset('public/assets/temp-imgs/simple/smpl (10).png')}}" alt="Simple Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -982,11 +982,12 @@
                 </div>
 
 
-                {{-- <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
+                {{-- <div
+                    class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="picture">
                     <!-- Image -->
                     <img src="{{ asset('public/assets/temp-imgs/pitcher-2.jpg') }}" alt="Picture Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
 
                     <!-- Overlay -->
                     <div
@@ -999,7 +1000,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="word">
                     <img src="{{asset('public/assets/temp-imgs/word-1.png')}}" alt="Word Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -1011,7 +1012,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="simple">
                     <img src="{{asset('public/assets/temp-imgs/simple-1.jpg')}}" alt="Simple Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -1023,7 +1024,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="two-column">
                     <img src="{{asset('public/assets/temp-imgs/two-column-1.jpg')}}" alt="Two-column Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -1035,7 +1036,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="two-column">
                     <img src="{{asset('public/assets/temp-imgs/two-column-2.png')}}" alt="Two-column Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -1047,7 +1048,7 @@
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="google-docs">
                     <img src="{{asset('public/assets/temp-imgs/google-drive-1.png')}}" alt="Google Docs Template"
-                        class="w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
+                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
