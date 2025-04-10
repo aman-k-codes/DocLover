@@ -20,19 +20,19 @@
 
             <div class="mt-6 flex flex-wrap gap-4">
                 <a href="{{ route('resume.index') }}" class="bg-blue-600 text-white font-semibold
-                                              px-4 py-2 text-sm
-                                              sm:px-6 sm:py-2.5 sm:text-base
-                                              md:px-8 md:py-3 md:text-lg
-                                              rounded-lg shadow-lg
-                                              hover:bg-blue-700 transition">
+                    px-4 py-2 text-sm
+                    sm:px-6 sm:py-2.5 sm:text-base
+                    md:px-8 md:py-3 md:text-lg
+                    rounded-lg shadow-lg
+                    hover:bg-blue-700 transition">
                     Document Editor
                 </a>
                 <a href="{{ route('resume.ResumeTemplate') }}" class="border border-blue-600 text-blue-600 font-semibold
-                                              px-4 py-2 text-sm
-                                              sm:px-6 sm:py-2.5 sm:text-base
-                                              md:px-8 md:py-3 md:text-lg
-                                              rounded-lg
-                                              hover:bg-blue-50 transition">
+                    px-4 py-2 text-sm
+                    sm:px-6 sm:py-2.5 sm:text-base
+                    md:px-8 md:py-3 md:text-lg
+                    rounded-lg
+                    hover:bg-blue-50 transition">
                     Build Resume
                 </a>
             </div>
@@ -74,7 +74,8 @@
                     </div>
                     <div>
                         <h3 class="font-semibold text-gray-900">Auto Formatting</h3>
-                        <p class="text-gray-600 text-sm">Focus on your content, we'll handle the sw.layout and formatting for
+                        <p class="text-gray-600 text-sm">Focus on your content, we'll handle the sw.layout and formatting
+                            for
                             you.</p>
                     </div>
                 </div>
