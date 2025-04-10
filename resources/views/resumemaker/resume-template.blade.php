@@ -132,7 +132,8 @@
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
-                        <button onclick="gotoFillData(base64encoded('.{{asset('public/assets/temp-imgs/ats/ats (1).jpg')}}.'));"
+                        <button
+                            onclick="gotoFillData(base64encoded('.{{asset('public/assets/temp-imgs/ats/ats (1).jpg')}}.'));"
                             class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Use
                             Template</button>
                     </div>
@@ -235,7 +236,8 @@
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
-                        <button onclick="gotoFillData(base64encoded('.{{asset('public/assets/temp-imgs/ats/ats (1).png')}}.'));"
+                        <button
+                            onclick="gotoFillData(base64encoded('.{{asset('public/assets/temp-imgs/ats/ats (1).png')}}.'));"
                             class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Use
                             Template</button>
                     </div>
@@ -283,7 +285,7 @@
                     data-category="picture">
                     <!-- Image -->
                     <img src="{{ 
-                            asset('public/assets/temp-imgs/pitcher/ptr (2).jpg') }}" alt="Picture Template"
+                                    asset('public/assets/temp-imgs/pitcher/ptr (2).jpg') }}" alt="Picture Template"
                         class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
 
                     <!-- Overlay -->
@@ -341,7 +343,8 @@
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
-                        <button onclick="gotoFillData(base64encoded('.{{asset('public/assets/temp-imgs/ats/ats (2).jpg')}}.'));"
+                        <button
+                            onclick="gotoFillData(base64encoded('.{{asset('public/assets/temp-imgs/ats/ats (2).jpg')}}.'));"
                             class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Use
                             Template</button>
                     </div>
@@ -444,7 +447,8 @@
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
-                        <button onclick="gotoFillData(base64encoded('.{{asset('public/assets/temp-imgs/ats/ats (2).png')}}.'));"
+                        <button
+                            onclick="gotoFillData(base64encoded('.{{asset('public/assets/temp-imgs/ats/ats (2).png')}}.'));"
                             class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Use
                             Template</button>
                     </div>
@@ -492,7 +496,7 @@
                     data-category="picture">
                     <!-- Image -->
                     <img src="{{ 
-                            asset('public/assets/temp-imgs/pitcher/ptr (3).jpg') }}" alt="Picture Template"
+                                    asset('public/assets/temp-imgs/pitcher/ptr (3).jpg') }}" alt="Picture Template"
                         class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
 
                     <!-- Overlay -->
@@ -550,7 +554,8 @@
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
-                        <button onclick="gotoFillData(base64encoded('.{{asset('public/assets/temp-imgs/ats/ats (3).png')}}.'));"
+                        <button
+                            onclick="gotoFillData(base64encoded('.{{asset('public/assets/temp-imgs/ats/ats (3).png')}}.'));"
                             class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Use
                             Template</button>
                     </div>
@@ -640,7 +645,8 @@
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
-                        <button onclick="gotoFillData(base64encoded('.{{asset('public/assets/temp-imgs/ats/ats (4).png')}}.'));"
+                        <button
+                            onclick="gotoFillData(base64encoded('.{{asset('public/assets/temp-imgs/ats/ats (4).png')}}.'));"
                             class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Use
                             Template</button>
                     </div>
@@ -675,7 +681,7 @@
                     data-category="picture">
                     <!-- Image -->
                     <img src="{{ 
-                            asset('public/assets/temp-imgs/pitcher/ptr (4).jpg') }}" alt="Picture Template"
+                                    asset('public/assets/temp-imgs/pitcher/ptr (4).jpg') }}" alt="Picture Template"
                         class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
 
                     <!-- Overlay -->
@@ -759,7 +765,8 @@
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
-                        <button onclick="gotoFillData(base64encoded('.{{asset('public/assets/temp-imgs/ats/ats (5).png')}}.'));"
+                        <button
+                            onclick="gotoFillData(base64encoded('.{{asset('public/assets/temp-imgs/ats/ats (5).png')}}.'));"
                             class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Use
                             Template</button>
                     </div>
@@ -849,7 +856,8 @@
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
-                        <button onclick="gotoFillData(base64encoded('.{{asset('public/assets/temp-imgs/ats/ats (6).png')}}.'));"
+                        <button
+                            onclick="gotoFillData(base64encoded('.{{asset('public/assets/temp-imgs/ats/ats (6).png')}}.'));"
                             class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Use
                             Template</button>
                     </div>
@@ -897,7 +905,7 @@
                     data-category="picture">
                     <!-- Image -->
                     <img src="{{ 
-                            asset('public/assets/temp-imgs/pitcher/ptr (5).jpg') }}" alt="Picture Template"
+                                    asset('public/assets/temp-imgs/pitcher/ptr (5).jpg') }}" alt="Picture Template"
                         class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
 
                     <!-- Overlay -->
@@ -929,7 +937,8 @@
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
-                        <button onclick="gotoFillData(base64encoded('.{{asset('public/assets/temp-imgs/ats/ats (7).png')}}.'));"
+                        <button
+                            onclick="gotoFillData(base64encoded('.{{asset('public/assets/temp-imgs/ats/ats (7).png')}}.'));"
                             class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Use
                             Template</button>
                     </div>
@@ -980,7 +989,8 @@
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
-                        <button onclick="gotoFillData(base64encoded('.{{asset('public/assets/temp-imgs/ats/ats (8).png')}}.'));"
+                        <button
+                            onclick="gotoFillData(base64encoded('.{{asset('public/assets/temp-imgs/ats/ats (8).png')}}.'));"
                             class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Use
                             Template</button>
                     </div>
@@ -989,7 +999,7 @@
                     data-category="picture">
                     <!-- Image -->
                     <img src="{{ 
-                            asset('public/assets/temp-imgs/pitcher/ptr (6).jpg') }}" alt="Picture Template"
+                                    asset('public/assets/temp-imgs/pitcher/ptr (6).jpg') }}" alt="Picture Template"
                         class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
 
                     <!-- Overlay -->
@@ -1008,7 +1018,8 @@
                     <!-- Overlay -->
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
-                        <button onclick="gotoFillData(base64encoded('.{{asset('public/assets/temp-imgs/ats/ats (9).png')}}.'));"
+                        <button
+                            onclick="gotoFillData(base64encoded('.{{asset('public/assets/temp-imgs/ats/ats (9).png')}}.'));"
                             class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Use
                             Template</button>
                     </div>
@@ -1143,8 +1154,8 @@
     </script>
     <script>
         function gotoFillData(id) {
-            console.log(id);
-            // window.location.href = "";
+            const url = "{{ url('/resume/template') }}/" + id;
+            window.location.href = url;
         }
         function base64encoded(text) {
             return btoa(text);

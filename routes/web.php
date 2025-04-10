@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DocsController;
 use App\Http\Controllers\DocumentController;
 use App\Http\Controllers\ResumeController;
+use App\Http\Controllers\ResumeTemplatesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -72,5 +73,8 @@ Route::prefix('/')->group(function () {
     Route::prefix('/resume')->group(function () {
         Route::get('/', [ResumeController::class, 'index'])->name('resume.index');
         Route::get('/templates', [ResumeController::class, 'ResumeTemplate'])->name('resume.ResumeTemplate');
+        Route::prefix('/template')->group(function () {
+            Route::get('/{id}', [ResumeTemplatesController::class, 'index'])->name('resumeTemp.index');
+        });
     });
 });
