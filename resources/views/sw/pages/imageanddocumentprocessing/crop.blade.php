@@ -5,22 +5,20 @@
 @section('meta_keywords', 'Image Cropper, Crop Image, Online Image Editing')
 
 @section('content')
-<!-- Hero Section -->
 <section class="pt-12 px-4 bg-gray-50">
     <div class="max-w-3xl mx-auto text-center">
-        <h2 class="text-4xl font-extrabold text-gray-800">Crop Your Images Instantly - Not Complete</h2>
-        <p class="text-lg text-gray-600 mt-3">Upload your image, crop it just the way you want, and download it in seconds!</p>
+        <h2 class="text-4xl font-extrabold text-gray-800">Crop Your Images Instantly</h2>
+        <p class="text-lg text-gray-600 mt-3">Upload your image, crop it just the way you want, and download it!</p>
     </div>
 </section>
 
-<!-- Upload Section -->
 <section class="py-10 px-4">
     <div class="flex flex-col sm:flex-row sm:justify-center sm:space-x-8 space-y-4 sm:space-y-0 bg-indigo-50 rounded-2xl p-6 max-w-2xl mx-auto mb-8 shadow">
         @foreach (['Upload Image', 'Crop the Image', 'Download Cropped Image'] as $i => $step)
-        <div class="flex items-center space-x-2">
-            <div class="w-8 h-8 flex items-center justify-center bg-indigo-700 text-white rounded-full font-bold">{{ $i + 1 }}</div>
-            <span class="text-gray-800 font-semibold">{{ $step }}</span>
-        </div>
+            <div class="flex items-center space-x-2">
+                <div class="w-8 h-8 flex items-center justify-center bg-indigo-700 text-white rounded-full font-bold">{{ $i + 1 }}</div>
+                <span class="text-gray-800 font-semibold">{{ $step }}</span>
+            </div>
         @endforeach
     </div>
 
@@ -34,31 +32,29 @@
         <p class="text-sm text-gray-500 mt-4">Supported formats: JPG, PNG, GIF. Max size: 10MB.</p>
     </div>
 
-    <div id="cropperContainer" class="hidden mt-8 max-w-3xl mx-auto text-center bg-white shadow-lg rounded-2xl p-6">
-        <h3 class="text-xl font-bold text-gray-900 mb-4">Adjust Crop</h3>
-
-        <div class="mb-4 text-left">
-            <label for="aspectRatio" class="font-semibold mr-2">Select Crop Size:</label>
-            <select id="aspectRatio" class="border px-3 py-2 rounded-md">
-                <option value="NaN">Free</option>
-                <option value="1">1:1 (Square)</option>
-                <option value="4/3">4:3</option>
-                <option value="16/9">16:9</option>
-                <option value="3/2">3:2</option>
-                <option value="2/3">2:3 (Portrait)</option>
-                <option value="21/9">21:9 (Cinematic)</option>
-            </select>
+    <div id="cropperContainer" class="hidden mt-8 max-w-6xl mx-auto bg-white shadow-lg rounded-2xl p-6 flex flex-col md:flex-row gap-6">
+        <div class="md:w-1/4 space-y-3">
+            <h3 class="text-lg font-semibold mb-2">Crop Sizes</h3>
+            <button data-size="free" class="aspect-btn w-full bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-md">Free</button>
+            <button data-size="1" class="aspect-btn w-full bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-md">1:1 (Square)</button>
+            <button data-size="4:3" class="aspect-btn w-full bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-md">4:3</button>
+            <button data-size="16:9" class="aspect-btn w-full bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-md">16:9</button>
+            <button data-size="3:2" class="aspect-btn w-full bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-md">3:2</button>
+            <button data-size="2:3" class="aspect-btn w-full bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-md">2:3</button>
+            <button data-size="21:9" class="aspect-btn w-full bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-md">21:9</button>
         </div>
 
-        <div class="overflow-hidden border rounded-lg">
-            <img id="imagePreview" class="mx-auto max-w-full" />
+        <div class="md:w-3/4">
+            <div class="overflow-hidden border rounded-lg w-full max-h-[500px]">
+                <img id="imagePreview" class="mx-auto max-w-full h-auto" />
+            </div>
+            <button id="cropButton" class="mt-6 bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-lg shadow transition-all">
+                Crop & Download
+            </button>
         </div>
-
-        <button id="cropButton" class="mt-6 bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-lg shadow transition-all">Crop & Download</button>
     </div>
 </section>
 
-<!-- Footer -->
 <section class="py-12 bg-gray-100">
     <div class="bg-white p-6 md:p-12">
         <div class="text-center mb-8">
@@ -76,32 +72,29 @@
     </div>
 </section>
 
-<!-- CropperJS -->
 <link href="https://unpkg.com/cropperjs/dist/cropper.min.css" rel="stylesheet" />
 <script src="https://unpkg.com/cropperjs/dist/cropper.min.js"></script>
 
-<!-- Custom JS -->
 <script>
     let cropper;
     const imageInput = document.getElementById("imageInput");
     const imagePreview = document.getElementById("imagePreview");
     const cropperContainer = document.getElementById("cropperContainer");
-    const aspectSelect = document.getElementById("aspectRatio");
     const cropButton = document.getElementById("cropButton");
+    const aspectButtons = document.querySelectorAll(".aspect-btn");
 
-    imageInput.addEventListener("change", function (event) {
+    imageInput.addEventListener("change", function(event) {
         const file = event.target.files[0];
         if (!file || !file.type.startsWith("image/")) return;
 
         const reader = new FileReader();
-        reader.onload = function (e) {
+        reader.onload = function(e) {
+            console.log("Image loaded:", e.target.result); // Debug log
             cropperContainer.classList.remove("hidden");
-            imagePreview.src = ''; // Reset src
             imagePreview.src = e.target.result;
 
             imagePreview.onload = () => {
                 if (cropper) cropper.destroy();
-
                 cropper = new Cropper(imagePreview, {
                     aspectRatio: NaN,
                     viewMode: 1,
@@ -113,21 +106,28 @@
         reader.readAsDataURL(file);
     });
 
-    aspectSelect.addEventListener("change", function () {
-        if (!cropper) return;
-        const val = aspectSelect.value;
-        let ratio;
+    aspectButtons.forEach(btn => {
+        btn.addEventListener("click", () => {
+            if (!cropper) return;
 
-        try {
-            ratio = val.includes('/') ? (parseFloat(val.split('/')[0]) / parseFloat(val.split('/')[1])) : parseFloat(val);
-        } catch (e) {
-            ratio = NaN;
-        }
+            const val = btn.dataset.size;
+            console.log("Aspect ratio button clicked:", val); // Debug log
+            let ratio = NaN;
 
-        cropper.setAspectRatio(isNaN(ratio) ? NaN : ratio);
+            if (val === "free") {
+                ratio = NaN;
+            } else if (val.includes(":")) {
+                const parts = val.split(":");
+                ratio = parseFloat(parts[0]) / parseFloat(parts[1]);
+            } else {
+                ratio = parseFloat(val);
+            }
+
+            cropper.setAspectRatio(isNaN(ratio) ? NaN : ratio);
+        });
     });
 
-    cropButton.addEventListener("click", function () {
+    cropButton.addEventListener("click", function() {
         if (!cropper) return;
 
         const canvas = cropper.getCroppedCanvas({
@@ -136,7 +136,16 @@
             imageSmoothingQuality: 'high'
         });
 
-        canvas.toBlob(function (blob) {
+        if (!canvas) {
+            console.error("Failed to get cropped canvas"); // Debug log
+            return;
+        }
+
+        canvas.toBlob(function(blob) {
+            if (!blob) {
+                console.error("Failed to create blob from canvas"); // Debug log
+                return;
+            }
             const link = document.createElement("a");
             link.href = URL.createObjectURL(blob);
             link.download = "cropped_image.png";
