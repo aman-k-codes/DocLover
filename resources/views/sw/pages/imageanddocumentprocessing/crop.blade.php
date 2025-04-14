@@ -42,16 +42,26 @@
             <button data-size="3:2" class="aspect-btn w-full bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-md">3:2</button>
             <button data-size="2:3" class="aspect-btn w-full bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-md">2:3</button>
             <button data-size="21:9" class="aspect-btn w-full bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-md">21:9</button>
+
+            {{-- Custom Sizes --}}
+            <h4 class="text-md font-semibold pt-4 border-t border-gray-200">Custom Sizes</h4>
+            <button data-px="413x531" class="px-btn w-full bg-indigo-100 hover:bg-indigo-200 px-4 py-2 rounded-md">Passport Size (413x531)</button>
+            <button data-px="826x1062" class="px-btn w-full bg-indigo-100 hover:bg-indigo-200 px-4 py-2 rounded-md">Aadhar Card (826x1062)</button>
+            <button data-px="1010x630" class="px-btn w-full bg-indigo-100 hover:bg-indigo-200 px-4 py-2 rounded-md">PAN Card (1010x630)</button>
+            <button data-px="150x150" class="px-btn w-full bg-indigo-100 hover:bg-indigo-200 px-4 py-2 rounded-md">Thumbnail (150x150)</button>
         </div>
 
         <div class="md:w-3/4">
             <div class="overflow-hidden border rounded-lg w-full max-h-[500px]">
                 <img id="imagePreview" class="mx-auto max-w-full h-auto" />
             </div>
-            <button id="cropButton" class="mt-6 bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-lg shadow transition-all">
-                Crop & Download
-            </button>
+            <div class="mt-6 flex justify-center">
+                <button id="cropButton" class="bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-lg shadow transition-all">
+                    Crop & Download
+                </button>
+            </div>
         </div>
+
     </div>
 </section>
 
@@ -72,10 +82,8 @@
     </div>
 </section>
 
-<!-- Updated (working) -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css" rel="stylesheet" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
-
 
 <script>
     let cropper;
@@ -84,6 +92,7 @@
     const cropperContainer = document.getElementById("cropperContainer");
     const cropButton = document.getElementById("cropButton");
     const aspectButtons = document.querySelectorAll(".aspect-btn");
+    const pxButtons = document.querySelectorAll(".px-btn");
 
     imageInput.addEventListener("change", function(event) {
         const file = event.target.files[0];
@@ -91,7 +100,6 @@
 
         const reader = new FileReader();
         reader.onload = function(e) {
-            console.log("Image loaded:", e.target.result); // Debug log
             cropperContainer.classList.remove("hidden");
             imagePreview.src = e.target.result;
 
@@ -113,7 +121,6 @@
             if (!cropper) return;
 
             const val = btn.dataset.size;
-            console.log("Aspect ratio button clicked:", val); // Debug log
             let ratio = NaN;
 
             if (val === "free") {
@@ -129,6 +136,18 @@
         });
     });
 
+    pxButtons.forEach(btn => {
+        btn.addEventListener("click", () => {
+            if (!cropper) return;
+
+            const px = btn.dataset.px.split("x");
+            const width = parseInt(px[0]);
+            const height = parseInt(px[1]);
+
+            cropper.setAspectRatio(width / height);
+        });
+    });
+
     cropButton.addEventListener("click", function() {
         if (!cropper) return;
 
@@ -138,16 +157,11 @@
             imageSmoothingQuality: 'high'
         });
 
-        if (!canvas) {
-            console.error("Failed to get cropped canvas"); // Debug log
-            return;
-        }
+        if (!canvas) return;
 
         canvas.toBlob(function(blob) {
-            if (!blob) {
-                console.error("Failed to create blob from canvas"); // Debug log
-                return;
-            }
+            if (!blob) return;
+
             const link = document.createElement("a");
             link.href = URL.createObjectURL(blob);
             link.download = "cropped_image.png";
