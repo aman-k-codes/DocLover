@@ -72,8 +72,10 @@
     </div>
 </section>
 
-<link href="https://unpkg.com/cropperjs/dist/cropper.min.css" rel="stylesheet" />
-<script src="https://unpkg.com/cropperjs/dist/cropper.min.js"></script>
+<!-- Updated (working) -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
+
 
 <script>
     let cropper;
