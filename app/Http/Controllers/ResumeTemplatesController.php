@@ -26,7 +26,7 @@ class ResumeTemplatesController extends Controller
 
     public function downloadResume()
     {
-        $html = view('resumemaker.templates.ats.ats(1)')->render();
+        $html = view('resumemaker.templates.google-docs.gd(18)png')->render();
 
         $pdf = Pdf::loadHTML($html)
             ->setPaper('A4', 'portrait')
