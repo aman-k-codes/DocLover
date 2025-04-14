@@ -48,7 +48,7 @@
                                 <li><i class="fas fa-crop-alt text-yellow-700 mr-2"></i><a href="{{ route('crop') }}"><span>Crop</span></a></li>
                                 {{-- <li><i class="fas fa-th-large text-pink-600 mr-2"></i><a href="{{ route('collage') }}"><span>Collage</span></a></li> --}}
                                 {{-- <li><i class="fas fa-expand-arrows-alt text-green-700 mr-2"></i><a href="{{ route('resize') }}"><span>Resize</span></a></li> --}}
-                                <li><i class="fas fa-id-card text-purple-600 mr-2"></i><a href="{{ route('passport-size-photo') }}"><span>Passport-size Photo</span></a></li>
+                                {{-- <li><i class="fas fa-id-card text-purple-600 mr-2"></i><a href="{{ route('passport-size-photo') }}"><span>Passport-size Photo</span></a></li> --}}
                                 <li><i class="fas fa-magic text-indigo-600 mr-2"></i><a href="{{ route('photo-clarity-enhancement') }}"><span>Photo Clarity Enhancement</span></a></li>
                                 <li><i class="fas fa-image text-orange-600 mr-2"></i><a href="{{ route('background-change') }}"><span>Background Change</span></a></li>
                                 <li><i class="fas fa-file-alt text-blue-500 mr-2"></i><a href="{{ route('resume-maker') }}"><span>Resume Maker</span></a></li>

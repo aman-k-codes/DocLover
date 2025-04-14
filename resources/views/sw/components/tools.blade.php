@@ -145,7 +145,7 @@
                 <li class="flex items-center space-x-2"><i class="fas fa-crop text-orange-500"></i><a href="{{ route('crop') }}"><span>Crop</span></a></li>
                 {{-- <li class="flex items-center space-x-2"><i class="fas fa-th text-pink-500"></i><a href="{{ route('collage') }}"><span>Collage</span></a></li> --}}
                 {{-- <li class="flex items-center space-x-2"><i class="fas fa-expand-arrows-alt text-blue-600"></i><a href="{{ route('resize') }}"><span>Resize</span></a></li> --}}
-                <li class="flex items-center space-x-2"><i class="fas fa-id-card text-green-600"></i><a href="{{ route('passport-size-photo') }}"><span>Passport-size Photo</span></a></li>
+                {{-- <li class="flex items-center space-x-2"><i class="fas fa-id-card text-green-600"></i><a href="{{ route('passport-size-photo') }}"><span>Passport-size Photo</span></a></li> --}}
                 <li class="flex items-center space-x-2"><i class="fas fa-magic text-purple-500"></i><a href="{{ route('photo-clarity-enhancement') }}"><span>Photo Clarity Enhancement</span></a></li>
                 <li class="flex items-center space-x-2"><i class="fas fa-image text-indigo-600"></i><a href="{{ route('background-change') }}"><span>Background Change</span></a></li>
                 <li class="flex items-center space-x-2"><i class="fas fa-file-alt text-gray-600"></i><a href="{{ route('resume-maker') }}"><span>Resume Maker</span></a></li>

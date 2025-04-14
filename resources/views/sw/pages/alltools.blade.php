@@ -103,13 +103,13 @@
                                     <span class="font-bold">Resize</span>
                                 </a>
                             </li> --}}
-                            <li
+                            {{-- <li
                                 class="cursor-pointer py-2 px-4 bg-gray-100 rounded-lg shadow-md flex items-center space-x-2">
                                 <i class="fas fa-id-card text-green-600"></i>
                                 <a href="{{ route('passport-size-photo') }}">
                                     <span class="font-bold">Passport-size Photo</span>
                                 </a>
-                            </li>
+                            </li> --}}
                             <li
                                 class="cursor-pointer py-2 px-4 bg-gray-100 rounded-lg shadow-md flex items-center space-x-2">
                                 <i class="fas fa-magic text-purple-500"></i>
