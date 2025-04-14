@@ -89,7 +89,7 @@
                                     <span class="font-bold">Crop</span>
                                 </a>
                             </li>
-                            <li
+                            {{-- <li
                                 class="cursor-pointer py-2 px-4 bg-gray-100 rounded-lg shadow-md flex items-center space-x-2">
                                 <i class="fas fa-th text-pink-500"></i>
                                 <a href="{{ route('collage') }}">
@@ -102,7 +102,7 @@
                                 <a href="{{ route('resize') }}">
                                     <span class="font-bold">Resize</span>
                                 </a>
-                            </li>
+                            </li> --}}
                             <li
                                 class="cursor-pointer py-2 px-4 bg-gray-100 rounded-lg shadow-md flex items-center space-x-2">
                                 <i class="fas fa-id-card text-green-600"></i>

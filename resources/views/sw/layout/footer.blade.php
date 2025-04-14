@@ -108,7 +108,7 @@
 
     <!-- Bottom Note -->
     <div class="text-center py-4 text-xs text-gray-500 border-t">
-        © 2025 DocLover — Handcrafted with ❤️ by <span class="font-medium">Your Name</span>
+        © 2025 DocLover — Handcrafted with ❤️ by <span class="font-medium">Nilesh</span>
     </div>
 </footer>
 

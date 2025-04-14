@@ -2,9 +2,9 @@
 
 @section('title', 'About Us - DocLover')
 
-@section('meta_description', 'Learn about DocLover, owned by Aman Sahu and developed by Aman Kumar. Discover powerful tools for resumes, document editing, image conversion, and more — all in one place.')
+@section('meta_description', 'Learn about DocLover, owned by Nilesh Navrange and developed by Aman Sahu. Discover powerful tools for resumes, document editing, image conversion, and more — all in one place.')
 
-@section('meta_keywords', 'DocLover, Aman Sahu, Aman Kumar, Resume Builder, PDF Tools, Image Converter, Online Document Editor, All-in-One Software')
+@section('meta_keywords', 'DocLover, Nilesh Navrange, Aman Sahu, Resume Builder, PDF Tools, Image Converter, Online Document Editor, All-in-One Software')
 
 @section('content')
 <section class="bg-white py-24 px-6">
@@ -22,7 +22,7 @@
         <div class="bg-gray-50 rounded-2xl shadow p-8">
             <div class="flex items-center gap-4 mb-4">
                 <i class="fas fa-user-tie text-3xl text-blue-500"></i>
-                <h2 class="text-2xl font-semibold text-gray-800">Aman Sahu</h2>
+                <h2 class="text-2xl font-semibold text-gray-800">Nilesh Navrange</h2>
             </div>
             <p class="text-gray-600">
                 As the owner of DocLover, I’m passionate about providing a free, powerful, and distraction-free platform for digital productivity. Everyone deserves access to essential tools without barriers.
@@ -33,7 +33,7 @@
         <div class="bg-gray-50 rounded-2xl shadow p-8">
             <div class="flex items-center gap-4 mb-4">
                 <i class="fas fa-code text-3xl text-green-500"></i>
-                <h2 class="text-2xl font-semibold text-gray-800">Aman Kumar</h2>
+                <h2 class="text-2xl font-semibold text-gray-800">Aman Sahu</h2>
             </div>
             <p class="text-gray-600">
                 I'm the developer behind DocLover. From smooth user experience to clean, responsive code — I’ve ensured this platform is fast, intuitive, and built to solve real-world file handling problems.
