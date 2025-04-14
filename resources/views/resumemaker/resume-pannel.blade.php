@@ -138,64 +138,88 @@
 
 
                 <!-- Work Experience -->
-                <section class="mb-12 bg-white p-6 rounded-xl shadow-sm border">
-                    <h3 class="text-2xl font-semibold text-gray-800 mb-2 flex items-center gap-2">
+                <section class="mb-12 bg-white p-6 rounded-xl shadow-sm border" id="experience">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-2">
                         <i class="fas fa-briefcase text-blue-500"></i> Work Experience
                     </h3>
                     <p class="text-sm text-gray-500 mb-6">
-                        Show your relevant experience (last 10 years). Use bullet points to describe achievements.
+                        Highlight your professional background. Focus on achievements and responsibilities.
                     </p>
-
+                
                     <div id="experienceContainer" class="space-y-6">
-                        <!-- Initial Experience Block -->
-                        <div class="border rounded-lg p-4 bg-gray-50">
-                            <div class="grid grid-cols-2 gap-4 mb-4">
-                                <input type="text" name="company[]" placeholder="Company Name"
-                                    class="form-input w-full" />
-                                <input type="text" name="role[]" placeholder="Job Title" class="form-input w-full" />
-                                <input type="text" name="start_date[]" placeholder="Start Date (e.g. Jan 2020)"
-                                    class="form-input w-full" />
-                                <input type="text" name="end_date[]" placeholder="End Date (e.g. Present)"
-                                    class="form-input w-full" />
+                        <div class="border border-blue-100 rounded-lg p-5 bg-blue-50/10 shadow-sm relative">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                                <div>
+                                    <label class="text-sm font-medium text-gray-700">Company</label>
+                                    <input type="text" name="company[]" placeholder="Company Name" class="form-input mt-1 w-full" />
+                                </div>
+                                <div>
+                                    <label class="text-sm font-medium text-gray-700">Job Title</label>
+                                    <input type="text" name="role[]" placeholder="Job Title" class="form-input mt-1 w-full" />
+                                </div>
+                                <div>
+                                    <label class="text-sm font-medium text-gray-700">Start Date</label>
+                                    <input type="text" name="start_date[]" placeholder="e.g. Jan 2020" class="form-input mt-1 w-full" />
+                                </div>
+                                <div>
+                                    <label class="text-sm font-medium text-gray-700">End Date</label>
+                                    <input type="text" name="end_date[]" placeholder="e.g. Present" class="form-input mt-1 w-full" />
+                                </div>
                             </div>
-                            <textarea name="description[]" rows="3" class="form-textarea w-full"
-                                placeholder="Brief summary of your achievements..."></textarea>
+                            <div>
+                                <label class="text-sm font-medium text-gray-700">Responsibilities / Achievements</label>
+                                <textarea name="description[]" rows="3" placeholder="Describe your role..." class="form-textarea mt-1 w-full"></textarea>
+                            </div>
                         </div>
                     </div>
-
-                    <button type="button" onclick="addExperience()"
-                        class="mt-4 text-blue-600 text-sm font-medium hover:underline">
-                        + Add employment
+                
+                    <button type="button" onclick="addExperience()" class="mt-4 inline-block text-sm text-blue-600 hover:underline">
+                        + Add another job
                     </button>
                 </section>
+                
 
 
                 <!-- Education -->
-                <section class="mb-12 bg-white p-6 rounded-xl shadow-sm border">
-                    <h3 class="text-2xl font-semibold text-gray-800 mb-2 flex items-center gap-2">
+                <section class="mb-12 bg-white p-6 rounded-xl shadow-sm border" id="education">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-2">
                         <i class="fas fa-graduation-cap text-blue-500"></i> Education
                     </h3>
-                    <p class="text-sm text-gray-500 mb-6">
-                        A varied education sums up the value that your background will bring to a job.
-                    </p>
+                    <p class="text-sm text-gray-500 mb-6">List your degrees and academic highlights.</p>
                 
                     <div id="educationContainer" class="space-y-6">
-                        <!-- Initial Education Block -->
-                        <div class="border rounded-lg p-4 bg-gray-50">
-                            <div class="grid grid-cols-2 gap-4 mb-4">
-                                <input type="text" name="institute[]" placeholder="Institute / University" class="form-input w-full" />
-                                <input type="text" name="degree[]" placeholder="Degree / Program" class="form-input w-full" />
-                                <input type="text" name="start_year[]" placeholder="Start Year (e.g. 2018)" class="form-input w-full" />
-                                <input type="text" name="end_year[]" placeholder="End Year (e.g. 2022)" class="form-input w-full" />
+                        <div class="border border-indigo-100 rounded-lg p-5 bg-indigo-50/10 shadow-sm">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                                <div>
+                                    <label class="text-sm font-medium text-gray-700">Institute / University</label>
+                                    <input type="text" name="institute[]" placeholder="e.g. ABC University" class="form-input mt-1 w-full" />
+                                </div>
+                                <div>
+                                    <label class="text-sm font-medium text-gray-700">Degree / Program</label>
+                                    <input type="text" name="degree[]" placeholder="e.g. B.Sc. Computer Science" class="form-input mt-1 w-full" />
+                                </div>
+                                <div>
+                                    <label class="text-sm font-medium text-gray-700">Start Year</label>
+                                    <input type="text" name="start_year[]" placeholder="e.g. 2018" class="form-input mt-1 w-full" />
+                                </div>
+                                <div>
+                                    <label class="text-sm font-medium text-gray-700">End Year</label>
+                                    <input type="text" name="end_year[]" placeholder="e.g. 2022" class="form-input mt-1 w-full" />
+                                </div>
                             </div>
-                            <textarea name="edu_description[]" rows="3" class="form-textarea w-full" placeholder="Describe coursework, honors or activities..."></textarea>
+                            <div>
+                                <label class="text-sm font-medium text-gray-700">Coursework / Highlights</label>
+                                <textarea name="edu_description[]" rows="3" placeholder="Mention honors, GPA, etc." class="form-textarea mt-1 w-full"></textarea>
+                            </div>
                         </div>
                     </div>
                 
-                    <button type="button" onclick="addEducation()" class="mt-4 text-blue-600 text-sm font-medium hover:underline">
-                        + Add education
+                    <button type="button" onclick="addEducation()" class="mt-4 inline-block text-sm text-blue-600 hover:underline">
+                        + Add another degree
                     </button>
                 </section>
+            
+                
                 
 
                 <!-- Skills -->
