@@ -2,10 +2,12 @@
 
 @section('title', 'DocLover - Free Resume Templates')
 
-@section('meta_description', 'Build a standout resume in minutes with DocLover. Choose from modern, professional resume
+@section('meta_description',
+    'Build a standout resume in minutes with DocLover. Choose from modern, professional resume
     templates and download your resume instantly.')
 
-@section('meta_keywords', 'Professional Resume Templates, Resume Builder, CV Maker, Free Resume Download, Online Resume
+@section('meta_keywords',
+    'Professional Resume Templates, Resume Builder, CV Maker, Free Resume Download, Online Resume
     Editor, ATS Friendly Resumes')
 
 @section('content')
@@ -27,8 +29,6 @@
             Create My Resume
         </button>
     </section>
-
-
 
     <!-- Resume Templates -->
     <section id="resumeSection" class="py-20 bg-white">
@@ -72,9 +72,6 @@
 
             <!-- Templates -->
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 border-t pt-5" id="templateContainer">
-
-                
-
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="two-column">
                     <img src="{{ asset('public/assets/temp-imgs/two-column/tclm (1).png') }}" alt="Two-column Template"
@@ -101,7 +98,7 @@
                             Template</button>
                     </div>
                 </div>
-                
+
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="simple">
                     <img src="{{ asset('public/assets/temp-imgs/simple/smpl (1).jpg') }}" alt="Simple Template"
@@ -115,7 +112,7 @@
                             Template</button>
                     </div>
                 </div>
-                
+
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="google-docs">
                     <img src="{{ asset('public/assets/temp-imgs/google-docs/gd (2).png') }}" alt="Google Docs Template"
@@ -235,7 +232,7 @@
                             Template</button>
                     </div>
                 </div>
-                
+
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="ats">
                     <img src="{{ asset('public/assets/temp-imgs/ats/ats (2).jpg') }}" alt="ATS Template"
@@ -301,7 +298,7 @@
                             Template</button>
                     </div>
                 </div>
-                
+
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="google-docs">
                     <img src="{{ asset('public/assets/temp-imgs/google-docs/gd (5).png') }}" alt="Google Docs Template"
@@ -532,7 +529,7 @@
                             Template</button>
                     </div>
                 </div>
-                
+
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="two-column">
                     <img src="{{ asset('public/assets/temp-imgs/two-column/tclm (22).png') }}" alt="Two-column Template"
@@ -743,7 +740,7 @@
                             Template</button>
                     </div>
                 </div>
-                
+
 
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="ats">
@@ -838,7 +835,7 @@
                             Template</button>
                     </div>
                 </div>
-                
+
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="ats">
                     <img src="{{ asset('public/assets/temp-imgs/ats/ats (12).png') }}" alt="ATS Template"
@@ -865,7 +862,7 @@
                             Template</button>
                     </div>
                 </div>
-                
+
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="simple">
                     <img src="{{ asset('public/assets/temp-imgs/simple/smpl (10).png') }}" alt="Simple Template"
@@ -879,7 +876,6 @@
                             Template</button>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -901,6 +897,7 @@
         }
     </script>
 @endsection
+
 @section('script')
     <script>
         document.querySelectorAll('.category-btn').forEach(button => {

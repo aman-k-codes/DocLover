@@ -9,19 +9,22 @@ class ResumeTemplatesController extends Controller
 {
     public function index(Request $request, $id)
     {
-        $url = base64_decode($id);
-        $cleanUrl = trim($url, '.');
-        $path = parse_url($cleanUrl, PHP_URL_PATH);
-        $parts = explode('/', $path);
-        $lastFolder = $parts[count($parts) - 2];
-        $fileName = trim(preg_replace('/\s+/', '', end($parts)), '.');
+        // $url = base64_decode($id);
+        // $cleanUrl = trim($url, '.');
+        // $path = parse_url($cleanUrl, PHP_URL_PATH);
+        // $parts = explode('/', $path);
+        // $lastFolder = $parts[count($parts) - 2];
+        // $fileName = trim(preg_replace('/\s+/', '', end($parts)), '.');
 
-        return $this->downloadResume();
+        // return $this->downloadResume();
+
         // if ($lastFolder == 'two-column') {
         //     if ($fileName == 'tclm(1).jpg') {
         //         return $this->downloadResume();
         //     }
         // }
+
+        return view('resumemaker.resume-pannel');
     }
 
     public function downloadResume()
@@ -36,5 +39,10 @@ class ResumeTemplatesController extends Controller
             ->setOption('margin-right', 0);
 
         return $pdf->download('doclover.pdf');
+    }
+
+    public function preview()
+    {
+        return view('resumemaker.templates.ats.ats(12)png');
     }
 }
