@@ -2,7 +2,7 @@
     <div class="max-w-9xl mx-auto px-4 sm:px-6 py-2 flex justify-between items-center">
         <!-- Logo & Tools -->
         <div class="flex items-center space-x-4">
-            <h1 class="text-xl sm:text-2xl font-extrabold text-blue-600"><a href="{{url('/')}}">DocLover</a></h1>
+            <h1 class="text-xl sm:text-2xl font-extrabold text-blue-600"><a href="{{ url('/') }}">DocLover</a></h1>
 
             <!-- Tools Dropdown -->
             <div class="relative hidden sm:block">
@@ -24,20 +24,29 @@
                         <div>
                             <h3 class="font-semibold mb-3 text-gray-600">File Conversions</h3>
                             <ul class="space-y-2">
-                                <li><i class="fas fa-file-archive text-blue-600 mr-2"></i><a href="{{ route('pdf-to-zip') }}"><span>PDF to ZIP</span></a></li>
-                                <li><i class="fas fa-file-word text-indigo-600 mr-2"></i><a href="{{ route('pdf-to-doc') }}"><span>PDF to DOC</span></a></li>
-                                <li><i class="fas fa-image text-yellow-600 mr-2"></i><a href="{{ route('pdf-to-jpg') }}"><span>PDF to JPG</span></a></li>
-                                <li><i class="fas fa-code text-green-600 mr-2"></i><a href="{{ route('pdf-to-html') }}"><span>PDF to HTML</span></a></li>
-                                <li><i class="fas fa-file-excel text-green-700 mr-2"></i><a href="{{ route('pdf-to-xl') }}"><span>PDF to XL</span></a></li>
+                                <li><i class="fas fa-file-archive text-blue-600 mr-2"></i><a
+                                        href="{{ route('pdf-to-zip') }}"><span>PDF to ZIP</span></a></li>
+                                <li><i class="fas fa-file-word text-indigo-600 mr-2"></i><a
+                                        href="{{ route('pdf-to-doc') }}"><span>PDF to DOC</span></a></li>
+                                <li><i class="fas fa-image text-yellow-600 mr-2"></i><a
+                                        href="{{ route('pdf-to-jpg') }}"><span>PDF to JPG</span></a></li>
+                                <li><i class="fas fa-code text-green-600 mr-2"></i><a
+                                        href="{{ route('pdf-to-html') }}"><span>PDF to HTML</span></a></li>
+                                <li><i class="fas fa-file-excel text-green-700 mr-2"></i><a
+                                        href="{{ route('pdf-to-xl') }}"><span>PDF to XL</span></a></li>
                             </ul>
                         </div>
                         <div>
                             <h3 class="font-semibold mb-3 text-gray-600">Image Conversions</h3>
                             <ul class="space-y-2">
-                                <li><i class="fas fa-file-image text-pink-600 mr-2"></i><a href="{{ route('jpg-to-png') }}"><span>JPG to PNG</span></a></li>
-                                <li><i class="fas fa-image text-purple-600 mr-2"></i><a href="{{ route('png-to-jpg') }}"><span>PNG to JPG</span></a></li>
-                                <li><i class="fas fa-file-word text-blue-600 mr-2"></i><a href="{{ route('jpg-to-doc') }}"><span>JPG to DOC</span></a></li>
-                                <li><i class="fas fa-file-excel text-green-600 mr-2"></i><a href="{{ route('jpg-to-xl') }}"><span>JPG to XL</span></a></li>
+                                <li><i class="fas fa-file-image text-pink-600 mr-2"></i><a
+                                        href="{{ route('jpg-to-png') }}"><span>JPG to PNG</span></a></li>
+                                <li><i class="fas fa-image text-purple-600 mr-2"></i><a
+                                        href="{{ route('png-to-jpg') }}"><span>PNG to JPG</span></a></li>
+                                <li><i class="fas fa-file-word text-blue-600 mr-2"></i><a
+                                        href="{{ route('jpg-to-doc') }}"><span>JPG to DOC</span></a></li>
+                                <li><i class="fas fa-file-excel text-green-600 mr-2"></i><a
+                                        href="{{ route('jpg-to-xl') }}"><span>JPG to XL</span></a></li>
                             </ul>
                         </div>
 
@@ -45,16 +54,26 @@
                         <div>
                             <h3 class="font-semibold mb-3 text-gray-600">Image & Document Processing</h3>
                             <ul class="space-y-2">
-                                <li><i class="fas fa-crop-alt text-yellow-700 mr-2"></i><a href="{{ route('crop') }}"><span>Crop</span></a></li>
+                                <li><i class="fas fa-crop-alt text-yellow-700 mr-2"></i><a
+                                        href="{{ route('crop') }}"><span>Crop</span></a></li>
                                 {{-- <li><i class="fas fa-th-large text-pink-600 mr-2"></i><a href="{{ route('collage') }}"><span>Collage</span></a></li> --}}
                                 {{-- <li><i class="fas fa-expand-arrows-alt text-green-700 mr-2"></i><a href="{{ route('resize') }}"><span>Resize</span></a></li> --}}
                                 {{-- <li><i class="fas fa-id-card text-purple-600 mr-2"></i><a href="{{ route('passport-size-photo') }}"><span>Passport-size Photo</span></a></li> --}}
-                                <li><i class="fas fa-magic text-indigo-600 mr-2"></i><a href="{{ route('photo-clarity-enhancement') }}"><span>Photo Clarity Enhancement</span></a></li>
-                                <li><i class="fas fa-image text-orange-600 mr-2"></i><a href="{{ route('background-change') }}"><span>Background Change</span></a></li>
-                                <li><i class="fas fa-file-alt text-blue-500 mr-2"></i><a href="{{ route('resume-maker') }}"><span>Resume Maker</span></a></li>
-                                <li><i class="fas fa-compress-alt text-red-600 mr-2"></i><a href="{{ route('photo-size-compression') }}"><span>Photo Size Compression</span></a></li>
-                                <li><i class="fas fa-file-signature text-teal-600 mr-2"></i><a href="{{ route('image-to-text-conversion') }}"><span>Image to Text Conversion</span></a></li>
-                                <li><i class="fas fa-signature text-pink-700 mr-2"></i><a href="{{ route('sign-picker') }}"><span>Sign Picker</span></a></li>
+                                <li><i class="fas fa-magic text-indigo-600 mr-2"></i><a
+                                        href="{{ route('photo-clarity-enhancement') }}"><span>Photo Clarity
+                                            Enhancement</span></a></li>
+                                <li><i class="fas fa-image text-orange-600 mr-2"></i><a
+                                        href="{{ route('background-change') }}"><span>Background Change</span></a></li>
+                                <li><i class="fas fa-file-alt text-blue-500 mr-2"></i><a
+                                        href="{{ route('resume-maker') }}"><span>Resume Maker</span></a></li>
+                                <li><i class="fas fa-compress-alt text-red-600 mr-2"></i><a
+                                        href="{{ route('photo-size-compression') }}"><span>Photo Size
+                                            Compression</span></a></li>
+                                <li><i class="fas fa-file-signature text-teal-600 mr-2"></i><a
+                                        href="{{ route('image-to-text-conversion') }}"><span>Image to Text
+                                            Conversion</span></a></li>
+                                <li><i class="fas fa-signature text-pink-700 mr-2"></i><a
+                                        href="{{ route('sign-picker') }}"><span>Sign Picker</span></a></li>
                             </ul>
                         </div>
 
@@ -145,10 +164,10 @@
 
         <!-- Nav links -->
         <nav class="hidden sm:flex items-center space-x-4 text-sm ">
-            <a href="#" class="hover:text-yellow-600 transition">Compress</a>
-            <a href="#" class="hover:text-yellow-600 transition">Convert</a>
-            <a href="#" class="hover:text-yellow-600 transition">Edit</a>
-            <a href="#" class="hover:text-yellow-600 transition">Pricing</a>
+            <a href="{{ route('home.index') }}" class="hover:text-yellow-600 transition">Home</a>
+            <a href="{{ route('home.AllTools') }}" class="hover:text-yellow-600 transition">All Tools</a>
+            {{-- <a href="#" class="hover:text-yellow-600 transition">Edit</a>
+            <a href="#" class="hover:text-yellow-600 transition">Pricing</a> --}}
             <a href="{{ route('resume.index') }}"
                 class="bg-blue-600 text-white px-4 py-1.5 rounded hover:bg-blue-700 transition whitespace-nowrap">Make
                 Resume</a>
@@ -157,11 +176,11 @@
 
     <!-- Mobile Menu -->
     <div id="mobileMenu" class="sm:hidden hidden px-6 pb-4 space-y-3 text-sm ">
-        <a href="#" class="block hover:text-yellow-600 transition">Compress</a>
-        <a href="#" class="block hover:text-yellow-600 transition">Convert</a>
-        <a href="#" class="block hover:text-yellow-600 transition">Edit</a>
-        <a href="#" class="block hover:text-yellow-600 transition">Pricing</a>
-        <a href="{{route('resume.index')}}"
+        <a href="{{ route('home.index') }}" class="block hover:text-yellow-600 transition">Home</a>
+        <a href="{{ route('home.AllTools') }}" class="block hover:text-yellow-600 transition">All Tools</a>
+        {{-- <a href="#" class="block hover:text-yellow-600 transition">Edit</a>
+        <a href="#" class="block hover:text-yellow-600 transition">Pricing</a> --}}
+        <a href="{{ route('resume.index') }}"
             class="block bg-blue-600 text-white px-4 py-1.5 rounded hover:bg-blue-700 transition text-center">Make
             Resume</a>
     </div>
@@ -172,13 +191,13 @@
             const button = document.getElementById(buttonId);
             const menu = document.getElementById(menuId);
 
-            button.addEventListener('click', function (event) {
+            button.addEventListener('click', function(event) {
                 event.stopPropagation(); // Prevents event from bubbling to `document`
                 menu.classList.toggle('hidden');
             });
 
             // Click outside to hide menu
-            document.addEventListener('click', function (event) {
+            document.addEventListener('click', function(event) {
                 if (!menu.contains(event.target) && !button.contains(event.target)) {
                     menu.classList.add('hidden');
                 }
