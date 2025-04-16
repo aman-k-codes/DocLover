@@ -121,7 +121,7 @@
                                 class="cursor-pointer py-2 px-4 bg-gray-100 rounded-lg shadow-md flex items-center space-x-2">
                                 <i class="fas fa-image text-indigo-600"></i>
                                 <a href="{{ route('background-change') }}">
-                                    <span class="font-bold">Background Change</span>
+                                    <span class="font-bold">Background Remover</span>
                                 </a>
                             </li>
                             <li

@@ -17,7 +17,7 @@
 
     Photo clarity enhancement
 
-    Background change
+    Background Remover
 
     Resume maker
 
@@ -100,7 +100,7 @@ Collage - Pending
 Resize - Pending
 Passport-size Photo - Pending
 Photo Clarity Enhancement - Pending
-Background Change - Pending
+Background Remover - Pending
 Resume Maker - Pending
 Photo Size Compression - Done
 Image to Text Conversion - Done

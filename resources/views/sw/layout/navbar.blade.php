@@ -63,7 +63,7 @@
                                         href="{{ route('photo-clarity-enhancement') }}"><span>Photo Clarity
                                             Enhancement</span></a></li>
                                 <li><i class="fas fa-image text-orange-600 mr-2"></i><a
-                                        href="{{ route('background-change') }}"><span>Background Change</span></a></li>
+                                        href="{{ route('background-change') }}"><span>Background Remover</span></a></li>
                                 <li><i class="fas fa-file-alt text-blue-500 mr-2"></i><a
                                         href="{{ route('resume-maker') }}"><span>Resume Maker</span></a></li>
                                 <li><i class="fas fa-compress-alt text-red-600 mr-2"></i><a
@@ -107,7 +107,7 @@
                                 <li><i class="fas fa-expand-arrows-alt text-green-700 mr-2"></i><a href="{{ route('resize') }}"><span>Resize</span></a></li>
                                 <li><i class="fas fa-id-card text-purple-600 mr-2"></i><a href="{{ route('passport-size-photo') }}"><span>Passport-size Photo</span></a></li>
                                 <li><i class="fas fa-magic text-indigo-600 mr-2"></i><a href="{{ route('photo-clarity-enhancement') }}"><span>Photo Clarity Enhancement</span></a></li>
-                                <li><i class="fas fa-image text-orange-600 mr-2"></i><a href="{{ route('background-change') }}"><span>Background Change</span></a></li>
+                                <li><i class="fas fa-image text-orange-600 mr-2"></i><a href="{{ route('background-change') }}"><span>Background Remover</span></a></li>
                                 <li><i class="fas fa-file-alt text-blue-500 mr-2"></i><a href="{{ route('resume-maker') }}"><span>Resume Maker</span></a></li>
                                 <li><i class="fas fa-compress-alt text-red-600 mr-2"></i><a href="{{ route('photo-size-compression') }}"><span>Photo Size Compression</span></a></li>
                                 <li><i class="fas fa-file-signature text-teal-600 mr-2"></i><a href="{{ route('image-to-text-conversion') }}"><span>Image to Text Conversion</span></a></li>
