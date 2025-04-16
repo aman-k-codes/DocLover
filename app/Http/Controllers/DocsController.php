@@ -77,6 +77,35 @@ class DocsController extends Controller
     }
 
 
+    // public function removeBG(Request $request)
+    // {
+    //     $request->validate([
+    //         'image' => 'required|image|mimes:jpeg,jpg,png|max:25600', // 25MB max
+    //     ]);
+
+    //     $image = $request->file('image');
+    //     $apiKey = env('REMOVE_BG_API_KEY');
+
+
+    //     $response = Http::withHeaders([
+    //         'X-Api-Key' => $apiKey,
+    //     ])->attach(
+    //             'image_file',
+    //             file_get_contents($image),
+    //             $image->getClientOriginalName()
+    //         )->post('https://api.remove.bg/v1.0/removebg');
+
+    //     if ($response->successful()) {
+    //         return response($response->body(), 200)
+    //             ->header('Content-Type', 'image/png');
+    //     } else {
+    //         return response()->json([
+    //             'error' => 'Failed to remove background.',
+    //             'details' => $response->json(),
+    //         ], $response->status());
+    //     }
+    // }
+
     public function removeBG(Request $request)
     {
         $request->validate([
@@ -84,16 +113,12 @@ class DocsController extends Controller
         ]);
 
         $image = $request->file('image');
-        $apiKey = env('REMOVE_BG_API_KEY');
 
-
-        $response = Http::withHeaders([
-            'X-Api-Key' => $apiKey,
-        ])->attach(
-                'image_file',
-                file_get_contents($image),
-                $image->getClientOriginalName()
-            )->post('https://api.remove.bg/v1.0/removebg');
+        $response = Http::attach(
+            'file',
+            file_get_contents($image),
+            $image->getClientOriginalName()
+        )->post('https://nileshnavrang--as-rmv-bg.hf.space/remove-background/');
 
         if ($response->successful()) {
             return response($response->body(), 200)
@@ -105,6 +130,7 @@ class DocsController extends Controller
             ], $response->status());
         }
     }
+
 
 
 
