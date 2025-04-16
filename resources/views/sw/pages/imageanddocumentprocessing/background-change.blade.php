@@ -2,8 +2,10 @@
 
 @section('title', 'DocLover - Remove Image Background')
 
-@section('meta_description', 'Remove the background from any image instantly with DocLover. Free, fast, and easy to use.')
-@section('meta_keywords', 'Image background remover, remove background, transparent background, JPG PNG background remover')
+@section('meta_description', 'Remove the background from any image instantly with DocLover. Free, fast, and easy to
+    use.')
+@section('meta_keywords', 'Image background remover, remove background, transparent background, JPG PNG background
+    remover')
 
 @section('content')
     <section class="pt-12 px-4 bg-gray-50">
@@ -31,15 +33,14 @@
 
         {{-- Upload Section --}}
         <div id="uploadSection"
-            class="border-2 border-dashed border-gray-300 rounded-2xl p-10 max-w-4xl mx-auto text-center bg-white shadow-md">
-            <p class="text-gray-500 mb-4">The tool may take a few seconds to load. Please wait...</p>
-
-            <div class="relative w-full" style="padding-top: 56.25%;">
+            class="border-2 border-dashed border-gray-300 rounded-2xl p-6 md:p-10 max-w-4xl mx-auto bg-white shadow-md min-h-screen flex flex-col justify-center">
+            <div class="relative w-full h-[140vh] sm:h-[70vh] md:h-[80vh]">
                 <iframe src="https://nileshnavrang-amansahu-bg-remove.hf.space" frameborder="0"
-                    class="absolute top-0 left-0 w-full h-full rounded-xl shadow-lg"
-                    allowfullscreen></iframe>
+                    class="absolute top-0 left-0 w-full h-full rounded-xl shadow-lg" allowfullscreen>
+                </iframe>
             </div>
         </div>
+
     </section>
 
     {{-- CTA Footer --}}
