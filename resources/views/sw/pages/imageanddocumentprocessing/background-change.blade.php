@@ -94,6 +94,50 @@
             }
         }
 
+        // async function removeBackground() {
+        //     const fileInput = document.getElementById('imageInput');
+        //     const removeBtn = document.getElementById("removeBgBtn");
+
+        //     if (fileInput.files.length === 0) {
+        //         alert("Please upload an image file first.");
+        //         return;
+        //     }
+
+        //     const file = fileInput.files[0];
+        //     const formData = new FormData();
+        //     formData.append('image', file);
+
+        //     removeBtn.disabled = true;
+        //     removeBtn.innerText = "Processing...";
+
+        //     try {
+        //         const response = await fetch("{{ route('background.remove') }}", {
+        //             method: "POST",
+        //             headers: {
+        //                 'X-CSRF-TOKEN': '{{ csrf_token() }}'
+        //             },
+        //             body: formData
+        //         });
+
+        //         if (!response.ok) throw new Error("Failed to process image.");
+
+        //         const blob = await response.blob();
+        //         transparentImageUrl = URL.createObjectURL(blob);
+
+        //         document.getElementById("uploadSection").classList.add("hidden");
+        //         document.getElementById("imagePreviewContainer").classList.add("hidden");
+        //         document.getElementById("downloadSection").classList.remove("hidden");
+        //         removeBtn.classList.add("hidden");
+
+        //     } catch (error) {
+        //         alert("Background removal failed. Please try again.");
+        //         console.error("Error:", error);
+        //     } finally {
+        //         removeBtn.disabled = false;
+        //         removeBtn.innerText = "Remove Background";
+        //     }
+        // }
+
         async function removeBackground() {
             const fileInput = document.getElementById('imageInput');
             const removeBtn = document.getElementById("removeBgBtn");
@@ -105,7 +149,7 @@
 
             const file = fileInput.files[0];
             const formData = new FormData();
-            formData.append('image', file);
+            formData.append('image', file); // Laravel expects 'image'
 
             removeBtn.disabled = true;
             removeBtn.innerText = "Processing...";
@@ -122,8 +166,20 @@
                 if (!response.ok) throw new Error("Failed to process image.");
 
                 const blob = await response.blob();
-                transparentImageUrl = URL.createObjectURL(blob);
+                const transparentImageUrl = URL.createObjectURL(blob); // Declare it here
 
+                // Show result image
+                const resultImg = document.getElementById("resultImage");
+                resultImg.src = transparentImageUrl;
+                resultImg.classList.remove("hidden");
+
+                // Show download button
+                const downloadBtn = document.getElementById("downloadBtn");
+                downloadBtn.href = transparentImageUrl;
+                downloadBtn.download = "bg-removed.png";
+                downloadBtn.classList.remove("hidden");
+
+                // Toggle visibility
                 document.getElementById("uploadSection").classList.add("hidden");
                 document.getElementById("imagePreviewContainer").classList.add("hidden");
                 document.getElementById("downloadSection").classList.remove("hidden");
@@ -137,6 +193,7 @@
                 removeBtn.innerText = "Remove Background";
             }
         }
+
 
         function downloadTransparentImage() {
             if (transparentImageUrl) {
