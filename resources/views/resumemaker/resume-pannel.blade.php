@@ -145,7 +145,7 @@
                     <p class="text-sm text-gray-500 mb-6">
                         Highlight your professional background. Focus on achievements and responsibilities.
                     </p>
-                
+
                     <div id="experienceContainer" class="space-y-6">
                         <div class="border border-blue-100 rounded-lg p-5 bg-blue-50/10 shadow-sm relative">
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
@@ -172,12 +172,51 @@
                             </div>
                         </div>
                     </div>
-                
+
                     <button type="button" onclick="addExperience()" class="mt-4 inline-block text-sm text-blue-600 hover:underline">
                         + Add another job
                     </button>
                 </section>
-                
+
+                <script>
+                    function addExperience() {
+                        const container = document.getElementById('experienceContainer');
+                        if (container.children.length >= 5) {
+                            alert('You can only add up to 5 work experience entries.');
+                            return;
+                        }
+
+                        const block = document.createElement('div');
+                        block.className = 'border border-blue-100 rounded-lg p-5 bg-blue-50/10 shadow-sm relative';
+
+                        block.innerHTML = `
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                                <div>
+                                    <label class="text-sm font-medium text-gray-700">Company</label>
+                                    <input type="text" name="company[]" placeholder="Company Name" class="form-input mt-1 w-full" />
+                                </div>
+                                <div>
+                                    <label class="text-sm font-medium text-gray-700">Job Title</label>
+                                    <input type="text" name="role[]" placeholder="Job Title" class="form-input mt-1 w-full" />
+                                </div>
+                                <div>
+                                    <label class="text-sm font-medium text-gray-700">Start Date</label>
+                                    <input type="text" name="start_date[]" placeholder="e.g. Jan 2020" class="form-input mt-1 w-full" />
+                                </div>
+                                <div>
+                                    <label class="text-sm font-medium text-gray-700">End Date</label>
+                                    <input type="text" name="end_date[]" placeholder="e.g. Present" class="form-input mt-1 w-full" />
+                                </div>
+                            </div>
+                            <div>
+                                <label class="text-sm font-medium text-gray-700">Responsibilities / Achievements</label>
+                                <textarea name="description[]" rows="3" placeholder="Describe your role..." class="form-textarea mt-1 w-full"></textarea>
+                            </div>
+                        `;
+
+                        container.appendChild(block);
+                    }
+                    </script>
 
 
                 <!-- Education -->
@@ -186,7 +225,7 @@
                         <i class="fas fa-graduation-cap text-blue-500"></i> Education
                     </h3>
                     <p class="text-sm text-gray-500 mb-6">List your degrees and academic highlights.</p>
-                
+
                     <div id="educationContainer" class="space-y-6">
                         <div class="border border-indigo-100 rounded-lg p-5 bg-indigo-50/10 shadow-sm">
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
@@ -213,21 +252,60 @@
                             </div>
                         </div>
                     </div>
-                
+
                     <button type="button" onclick="addEducation()" class="mt-4 inline-block text-sm text-blue-600 hover:underline">
                         + Add another degree
                     </button>
                 </section>
-            
-                
-                
+                <script>
+                    function addEducation() {
+                        const container = document.getElementById('educationContainer');
+                        if (container.children.length >= 5) {
+                            alert('You can only add up to 5 education entries.');
+                            return;
+                        }
+                        const block = document.createElement('div');
+                        block.className = 'border border-indigo-100 rounded-lg p-5 bg-indigo-50/10 shadow-sm';
+
+                        block.innerHTML = `
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                                <div>
+                                    <label class="text-sm font-medium text-gray-700">Institute / University</label>
+                                    <input type="text" name="institute[]" placeholder="e.g. ABC University" class="form-input mt-1 w-full" />
+                                </div>
+                                <div>
+                                    <label class="text-sm font-medium text-gray-700">Degree / Program</label>
+                                    <input type="text" name="degree[]" placeholder="e.g. B.Sc. Computer Science" class="form-input mt-1 w-full" />
+                                </div>
+                                <div>
+                                    <label class="text-sm font-medium text-gray-700">Start Year</label>
+                                    <input type="text" name="start_year[]" placeholder="e.g. 2018" class="form-input mt-1 w-full" />
+                                </div>
+                                <div>
+                                    <label class="text-sm font-medium text-gray-700">End Year</label>
+                                    <input type="text" name="end_year[]" placeholder="e.g. 2022" class="form-input mt-1 w-full" />
+                                </div>
+                            </div>
+                            <div>
+                                <label class="text-sm font-medium text-gray-700">Coursework / Highlights</label>
+                                <textarea name="edu_description[]" rows="3" placeholder="Mention honors, GPA, etc." class="form-textarea mt-1 w-full"></textarea>
+                            </div>
+                        `;
+
+                        container.appendChild(block);
+                    }
+                    </script>
+
+
+
+
 
                 <!-- Skills -->
                 <section class="mb-12 bg-white p-6 rounded-xl shadow-sm border">
                     <h3 class="text-2xl font-semibold text-gray-800 mb-2 flex items-center gap-2">
                         <i class="fas fa-tools text-blue-500"></i> Skills
                     </h3>
-                
+
                     <div id="skillsContainer" class="flex flex-wrap gap-2 mt-4">
                         @foreach (['Time Management', 'Highly responsible and reliable', 'Adaptability', 'Analytical Thinking', 'Collaboration & Teamwork', 'Good team player', 'Creative Problem Solving'] as $skill)
                             <span class="bg-gray-100 text-sm px-3 py-1 rounded-full text-gray-700 border flex items-center gap-1">
@@ -238,7 +316,7 @@
                             </span>
                         @endforeach
                     </div>
-                
+
                     <div class="mt-4 flex items-center gap-2">
                         <input type="text" id="newSkillInput" placeholder="Enter skill" class="form-input text-sm w-64" />
                         <button type="button" onclick="addSkill()" class="text-sm px-3 py-1 bg-blue-600 text-white rounded hover:bg-blue-700">
@@ -246,18 +324,18 @@
                         </button>
                     </div>
                 </section>
-                
+
 
                 <!-- Courses -->
                 <section class="mb-12 bg-white p-6 rounded-xl shadow-sm border">
                     <h3 class="text-2xl font-semibold text-gray-800 mb-2 flex items-center gap-2">
                         <i class="fas fa-book-reader text-blue-500"></i> Courses
                     </h3>
-                
+
                     <div id="coursesContainer" class="space-y-3 mt-4">
                         <!-- You can pre-populate here with a loop if needed -->
                     </div>
-                
+
                     <div class="mt-4 flex items-center gap-2">
                         <input type="text" id="newCourseInput" placeholder="Enter course title" class="form-input text-sm w-64" />
                         <button type="button" onclick="addCourse()" class="text-sm px-3 py-1 bg-blue-600 text-white rounded hover:bg-blue-700">
@@ -265,7 +343,7 @@
                         </button>
                     </div>
                 </section>
-                
+
 
                 <!-- Buttons -->
                 <div class="flex justify-end space-x-3 pt-6 border-t mt-6">
@@ -318,49 +396,9 @@
     </script>
 
     <script>
-        function addEducation() {
-            const container = document.getElementById('educationContainer');
-            if (container.children.length >= 5) {
-                alert('You can only add up to 5 education entries.');
-                return;
-            }
-            const block = document.createElement('div');
-            block.className = 'border rounded-lg p-4 bg-gray-50 space-y-4';
 
-            block.innerHTML = `
-                <div class="grid grid-cols-2 gap-4">
-                    <input type="text" name="institute[]" placeholder="Institute / University" class="form-input w-full" />
-                    <input type="text" name="degree[]" placeholder="Degree / Program" class="form-input w-full" />
-                    <input type="text" name="start_year[]" placeholder="Start Year (e.g. 2018)" class="form-input w-full" />
-                    <input type="text" name="end_year[]" placeholder="End Year (e.g. 2022)" class="form-input w-full" />
-                </div>
-                <textarea name="edu_description[]" rows="3" class="form-textarea w-full" placeholder="Describe coursework, honors or activities..."></textarea>
-            `;
 
-            container.appendChild(block);
-        }
 
-        function addExperience() {
-            const container = document.getElementById('experienceContainer');
-            if (container.children.length >= 5) {
-                alert('You can only add up to 5 work experience entries.');
-                return;
-            }
-            const block = document.createElement('div');
-            block.className = 'border rounded-lg p-4 bg-gray-50 space-y-4';
-
-            block.innerHTML = `
-                <div class="grid grid-cols-2 gap-4">
-                    <input type="text" name="company[]" placeholder="Company Name" class="form-input w-full" />
-                    <input type="text" name="role[]" placeholder="Job Title" class="form-input w-full" />
-                    <input type="text" name="start_date[]" placeholder="Start Date (e.g. Jan 2020)" class="form-input w-full" />
-                    <input type="text" name="end_date[]" placeholder="End Date (e.g. Present)" class="form-input w-full" />
-                </div>
-                <textarea name="description[]" rows="3" class="form-textarea w-full" placeholder="Brief summary of your achievements..."></textarea>
-            `;
-
-            container.appendChild(block);
-        }
 
         function addSkill() {
             const input = document.getElementById('newSkillInput');
@@ -401,6 +439,6 @@
             input.value = '';
         }
     </script>
-    
+
 
 @endsection
