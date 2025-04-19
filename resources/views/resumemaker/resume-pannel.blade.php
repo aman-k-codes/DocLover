@@ -73,13 +73,18 @@
                     </h3>
 
                     <div class="flex items-center gap-6 mb-6">
-                        <div class="w-24 h-24 bg-gray-100 border rounded-full flex items-center justify-center shadow-sm">
-                            <i class="fas fa-user text-gray-400 text-3xl"></i>
+                        <div
+                            id="dropZone"
+                            class="w-24 h-24 bg-gray-100 border rounded-full flex items-center justify-center shadow-sm overflow-hidden cursor-pointer"
+                            ondragover="handleDragOver(event)" ondrop="handleDrop(event)">
+                            <img id="photoPreview" src="" alt="Preview" class="w-full h-full object-cover hidden" />
+                            <i id="defaultIcon" class="fas fa-user text-gray-400 text-3xl"></i>
                         </div>
                         <div>
-                            <label class="text-sm font-medium text-blue-600 cursor-pointer hover:underline">
+                            <label for="photoUpload" class="text-sm font-medium text-blue-600 cursor-pointer hover:underline">
                                 Upload Photo
                             </label>
+                            <input type="file" id="photoUpload" name="photo" accept="image/*" class="hidden" onchange="previewPhoto(this)" />
                         </div>
                     </div>
 
@@ -95,206 +100,297 @@
                     </div>
                 </section>
 
+                <script>
+                    function previewPhoto(input) {
+                        const file = input.files[0];
+                        const reader = new FileReader();
+                        const preview = document.getElementById('photoPreview');
+                        const icon = document.getElementById('defaultIcon');
 
-                <!-- Job Preferences -->
-                <section class="mb-12 bg-white p-6 rounded-xl shadow-sm border">
-                    <h3 class="text-2xl font-semibold text-gray-800 mb-2 flex items-center gap-2">
-                        <i class="fas fa-briefcase text-blue-500"></i> Job Preferences
-                    </h3>
-                    <p class="text-sm text-gray-500 mb-6">
-                        Tell us about the job you want. We use this info to recommend the best jobs for you.
-                    </p>
+                        if (file) {
+                            reader.onload = function (e) {
+                                preview.src = e.target.result;
+                                preview.classList.remove('hidden');
+                                icon.classList.add('hidden');
+                            };
+                            reader.readAsDataURL(file);
+                        }
+                    }
 
-                    <!-- Target Roles -->
-                    <div class="mb-6">
-                        <label class="block text-sm font-medium text-gray-700 mb-2">
-                            <i class="fas fa-bullseye mr-1 text-gray-500"></i> Target Roles:
-                        </label>
-                        <div id="targetRolesContainer" class="space-y-2">
-                            <input type="text" name="target_role[]" placeholder="Job Title" class="form-input w-full" />
-                        </div>
-                        <button type="button" onclick="addTargetRole()" class="mt-2 text-sm text-blue-600 hover:underline">
-                            + Add another role
-                        </button>
-                        <p class="text-xs text-gray-500 mt-1">Add up to 5 roles to improve recommendations.</p>
-                    </div>
+                    function handleDragOver(event) {
+                        event.preventDefault(); // Prevent the default behavior to allow drop
+                        const dropZone = document.getElementById('dropZone');
+                        dropZone.classList.add('bg-gray-200'); // Change background on drag over
+                    }
 
-                    <!-- Preferred Locations -->
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">
-                            <i class="fas fa-map-marker-alt mr-1 text-gray-500"></i> Preferred Locations:
-                        </label>
-                        <div id="preferredLocationsContainer" class="space-y-2">
-                            <input type="text" name="preferred_location[]" placeholder="e.g. London"
-                                class="form-input w-full" />
-                        </div>
-                        <button type="button" onclick="addPreferredLocation()"
-                            class="mt-2 text-sm text-blue-600 hover:underline">
-                            + Add another location
-                        </button>
-                        <p class="text-xs text-gray-500 mt-1">You can specify up to 5 preferred locations.</p>
-                    </div>
-                </section>
+                    function handleDrop(event) {
+                        event.preventDefault();
+                        const dropZone = document.getElementById('dropZone');
+                        dropZone.classList.remove('bg-gray-200'); // Reset background
+
+                        const file = event.dataTransfer.files[0];
+                        if (file && file.type.startsWith('image/')) {
+                            const reader = new FileReader();
+                            const preview = document.getElementById('photoPreview');
+                            const icon = document.getElementById('defaultIcon');
+
+                            reader.onload = function (e) {
+                                preview.src = e.target.result;
+                                preview.classList.remove('hidden');
+                                icon.classList.add('hidden');
+                            };
+                            reader.readAsDataURL(file);
+                        }
+                    }
+                </script>
+
+
+
+
+<section class="mb-12 bg-white p-8 rounded-xl shadow-lg border border-gray-200">
+    <h3 class="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-2">
+        <i class="fas fa-briefcase text-blue-500"></i> Job Preferences
+    </h3>
+    <p class="text-sm text-gray-600 mb-6">
+        Tell us about the job you want. We use this info to recommend the best jobs for you.
+    </p>
+
+    <!-- Target Roles -->
+    <div class="mb-6">
+        <label class="block text-sm font-medium text-gray-700 mb-2">
+            <i class="fas fa-bullseye mr-1 text-gray-500"></i> Target Roles:
+        </label>
+        <div id="targetRolesContainer" class="space-y-4">
+            <input type="text" name="target_role[]" placeholder="Job Title" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700" />
+        </div>
+        <button type="button" onclick="addTargetRole()" class="mt-2 text-sm text-blue-600 hover:underline focus:outline-none focus:ring-2 focus:ring-blue-500">
+            + Add another role
+        </button>
+        <p class="text-xs text-gray-500 mt-1">Add up to 5 roles to improve recommendations.</p>
+    </div>
+
+    <!-- Preferred Locations -->
+    <div>
+        <label class="block text-sm font-medium text-gray-700 mb-2">
+            <i class="fas fa-map-marker-alt mr-1 text-gray-500"></i> Preferred Locations:
+        </label>
+        <div id="preferredLocationsContainer" class="space-y-4">
+            <input type="text" name="preferred_location[]" placeholder="e.g. London"
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700" />
+        </div>
+        <button type="button" onclick="addPreferredLocation()" class="mt-2 text-sm text-blue-600 hover:underline focus:outline-none focus:ring-2 focus:ring-blue-500">
+            + Add another location
+        </button>
+        <p class="text-xs text-gray-500 mt-1">You can specify up to 5 preferred locations.</p>
+    </div>
+</section>
+
+<script>
+    function addTargetRole() {
+        const container = document.getElementById('targetRolesContainer');
+        const newInput = document.createElement('input');
+        newInput.type = 'text';
+        newInput.name = 'target_role[]';
+        newInput.placeholder = 'Job Title';
+        newInput.classList.add('w-full', 'px-4', 'py-2', 'border', 'border-gray-300', 'rounded-md', 'focus:outline-none', 'focus:ring-2', 'focus:ring-blue-500', 'text-gray-700', 'mt-2');
+        container.appendChild(newInput);
+    }
+
+    function addPreferredLocation() {
+        const container = document.getElementById('preferredLocationsContainer');
+        const newInput = document.createElement('input');
+        newInput.type = 'text';
+        newInput.name = 'preferred_location[]';
+        newInput.placeholder = 'e.g. London';
+        newInput.classList.add('w-full', 'px-4', 'py-2', 'border', 'border-gray-300', 'rounded-md', 'focus:outline-none', 'focus:ring-2', 'focus:ring-blue-500', 'text-gray-700', 'mt-2');
+        container.appendChild(newInput);
+    }
+</script>
+
 
 
                 <!-- Work Experience -->
-                <section class="mb-12 bg-white p-6 rounded-xl shadow-sm border" id="experience">
-                    <h3 class="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-2">
-                        <i class="fas fa-briefcase text-blue-500"></i> Work Experience
-                    </h3>
-                    <p class="text-sm text-gray-500 mb-6">
-                        Highlight your professional background. Focus on achievements and responsibilities.
-                    </p>
+<section class="mb-12 bg-white p-8 rounded-xl shadow-lg border border-gray-200" id="experience">
+    <h3 class="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-2">
+        <i class="fas fa-briefcase text-blue-500"></i> Work Experience
+    </h3>
+    <p class="text-sm text-gray-600 mb-6">
+        Highlight your professional background. Focus on achievements and responsibilities.
+    </p>
 
-                    <div id="experienceContainer" class="space-y-6">
-                        <div class="border border-blue-100 rounded-lg p-5 bg-blue-50/10 shadow-sm relative">
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                                <div>
-                                    <label class="text-sm font-medium text-gray-700">Company</label>
-                                    <input type="text" name="company[]" placeholder="Company Name" class="form-input mt-1 w-full" />
-                                </div>
-                                <div>
-                                    <label class="text-sm font-medium text-gray-700">Job Title</label>
-                                    <input type="text" name="role[]" placeholder="Job Title" class="form-input mt-1 w-full" />
-                                </div>
-                                <div>
-                                    <label class="text-sm font-medium text-gray-700">Start Date</label>
-                                    <input type="text" name="start_date[]" placeholder="e.g. Jan 2020" class="form-input mt-1 w-full" />
-                                </div>
-                                <div>
-                                    <label class="text-sm font-medium text-gray-700">End Date</label>
-                                    <input type="text" name="end_date[]" placeholder="e.g. Present" class="form-input mt-1 w-full" />
-                                </div>
-                            </div>
-                            <div>
-                                <label class="text-sm font-medium text-gray-700">Responsibilities / Achievements</label>
-                                <textarea name="description[]" rows="3" placeholder="Describe your role..." class="form-textarea mt-1 w-full"></textarea>
-                            </div>
-                        </div>
-                    </div>
+    <div id="experienceContainer" class="space-y-6">
+        <div class="border border-blue-100 rounded-lg p-6 bg-blue-50/10 shadow-sm relative">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
+                <div>
+                    <label class="text-sm font-medium text-gray-700">Company</label>
+                    <input type="text" name="company[]" placeholder="Company Name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700" />
+                </div>
+                <div>
+                    <label class="text-sm font-medium text-gray-700">Job Title</label>
+                    <input type="text" name="role[]" placeholder="Job Title" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700" />
+                </div>
+                <div>
+                    <label class="text-sm font-medium text-gray-700">Start Date</label>
+                    <input type="text" name="start_date[]" placeholder="e.g. Jan 2020" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700" />
+                </div>
+                <div>
+                    <label class="text-sm font-medium text-gray-700">End Date</label>
+                    <input type="text" name="end_date[]" placeholder="e.g. Present" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700" />
+                </div>
+            </div>
+            <div>
+                <label class="text-sm font-medium text-gray-700">Responsibilities / Achievements</label>
+                <textarea name="description[]" rows="3" placeholder="Describe your role..." class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700 mt-2"></textarea>
+            </div>
+        </div>
+    </div>
 
-                    <button type="button" onclick="addExperience()" class="mt-4 inline-block text-sm text-blue-600 hover:underline">
-                        + Add another job
-                    </button>
-                </section>
+    <button type="button" onclick="addExperience()" class="mt-4 inline-block text-sm text-blue-600 hover:underline focus:outline-none focus:ring-2 focus:ring-blue-500">
+        + Add another job
+    </button>
+</section>
 
-                <script>
-                    function addExperience() {
-                        const container = document.getElementById('experienceContainer');
-                        if (container.children.length >= 5) {
-                            alert('You can only add up to 5 work experience entries.');
-                            return;
-                        }
+<script>
+    function addExperience() {
+        const container = document.getElementById('experienceContainer');
+        if (container.children.length >= 5) {
+            alert('You can only add up to 5 work experience entries.');
+            return;
+        }
 
-                        const block = document.createElement('div');
-                        block.className = 'border border-blue-100 rounded-lg p-5 bg-blue-50/10 shadow-sm relative';
+        const block = document.createElement('div');
+        block.className = 'border border-blue-100 rounded-lg p-6 bg-blue-50/10 shadow-sm relative';
 
-                        block.innerHTML = `
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                                <div>
-                                    <label class="text-sm font-medium text-gray-700">Company</label>
-                                    <input type="text" name="company[]" placeholder="Company Name" class="form-input mt-1 w-full" />
-                                </div>
-                                <div>
-                                    <label class="text-sm font-medium text-gray-700">Job Title</label>
-                                    <input type="text" name="role[]" placeholder="Job Title" class="form-input mt-1 w-full" />
-                                </div>
-                                <div>
-                                    <label class="text-sm font-medium text-gray-700">Start Date</label>
-                                    <input type="text" name="start_date[]" placeholder="e.g. Jan 2020" class="form-input mt-1 w-full" />
-                                </div>
-                                <div>
-                                    <label class="text-sm font-medium text-gray-700">End Date</label>
-                                    <input type="text" name="end_date[]" placeholder="e.g. Present" class="form-input mt-1 w-full" />
-                                </div>
-                            </div>
-                            <div>
-                                <label class="text-sm font-medium text-gray-700">Responsibilities / Achievements</label>
-                                <textarea name="description[]" rows="3" placeholder="Describe your role..." class="form-textarea mt-1 w-full"></textarea>
-                            </div>
-                        `;
+        block.innerHTML = `
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
+                <div>
+                    <label class="text-sm font-medium text-gray-700">Company</label>
+                    <input type="text" name="company[]" placeholder="Company Name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700" />
+                </div>
+                <div>
+                    <label class="text-sm font-medium text-gray-700">Job Title</label>
+                    <input type="text" name="role[]" placeholder="Job Title" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700" />
+                </div>
+                <div>
+                    <label class="text-sm font-medium text-gray-700">Start Date</label>
+                    <input type="text" name="start_date[]" placeholder="e.g. Jan 2020" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700" />
+                </div>
+                <div>
+                    <label class="text-sm font-medium text-gray-700">End Date</label>
+                    <input type="text" name="end_date[]" placeholder="e.g. Present" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700" />
+                </div>
+            </div>
+            <div>
+                <label class="text-sm font-medium text-gray-700">Responsibilities / Achievements</label>
+                <textarea name="description[]" rows="3" placeholder="Describe your role..." class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700 mt-2"></textarea>
+            </div>
+        `;
 
-                        container.appendChild(block);
-                    }
-                    </script>
+        container.appendChild(block);
+    }
+</script>
 
 
                 <!-- Education -->
-                <section class="mb-12 bg-white p-6 rounded-xl shadow-sm border" id="education">
-                    <h3 class="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-2">
-                        <i class="fas fa-graduation-cap text-blue-500"></i> Education
-                    </h3>
-                    <p class="text-sm text-gray-500 mb-6">List your degrees and academic highlights.</p>
+<section class="mb-12 bg-white p-6 rounded-xl shadow-sm border" id="education">
+    <h3 class="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-2">
+        <i class="fas fa-graduation-cap text-blue-500"></i> Education
+    </h3>
+    <p class="text-sm text-gray-500 mb-6">List your degrees and academic highlights.</p>
 
-                    <div id="educationContainer" class="space-y-6">
-                        <div class="border border-indigo-100 rounded-lg p-5 bg-indigo-50/10 shadow-sm">
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                                <div>
-                                    <label class="text-sm font-medium text-gray-700">Institute / University</label>
-                                    <input type="text" name="institute[]" placeholder="e.g. ABC University" class="form-input mt-1 w-full" />
-                                </div>
-                                <div>
-                                    <label class="text-sm font-medium text-gray-700">Degree / Program</label>
-                                    <input type="text" name="degree[]" placeholder="e.g. B.Sc. Computer Science" class="form-input mt-1 w-full" />
-                                </div>
-                                <div>
-                                    <label class="text-sm font-medium text-gray-700">Start Year</label>
-                                    <input type="text" name="start_year[]" placeholder="e.g. 2018" class="form-input mt-1 w-full" />
-                                </div>
-                                <div>
-                                    <label class="text-sm font-medium text-gray-700">End Year</label>
-                                    <input type="text" name="end_year[]" placeholder="e.g. 2022" class="form-input mt-1 w-full" />
-                                </div>
-                            </div>
-                            <div>
-                                <label class="text-sm font-medium text-gray-700">Coursework / Highlights</label>
-                                <textarea name="edu_description[]" rows="3" placeholder="Mention honors, GPA, etc." class="form-textarea mt-1 w-full"></textarea>
-                            </div>
-                        </div>
-                    </div>
+    <div id="educationContainer" class="space-y-6">
+        <div class="border border-indigo-100 rounded-lg p-5 bg-indigo-50/10 shadow-sm">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                <div>
+                    <label class="text-sm font-medium text-gray-700">Institute / University</label>
+                    <input type="text" name="institute[]" placeholder="e.g. ABC University" class="form-input mt-1 w-full" required />
+                </div>
+                <div>
+                    <label class="text-sm font-medium text-gray-700">Degree / Program</label>
+                    <input type="text" name="degree[]" placeholder="e.g. B.Sc. Computer Science" class="form-input mt-1 w-full" required />
+                </div>
+                <div>
+                    <label class="text-sm font-medium text-gray-700">Start Year</label>
+                    <input type="number" name="start_year[]" placeholder="e.g. 2018" class="form-input mt-1 w-full" required />
+                </div>
+                <div>
+                    <label class="text-sm font-medium text-gray-700">End Year</label>
+                    <input type="number" name="end_year[]" placeholder="e.g. 2022" class="form-input mt-1 w-full" required />
+                </div>
+            </div>
+            <div>
+                <label class="text-sm font-medium text-gray-700">Coursework / Highlights</label>
+                <textarea name="edu_description[]" rows="3" placeholder="Mention honors, GPA, etc." class="form-textarea mt-1 w-full" required></textarea>
+            </div>
+        </div>
+    </div>
 
-                    <button type="button" onclick="addEducation()" class="mt-4 inline-block text-sm text-blue-600 hover:underline">
-                        + Add another degree
-                    </button>
-                </section>
-                <script>
-                    function addEducation() {
-                        const container = document.getElementById('educationContainer');
-                        if (container.children.length >= 5) {
-                            alert('You can only add up to 5 education entries.');
-                            return;
-                        }
-                        const block = document.createElement('div');
-                        block.className = 'border border-indigo-100 rounded-lg p-5 bg-indigo-50/10 shadow-sm';
+    <button type="button" onclick="addEducation()" class="mt-4 inline-block text-sm text-blue-600 hover:underline">
+        + Add another degree
+    </button>
+</section>
 
-                        block.innerHTML = `
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                                <div>
-                                    <label class="text-sm font-medium text-gray-700">Institute / University</label>
-                                    <input type="text" name="institute[]" placeholder="e.g. ABC University" class="form-input mt-1 w-full" />
-                                </div>
-                                <div>
-                                    <label class="text-sm font-medium text-gray-700">Degree / Program</label>
-                                    <input type="text" name="degree[]" placeholder="e.g. B.Sc. Computer Science" class="form-input mt-1 w-full" />
-                                </div>
-                                <div>
-                                    <label class="text-sm font-medium text-gray-700">Start Year</label>
-                                    <input type="text" name="start_year[]" placeholder="e.g. 2018" class="form-input mt-1 w-full" />
-                                </div>
-                                <div>
-                                    <label class="text-sm font-medium text-gray-700">End Year</label>
-                                    <input type="text" name="end_year[]" placeholder="e.g. 2022" class="form-input mt-1 w-full" />
-                                </div>
-                            </div>
-                            <div>
-                                <label class="text-sm font-medium text-gray-700">Coursework / Highlights</label>
-                                <textarea name="edu_description[]" rows="3" placeholder="Mention honors, GPA, etc." class="form-textarea mt-1 w-full"></textarea>
-                            </div>
-                        `;
+<script>
+    function addEducation() {
+        const container = document.getElementById('educationContainer');
 
-                        container.appendChild(block);
-                    }
-                    </script>
+        if (container.children.length >= 5) {
+            alert('You can only add up to 5 education entries.');
+            return;
+        }
+
+        const block = document.createElement('div');
+        block.className = 'border border-indigo-100 rounded-lg p-5 bg-indigo-50/10 shadow-sm';
+
+        block.innerHTML = `
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                <div>
+                    <label class="text-sm font-medium text-gray-700">Institute / University</label>
+                    <input type="text" name="institute[]" placeholder="e.g. ABC University" class="form-input mt-1 w-full" required />
+                </div>
+                <div>
+                    <label class="text-sm font-medium text-gray-700">Degree / Program</label>
+                    <input type="text" name="degree[]" placeholder="e.g. B.Sc. Computer Science" class="form-input mt-1 w-full" required />
+                </div>
+                <div>
+                    <label class="text-sm font-medium text-gray-700">Start Year</label>
+                    <input type="number" name="start_year[]" placeholder="e.g. 2018" class="form-input mt-1 w-full" required />
+                </div>
+                <div>
+                    <label class="text-sm font-medium text-gray-700">End Year</label>
+                    <input type="number" name="end_year[]" placeholder="e.g. 2022" class="form-input mt-1 w-full" required />
+                </div>
+            </div>
+            <div>
+                <label class="text-sm font-medium text-gray-700">Coursework / Highlights</label>
+                <textarea name="edu_description[]" rows="3" placeholder="Mention honors, GPA, etc." class="form-textarea mt-1 w-full" required></textarea>
+            </div>
+        `;
+
+        container.appendChild(block);
+    }
+
+    // Prevent form submission with incomplete fields
+    const form = document.querySelector('form');
+    form.addEventListener('submit', function(event) {
+        const inputs = form.querySelectorAll('input, textarea');
+        let isValid = true;
+        inputs.forEach(input => {
+            if (!input.value) {
+                isValid = false;
+                input.classList.add('border-red-500');
+            } else {
+                input.classList.remove('border-red-500');
+            }
+        });
+
+        if (!isValid) {
+            event.preventDefault();
+            alert('Please fill in all required fields.');
+        }
+    });
+</script>
+
 
 
 
@@ -324,6 +420,27 @@
                         </button>
                     </div>
                 </section>
+
+                <script>
+                    function addSkill() {
+            const input = document.getElementById('newSkillInput');
+            const value = input.value.trim();
+            if (!value) return;
+
+            const container = document.getElementById('skillsContainer');
+            if (container.children.length >= 10) {
+                alert('You can only add up to 10 skills.');
+                return;
+            }
+
+            const span = document.createElement('span');
+            span.className = 'bg-gray-100 text-sm px-3 py-1 rounded-full text-gray-700 border flex items-center gap-1';
+            span.innerHTML = `${value} <button type="button" onclick="this.parentElement.remove()" class="text-gray-400 hover:text-red-500 ml-1">&times;</button>`;
+
+            container.appendChild(span);
+            input.value = '';
+        }
+                </script>
 
 
                 <!-- Courses -->
@@ -369,55 +486,10 @@
             @apply w-full px-4 py-2 border border-gray-300 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-300 bg-white;
         }
     </style>
-    <script>
-        function addTargetRole() {
-            const container = document.getElementById('targetRolesContainer');
-            if (container.children.length < 5) {
-                const input = document.createElement('input');
-                input.type = 'text';
-                input.name = 'target_role[]';
-                input.placeholder = 'Job Title';
-                input.className = 'form-input w-full';
-                container.appendChild(input);
-            }
-        }
-
-        function addPreferredLocation() {
-            const container = document.getElementById('preferredLocationsContainer');
-            if (container.children.length < 5) {
-                const input = document.createElement('input');
-                input.type = 'text';
-                input.name = 'preferred_location[]';
-                input.placeholder = 'e.g. London';
-                input.className = 'form-input w-full';
-                container.appendChild(input);
-            }
-        }
-    </script>
 
     <script>
 
 
-
-
-        function addSkill() {
-            const input = document.getElementById('newSkillInput');
-            const value = input.value.trim();
-            if (!value) return;
-
-            const container = document.getElementById('skillsContainer');
-            if (container.children.length >= 10) {
-                alert('You can only add up to 10 skills.');
-                return;
-            }
-
-            const span = document.createElement('span');
-            span.className = 'bg-gray-100 text-sm px-3 py-1 rounded-full text-gray-700 border flex items-center gap-1';
-            span.innerHTML = `${value} <button type="button" onclick="this.parentElement.remove()" class="text-gray-400 hover:text-red-500 ml-1">&times;</button>`;
-
-            container.appendChild(span);
-            input.value = '';
-        }
 
         function addCourse() {
             const input = document.getElementById('newCourseInput');
