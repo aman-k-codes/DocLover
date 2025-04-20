@@ -7,6 +7,7 @@
 @section('meta_keywords', 'Resume Builder, Online Resume Maker, Interactive Resume Panel, Build Resume, Resume Preview')
 @php
     // dd(Cache::get('resume_data', 'default'));
+    $Skills = Cache::get('resume_data', 'default')['skills'] ?? [];
 @endphp
 @section('content')
     <div class="flex">
@@ -83,8 +84,9 @@
                         <div id="dropZone"
                             class="w-24 h-24 bg-gray-100 border rounded-full flex items-center justify-center shadow-sm overflow-hidden cursor-pointer"
                             ondragover="handleDragOver(event)" ondrop="handleDrop(event)">
-                            <img id="photoPreview" src="{{Cache::get('photo', null) ? asset('public/uploads/'.Cache::get('photo', null)) : ''}}" alt="Preview"
-                                class="w-full h-full object-cover hidden" />
+                            <img id="photoPreview"
+                                src="{{ Cache::get('photo', null) ? asset('public/uploads/' . Cache::get('photo', null)) : '' }}"
+                                alt="Preview" class="w-full h-full object-cover hidden" />
                             <i id="defaultIcon" class="fas fa-user text-gray-400 text-3xl"></i>
                         </div>
                         <div>
@@ -179,15 +181,17 @@
                         <label class="block text-sm font-medium text-gray-700 mb-2">
                             <i class="fas fa-bullseye mr-1 text-gray-500"></i> Target Roles:
                         </label>
-                        @foreach (Cache::get('resume_data', 'default')['target_role'] as $role)
-                            @if ($role)
-                                <div id="targetRolesContainer" class="space-y-4">
-                                    <input type="text" name="target_role[]" placeholder="Job Title"
-                                        value="{{ $role }}"
-                                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700" />
-                                </div>
-                            @endif
-                        @endforeach
+                        @if (!blank(Cache::get('resume_data', [])))
+                            @foreach (Cache::get('resume_data', 'default')['target_role'] as $role)
+                                @if ($role)
+                                    <div id="targetRolesContainer" class="space-y-4">
+                                        <input type="text" name="target_role[]" placeholder="Job Title"
+                                            value="{{ $role }}"
+                                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700" />
+                                    </div>
+                                @endif
+                            @endforeach
+                        @endif
                         <div id="targetRolesContainer"
                             class="space-y-4 w-full py-2
                             focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700 mt-2">
@@ -206,15 +210,17 @@
                         <label class="block text-sm font-medium text-gray-700 mb-2">
                             <i class="fas fa-map-marker-alt mr-1 text-gray-500"></i> Preferred Locations:
                         </label>
-                        @foreach (Cache::get('resume_data', 'default')['preferred_location'] as $location)
-                            @if ($location)
-                                <div id="preferredLocationsContainer" class="space-y-4">
-                                    <input type="text" name="preferred_location[]" placeholder="e.g. London"
-                                        value="{{ $location }}"
-                                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700" />
-                                </div>
-                            @endif
-                        @endforeach
+                        @if (!blank(Cache::get('resume_data', [])))
+                            @foreach (Cache::get('resume_data', 'default')['preferred_location'] as $location)
+                                @if ($location)
+                                    <div id="preferredLocationsContainer" class="space-y-4">
+                                        <input type="text" name="preferred_location[]" placeholder="e.g. London"
+                                            value="{{ $location }}"
+                                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700" />
+                                    </div>
+                                @endif
+                            @endforeach
+                        @endif
                         <div id="preferredLocationsContainer"
                             class="space-y-4 w-full py-2
                             focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700 mt-2">
@@ -263,44 +269,46 @@
                     </p>
 
                     <div id="experienceContainer" class="space-y-6">
-                        @foreach (Cache::get('resume_data', 'default')['company'] as $key => $item)
-                            @if ($item)
-                                <div class="border border-blue-100 rounded-lg p-6 bg-blue-50/10 shadow-sm relative">
-                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
-                                        <div>
-                                            <label class="text-sm font-medium text-gray-700">Company</label>
-                                            <input type="text" name="company[]" placeholder="Company Name"
-                                                value="{{ Cache::get('resume_data', 'default')['company'][$key] }}"
-                                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700" />
+                        @if (!blank(Cache::get('resume_data', [])))
+                            @foreach (Cache::get('resume_data', 'default')['company'] as $key => $item)
+                                @if ($item)
+                                    <div class="border border-blue-100 rounded-lg p-6 bg-blue-50/10 shadow-sm relative">
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
+                                            <div>
+                                                <label class="text-sm font-medium text-gray-700">Company</label>
+                                                <input type="text" name="company[]" placeholder="Company Name"
+                                                    value="{{ Cache::get('resume_data', 'default')['company'][$key] }}"
+                                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700" />
+                                            </div>
+                                            <div>
+                                                <label class="text-sm font-medium text-gray-700">Job Title</label>
+                                                <input type="text" name="role[]" placeholder="Job Title"
+                                                    value="{{ Cache::get('resume_data', 'default')['role'][$key] }}"
+                                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700" />
+                                            </div>
+                                            <div>
+                                                <label class="text-sm font-medium text-gray-700">Start Date</label>
+                                                <input type="text" name="start_date[]" placeholder="e.g. Jan 2020"
+                                                    value="{{ Cache::get('resume_data', 'default')['start_date'][$key] }}"
+                                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700" />
+                                            </div>
+                                            <div>
+                                                <label class="text-sm font-medium text-gray-700">End Date</label>
+                                                <input type="text" name="end_date[]" placeholder="e.g. Present"
+                                                    value="{{ Cache::get('resume_data', 'default')['end_date'][$key] }}"
+                                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700" />
+                                            </div>
                                         </div>
                                         <div>
-                                            <label class="text-sm font-medium text-gray-700">Job Title</label>
-                                            <input type="text" name="role[]" placeholder="Job Title"
-                                                value="{{ Cache::get('resume_data', 'default')['role'][$key] }}"
-                                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700" />
-                                        </div>
-                                        <div>
-                                            <label class="text-sm font-medium text-gray-700">Start Date</label>
-                                            <input type="text" name="start_date[]" placeholder="e.g. Jan 2020"
-                                                value="{{ Cache::get('resume_data', 'default')['start_date'][$key] }}"
-                                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700" />
-                                        </div>
-                                        <div>
-                                            <label class="text-sm font-medium text-gray-700">End Date</label>
-                                            <input type="text" name="end_date[]" placeholder="e.g. Present"
-                                                value="{{ Cache::get('resume_data', 'default')['end_date'][$key] }}"
-                                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700" />
+                                            <label class="text-sm font-medium text-gray-700">Responsibilities /
+                                                Achievements</label>
+                                            <textarea name="description[]" rows="3" placeholder="Describe your role..."
+                                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700 mt-2">{{ Cache::get('resume_data', 'default')['description'][$key] }}</textarea>
                                         </div>
                                     </div>
-                                    <div>
-                                        <label class="text-sm font-medium text-gray-700">Responsibilities /
-                                            Achievements</label>
-                                        <textarea name="description[]" rows="3" placeholder="Describe your role..."
-                                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700 mt-2">{{ Cache::get('resume_data', 'default')['description'][$key] }}</textarea>
-                                    </div>
-                                </div>
-                            @endif
-                        @endforeach
+                                @endif
+                            @endforeach
+                        @endif
                         <div class="border border-blue-100 rounded-lg p-6 bg-blue-50/10 shadow-sm relative">
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
                                 <div>
@@ -386,45 +394,50 @@
                     <p class="text-sm text-gray-600 mb-6">List your degrees and academic highlights.</p>
 
                     <div id="educationContainer" class="space-y-6">
-                        @foreach (Cache::get('resume_data', 'default')['institute'] as $key => $item)
-                            @if ($item)
-                                <div class="border border-blue-100 rounded-lg p-6 bg-blue-50/10 shadow-sm relative">
-                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
-                                        <div>
-                                            <label class="text-sm font-medium text-gray-700">Institute / University</label>
-                                            <input type="text" name="institute[]" placeholder="e.g. ABC University"
-                                                value="{{ Cache::get('resume_data', 'default')['institute'][$key] }}"
-                                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700" />
+                        @if (!blank(Cache::get('resume_data', [])))
+                            @foreach (Cache::get('resume_data', 'default')['institute'] as $key => $item)
+                                @if ($item)
+                                    <div class="border border-blue-100 rounded-lg p-6 bg-blue-50/10 shadow-sm relative">
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
+                                            <div>
+                                                <label class="text-sm font-medium text-gray-700">Institute /
+                                                    University</label>
+                                                <input type="text" name="institute[]"
+                                                    placeholder="e.g. ABC University"
+                                                    value="{{ Cache::get('resume_data', 'default')['institute'][$key] }}"
+                                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700" />
+                                            </div>
+                                            <div>
+                                                <label class="text-sm font-medium text-gray-700">Degree / Program</label>
+                                                <input type="text" name="degree[]"
+                                                    placeholder="e.g. B.Sc. Computer Science"
+                                                    value="{{ Cache::get('resume_data', 'default')['degree'][$key] }}"
+                                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700" />
+                                            </div>
+                                            <div>
+                                                <label class="text-sm font-medium text-gray-700">Start Year</label>
+                                                <input type="number" name="start_year[]" placeholder="e.g. 2018"
+                                                    value="{{ Cache::get('resume_data', 'default')['start_year'][$key] }}"
+                                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700" />
+                                            </div>
+                                            <div>
+                                                <label class="text-sm font-medium text-gray-700">End Year</label>
+                                                <input type="number" name="end_year[]" placeholder="e.g. 2022"
+                                                    value="{{ Cache::get('resume_data', 'default')['end_year'][$key] }}"
+                                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700" />
+                                            </div>
                                         </div>
                                         <div>
-                                            <label class="text-sm font-medium text-gray-700">Degree / Program</label>
-                                            <input type="text" name="degree[]"
-                                                placeholder="e.g. B.Sc. Computer Science"
-                                                value="{{ Cache::get('resume_data', 'default')['degree'][$key] }}"
-                                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700" />
-                                        </div>
-                                        <div>
-                                            <label class="text-sm font-medium text-gray-700">Start Year</label>
-                                            <input type="number" name="start_year[]" placeholder="e.g. 2018"
-                                                value="{{ Cache::get('resume_data', 'default')['start_year'][$key] }}"
-                                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700" />
-                                        </div>
-                                        <div>
-                                            <label class="text-sm font-medium text-gray-700">End Year</label>
-                                            <input type="number" name="end_year[]" placeholder="e.g. 2022"
-                                                value="{{ Cache::get('resume_data', 'default')['end_year'][$key] }}"
-                                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700" />
+                                            <label class="text-sm font-medium text-gray-700">Coursework /
+                                                Highlights</label>
+                                            <textarea name="edu_description[]" rows="3" placeholder="Mention honors, GPA, etc."
+                                                value="{{ Cache::get('resume_data', 'default')['edu_description'][$key] }}"
+                                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700 mt-2"></textarea>
                                         </div>
                                     </div>
-                                    <div>
-                                        <label class="text-sm font-medium text-gray-700">Coursework / Highlights</label>
-                                        <textarea name="edu_description[]" rows="3" placeholder="Mention honors, GPA, etc."
-                                            value="{{ Cache::get('resume_data', 'default')['edu_description'][$key] }}"
-                                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700 mt-2"></textarea>
-                                    </div>
-                                </div>
-                            @endif
-                        @endforeach
+                                @endif
+                            @endforeach
+                        @endif
                         <div class="border border-blue-100 rounded-lg p-6 bg-blue-50/10 shadow-sm relative">
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
                                 <div>
@@ -510,18 +523,20 @@
                     </h3>
 
                     <div id="skillsContainer" class="flex flex-wrap gap-3 mt-2">
-                        @foreach (Cache::get('resume_data', 'default')['skills'] as $key => $skill)
-                            <span
-                                class="bg-blue-50 text-sm px-4 py-1.5 rounded-full text-blue-800 border border-blue-200 flex items-center gap-2 shadow-sm hover transition">
-                                <i class="fas fa-check-circle text-blue-400 text-xs"></i>
-                                {{ $skill }}
-                                <button type="button" onclick="this.parentElement.remove()"
-                                    class="text-blue-400 hover:text-red-500 focus:outline-none">
-                                    <i class="fas fa-times-circle"></i>
-                                </button>
-                                <input type="text" name="skills[]" value="{{ $skill }}" hidden>
-                            </span>
-                        @endforeach
+                        @if (!blank(Cache::get('resume_data', [])))
+                            @foreach ($Skills as $key => $skill)
+                                <span
+                                    class="bg-blue-50 text-sm px-4 py-1.5 rounded-full text-blue-800 border border-blue-200 flex items-center gap-2 shadow-sm hover transition">
+                                    <i class="fas fa-check-circle text-blue-400 text-xs"></i>
+                                    {{ $skill }}
+                                    <button type="button" onclick="this.parentElement.remove()"
+                                        class="text-blue-400 hover:text-red-500 focus:outline-none">
+                                        <i class="fas fa-times-circle"></i>
+                                    </button>
+                                    <input type="text" name="skills[]" value="{{ $skill }}" hidden>
+                                </span>
+                            @endforeach
+                        @endif
                     </div>
 
                     <div class="mt-6 flex flex-col sm:flex-row items-start sm:items-center gap-3">
@@ -646,7 +661,7 @@
                         <div>
                             <label for="linkedin" class="text-sm font-medium text-gray-600">LinkedIn</label>
                             <input type="url" name="linkedin" id="linkedin"
-                                value="{{ Cache::get('resume_data', 'default')['linkedin'] }}"
+                                value="{{ !blank(Cache::get('resume_data', [])) ? Cache::get('resume_data', 'default')['linkedin'] : '' }}"
                                 placeholder="https://www.linkedin.com/in/yourname"
                                 class="w-full mt-2 px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800 shadow-sm transition-all hover:border-blue-300" />
                         </div>
@@ -654,7 +669,7 @@
                         <div>
                             <label for="twitter" class="text-sm font-medium text-gray-600">Twitter</label>
                             <input type="url" name="twitter" id="twitter"
-                                value="{{ Cache::get('resume_data', 'default')['twitter'] }}"
+                                value="{{ Cache::get('resume_data', []) ? Cache::get('resume_data', 'default')['twitter'] : '' }}"
                                 placeholder="https://twitter.com/yourhandle"
                                 class="w-full mt-2 px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800 shadow-sm transition-all hover:border-blue-300" />
                         </div>
@@ -662,7 +677,7 @@
                         <div>
                             <label for="facebook" class="text-sm font-medium text-gray-600">Facebook</label>
                             <input type="url" name="facebook" id="facebook"
-                                value="{{ Cache::get('resume_data', 'default')['facebook'] }}"
+                                value="{{ Cache::get('resume_data', []) ? Cache::get('resume_data', 'default')['facebook'] : '' }}"
                                 placeholder="https://facebook.com/yourprofile"
                                 class="w-full mt-2 px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800 shadow-sm transition-all hover:border-blue-300" />
                         </div>
@@ -670,7 +685,7 @@
                         <div>
                             <label for="instagram" class="text-sm font-medium text-gray-600">Instagram</label>
                             <input type="url" name="instagram" id="instagram"
-                                value="{{ Cache::get('resume_data', 'default')['instagram'] }}"
+                                value="{{ Cache::get('resume_data', []) ? Cache::get('resume_data', 'default')['instagram'] : '' }}"
                                 placeholder="https://www.instagram.com/yourhandle"
                                 class="w-full mt-2 px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800 shadow-sm transition-all hover:border-blue-300" />
                         </div>
@@ -678,7 +693,7 @@
                         <div>
                             <label for="github" class="text-sm font-medium text-gray-600">GitHub</label>
                             <input type="url" name="github" id="github"
-                                value="{{ Cache::get('resume_data', 'default')['github'] }}"
+                                value="{{ Cache::get('resume_data', []) ? Cache::get('resume_data', 'default')['github'] : '' }}"
                                 placeholder="https://github.com/yourusername"
                                 class="w-full mt-2 px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800 shadow-sm transition-all hover:border-blue-300" />
                         </div>

@@ -13,33 +13,32 @@ class ResumeTemplatesController extends Controller
     public function collectAllData(Request $request)
     {
 
-        // dd($request->all());
-        $path = $request->file('photo')->store('', 'uploads');
-        // Store all other form data except the photo
+        if ($request->has('photo')) {
+            $path = $request->file('photo')->store('', 'uploads');
+            Cache::put('photo', $path, now()->addMinutes(60));
+        }
         Cache::put('resume_data', $request->except('photo'), now()->addMinutes(60));
-        // Store photo path separately
-        Cache::put('photo', $path, now()->addMinutes(60));
-        return response()->json(['message' => 'Data cached successfully']);
+        return redirect()->route('resume.preview');
     }
 
     public function index(Request $request, $id)
     {
-        // $url = base64_decode($id);
-        // $cleanUrl = trim($url, '.');
-        // $path = parse_url($cleanUrl, PHP_URL_PATH);
-        // $parts = explode('/', $path);
-        // $lastFolder = $parts[count($parts) - 2];
-        // $fileName = trim(preg_replace('/\s+/', '', end($parts)), '.');
+        $url = base64_decode($id);
+        $cleanUrl = trim($url, '.');
+        $path = parse_url($cleanUrl, PHP_URL_PATH);
+        $parts = explode('/', $path);
+        $lastFolder = $parts[count($parts) - 2];
+        $fileNameWithDot = trim(preg_replace('/\s+/', '', end($parts)), '.');
+        [$name, $ext] = explode('.', $fileNameWithDot);
+        $fileName = $name . $ext;
+        Cache::put('folder', $lastFolder, now()->addMinutes(60));
+        Cache::put('template', $fileName, now()->addMinutes(60));
+        // dd(Cache::get('folder') . '.' . Cache::get('template'));
 
-        // return $this->downloadResume();
-
-        // if ($lastFolder == 'two-column') {
-        //     if ($fileName == 'tclm(1).jpg') {
-        //         return $this->downloadResume();
-        //     }
-        // }
-
-        return view('resumemaker.resume-pannel');
+        $pdf = Pdf::loadView('resumemaker.templates.' . Cache::get('folder') . '.' . Cache::get('template')); // you can pass data as second param
+        return $pdf->stream('doc_lover_resume.pdf');
+        // return view('resumemaker.preview');
+        // return view('resumemaker.resume-pannel');
     }
 
 
@@ -59,6 +58,18 @@ class ResumeTemplatesController extends Controller
 
     public function preview()
     {
-        return view('resumemaker.templates.ats.ats(12)png');
+
+        return view('resumemaker.preview');
     }
+
+    public function getResumeTemplate()
+    {
+        return view('resumemaker.templates.' . Cache::get('folder') . '.' . Cache::get('template'));
+    }
+
+    // public function downloadPDF()
+    // {
+    //     $pdf = Pdf::loadView('resumemaker.templates.' . Cache::get('folder') . '.' . Cache::get('template')); // you can pass data as second param
+    //     return $pdf->stream('doc_lover_resume.pdf');
+    // }
 }
