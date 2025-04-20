@@ -4,9 +4,24 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\Pdf;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Storage;
 
 class ResumeTemplatesController extends Controller
 {
+
+    public function collectAllData(Request $request)
+    {
+
+        // dd($request->all());
+        $path = $request->file('photo')->store('', 'uploads');
+        // Store all other form data except the photo
+        Cache::put('resume_data', $request->except('photo'), now()->addMinutes(60));
+        // Store photo path separately
+        Cache::put('photo', $path, now()->addMinutes(60));
+        return response()->json(['message' => 'Data cached successfully']);
+    }
+
     public function index(Request $request, $id)
     {
         // $url = base64_decode($id);
@@ -26,6 +41,7 @@ class ResumeTemplatesController extends Controller
 
         return view('resumemaker.resume-pannel');
     }
+
 
     public function downloadResume()
     {

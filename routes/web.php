@@ -74,6 +74,7 @@ Route::prefix('/')->group(function () {
         Route::get('/', [ResumeController::class, 'index'])->name('resume.index');
         Route::get('/templates', [ResumeController::class, 'ResumeTemplate'])->name('resume.ResumeTemplate');
         Route::prefix('/template')->group(function () {
+            Route::post('/collect-data', [ResumeTemplatesController::class, 'collectAllData'])->name('resume.collectAllData');
             Route::get('/preview', [ResumeTemplatesController::class, 'preview'])->name('resume.preview');
             Route::get('/{id}', [ResumeTemplatesController::class, 'index'])->name('resumeTemp.index');
         });

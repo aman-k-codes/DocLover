@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use PhpOffice\PhpWord\PhpWord;
 use PhpOffice\PhpWord\IOFactory;
 
+
 class ResumeController extends Controller
 {
     public function index()
@@ -17,4 +18,6 @@ class ResumeController extends Controller
     {
         return view('resumemaker.resume-template');
     }
+
+
 }
