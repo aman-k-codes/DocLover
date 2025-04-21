@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Resume</title>
     <style>
+         @page {
+            margin: 0;
+        }
         body {
             font-family: 'Times New Roman', serif;
             background: #fff;

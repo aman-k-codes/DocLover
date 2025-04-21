@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <title>May Riley Resume</title>
     <style>
+         @page {
+            margin: 0;
+        }
         body {
             font-family: Arial, sans-serif;
             font-size: 12px;
@@ -65,8 +68,8 @@
         <h1>May Riley</h1>
         <hr>
         <div class="contact">
-            4567 Main Street, Buffalo, New York 98052 | (716) 555-0100 | 
-            <a href="mailto:m.riley@live.com">m.riley@live.com</a> | 
+            4567 Main Street, Buffalo, New York 98052 | (716) 555-0100 |
+            <a href="mailto:m.riley@live.com">m.riley@live.com</a> |
             <a href="https://www.linkedin.com/in/m.riley">www.linkedin.com/in/m.riley</a>
         </div>
 

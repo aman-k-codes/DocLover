@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <title>Technical Program Manager Resume</title>
     <style>
+         @page {
+            margin: 0;
+        }
         body {
             font-family: Arial, sans-serif;
             font-size: 12px;
