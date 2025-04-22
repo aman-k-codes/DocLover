@@ -13,6 +13,7 @@
             font-family: 'Times New Roman', serif;
             background: #fff;
             color: #000;
+            margin: 40px;
         }
 
         .header {
