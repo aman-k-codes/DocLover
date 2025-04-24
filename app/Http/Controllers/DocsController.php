@@ -11,6 +11,7 @@ use Symfony\Component\Process\Exception\ProcessFailedException;
 use PhpOffice\PhpWord\PhpWord;
 use Spatie\PdfToText\Pdf;
 use Illuminate\Support\Facades\Http;
+use Intervention\Image\Facades\Image;
 
 
 class DocsController extends Controller
@@ -109,25 +110,20 @@ class DocsController extends Controller
     public function removeBG(Request $request)
     {
         $request->validate([
-            'image' => 'required|image|mimes:jpeg,jpg,png|max:25600', // 25MB max
+            'image' => 'required|image|max:25600', // Max 25MB
         ]);
 
-        $image = $request->file('image');
-
         $response = Http::attach(
-            'file',
-            file_get_contents($image),
-            $image->getClientOriginalName()
-        )->post('https://nileshnavrang--as-rmv-bg.hf.space/remove-background/');
+            'image',
+            $request->file('image')->get(),
+            $request->file('image')->getClientOriginalName()
+        )->post('http://127.0.0.1:5000/remove-bg');
 
         if ($response->successful()) {
             return response($response->body(), 200)
                 ->header('Content-Type', 'image/png');
         } else {
-            return response()->json([
-                'error' => 'Failed to remove background.',
-                'details' => $response->json(),
-            ], $response->status());
+            return response()->json(['error' => 'Failed to remove background'], 500);
         }
     }
 
