@@ -127,7 +127,25 @@ class DocsController extends Controller
         }
     }
 
+    public function enhanceImageQuality(Request $request)
+    {
+        $request->validate([
+            'image' => 'required|image|max:25600', // Max 25MB
+        ]);
 
+        $response = Http::attach(
+            'image',
+            $request->file('image')->get(),
+            $request->file('image')->getClientOriginalName()
+        )->post('http://127.0.0.1:5000/remove-bg');
+
+        if ($response->successful()) {
+            return response($response->body(), 200)
+                ->header('Content-Type', 'image/png');
+        } else {
+            return response()->json(['error' => 'Failed to remove background'], 500);
+        }
+    }
 
 
     public function convertPDFtoWord(Request $request)

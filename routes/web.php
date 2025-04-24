@@ -40,35 +40,20 @@ Route::prefix('/')->group(function () {
         Route::get('/jpg-to-doc', [DocumentController::class, 'jpg_to_doc'])->name('jpg-to-doc');
         Route::get('/jpg-to-xl', [DocumentController::class, 'jpg_to_xl'])->name('jpg-to-xl');
         Route::get('/crop', [DocumentController::class, 'crop'])->name('crop');
-        // Route::get('/collage', [DocumentController::class, 'collage'])->name('collage');
-        // Route::get('/resize', [DocumentController::class, 'resize'])->name('resize');
-        // Route::get('/passport-size-photo', [DocumentController::class, 'passport_size_photo'])->name('passport-size-photo');
         Route::get('/photo-clarity-enhancement', [DocumentController::class, 'photo_clarity_enhancement'])->name('photo-clarity-enhancement');
         Route::get('/background-change', [DocumentController::class, 'background_change'])->name('background-change');
-        // Route::get('/resume-maker', [DocumentController::class, 'resume_maker'])->name('resume-maker');
         Route::get('/photo-size-compression', [DocumentController::class, 'photo_size_compression'])->name('photo-size-compression');
         Route::get('/image-to-text-conversion', [DocumentController::class, 'image_to_text_conversion'])->name('image-to-text-conversion');
         Route::get('/sign-picker', [DocumentController::class, 'sign_picker'])->name('sign-picker');
-        // Route::get('/merge-pdf', [DocumentController::class, 'merge_pdf'])->name('merge-pdf');
-        // Route::get('/split-pdf', [DocumentController::class, 'split_pdf'])->name('split-pdf');
-        // Route::get('/rotate-pdf', [DocumentController::class, 'rotate_pdf'])->name('rotate-pdf');
-        // Route::get('/delete-pdf-pages', [DocumentController::class, 'delete_pdf_pages'])->name('delete-pdf-pages');
-        // Route::get('/pdf-to-word', [DocumentController::class, 'pdf_to_word'])->name('pdf-to-word');
         Route::get('/pdf-to-excel', [DocumentController::class, 'pdf_to_excel'])->name('pdf-to-excel');
         Route::get('/pdf-to-ppt', [DocumentController::class, 'pdf_to_ppt'])->name('pdf-to-ppt');
-        // Route::get('/word-to-pdf', [DocumentController::class, 'word_to_pdf'])->name('word-to-pdf');
-        // Route::get('/excel-to-pdf', [DocumentController::class, 'excel_to_pdf'])->name('excel-to-pdf');
-        // Route::get('/ppt-to-pdf', [DocumentController::class, 'ppt_to_pdf'])->name('ppt-to-pdf');
-        // Route::get('/sign-pdf', [DocumentController::class, 'sign_pdf'])->name('sign-pdf');
-        // Route::get('/protect-pdf', [DocumentController::class, 'protect_pdf'])->name('protect-pdf');
-        // Route::get('/unlock-pdf', [DocumentController::class, 'unlock_pdf'])->name('unlock-pdf');
     });
     Route::prefix('/convert')->group(function () {
         Route::post('/pdf-to-zip', [DocsController::class, 'PDFtoZIP'])->name('convert.PDFtoZIP');
         Route::post('/jpg-to-png', [DocsController::class, 'JPGtoPNG'])->name('convert.JPGtoPNG');
         Route::post('/remove-background', [DocsController::class, 'removeBG'])->name('remove.background');
+        Route::post('/image-quality-enhance', [DocsController::class, 'enhanceImageQuality'])->name('enhance.image');
         Route::post('/pdf-to-word', [DocsController::class, 'convertPDFtoWord'])->name('convert.convertPDFtoWord');
-
     });
     Route::prefix('/resume')->group(function () {
         Route::get('/', [ResumeController::class, 'index'])->name('resume.index');
