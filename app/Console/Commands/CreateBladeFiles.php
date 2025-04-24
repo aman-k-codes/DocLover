@@ -26,21 +26,11 @@ class CreateBladeFiles extends Command
             ],
             'ImageAndDocumentProcessing' => [
                 'crop',
-                'collage',
-                'resize',
-                'passport-size-photo',
                 'photo-clarity-enhancement',
                 'background-change',
-                'resume-maker',
                 'photo-size-compression',
                 'image-to-text-conversion',
                 'sign-picker'
-            ],
-            'OrganizePDF' => [
-                'merge-pdf',
-                'split-pdf',
-                'rotate-pdf',
-                'delete-pdf-pages'
             ],
             'ConvertFromPDF' => [
                 'pdf-to-word',
@@ -49,14 +39,7 @@ class CreateBladeFiles extends Command
             ],
             'ConvertToPDF' => [
                 'word-to-pdf',
-                'excel-to-pdf',
-                'ppt-to-pdf'
             ],
-            'SignAndSecure' => [
-                'sign-pdf',
-                'protect-pdf',
-                'unlock-pdf'
-            ]
         ];
 
         foreach ($folders as $folder => $files) {

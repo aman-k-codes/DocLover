@@ -48,18 +48,6 @@ class DocumentController extends Controller
     {
         return view('sw.pages.imageanddocumentprocessing.crop');
     }
-    public function collage()
-    {
-        return view('sw.pages.imageanddocumentprocessing.collage');
-    }
-    public function resize()
-    {
-        return view('sw.pages.imageanddocumentprocessing.resize');
-    }
-    public function passport_size_photo()
-    {
-        return view('sw.pages.imageanddocumentprocessing.passport-size-photo');
-    }
     public function photo_clarity_enhancement()
     {
         return view('sw.pages.imageanddocumentprocessing.photo-clarity-enhancement');
@@ -67,10 +55,6 @@ class DocumentController extends Controller
     public function background_change()
     {
         return view('sw.pages.imageanddocumentprocessing.background-change');
-    }
-    public function resume_maker()
-    {
-        return view('sw.pages.imageanddocumentprocessing.resume-maker');
     }
     public function photo_size_compression()
     {
@@ -84,26 +68,6 @@ class DocumentController extends Controller
     {
         return view('sw.pages.imageanddocumentprocessing.sign-picker');
     }
-    public function merge_pdf()
-    {
-        return view('sw.pages.organizepdf.merge-pdf');
-    }
-    public function split_pdf()
-    {
-        return view('sw.pages.organizepdf.split-pdf');
-    }
-    public function rotate_pdf()
-    {
-        return view('sw.pages.organizepdf.rotate-pdf');
-    }
-    public function delete_pdf_pages()
-    {
-        return view('sw.pages.organizepdf.delete-pdf-pages');
-    }
-    public function pdf_to_word()
-    {
-        return view('sw.pages.convertfrompdf.pdf-to-word');
-    }
     public function pdf_to_excel()
     {
         return view('sw.pages.convertfrompdf.pdf-to-excel');
@@ -111,29 +75,5 @@ class DocumentController extends Controller
     public function pdf_to_ppt()
     {
         return view('sw.pages.convertfrompdf.pdf-to-ppt');
-    }
-    public function word_to_pdf()
-    {
-        return view('sw.pages.converttopdf.word-to-pdf');
-    }
-    public function excel_to_pdf()
-    {
-        return view('sw.pages.converttopdf.excel-to-pdf');
-    }
-    public function ppt_to_pdf()
-    {
-        return view('sw.pages.converttopdf.ppt-to-pdf');
-    }
-    public function sign_pdf()
-    {
-        return view('sw.pages.signandsecure.sign-pdf');
-    }
-    public function protect_pdf()
-    {
-        return view('sw.pages.signandsecure.protect-pdf');
-    }
-    public function unlock_pdf()
-    {
-        return view('sw.pages.signandsecure.unlock-pdf');
     }
 }
