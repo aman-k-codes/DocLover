@@ -36,13 +36,11 @@ class GenerateControllerViews extends Command
                 'crop',
                 'photo-clarity-enhancement',
                 'background-change',
-                // 'resume-maker',
                 'photo-size-compression',
                 'image-to-text-conversion',
                 'sign-picker'
             ],
             'ConvertFromPDF' => [
-                // 'pdf-to-word',
                 'pdf-to-excel',
                 'pdf-to-ppt'
             ],

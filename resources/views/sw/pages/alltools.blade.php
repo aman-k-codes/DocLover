@@ -127,7 +127,7 @@
                             <li
                                 class="cursor-pointer py-2 px-4 bg-gray-100 rounded-lg shadow-md flex items-center space-x-2">
                                 <i class="fas fa-file-alt text-gray-600"></i>
-                                <a href="{{ route('resume-maker') }}">
+                                <a href="{{ route('resume.index') }}">
                                     <span class="font-bold">Resume Maker</span>
                                 </a>
                             </li>

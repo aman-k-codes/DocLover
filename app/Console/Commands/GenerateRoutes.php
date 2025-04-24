@@ -29,37 +29,19 @@ class GenerateRoutes extends Command
             ],
             'ImageAndDocumentProcessing' => [
                 'crop',
-                'collage',
-                'resize',
-                'passport-size-photo',
                 'photo-clarity-enhancement',
                 'background-change',
-                'resume-maker',
                 'photo-size-compression',
                 'image-to-text-conversion',
                 'sign-picker'
             ],
-            'OrganizePDF' => [
-                'merge-pdf',
-                'split-pdf',
-                'rotate-pdf',
-                'delete-pdf-pages'
-            ],
             'ConvertFromPDF' => [
-                'pdf-to-word',
                 'pdf-to-excel',
                 'pdf-to-ppt'
             ],
             'ConvertToPDF' => [
                 'word-to-pdf',
-                'excel-to-pdf',
-                'ppt-to-pdf'
             ],
-            'SignAndSecure' => [
-                'sign-pdf',
-                'protect-pdf',
-                'unlock-pdf'
-            ]
         ];
 
         $routes = "\n// Auto-generated routes for {$controllerName}\n";
