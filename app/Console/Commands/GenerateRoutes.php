@@ -42,21 +42,47 @@ class GenerateRoutes extends Command
             'ConvertToPDF' => [
                 'word-to-pdf',
             ],
+            'PDFManagement' => [
+                'merge-pdf',
+                'split-pdf',
+                'rotate-pdf',
+                'delete-pdf-pages',
+                'extract-pdf-pages',
+                'protect-pdf',
+                'unlock-pdf',
+                'add-watermark',
+                'pdf-metadata-editor',
+                'pdf-form-filler'
+            ],
         ];
 
+        // Read current route file content once
+        $currentRoutes = File::exists($routeFile) ? File::get($routeFile) : '';
+
         $routes = "\n// Auto-generated routes for {$controllerName}\n";
+        $newRoutes = '';
+
         foreach ($folders as $folder => $files) {
             foreach ($files as $file) {
                 $functionName = str_replace('-', '_', $file);
                 $routePath = str_replace('_', '-', $functionName);
 
-                $routes .= "Route::get('/{$routePath}', [{$controllerName}::class, '{$functionName}'])->name('{$routePath}');\n";
+                // Check if route already exists
+                if (strpos($currentRoutes, "->name('{$routePath}')") !== false) {
+                    continue; // Skip if the route is already defined
+                }
+
+                $newRoutes .= "Route::get('/{$routePath}', [{$controllerName}::class, '{$functionName}'])->name('{$routePath}');\n";
             }
         }
 
-        // Append routes to web.php or api.php
-        File::append($routeFile, $routes);
+        // Only append if there are new routes
+        if (!empty($newRoutes)) {
+            File::append($routeFile, $routes . $newRoutes);
+            $this->info("Routes added to " . ($this->option('web') ? 'web.php' : 'api.php'));
+        } else {
+            $this->info("No new routes to add.");
+        }
 
-        $this->info("Routes added to " . ($this->option('web') ? 'web.php' : 'api.php'));
     }
 }

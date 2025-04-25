@@ -47,6 +47,18 @@ Route::prefix('/')->group(function () {
         Route::get('/sign-picker', [DocumentController::class, 'sign_picker'])->name('sign-picker');
         Route::get('/pdf-to-excel', [DocumentController::class, 'pdf_to_excel'])->name('pdf-to-excel');
         Route::get('/pdf-to-ppt', [DocumentController::class, 'pdf_to_ppt'])->name('pdf-to-ppt');
+
+        Route::get('/word-to-pdf', [DocumentController::class, 'word_to_pdf'])->name('word-to-pdf');
+        Route::get('/merge-pdf', [DocumentController::class, 'merge_pdf'])->name('merge-pdf');
+        Route::get('/split-pdf', [DocumentController::class, 'split_pdf'])->name('split-pdf');
+        Route::get('/rotate-pdf', [DocumentController::class, 'rotate_pdf'])->name('rotate-pdf');
+        Route::get('/delete-pdf-pages', [DocumentController::class, 'delete_pdf_pages'])->name('delete-pdf-pages');
+        Route::get('/extract-pdf-pages', [DocumentController::class, 'extract_pdf_pages'])->name('extract-pdf-pages');
+        Route::get('/protect-pdf', [DocumentController::class, 'protect_pdf'])->name('protect-pdf');
+        Route::get('/unlock-pdf', [DocumentController::class, 'unlock_pdf'])->name('unlock-pdf');
+        Route::get('/add-watermark', [DocumentController::class, 'add_watermark'])->name('add-watermark');
+        Route::get('/pdf-metadata-editor', [DocumentController::class, 'pdf_metadata_editor'])->name('pdf-metadata-editor');
+        Route::get('/pdf-form-filler', [DocumentController::class, 'pdf_form_filler'])->name('pdf-form-filler');
     });
     Route::prefix('/convert')->group(function () {
         Route::post('/pdf-to-zip', [DocsController::class, 'PDFtoZIP'])->name('convert.PDFtoZIP');

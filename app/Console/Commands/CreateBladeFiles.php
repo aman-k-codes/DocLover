@@ -40,6 +40,18 @@ class CreateBladeFiles extends Command
             'ConvertToPDF' => [
                 'word-to-pdf',
             ],
+            'PDFManagement' => [
+                'merge-pdf',
+                'split-pdf',
+                'rotate-pdf',
+                'delete-pdf-pages',
+                'extract-pdf-pages',
+                'protect-pdf',
+                'unlock-pdf',
+                'add-watermark',
+                'pdf-metadata-editor',
+                'pdf-form-filler'
+            ],
         ];
 
         foreach ($folders as $folder => $files) {

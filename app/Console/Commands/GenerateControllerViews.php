@@ -47,31 +47,50 @@ class GenerateControllerViews extends Command
             'ConvertToPDF' => [
                 'word-to-pdf',
             ],
+            'PDFManagement' => [
+                'merge-pdf',
+                'split-pdf',
+                'rotate-pdf',
+                'delete-pdf-pages',
+                'extract-pdf-pages',
+                'protect-pdf',
+                'unlock-pdf',
+                'add-watermark',
+                'pdf-metadata-editor',
+                'pdf-form-filler'
+            ],
         ];
 
         $functions = "";
+        $controllerContent = File::get($controllerPath); // Read once, before loop
+
         foreach ($folders as $folder => $files) {
             foreach ($files as $file) {
                 $functionName = str_replace('-', '_', $file);
+
+                // Check if function already exists
+                if (strpos($controllerContent, "function {$functionName}(") !== false) {
+                    continue; // Skip if function already exists
+                }
+
                 $functions .= <<<PHP
 
-    public function {$functionName}()
-    {
-        return view('Pages.{$folder}.{$file}');
-    }
-PHP;
+            public function {$functionName}()
+            {
+                return view('Pages.{$folder}.{$file}');
+            }
+        PHP;
             }
         }
 
-        // Read the current controller file
-        $controllerContent = File::get($controllerPath);
+        // Add functions before the final closing bracket of the class
+        if (!empty($functions)) {
+            $controllerContent = preg_replace('/}\s*$/', $functions . "\n}", $controllerContent);
+            File::put($controllerPath, $controllerContent);
+            $this->info("View functions added to {$controllerName}.php");
+        } else {
+            $this->info("No new functions to add to {$controllerName}.php");
+        }
 
-        // Insert functions before the closing bracket of the class
-        $controllerContent = preg_replace('/}\s*$/', $functions . "\n}", $controllerContent);
-
-        // Save the modified controller
-        File::put($controllerPath, $controllerContent);
-
-        $this->info("View functions added to {$controllerName}.php");
     }
 }
