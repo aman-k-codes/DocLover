@@ -77,48 +77,44 @@ class DocumentController extends Controller
         return view('sw.pages.convertfrompdf.pdf-to-ppt');
     }
 
-    public function word_to_pdf()
-    {
-        return view('Pages.ConvertToPDF.word-to-pdf');
-    }
     public function merge_pdf()
     {
-        return view('Pages.PDFManagement.merge-pdf');
+        return view('sw.pages.pdfmanagement.merge-pdf');
     }
     public function split_pdf()
     {
-        return view('Pages.PDFManagement.split-pdf');
+        return view('sw.pages.pdfmanagement.split-pdf');
     }
     public function rotate_pdf()
     {
-        return view('Pages.PDFManagement.rotate-pdf');
+        return view('sw.pages.pdfmanagement.rotate-pdf');
     }
     public function delete_pdf_pages()
     {
-        return view('Pages.PDFManagement.delete-pdf-pages');
+        return view('sw.pages.pdfmanagement.delete-pdf-pages');
     }
     public function extract_pdf_pages()
     {
-        return view('Pages.PDFManagement.extract-pdf-pages');
+        return view('sw.pages.pdfmanagement.extract-pdf-pages');
     }
     public function protect_pdf()
     {
-        return view('Pages.PDFManagement.protect-pdf');
+        return view('sw.pages.pdfmanagement.protect-pdf');
     }
     public function unlock_pdf()
     {
-        return view('Pages.PDFManagement.unlock-pdf');
+        return view('sw.pages.pdfmanagement.unlock-pdf');
     }
     public function add_watermark()
     {
-        return view('Pages.PDFManagement.add-watermark');
+        return view('sw.pages.pdfmanagement.add-watermark');
     }
     public function pdf_metadata_editor()
     {
-        return view('Pages.PDFManagement.pdf-metadata-editor');
+        return view('sw.pages.pdfmanagement.pdf-metadata-editor');
     }
     public function pdf_form_filler()
     {
-        return view('Pages.PDFManagement.pdf-form-filler');
+        return view('sw.pages.pdfmanagement.pdf-form-filler');
     }
 }

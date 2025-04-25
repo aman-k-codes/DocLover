@@ -59,8 +59,6 @@
         <div>
             <h3 class="text-md font-semibold text-gray-900 mb-4">PDF Tools</h3>
             <ul class="space-y-3">
-                <li class="flex items-center space-x-2"><i class="fas fa-file-pdf text-red-600"></i><a
-                        href="{{ route('word-to-pdf') }}"><span>Word to PDF</span></a></li>
                 <li class="flex items-center space-x-2"><i class="fas fa-file-merge text-blue-600"></i><a
                         href="{{ route('merge-pdf') }}"><span>Merge PDF</span></a></li>
                 <li class="flex items-center space-x-2"><i class="fas fa-cut text-yellow-500"></i><a

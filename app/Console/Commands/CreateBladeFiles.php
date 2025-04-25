@@ -37,9 +37,6 @@ class CreateBladeFiles extends Command
                 'pdf-to-excel',
                 'pdf-to-ppt'
             ],
-            'ConvertToPDF' => [
-                'word-to-pdf',
-            ],
             'PDFManagement' => [
                 'merge-pdf',
                 'split-pdf',

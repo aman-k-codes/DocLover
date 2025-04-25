@@ -48,7 +48,6 @@ Route::prefix('/')->group(function () {
         Route::get('/pdf-to-excel', [DocumentController::class, 'pdf_to_excel'])->name('pdf-to-excel');
         Route::get('/pdf-to-ppt', [DocumentController::class, 'pdf_to_ppt'])->name('pdf-to-ppt');
 
-        Route::get('/word-to-pdf', [DocumentController::class, 'word_to_pdf'])->name('word-to-pdf');
         Route::get('/merge-pdf', [DocumentController::class, 'merge_pdf'])->name('merge-pdf');
         Route::get('/split-pdf', [DocumentController::class, 'split_pdf'])->name('split-pdf');
         Route::get('/rotate-pdf', [DocumentController::class, 'rotate_pdf'])->name('rotate-pdf');
