@@ -59,6 +59,51 @@ class DocsController extends Controller
         }
     }
 
+    public function convertPDFtoWord(Request $request)
+    {
+        try {
+            $request->validate([
+                'pdf_file' => 'required|file|mimes:pdf|max:25600', // Max 25MB
+            ]);
+
+            $pdf = $request->file('pdf_file');
+
+            Log::debug('API URL', ['url' => env('API_URL')]);
+
+            // Send the PDF to external API
+            $response = Http::attach(
+                'file', // IMPORTANT: should match the expected field name in Flask
+                file_get_contents($pdf->getRealPath()),
+                $pdf->getClientOriginalName()
+            )->post(env('API_URL') . '/pdf-to-word'); // <-- your Flask route
+
+            Log::debug('External API Response', [
+                'status' => $response->status(),
+                'body' => $response->body()
+            ]);
+
+            if ($response->successful()) {
+                // Send the DOCX file back to user
+                return response($response->body(), 200)
+                    ->header('Content-Type', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document')
+                    ->header('Content-Disposition', 'attachment; filename="converted.docx"');
+            } else {
+                Log::error('PDF to Word API failed', [
+                    'status' => $response->status(),
+                    'body' => $response->body()
+                ]);
+                return response()->json(['error' => 'Failed to convert PDF to Word'], 500);
+            }
+        } catch (\Exception $e) {
+            Log::error('Exception in convertPDFtoWord', [
+                'message' => $e->getMessage(),
+                'trace' => $e->getTraceAsString()
+            ]);
+            return response()->json(['error' => 'Server error', 'details' => $e->getMessage()], 500);
+        }
+    }
+
+
 
     public function PDFtoZIP(Request $request)
     {
@@ -141,24 +186,5 @@ class DocsController extends Controller
         } else {
             return response()->json(['error' => 'Failed to remove background'], 500);
         }
-    }
-
-
-    public function convertPDFtoWord(Request $request)
-    {
-        $request->validate([
-            'pdf_file' => 'required|file|mimes:pdf|max:25600',
-        ]);
-
-        $pdf = $request->file('pdf_file');
-
-        // Temporary logic – replace with real PDF-to-Word logic
-        $wordContent = '<h1>This is dummy Word content from PDF</h1>';
-        $fileName = 'converted_' . time() . '.docx';
-
-        $tempPath = storage_path("app/public/$fileName");
-        file_put_contents($tempPath, $wordContent);
-
-        return response()->download($tempPath)->deleteFileAfterSend(true);
     }
 }
