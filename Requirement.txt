@@ -83,7 +83,7 @@ I have done -
 
 PDF Conversions
 PDF to ZIP - Done
-PDF to DOC - Pending
+PDF to DOC - Done
 PDF to JPG - Done
 PDF to HTML - Pending
 PDF to XL - Pending

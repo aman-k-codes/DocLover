@@ -103,8 +103,6 @@ class DocsController extends Controller
         }
     }
 
-
-
     public function PDFtoZIP(Request $request)
     {
         $request->validate([
@@ -166,8 +164,6 @@ class DocsController extends Controller
         ]);
     }
 
-
-
     public function enhanceImageQuality(Request $request)
     {
         $request->validate([
@@ -185,6 +181,51 @@ class DocsController extends Controller
                 ->header('Content-Type', 'image/png');
         } else {
             return response()->json(['error' => 'Failed to remove background'], 500);
+        }
+    }
+
+    public function convertPDFtoHTML(Request $request)
+    {
+        try {
+            // Validate incoming PDF (field name in your form should be "pdf_file")
+            $request->validate([
+                'file' => 'required|file|mimes:pdf|max:25600', // Max 25MB
+            ]);
+
+            $pdfFile = $request->file('file');
+
+            Log::debug('API URL', ['url' => env('API_URL')]);
+
+            // Send the file to the Flask API (make sure the Flask API expects 'file' field)
+            $response = Http::attach(
+                'file', // This field must be 'file' because Flask expects it that way
+                file_get_contents($pdfFile->getRealPath()),
+                $pdfFile->getClientOriginalName()
+            )->post(env('API_URL') . '/api/pdf-to-html');  // Flask API endpoint
+
+            Log::debug('External API Response', [
+                'status' => $response->status(),
+                'body' => substr($response->body(), 0, 500),
+            ]);
+
+            if ($response->successful()) {
+                // Return the HTML content from the Flask API as a response
+                return response($response->body(), 200)
+                    ->header('Content-Type', 'text/html')
+                    ->header('Content-Disposition', 'attachment; filename="converted.html"');
+            } else {
+                Log::error('PDF to HTML API failed', [
+                    'status' => $response->status(),
+                    'body' => $response->body(),
+                ]);
+                return response()->json(['error' => 'Failed to convert PDF to HTML'], 500);
+            }
+        } catch (\Exception $e) {
+            Log::error('Exception in convertPDFtoHTML', [
+                'message' => $e->getMessage(),
+                'trace' => $e->getTraceAsString(),
+            ]);
+            return response()->json(['error' => 'Server error', 'details' => $e->getMessage()], 500);
         }
     }
 }

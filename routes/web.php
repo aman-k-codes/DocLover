@@ -65,6 +65,7 @@ Route::prefix('/')->group(function () {
         Route::post('/remove-background', [DocsController::class, 'removeBG'])->name('remove.background');
         Route::post('/image-quality-enhance', [DocsController::class, 'enhanceImageQuality'])->name('enhance.image');
         Route::post('/pdf-to-word', [DocsController::class, 'convertPDFtoWord'])->name('convert.convertPDFtoWord');
+        Route::post('/pdf-to-html', [DocsController::class, 'convertPDFtoHTML'])->name('convert.convertPDFtoHTML');
     });
     Route::prefix('/resume')->group(function () {
         Route::get('/', [ResumeController::class, 'index'])->name('resume.index');
