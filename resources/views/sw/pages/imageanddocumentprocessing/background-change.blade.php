@@ -95,13 +95,18 @@
             formData.append("image", fileInput.files[0]);
 
             fetch("{{ route('remove.background') }}", {
-                method: "POST",
-                headers: {
-                    "X-CSRF-TOKEN": "{{ csrf_token() }}"
-                },
-                body: formData
-            })
-                .then(response => response.blob())
+                    method: "POST",
+                    headers: {
+                        "X-CSRF-TOKEN": "{{ csrf_token() }}"
+                    },
+                    body: formData
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error("Server returned " + response.status);
+                    }
+                    return response.blob();
+                })
                 .then(blob => {
                     const downloadURL = URL.createObjectURL(blob);
                     const link = document.getElementById("downloadLink");
@@ -117,6 +122,7 @@
                     alert("Error removing background. Please try again.");
                     console.error(error);
                 });
+
         }
     </script>
 
