@@ -239,11 +239,11 @@ class DocsController extends Controller
         try {
             // Validate the uploaded image
             $request->validate([
-                'image' => 'required|image|max:25600', // Max 25MB
+                'file' => 'required|image|max:25600', // Max 25MB
             ]);
 
             // Get the uploaded image
-            $image = $request->file('image');
+            $image = $request->file('file');
 
             // Log the API URL for debugging purposes
             Log::debug('API URL', ['url' => env('API_URL')]);
@@ -253,8 +253,8 @@ class DocsController extends Controller
                 'file',
                 file_get_contents($image->getRealPath()), // Get the file contents safely
                 $image->getClientOriginalName()
-            )->post(env('API_URL') . '/api/image-to-text');
-
+            )->post(env('API_URL') . '/image-to-text');
+            // dd($response);
             // Log the API response for debugging purposes
             Log::debug('External API Response', ['status' => $response->status(), 'body' => $response->body()]);
 
