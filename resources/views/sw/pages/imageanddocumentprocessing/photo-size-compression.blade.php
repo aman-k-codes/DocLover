@@ -56,8 +56,21 @@
             </div>
 
             <button id="compressButton"
-                class="bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-lg shadow transition-all">Compress
-                & Download</button>
+                class="bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-lg shadow transition-all mb-4">
+                Compress Image
+            </button>
+
+            <div id="actionButtons" class="hidden space-x-4">
+                <button id="downloadButton"
+                    class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg shadow transition-all">
+                    Download Compressed Image
+                </button>
+                <button id="convertAgainButton"
+                    class="bg-gray-600 hover:bg-gray-700 text-white font-semibold px-6 py-3 rounded-lg shadow transition-all">
+                    Convert Again
+                </button>
+            </div>
+
         </div>
     </section>
 
@@ -84,10 +97,13 @@
         const imageInput = document.getElementById("imageInput");
         const imagePreview = document.getElementById("imagePreview");
         const compressorContainer = document.getElementById("compressorContainer");
-        const qualityRange = document.getElementById("qualityRange");
         const compressButton = document.getElementById("compressButton");
+        const downloadButton = document.getElementById("downloadButton");
+        const convertAgainButton = document.getElementById("convertAgainButton");
+        const actionButtons = document.getElementById("actionButtons");
 
         let originalImage = null;
+        let compressedBlobUrl = null;
 
         imageInput.addEventListener("change", function(event) {
             const file = event.target.files[0];
@@ -95,15 +111,22 @@
 
             const reader = new FileReader();
             reader.onload = function(e) {
-                imagePreview.src = e.target.result;
-                compressorContainer.classList.remove("hidden");
                 originalImage = e.target.result;
+                imagePreview.src = originalImage;
+                compressorContainer.classList.remove("hidden");
             };
             reader.readAsDataURL(file);
         });
 
         compressButton.addEventListener("click", function() {
             if (!originalImage) return;
+
+            const targetSizeInput = document.getElementById("targetSize");
+            const targetSizeKB = parseInt(targetSizeInput.value, 10);
+            if (isNaN(targetSizeKB) || targetSizeKB <= 0) {
+                alert("Please enter a valid target file size in KB.");
+                return;
+            }
 
             const img = new Image();
             img.src = originalImage;
@@ -116,54 +139,60 @@
                 const ctx = canvas.getContext("2d");
                 ctx.drawImage(img, 0, 0);
 
-                const targetSizeInput = document.getElementById("targetSize");
+                let quality = 0.9;
 
-                compressButton.addEventListener("click", function() {
-                    if (!originalImage) return;
+                const compressLoop = () => {
+                    canvas.toBlob(function(blob) {
+                        const sizeKB = blob.size / 1024;
 
-                    const targetSizeKB = parseInt(targetSizeInput.value, 10);
-                    if (isNaN(targetSizeKB) || targetSizeKB <= 0) {
-                        alert("Please enter a valid target file size in KB.");
-                        return;
-                    }
+                        if (sizeKB <= targetSizeKB || quality <= 0.1) {
+                            if (compressedBlobUrl) {
+                                URL.revokeObjectURL(compressedBlobUrl); // revoke previous URL if any
+                            }
+                            compressedBlobUrl = URL.createObjectURL(blob);
 
-                    const img = new Image();
-                    img.src = originalImage;
+                            // Hide Compress button, show Download & Convert Again buttons
+                            compressButton.classList.add("hidden");
+                            actionButtons.classList.remove("hidden");
 
-                    img.onload = function() {
-                        const canvas = document.createElement("canvas");
-                        canvas.width = img.width;
-                        canvas.height = img.height;
+                        } else {
+                            quality -= 0.05;
+                            compressLoop();
+                        }
+                    }, "image/jpeg", quality);
+                };
 
-                        const ctx = canvas.getContext("2d");
-                        ctx.drawImage(img, 0, 0);
-
-                        let quality = 0.9;
-
-                        const compressLoop = () => {
-                            canvas.toBlob(function(blob) {
-                                const sizeKB = blob.size / 1024;
-
-                                if (sizeKB <= targetSizeKB || quality <= 0.1) {
-                                    const link = document.createElement("a");
-                                    link.href = URL.createObjectURL(blob);
-                                    link.download = "compressed_image.jpg";
-                                    document.body.appendChild(link);
-                                    link.click();
-                                    document.body.removeChild(link);
-                                    URL.revokeObjectURL(link.href);
-                                } else {
-                                    quality -= 0.05;
-                                    compressLoop();
-                                }
-                            }, "image/jpeg", quality);
-                        };
-
-                        compressLoop();
-                    };
-                });
-
+                compressLoop();
             };
         });
+
+        downloadButton.addEventListener("click", function() {
+            if (!compressedBlobUrl) return;
+
+            const link = document.createElement("a");
+            link.href = compressedBlobUrl;
+            link.download = "compressed_image.jpg";
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+
+        convertAgainButton.addEventListener("click", function() {
+            // Reset everything
+            document.getElementById("uploadSection").classList.remove("hidden");
+            compressorContainer.classList.add("hidden");
+            actionButtons.classList.add("hidden");
+            compressButton.classList.remove("hidden");
+
+            imageInput.value = '';
+            imagePreview.src = '';
+            originalImage = null;
+
+            if (compressedBlobUrl) {
+                URL.revokeObjectURL(compressedBlobUrl);
+                compressedBlobUrl = null;
+            }
+        });
     </script>
+
 @endsection
