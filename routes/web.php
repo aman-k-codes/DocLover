@@ -68,6 +68,7 @@ Route::prefix('/')->group(function () {
         Route::post('/pdf-to-html', [DocsController::class, 'convertPDFtoHTML'])->name('convert.convertPDFtoHTML');
         Route::post('/image-to-text', [DocsController::class, 'imageToText'])->name('convert.imageToText');
         Route::post('/image-to-word', [DocsController::class, 'convertImageToWord'])->name('convert.imageToWord');
+        Route::post('/pdf-merge', [DocsController::class, 'mergePDF'])->name('pdf.merge');
     });
     Route::prefix('/resume')->group(function () {
         Route::get('/', [ResumeController::class, 'index'])->name('resume.index');

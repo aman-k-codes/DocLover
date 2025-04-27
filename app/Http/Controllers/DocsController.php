@@ -5,14 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use ZipArchive;
 use Illuminate\Support\Facades\Storage;
-use ConvertApi\ConvertApi;
-use Symfony\Component\Process\Process;
-use Symfony\Component\Process\Exception\ProcessFailedException;
-use PhpOffice\PhpWord\PhpWord;
-use Spatie\PdfToText\Pdf;
 use Illuminate\Support\Facades\Http;
-use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Log;
+use PDFMerger\PDFMerger;
 
 
 
@@ -310,5 +305,40 @@ class DocsController extends Controller
         } else {
             return response()->json(['error' => 'Error converting image to Word.'], 400);
         }
+    }
+
+    public function mergePDF(Request $request)
+    {
+        // Validate the uploaded files
+        $request->validate([
+            'pdfs.*' => 'required|mimes:pdf|max:25000', // max 25MB each PDF
+        ]);
+
+        $pdfs = $request->file('pdfs');
+
+        // Prepare an array to hold the PDFs
+        $pdfsToMerge = [];
+
+        foreach ($pdfs as $pdf) {
+            $pdfsToMerge[] = $pdf->getPathname(); // Add PDF file path to array
+        }
+
+        // Use a package like PDFMerger or similar for merging the PDFs
+        $pdfMerger = new \PDFMerger();
+
+        foreach ($pdfsToMerge as $pdfPath) {
+            $pdfMerger->addPDF($pdfPath);
+        }
+
+        // Output the merged PDF
+        $mergedPDF = $pdfMerger->merge(); // Or save it to disk if needed
+
+        // Return the merged PDF as a download
+        return response()->stream(function () use ($mergedPDF) {
+            echo $mergedPDF;
+        }, 200, [
+            'Content-Type' => 'application/pdf',
+            'Content-Disposition' => 'attachment; filename="merged.pdf"',
+        ]);
     }
 }
