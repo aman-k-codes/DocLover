@@ -185,9 +185,9 @@
                     if (data.error) {
                         alert(data.error);
                     } else {
-                        const downloadUrl = URL.createObjectURL(new Blob([data.fileContent], {
-                            type: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
-                        }));
+                        // console.log(localUrl+data.file_url);
+
+                        var downloadUrl = localUrl+data.file_url;
                         docBlobUrl = downloadUrl;
 
                         // Show download section

@@ -41,10 +41,16 @@ return [
             'url' => env('APP_URL') . '/public/uploads',
             'visibility' => 'public',
         ],
+        'words' => [
+            'driver' => 'local',
+            'root' => public_path('uploads/word_files'),
+            'url' => env('APP_URL') . '/public/uploads/word_files',
+            'visibility' => 'public',
+        ],
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
-            'url' => env('APP_URL') . '/storage',
+            'url' => env('APP_URL') . '/public/uploads',
             'visibility' => 'public',
             'throw' => false,
         ],

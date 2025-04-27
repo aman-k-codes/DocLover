@@ -292,16 +292,17 @@ class DocsController extends Controller
             $file->getClientOriginalName()
         )->post('http://127.0.0.1:5000/api/image-to-word');
 
+
         // Check if the request was successful
         if ($response->successful()) {
             // Save the received Word document to storage
             $filename = 'converted_' . time() . '.docx';
-            Storage::put('public/word_files/' . $filename, $response->body());
+            Storage::disk('words')->put($filename, $response->body());
 
             // Return the URL to the file or a success message
             return response()->json([
                 'message' => 'File converted successfully!',
-                'file_url' => Storage::url('public/word_files/' . $filename)
+                'file_url' => 'public/uploads/word_files/' . $filename
             ]);
         } else {
             return response()->json(['error' => 'Error converting image to Word.'], 400);
