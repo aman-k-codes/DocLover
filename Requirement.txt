@@ -95,13 +95,25 @@ JPG to DOC - Done
 JPG to XL - Done
 
 Image & Document Tools
-Crop - Pending
-Collage - Pending
-Resize - Pending
-Passport-size Photo - Pending
-Photo Clarity Enhancement - Pending
-Background Remover - Pending
-Resume Maker - Pending
+Crop - Done
+Passport-size Photo - Done
+Photo Clarity Enhancement - Done
+Background Remover - Done
+Resume Maker - Progress
 Photo Size Compression - Done
 Image to Text Conversion - Done
 Sign Picker - Pending
+
+
+PDF Tools
+
+Merge PDF - Pending
+Split PDF - Pending
+Rotate PDF - Pending
+Delete PDF Pages - Pending
+Extract PDF Pages - Pending
+Protect PDF - Pending
+Unlock PDF - Pending
+Add Watermark - Pending
+PDF Metadata Editor - Pending
+PDF Form Filler - Pending
