@@ -171,19 +171,22 @@ class DocsController extends Controller
             'image' => 'required|image|max:25600', // Max 25MB
         ]);
 
+        // Send the image to the Flask API for enhancement
         $response = Http::attach(
-            'image',
+            'file', // <- your Flask expects 'file', not 'image'
             $request->file('image')->get(),
             $request->file('image')->getClientOriginalName()
-        )->post('http://127.0.0.1:5000/remove-bg');
+        )->post('http://127.0.0.1:5000/api/enhance-photo'); // <- correct Flask API URL
 
         if ($response->successful()) {
             return response($response->body(), 200)
-                ->header('Content-Type', 'image/png');
+                ->header('Content-Type', 'image/jpeg') // Flask sends JPEG
+                ->header('Content-Disposition', 'attachment; filename="enhanced.jpg"');
         } else {
-            return response()->json(['error' => 'Failed to remove background'], 500);
+            return response()->json(['error' => 'Failed to enhance image quality'], 500);
         }
     }
+
 
     public function convertPDFtoHTML(Request $request)
     {
