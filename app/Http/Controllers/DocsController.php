@@ -15,6 +15,7 @@ use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Log;
 
 
+
 class DocsController extends Controller
 {
 
@@ -226,6 +227,84 @@ class DocsController extends Controller
                 'trace' => $e->getTraceAsString(),
             ]);
             return response()->json(['error' => 'Server error', 'details' => $e->getMessage()], 500);
+        }
+    }
+
+
+    public function imageToText(Request $request)
+    {
+        try {
+            // Validate the uploaded image
+            $request->validate([
+                'image' => 'required|image|max:25600', // Max 25MB
+            ]);
+
+            // Get the uploaded image
+            $image = $request->file('image');
+
+            // Log the API URL for debugging purposes
+            Log::debug('API URL', ['url' => env('API_URL')]);
+
+            // Send the image to the Flask API
+            $response = Http::attach(
+                'file',
+                file_get_contents($image->getRealPath()), // Get the file contents safely
+                $image->getClientOriginalName()
+            )->post(env('API_URL') . '/api/image-to-text');
+
+            // Log the API response for debugging purposes
+            Log::debug('External API Response', ['status' => $response->status(), 'body' => $response->body()]);
+
+            // Check if the response from the Flask API is successful
+            if ($response->successful()) {
+                // Return the extracted text from the API response
+                $data = $response->json(); // Convert the JSON response to an array
+                return response()->json([
+                    'extracted_text' => $data['extracted_text']
+                ]);
+            } else {
+                // Log error details if the API call failed
+                Log::error('Text extraction API failed', [
+                    'status' => $response->status(),
+                    'body' => $response->body(),
+                ]);
+                return response()->json(['error' => 'Failed to extract text from the image'], 500);
+            }
+        } catch (\Exception $e) {
+            // Log any exception that occurs during the process
+            Log::error('Exception in imageToText', [
+                'message' => $e->getMessage(),
+                'trace' => $e->getTraceAsString(),
+            ]);
+            return response()->json(['error' => 'Server error', 'details' => $e->getMessage()], 500);
+        }
+    }
+
+    public function convertImageToWord(Request $request)
+    {
+        // Make sure you have the file uploaded
+        $file = $request->file('image');
+
+        // Send the file to the Flask API
+        $response = Http::attach(
+            'file',
+            file_get_contents($file->getRealPath()),
+            $file->getClientOriginalName()
+        )->post('http://127.0.0.1:5000/api/image-to-word');
+
+        // Check if the request was successful
+        if ($response->successful()) {
+            // Save the received Word document to storage
+            $filename = 'converted_' . time() . '.docx';
+            Storage::put('public/word_files/' . $filename, $response->body());
+
+            // Return the URL to the file or a success message
+            return response()->json([
+                'message' => 'File converted successfully!',
+                'file_url' => Storage::url('public/word_files/' . $filename)
+            ]);
+        } else {
+            return response()->json(['error' => 'Error converting image to Word.'], 400);
         }
     }
 }

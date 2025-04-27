@@ -165,55 +165,47 @@
                 return;
             }
 
-            const imageFile = fileInput.files[0];
-            const reader = new FileReader();
+            const formData = new FormData();
+            formData.append('image', fileInput.files[0]);
 
-            reader.onload = function (e) {
-                const imageData = e.target.result;
+            // Show loading
+            document.getElementById("convertBtn").innerText = "Processing...";
+            document.getElementById("convertBtn").disabled = true;
 
-                // Show loading
-                document.getElementById("convertBtn").innerText = "Processing...";
-                document.getElementById("convertBtn").disabled = true;
+            // Using fetch to send the request
+            fetch("{{ route('convert.imageToWord') }}", {
+                    method: 'POST',
+                    headers: {
+                        'X-CSRF-TOKEN': "{{ csrf_token() }}"
+                    },
+                    body: formData,
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.error) {
+                        alert(data.error);
+                    } else {
+                        const downloadUrl = URL.createObjectURL(new Blob([data.fileContent], {
+                            type: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+                        }));
+                        docBlobUrl = downloadUrl;
 
-                // OCR using Tesseract.js
-                Tesseract.recognize(imageData, 'eng', {
-                    logger: m => console.log(m)
-                }).then(({
-                    data: {
-                        text
+                        // Show download section
+                        document.getElementById("downloadSection").classList.remove("hidden");
+                        document.getElementById("uploadSection").classList.add("hidden");
+                        document.getElementById("imagePreviewContainer").classList.add("hidden");
+                        document.getElementById("convertBtn").classList.add("hidden");
                     }
-                }) => {
-                    const htmlContent = `
-                    <html xmlns:o='urn:schemas-microsoft-com:office:office'
-                          xmlns:w='urn:schemas-microsoft-com:office:word'
-                          xmlns='http://www.w3.org/TR/REC-html40'>
-                    <head><meta charset="utf-8"><title>Image to Word</title></head>
-                    <body>
-                        <pre style="font-family: Arial, sans-serif; font-size: 14px;">${text}</pre>
-                    </body>
-                    </html>`;
-
-                    const blob = new Blob(['\ufeff', htmlContent], {
-                        type: 'application/msword'
-                    });
-
-                    docBlobUrl = URL.createObjectURL(blob);
-                    document.getElementById("downloadSection").classList.remove("hidden");
-
-                    // Hide convert section
-                    document.getElementById("uploadSection").classList.add("hidden");
-                    document.getElementById("imagePreviewContainer").classList.add("hidden");
-                    document.getElementById("convertBtn").classList.add("hidden");
-                }).catch(error => {
-                    alert("Failed to extract text from image.");
-                    console.error(error);
-                }).finally(() => {
+                })
+                .catch(error => {
+                    console.error("Error:", error);
+                    alert("There was an error processing your request. Please try again.");
+                })
+                .finally(() => {
+                    // Restore the convert button
                     document.getElementById("convertBtn").innerText = "Convert to Word";
                     document.getElementById("convertBtn").disabled = false;
                 });
-            };
-
-            reader.readAsDataURL(imageFile);
         }
 
 
@@ -227,7 +219,7 @@
 
                 const link = document.createElement('a');
                 link.href = docBlobUrl;
-                link.download = `${fileName}.doc`;
+                link.download = `${fileName}.docx`;
                 document.body.appendChild(link);
                 link.click();
                 document.body.removeChild(link);
@@ -241,10 +233,10 @@
             document.getElementById("imagePreviewContainer").classList.add("hidden"); // Hide preview section
             document.getElementById("convertBtn").classList.add("hidden"); // Hide convert button
 
-            // Reset file input (Corrected ID)
+            // Reset file input
             const fileInput = document.getElementById("imageInput");
             fileInput.value = "";
         }
-
     </script>
+
 @endsection

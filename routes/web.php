@@ -66,6 +66,8 @@ Route::prefix('/')->group(function () {
         Route::post('/image-quality-enhance', [DocsController::class, 'enhanceImageQuality'])->name('enhance.image');
         Route::post('/pdf-to-word', [DocsController::class, 'convertPDFtoWord'])->name('convert.convertPDFtoWord');
         Route::post('/pdf-to-html', [DocsController::class, 'convertPDFtoHTML'])->name('convert.convertPDFtoHTML');
+        Route::post('/image-to-text', [DocsController::class, 'imageToText'])->name('convert.imageToText');
+        Route::post('/image-to-word', [DocsController::class, 'convertImageToWord'])->name('convert.imageToWord');
     });
     Route::prefix('/resume')->group(function () {
         Route::get('/', [ResumeController::class, 'index'])->name('resume.index');
