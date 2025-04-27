@@ -1,175 +1,130 @@
 @extends('sw.layout.master')
 
-@section('title', 'DocLover - Split PDF')
-
-@section('meta_description', 'Split a single PDF into multiple pages or ranges with DocLover.')
-@section('meta_keywords', 'Split PDF, Extract PDF pages, PDF Tools')
+@section('title', 'DocLover - Split PDFs')
+@section('meta_description', 'Easily split PDF files into multiple pages with DocLover.')
+@section('meta_keywords', 'Split PDF, PDF Splitter, Split PDF files, DocLover')
 
 @section('content')
-<!-- Hero Section -->
-<section class="pt-12 px-4 bg-gray-50">
-    <div class="max-w-3xl mx-auto text-center">
-        <h2 class="text-4xl font-extrabold text-gray-800">Split Your PDF in Seconds</h2>
-        <p class="text-lg text-gray-600 mt-3">Upload a PDF and extract specific pages or ranges with our fast and secure tool.</p>
-    </div>
-</section>
-
-<!-- Step indicator -->
-<section class="py-10 px-4">
-    <div
-        class="flex flex-col sm:flex-row sm:justify-center sm:space-x-8 space-y-4 sm:space-y-0 bg-indigo-50 rounded-2xl p-6 max-w-2xl mx-auto mb-8 shadow">
-        <div class="flex items-center space-x-2">
-            <div class="w-8 h-8 flex items-center justify-center bg-indigo-700 text-white rounded-full font-bold">1</div>
-            <span class="text-gray-800 font-semibold">Upload PDF</span>
+    <section class="pt-12 px-4 bg-gray-50">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-4xl font-extrabold text-gray-800">Split PDFs Instantly</h2>
+            <p class="text-lg text-gray-600 mt-3">Upload a PDF and split it into individual pages or specific ranges.</p>
         </div>
-        <div class="flex items-center space-x-2">
-            <div class="w-8 h-8 flex items-center justify-center bg-indigo-700 text-white rounded-full font-bold">2</div>
-            <span class="text-gray-800 font-semibold">Split File</span>
+    </section>
+
+    <section class="py-10 px-4">
+        <div class="flex flex-col sm:flex-row sm:justify-center sm:space-x-8 space-y-4 sm:space-y-0 bg-indigo-50 rounded-2xl p-6 max-w-2xl mx-auto mb-8 shadow">
+            @foreach (['Upload PDF', 'Choose Pages', 'Split & Download'] as $i => $step)
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 flex items-center justify-center bg-indigo-700 text-white rounded-full font-bold">
+                        {{ $i + 1 }}
+                    </div>
+                    <span class="text-gray-800 font-semibold">{{ $step }}</span>
+                </div>
+            @endforeach
         </div>
-        <div class="flex items-center space-x-2">
-            <div class="w-8 h-8 flex items-center justify-center bg-indigo-700 text-white rounded-full font-bold">3</div>
-            <span class="text-gray-800 font-semibold">Download Split Files</span>
+
+        <div class="border-2 border-dashed border-gray-300 rounded-2xl p-10 max-w-3xl mx-auto text-center bg-white shadow-md" id="uploadSection">
+            <p class="text-lg font-medium mb-4">Drop your PDF here <span class="text-gray-500">or</span></p>
+            <label class="inline-flex items-center bg-indigo-700 text-white font-semibold px-6 py-3 rounded-md cursor-pointer hover:bg-indigo-800">
+                <i class="fas fa-upload mr-2"></i>
+                Upload PDF
+                <input type="file" id="pdfInput" class="hidden" accept="application/pdf" />
+            </label>
+            <p class="text-sm text-gray-500 mt-4">Max size: 100MB. Only PDF files supported.</p>
         </div>
-    </div>
 
-    <!-- Upload Area -->
-    <div id="uploadSection"
-        class="border-2 border-dashed border-gray-300 rounded-2xl p-10 max-w-3xl mx-auto text-center bg-white shadow-md">
-        <p class="text-lg font-medium mb-4">Drop your PDF here <span class="text-gray-500">or</span></p>
-        <label
-            class="inline-flex items-center bg-indigo-700 text-white font-semibold px-6 py-3 rounded-md cursor-pointer hover:bg-indigo-800">
-            <i class="fas fa-upload mr-2"></i>
-            Upload PDF
-            <input type="file" id="pdfInput" class="hidden" accept="application/pdf" onchange="previewPDF(event)" />
-        </label>
-        <p class="text-sm text-gray-500 mt-4">Max size: 25MB. Only one PDF file supported.</p>
-    </div>
+        <div id="previewContainer" class="hidden mt-8 max-w-3xl mx-auto text-center bg-white shadow-lg rounded-2xl p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-4">PDF to Split</h3>
+            <p id="pdfPages" class="text-sm text-gray-700 mb-4"></p>
+            <label for="pageRange" class="text-sm text-gray-700">Enter the page range to split (e.g., 1-3, 5):</label>
+            <input type="text" id="pageRange" class="mt-2 p-2 border rounded" placeholder="Page range..." />
+        </div>
 
-    <!-- PDF Preview -->
-    <div id="pdfPreviewContainer" class="hidden mt-8 max-w-3xl mx-auto text-center bg-white shadow-lg rounded-2xl p-6">
-        <h3 class="text-xl font-bold text-gray-900 mb-4">PDF File Selected</h3>
-        <ul id="pdfList" class="text-gray-700 text-left list-disc pl-6"></ul>
-    </div>
-
-    <!-- Convert Button -->
-    <div id="convertSection" class="mt-8 max-w-3xl mx-auto text-center">
-        <button id="convertBtn"
-            class="bg-gray-800 text-white font-semibold px-8 py-3 rounded-lg shadow-md transition-all hover:bg-green-700 hover:shadow-lg cursor-pointer hidden"
-            onclick="splitPDF()">
-            <span class="inline-flex items-center">
-                <i class="fas fa-cut mr-2"></i>
+        <div id="splitSection" class="mt-8 max-w-3xl mx-auto text-center">
+            <button id="splitBtn" class="bg-gray-800 text-white font-semibold px-8 py-3 rounded-lg shadow-md hover:bg-green-700 hidden">
+                <i class="fas fa-compress-arrows-alt mr-2"></i>
                 Split PDF
-            </span>
-        </button>
-    </div>
+            </button>
+        </div>
 
-    <!-- Download Section -->
-    <div id="downloadSection"
-        class="hidden mt-8 max-w-3xl mx-auto text-center bg-white shadow-lg rounded-2xl p-6 border border-gray-200">
-        <div class="flex flex-col items-center">
-            <div class="w-16 h-16 flex items-center justify-center bg-green-100 text-green-600 rounded-full mb-4">
-                <i class="fas fa-check-circle text-4xl"></i>
-            </div>
-            <h3 class="text-xl font-bold text-gray-900">Split Successful!</h3>
-            <p class="text-gray-600 mt-2">Your split PDF files are ready to download.</p>
-            <div class="flex flex-wrap justify-center mt-6 space-x-4">
-                <button id="downloadBtn"
-                    class="bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 shadow-md transition duration-200"
-                    onclick="downloadSplitPDF()">
+        <div id="downloadSection" class="hidden mt-8 max-w-3xl mx-auto text-center bg-white shadow-lg rounded-2xl p-6 border border-gray-200">
+            <div class="flex flex-col items-center">
+                <div class="w-16 h-16 flex items-center justify-center bg-green-100 text-green-600 rounded-full mb-4">
+                    <i class="fas fa-check-circle text-4xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900">Split Successful!</h3>
+                <p class="text-gray-600 mt-2">Your split PDF is ready for download.</p>
+
+                <a id="downloadSplitBtn" href="#" class="mt-6 bg-green-700 hover:bg-green-800 text-white font-semibold px-6 py-3 rounded-lg shadow-md">
                     <i class="fas fa-download mr-2"></i>
-                    Download ZIP
-                </button>
-                <button id="convertAgainBtn"
-                    class="bg-gray-700 text-white font-semibold px-6 py-3 rounded-lg hover:bg-gray-800 shadow-md transition duration-200"
-                    onclick="convertAgain()">
-                    <i class="fas fa-sync-alt mr-2"></i>
-                    Split Another
-                </button>
+                    Download Split PDF
+                </a>
+
+                <div class="flex flex-wrap justify-center mt-6 space-x-4">
+                    <button id="splitAgainBtn" onclick="splitAgain()" class="bg-gray-700 text-white font-semibold px-6 py-3 rounded-lg hover:bg-gray-800 shadow-md transition duration-200">
+                        <i class="fas fa-sync-alt mr-2"></i>
+                        Split Another PDF
+                    </button>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<script>
-    let splitPDFZipUrl = null;
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
 
-    function previewPDF(event) {
-        const file = event.target.files[0];
-        const list = document.getElementById("pdfList");
-        list.innerHTML = "";
+    <script>
+        let file;
+        const pdfInput = document.getElementById("pdfInput");
+        const previewContainer = document.getElementById("previewContainer");
+        const pdfPages = document.getElementById("pdfPages");
+        const splitBtn = document.getElementById("splitBtn");
+        const downloadSection = document.getElementById("downloadSection");
+        const downloadSplitBtn = document.getElementById("downloadSplitBtn");
 
-        if (file) {
-            const li = document.createElement("li");
-            li.textContent = file.name;
-            list.appendChild(li);
+        pdfInput.addEventListener("change", function() {
+            file = this.files[0];
+            if (!file) return alert("Please select a PDF file.");
 
-            document.getElementById("pdfPreviewContainer").classList.remove("hidden");
-            document.getElementById("convertBtn").classList.remove("hidden");
-        }
-    }
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                const pdfBytes = new Uint8Array(event.target.result);
+                const pdf = PDFLib.PDFDocument.load(pdfBytes);
 
-    function splitPDF() {
-        const fileInput = document.getElementById('pdfInput');
-        const file = fileInput.files[0];
+                pdf.then(function(pdfDoc) {
+                    pdfPages.innerHTML = `This PDF has ${pdfDoc.getPageCount()} pages.`;
+                    previewContainer.classList.remove("hidden");
+                    splitBtn.classList.remove("hidden");
+                });
+            };
+            reader.readAsArrayBuffer(file);
+        });
 
-        if (!file) {
-            alert("Please upload a PDF file to split.");
-            return;
-        }
+        splitBtn.addEventListener("click", async function() {
+            const pageRange = document.getElementById("pageRange").value.trim();
+            if (!pageRange) return alert("Please enter a page range.");
 
-        document.getElementById("uploadSection").classList.add("hidden");
-        document.getElementById("pdfPreviewContainer").classList.add("hidden");
-        document.getElementById("convertBtn").classList.add("hidden");
+            const rangeArray = pageRange.split(",").map(r => r.split("-").map(Number));
+            const pdfBytes = await file.arrayBuffer();
+            const pdf = await PDFLib.PDFDocument.load(pdfBytes);
+            const splitPdf = await PDFLib.PDFDocument.create();
 
-        const csrfToken = CSRF;
-        const formData = new FormData();
-        formData.append("_token", csrfToken);
-        formData.append("pdf", file);
+            for (let range of rangeArray) {
+                let [start, end] = range;
+                start = start - 1; // zero-based index
+                end = end ? end - 1 : start; // if no end, just split that page
 
-        fetch("#", {
-            method: "POST",
-            headers: {
-                "X-CSRF-TOKEN": csrfToken
-            },
-            body: formData
-        })
-            .then(response => {
-                if (!response.ok) throw new Error("Split failed. Try again.");
-                return response.blob();
-            })
-            .then(blob => {
-                splitPDFZipUrl = URL.createObjectURL(blob);
-                document.getElementById("downloadSection").classList.remove("hidden");
-            })
-            .catch(error => {
-                console.error("Error:", error);
-                alert("An error occurred during split.");
-                document.getElementById("uploadSection").classList.remove("hidden");
-                document.getElementById("pdfPreviewContainer").classList.remove("hidden");
-                document.getElementById("convertBtn").classList.remove("hidden");
-            });
-    }
+                const copiedPages = await splitPdf.copyPages(pdf, Array.from({ length: end - start + 1 }, (_, i) => i + start));
+                copiedPages.forEach(page => splitPdf.addPage(page));
+            }
 
-    function downloadSplitPDF() {
-        if (splitPDFZipUrl) {
-            const downloadLink = document.createElement("a");
-            downloadLink.href = splitPDFZipUrl;
-            downloadLink.download = "split_pages_doclover.zip";
-            document.body.appendChild(downloadLink);
-            downloadLink.click();
-            document.body.removeChild(downloadLink);
-            URL.revokeObjectURL(splitPDFZipUrl);
-            splitPDFZipUrl = null;
-        }
-    }
+            const splitBytes = await splitPdf.save();
+            const blob = new Blob([splitBytes], { type: 'application/pdf' });
+            const url = URL.createObjectURL(blob);
 
-    function convertAgain() {
-        document.getElementById("downloadSection").classList.add("hidden");
-        document.getElementById("uploadSection").classList.remove("hidden");
-        document.getElementById("pdfPreviewContainer").classList.add("hidden");
-        document.getElementById("convertBtn").classList.add("hidden");
-        document.getElementById("pdfList").innerHTML = "";
-        document.getElementById("pdfInput").value = "";
-    }
-</script>
+            downloadSplitBtn.href = url;
+            downloadSection.classList.remove("hidden");
+            splitBtn.classList.add("hidden");
+        });
+    </script>
 @endsection

@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 use PDFMerger\PDFMerger;
-
+use setasign\Fpdi\Fpdi;
 
 
 class DocsController extends Controller
@@ -340,5 +340,57 @@ class DocsController extends Controller
             'Content-Type' => 'application/pdf',
             'Content-Disposition' => 'attachment; filename="merged.pdf"',
         ]);
+    }
+
+
+    public function split(Request $request)
+    {
+        $this->validate($request, [
+            'pdf' => 'required|mimes:pdf|max:25000',
+        ]);
+
+        $pdf = $request->file('pdf');
+        $pdfPath = $pdf->storeAs('pdfs', 'original.pdf'); // Store the original PDF
+
+        $outputDir = 'pdfs/split/';
+        $this->splitPDF($pdfPath, $outputDir);
+
+        // Zip the split files
+        $zipPath = $this->zipSplitFiles($outputDir);
+
+        // Return the zip file
+        return response()->download($zipPath);
+    }
+
+    private function splitPDF($pdfPath, $outputDir)
+    {
+        $pdf = new Fpdi();
+        $pageCount = $pdf->setSourceFile(storage_path("app/{$pdfPath}"));
+
+        for ($i = 1; $i <= $pageCount; $i++) {
+            $pdf->addPage();
+            $pdf->useTemplate($pdf->importPage($i));
+
+            // Save each page as a separate file
+            $outputFile = storage_path("app/{$outputDir}page_{$i}.pdf");
+            $pdf->Output('F', $outputFile);
+            $pdf->close();
+        }
+    }
+
+    private function zipSplitFiles($outputDir)
+    {
+        $zip = new ZipArchive();
+        $zipFilePath = storage_path('app/pdfs/split_pages_doclover.zip');
+
+        if ($zip->open($zipFilePath, ZipArchive::CREATE) === TRUE) {
+            $files = glob(storage_path("app/{$outputDir}*.pdf"));
+            foreach ($files as $file) {
+                $zip->addFile($file, basename($file));
+            }
+            $zip->close();
+        }
+
+        return $zipFilePath;
     }
 }
