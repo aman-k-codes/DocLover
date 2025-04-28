@@ -52,6 +52,10 @@ class DocumentController extends Controller
     {
         return view('sw.pages.imageanddocumentprocessing.photo-clarity-enhancement');
     }
+    public function passport_size_photo()
+    {
+        return view('sw.pages.imageanddocumentprocessing.passport-photo');
+    }
     public function background_change()
     {
         return view('sw.pages.imageanddocumentprocessing.background-change');

@@ -35,6 +35,7 @@ class GenerateControllerViews extends Command
             'ImageAndDocumentProcessing' => [
                 'crop',
                 'photo-clarity-enhancement',
+                'pasport-photo',
                 'background-change',
                 'photo-size-compression',
                 'image-to-text-conversion',

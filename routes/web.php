@@ -41,6 +41,7 @@ Route::prefix('/')->group(function () {
         Route::get('/jpg-to-xl', [DocumentController::class, 'jpg_to_xl'])->name('jpg-to-xl');
         Route::get('/crop', [DocumentController::class, 'crop'])->name('crop');
         Route::get('/photo-clarity-enhancement', [DocumentController::class, 'photo_clarity_enhancement'])->name('photo-clarity-enhancement');
+        Route::get('/passport-photo', [DocumentController::class, 'passport_size_photo'])->name('passport-photo');
         Route::get('/background-change', [DocumentController::class, 'background_change'])->name('background-change');
         Route::get('/photo-size-compression', [DocumentController::class, 'photo_size_compression'])->name('photo-size-compression');
         Route::get('/image-to-text-conversion', [DocumentController::class, 'image_to_text_conversion'])->name('image-to-text-conversion');
