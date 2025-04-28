@@ -42,6 +42,12 @@
 
                 <li class="flex items-center space-x-2"><i class="fas fa-magic text-purple-500"></i><a
                         href="{{ route('photo-clarity-enhancement') }}"><span>Photo Clarity Enhancement</span></a></li>
+                <li class="flex items-center space-x-2">
+                    <i class="fas fa-passport text-indigo-600"></i>
+                    <a href="{{ route('passport-photo') }}">
+                        <span>Passport-Photo</span>
+                    </a>
+                </li>
                 <li class="flex items-center space-x-2"><i class="fas fa-image text-indigo-600"></i><a
                         href="{{ route('background-change') }}"><span>Background Remover</span></a></li>
                 <li class="flex items-center space-x-2"><i class="fas fa-file-alt text-gray-600"></i><a
