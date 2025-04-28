@@ -1,7 +1,6 @@
 @extends('sw.layout.master')
 
 @section('title', 'DocLover - Protect PDF')
-
 @section('meta_description', 'Protect your PDF with DocLover’s easy-to-use tool.')
 @section('meta_keywords', 'Protect PDF, PDF tools')
 
@@ -14,30 +13,11 @@
     </div>
 </section>
 
-<!-- Step indicator -->
+<!-- Upload Area -->
 <section class="py-10 px-4">
-    <div
-        class="flex flex-col sm:flex-row sm:justify-center sm:space-x-8 space-y-4 sm:space-y-0 bg-indigo-50 rounded-2xl p-6 max-w-2xl mx-auto mb-8 shadow">
-        <div class="flex items-center space-x-2">
-            <div class="w-8 h-8 flex items-center justify-center bg-indigo-700 text-white rounded-full font-bold">1</div>
-            <span class="text-gray-800 font-semibold">Upload PDF</span>
-        </div>
-        <div class="flex items-center space-x-2">
-            <div class="w-8 h-8 flex items-center justify-center bg-indigo-700 text-white rounded-full font-bold">2</div>
-            <span class="text-gray-800 font-semibold">Set a Password</span>
-        </div>
-        <div class="flex items-center space-x-2">
-            <div class="w-8 h-8 flex items-center justify-center bg-indigo-700 text-white rounded-full font-bold">3</div>
-            <span class="text-gray-800 font-semibold">Download Protected PDF</span>
-        </div>
-    </div>
-
-    <!-- Upload Area -->
-    <div id="uploadSection"
-        class="border-2 border-dashed border-gray-300 rounded-2xl p-10 max-w-3xl mx-auto text-center bg-white shadow-md">
+    <div id="uploadSection" class="border-2 border-dashed border-gray-300 rounded-2xl p-10 max-w-3xl mx-auto text-center bg-white shadow-md">
         <p class="text-lg font-medium mb-4">Drop your PDF here <span class="text-gray-500">or</span></p>
-        <label
-            class="inline-flex items-center bg-indigo-700 text-white font-semibold px-6 py-3 rounded-md cursor-pointer hover:bg-indigo-800">
+        <label class="inline-flex items-center bg-indigo-700 text-white font-semibold px-6 py-3 rounded-md cursor-pointer hover:bg-indigo-800">
             <i class="fas fa-upload mr-2"></i>
             Upload PDF
             <input type="file" id="pdfInput" class="hidden" accept="application/pdf" onchange="previewPDF(event)" />
@@ -55,9 +35,7 @@
 
     <!-- Protect Button -->
     <div id="convertSection" class="mt-8 max-w-3xl mx-auto text-center">
-        <button id="protectBtn"
-            class="bg-gray-800 text-white font-semibold px-8 py-3 rounded-lg shadow-md transition-all hover:bg-green-700 hover:shadow-lg cursor-pointer hidden"
-            onclick="protectPDF()">
+        <button id="protectBtn" class="bg-gray-800 text-white font-semibold px-8 py-3 rounded-lg shadow-md transition-all hover:bg-green-700 hover:shadow-lg cursor-pointer hidden" onclick="protectPDF()">
             <span class="inline-flex items-center">
                 <i class="fas fa-lock mr-2"></i>
                 Protect PDF with Password
@@ -66,8 +44,7 @@
     </div>
 
     <!-- Download Section -->
-    <div id="downloadSection"
-        class="hidden mt-8 max-w-3xl mx-auto text-center bg-white shadow-lg rounded-2xl p-6 border border-gray-200">
+    <div id="downloadSection" class="hidden mt-8 max-w-3xl mx-auto text-center bg-white shadow-lg rounded-2xl p-6 border border-gray-200">
         <div class="flex flex-col items-center">
             <div class="w-16 h-16 flex items-center justify-center bg-green-100 text-green-600 rounded-full mb-4">
                 <i class="fas fa-check-circle text-4xl"></i>
@@ -75,15 +52,11 @@
             <h3 class="text-xl font-bold text-gray-900">PDF Protected Successfully!</h3>
             <p class="text-gray-600 mt-2">Your protected PDF is ready to download.</p>
             <div class="flex flex-wrap justify-center mt-6 space-x-4">
-                <button id="downloadBtn"
-                    class="bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 shadow-md transition duration-200"
-                    onclick="downloadProtectedPDF()">
+                <button id="downloadBtn" class="bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 shadow-md transition duration-200" onclick="downloadProtectedPDF()">
                     <i class="fas fa-download mr-2"></i>
                     Download PDF
                 </button>
-                <button id="protectAgainBtn"
-                    class="bg-gray-700 text-white font-semibold px-6 py-3 rounded-lg hover:bg-gray-800 shadow-md transition duration-200"
-                    onclick="protectAgain()">
+                <button id="protectAgainBtn" class="bg-gray-700 text-white font-semibold px-6 py-3 rounded-lg hover:bg-gray-800 shadow-md transition duration-200" onclick="protectAgain()">
                     <i class="fas fa-sync-alt mr-2"></i>
                     Protect Another PDF
                 </button>
@@ -91,6 +64,9 @@
         </div>
     </div>
 </section>
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+<script src="https://unpkg.com/@cantoo/pdf-lib-encrypt@1.0.0/dist/pdf-lib-encrypt.min.js"></script>
 
 <script>
     let protectedPDFUrl = null;
@@ -110,7 +86,7 @@
         }
     }
 
-    function protectPDF() {
+    async function protectPDF() {
         const fileInput = document.getElementById('pdfInput');
         const file = fileInput.files[0];
         const passwordInput = document.getElementById('passwordInput').value.trim();
@@ -129,34 +105,36 @@
         document.getElementById("pdfPreviewContainer").classList.add("hidden");
         document.getElementById("protectBtn").classList.add("hidden");
 
-        const csrfToken = CSRF;
-        const formData = new FormData();
-        formData.append("_token", csrfToken);
-        formData.append("pdf", file);
-        formData.append("password", passwordInput);
+        try {
+            const arrayBuffer = await file.arrayBuffer();
+            const pdfDoc = await PDFLib.PDFDocument.load(arrayBuffer);
 
-        fetch("{{ route('protect-pdf') }}", { // Replace with actual backend route
-            method: "POST",
-            headers: {
-                "X-CSRF-TOKEN": csrfToken
-            },
-            body: formData
-        })
-            .then(response => {
-                if (!response.ok) throw new Error("Protection failed. Try again.");
-                return response.blob();
-            })
-            .then(blob => {
-                protectedPDFUrl = URL.createObjectURL(blob);
-                document.getElementById("downloadSection").classList.remove("hidden");
-            })
-            .catch(error => {
-                console.error("Error:", error);
-                alert("An error occurred during protection.");
-                document.getElementById("uploadSection").classList.remove("hidden");
-                document.getElementById("pdfPreviewContainer").classList.remove("hidden");
-                document.getElementById("protectBtn").classList.remove("hidden");
+            // Use pdf-lib-encrypt to apply password protection
+            const encryptedPdfBytes = await PDFLibEncrypt.encrypt(pdfDoc, {
+                userPassword: passwordInput,
+                ownerPassword: passwordInput,
+                permissions: {
+                    printing: 'highResolution',
+                    modifying: false,
+                    copying: false,
+                    annotating: false,
+                    fillingForms: false,
+                    contentAccessibility: false,
+                    documentAssembly: false,
+                },
             });
+
+            // Create an object URL for the encrypted PDF
+            protectedPDFUrl = URL.createObjectURL(new Blob([encryptedPdfBytes], { type: 'application/pdf' }));
+
+            document.getElementById("downloadSection").classList.remove("hidden");
+        } catch (error) {
+            console.error("Error:", error);
+            alert("An error occurred during protection.");
+            document.getElementById("uploadSection").classList.remove("hidden");
+            document.getElementById("pdfPreviewContainer").classList.remove("hidden");
+            document.getElementById("protectBtn").classList.remove("hidden");
+        }
     }
 
     function downloadProtectedPDF() {
@@ -182,4 +160,5 @@
         document.getElementById("pdfInput").value = "";
     }
 </script>
+
 @endsection

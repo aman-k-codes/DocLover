@@ -63,13 +63,13 @@
                         href="{{ route('merge-pdf') }}"><span>Merge PDF</span></a></li>
                 <li class="flex items-center space-x-2"><i class="fas fa-cut text-yellow-500"></i><a
                         href="{{ route('split-pdf') }}"><span>Split PDF</span></a></li>
-                <li class="flex items-center space-x-2"><i class="fas fa-sync text-green-500"></i><a
-                        href="{{ route('rotate-pdf') }}"><span>Rotate PDF</span></a></li>
+                {{-- <li class="flex items-center space-x-2"><i class="fas fa-sync text-green-500"></i><a
+                        href="{{ route('rotate-pdf') }}"><span>Rotate PDF</span></a></li> --}}
                 <li class="flex items-center space-x-2"><i class="fas fa-trash-alt text-red-500"></i><a
                         href="{{ route('delete-pdf-pages') }}"><span>Delete PDF Pages</span></a></li>
                 <li class="flex items-center space-x-2"><i class="fas fa-file-export text-blue-500"></i><a
                         href="{{ route('extract-pdf-pages') }}"><span>Extract PDF Pages</span></a></li>
-                <li class="flex items-center space-x-2"><i class="fas fa-lock text-gray-700"></i><a
+                {{-- <li class="flex items-center space-x-2"><i class="fas fa-lock text-gray-700"></i><a
                         href="{{ route('protect-pdf') }}"><span>Protect PDF</span></a></li>
                 <li class="flex items-center space-x-2"><i class="fas fa-unlock text-green-600"></i><a
                         href="{{ route('unlock-pdf') }}"><span>Unlock PDF</span></a></li>
@@ -78,7 +78,7 @@
                 <li class="flex items-center space-x-2"><i class="fas fa-info-circle text-indigo-600"></i><a
                         href="{{ route('pdf-metadata-editor') }}"><span>PDF Metadata Editor</span></a></li>
                 <li class="flex items-center space-x-2"><i class="fas fa-pen-square text-blue-800"></i><a
-                        href="{{ route('pdf-form-filler') }}"><span>PDF Form Filler</span></a></li>
+                        href="{{ route('pdf-form-filler') }}"><span>PDF Form Filler</span></a></li> --}}
             </ul>
         </div>
 
