@@ -113,7 +113,7 @@
                     </div>
                 </div>
 
-                <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
+                {{-- <div style="display:none" class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="google-docs">
                     <img src="{{ asset('public/assets/temp-imgs/google-docs/gd (2).png') }}" alt="Google Docs Template"
                         class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
@@ -125,7 +125,8 @@
                             class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Use
                             Template</button>
                     </div>
-                </div>
+                </div> --}}
+
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="two-column">
                     <img src="{{ asset('public/assets/temp-imgs/two-column/tclm (3).png') }}" alt="Two-column Template"
@@ -165,7 +166,8 @@
                             Template</button>
                     </div>
                 </div>
-                <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
+
+                {{-- <div style="display:none" class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="google-docs">
                     <img src="{{ asset('public/assets/temp-imgs/google-docs/gd (2).jpg') }}" alt="Google Docs Template"
                         class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
@@ -177,7 +179,8 @@
                             class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Use
                             Template</button>
                     </div>
-                </div>
+                </div> --}}
+
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="two-column">
                     <img src="{{ asset('public/assets/temp-imgs/two-column/tclm (4).png') }}" alt="Two-column Template"
@@ -191,7 +194,8 @@
                             Template</button>
                     </div>
                 </div>
-                <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
+
+                {{-- <div style="display:none" class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="picture">
                     <!-- Image -->
                     <img src="{{ asset('public/assets/temp-imgs/pitcher/ptr (2).jpg') }}" alt="Picture Template"
@@ -205,7 +209,8 @@
                             class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Use
                             Template</button>
                     </div>
-                </div>
+                </div> --}}
+
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="two-column">
                     <img src="{{ asset('public/assets/temp-imgs/two-column/tclm (5).png') }}" alt="Two-column Template"
@@ -219,7 +224,8 @@
                             Template</button>
                     </div>
                 </div>
-                <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
+
+                {{-- <div style="display:none" class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="google-docs">
                     <img src="{{ asset('public/assets/temp-imgs/google-docs/gd (3).png') }}" alt="Google Docs Template"
                         class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
@@ -231,7 +237,7 @@
                             class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Use
                             Template</button>
                     </div>
-                </div>
+                </div> --}}
 
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="ats">
@@ -259,7 +265,8 @@
                             Template</button>
                     </div>
                 </div>
-                <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
+
+                {{-- <div style="display:none" class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="google-docs">
                     <img src="{{ asset('public/assets/temp-imgs/google-docs/gd (4).png') }}" alt="Google Docs Template"
                         class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
@@ -271,7 +278,8 @@
                             class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Use
                             Template</button>
                     </div>
-                </div>
+                </div> --}}
+
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="two-column">
                     <img src="{{ asset('public/assets/temp-imgs/two-column/tclm (8).png') }}" alt="Two-column Template"
@@ -299,7 +307,7 @@
                     </div>
                 </div>
 
-                <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
+                {{-- <div style="display:none" class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="google-docs">
                     <img src="{{ asset('public/assets/temp-imgs/google-docs/gd (5).png') }}" alt="Google Docs Template"
                         class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
@@ -311,7 +319,8 @@
                             class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Use
                             Template</button>
                     </div>
-                </div>
+                </div> --}}
+
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="two-column">
                     <img src="{{ asset('public/assets/temp-imgs/two-column/tclm (10).png') }}" alt="Two-column Template"
@@ -365,7 +374,8 @@
                             Template</button>
                     </div>
                 </div>
-                <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
+
+                {{-- <div style="display:none" class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="picture">
                     <!-- Image -->
                     <img src="{{ asset('public/assets/temp-imgs/pitcher/ptr (3).jpg') }}" alt="Picture Template"
@@ -379,7 +389,8 @@
                             class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Use
                             Template</button>
                     </div>
-                </div>
+                </div> --}}
+
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="two-column">
                     <img src="{{ asset('public/assets/temp-imgs/two-column/tclm (13).png') }}" alt="Two-column Template"
@@ -488,7 +499,7 @@
                     </div>
                 </div>
 
-                <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
+                {{-- <div style="display:none" class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="picture">
                     <!-- Image -->
                     <img src="{{ asset('public/assets/temp-imgs/pitcher/ptr (4).jpg') }}" alt="Picture Template"
@@ -502,7 +513,8 @@
                             class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Use
                             Template</button>
                     </div>
-                </div>
+                </div> --}}
+
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="two-column">
                     <img src="{{ asset('public/assets/temp-imgs/two-column/tclm (20).png') }}" alt="Two-column Template"
@@ -516,7 +528,8 @@
                             Template</button>
                     </div>
                 </div>
-                <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
+
+                {{-- <div style="display:none" class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="google-docs">
                     <img src="{{ asset('public/assets/temp-imgs/google-docs/gd (11).png') }}" alt="Google Docs Template"
                         class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
@@ -528,7 +541,7 @@
                             class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Use
                             Template</button>
                     </div>
-                </div>
+                </div> --}}
 
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="two-column">
@@ -569,7 +582,8 @@
                             Template</button>
                     </div>
                 </div>
-                <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
+
+                {{-- <div style="display:none" class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="google-docs">
                     <img src="{{ asset('public/assets/temp-imgs/google-docs/gd (13).png') }}" alt="Google Docs Template"
                         class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
@@ -581,7 +595,8 @@
                             class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Use
                             Template</button>
                     </div>
-                </div>
+                </div> --}}
+
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="two-column">
                     <img src="{{ asset('public/assets/temp-imgs/two-column/tclm (24).png') }}" alt="Two-column Template"
@@ -608,7 +623,8 @@
                             Template</button>
                     </div>
                 </div>
-                <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
+
+                {{-- <div style="display:none" class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="google-docs">
                     <img src="{{ asset('public/assets/temp-imgs/google-docs/gd (14).png') }}" alt="Google Docs Template"
                         class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
@@ -620,7 +636,8 @@
                             class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Use
                             Template</button>
                     </div>
-                </div>
+                </div> --}}
+
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="two-column">
                     <img src="{{ asset('public/assets/temp-imgs/two-column/tclm (25).png') }}" alt="Two-column Template"
@@ -660,7 +677,8 @@
                             Template</button>
                     </div>
                 </div>
-                <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
+
+                {{-- <div style="display:none" class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="google-docs">
                     <img src="{{ asset('public/assets/temp-imgs/google-docs/gd (15).png') }}" alt="Google Docs Template"
                         class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
@@ -672,7 +690,8 @@
                             class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Use
                             Template</button>
                     </div>
-                </div>
+                </div> --}}
+
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="two-column">
                     <img src="{{ asset('public/assets/temp-imgs/two-column/tclm (27).png') }}" alt="Two-column Template"
@@ -686,7 +705,8 @@
                             Template</button>
                     </div>
                 </div>
-                <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
+
+                {{-- <div style="display:none" class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="picture">
                     <!-- Image -->
                     <img src="{{ asset('public/assets/temp-imgs/pitcher/ptr (5).jpg') }}" alt="Picture Template"
@@ -700,8 +720,9 @@
                             class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Use
                             Template</button>
                     </div>
-                </div>
-                <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
+                </div> --}}
+
+                {{-- <div style="display:none" class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="google-docs">
                     <img src="{{ asset('public/assets/temp-imgs/google-docs/gd (16).png') }}" alt="Google Docs Template"
                         class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
@@ -713,7 +734,8 @@
                             class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Use
                             Template</button>
                     </div>
-                </div>
+                </div> --}}
+
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="ats">
                     <img src="{{ asset('public/assets/temp-imgs/ats/ats (7).png') }}" alt="ATS Template"
@@ -727,7 +749,8 @@
                             Template</button>
                     </div>
                 </div>
-                <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
+
+                {{-- <div style="display:none" class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="google-docs">
                     <img src="{{ asset('public/assets/temp-imgs/google-docs/gd (17).png') }}" alt="Google Docs Template"
                         class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
@@ -739,7 +762,7 @@
                             class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Use
                             Template</button>
                     </div>
-                </div>
+                </div> --}}
 
 
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
@@ -755,7 +778,8 @@
                             Template</button>
                     </div>
                 </div>
-                <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
+
+                {{-- <div style="display:none" class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="picture">
                     <!-- Image -->
                     <img src="{{ asset('public/assets/temp-imgs/pitcher/ptr (6).jpg') }}" alt="Picture Template"
@@ -769,7 +793,8 @@
                             class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Use
                             Template</button>
                     </div>
-                </div>
+                </div> --}}
+
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="ats">
                     <img src="{{ asset('public/assets/temp-imgs/ats/ats (9).png') }}" alt="ATS Template"
