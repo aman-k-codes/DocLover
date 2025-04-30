@@ -6,14 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ats(1)png</title>
     <style>
-         @page {
+        @page {
             margin: 0;
         }
+
         body {
             font-family: 'Times New Roman', serif;
             background: #fff;
             color: #000;
             margin: 40px;
+            font-size: 13px;
+            line-height: 1.5;
         }
 
         .header {
@@ -23,7 +26,7 @@
 
         .header h1 {
             margin: 0;
-            font-size: 24px;
+            font-size: 26px;
             font-weight: bold;
         }
 
@@ -33,14 +36,14 @@
         }
 
         .section {
-            margin-top: 30px;
+            margin-top: 25px;
         }
 
         .section-title {
             font-weight: bold;
             border-bottom: 1px solid #000;
-            margin-bottom: 10px;
-            font-size: 16px;
+            margin-bottom: 8px;
+            font-size: 15px;
             text-transform: uppercase;
         }
 
@@ -52,26 +55,37 @@
             display: flex;
             justify-content: space-between;
             font-weight: bold;
+            font-size: 13px;
         }
 
         .job-title {
             margin: 5px 0;
             font-style: italic;
+            font-size: 13px;
         }
 
         ul {
             padding-left: 20px;
             margin: 5px 0;
+            font-size: 13px;
+        }
+
+        ul li {
+            margin-bottom: 4px;
         }
 
         .education,
         .skills {
-            margin-top: 10px;
+            margin-top: 20px;
         }
 
         .skills span {
             display: inline-block;
             margin-right: 5px;
+        }
+
+        p {
+            margin: 5px 0;
         }
     </style>
 </head>

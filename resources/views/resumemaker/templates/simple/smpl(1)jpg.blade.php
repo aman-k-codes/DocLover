@@ -26,7 +26,7 @@
             padding-bottom: 3px;
         }
         .section {
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
         .header, .contact, .references {
             text-align: center;
@@ -41,6 +41,8 @@
         .contact-info {
             margin-top: 10px;
             font-size: 13px;
+            text-align: center;
+            margin-bottom: 15px;
         }
         .education-entry, .experience-entry {
             margin-bottom: 10px;
@@ -64,7 +66,6 @@
 <body>
 
     <div class="header">
-        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Profile Picture" class="profile-pic">
         <h1>John Doe</h1>
         <p>Web Designer</p>
     </div>
@@ -110,19 +111,39 @@
 
     <div class="section skills">
         <h2>SKILLS</h2>
-        <ul>
-            <li>HTML5 / CSS3</li>
-            <li>JavaScript / jQuery</li>
-            <li>UI/UX Design</li>
-            <li>Responsive Web Design</li>
-            <li>SEO Fundamentals</li>
-            <li>Figma / Adobe XD</li>
-            <li>Version Control (Git)</li>
-            <li>Accessibility Standards</li>
+        <ul style="list-style: none; padding: 0; margin: 0;">
+            <li style="display: inline-block; padding: 6px 12px; margin: 5px; background-color: #5f9ea0; color: white; border-radius: 20px;">HTML5 / CSS3</li>
+            <li style="display: inline-block; padding: 6px 12px; margin: 5px; background-color: #5f9ea0; color: white; border-radius: 20px;">JavaScript / jQuery</li>
+            <li style="display: inline-block; padding: 6px 12px; margin: 5px; background-color: #5f9ea0; color: white; border-radius: 20px;">UI/UX Design</li>
+            <li style="display: inline-block; padding: 6px 12px; margin: 5px; background-color: #5f9ea0; color: white; border-radius: 20px;">Responsive Web Design</li>
+            <li style="display: inline-block; padding: 6px 12px; margin: 5px; background-color: #5f9ea0; color: white; border-radius: 20px;">SEO Fundamentals</li>
+            <li style="display: inline-block; padding: 6px 12px; margin: 5px; background-color: #5f9ea0; color: white; border-radius: 20px;">Figma / Adobe XD</li>
+            <li style="display: inline-block; padding: 6px 12px; margin: 5px; background-color: #5f9ea0; color: white; border-radius: 20px;">Version Control (Git)</li>
+            <li style="display: inline-block; padding: 6px 12px; margin: 5px; background-color: #5f9ea0; color: white; border-radius: 20px;">Accessibility Standards</li>
         </ul>
     </div>
 
-    <div class="section references">
+    <div class="section">
+        <h2>PROJECTS</h2>
+        <div class="project-entry">
+            <strong>2023</strong><br>
+            Portfolio Website<br>
+            Created a fully responsive personal portfolio website using HTML5, CSS3, and JavaScript. Integrated smooth animations and SEO best practices to boost visibility.
+        </div>
+        <div class="project-entry">
+            <strong>2022</strong><br>
+            E-commerce Platform<br>
+            Developed an e-commerce website with dynamic product listings, user authentication, and a custom shopping cart using JavaScript and Firebase.
+        </div>
+        <div class="project-entry">
+            <strong>2021</strong><br>
+            Blog CMS<br>
+            Built a lightweight content management system (CMS) for blogging with custom admin panel, markdown support, and RESTful APIs.
+        </div>
+    </div>
+
+
+    <div class="section">
         <h2>REFERENCES</h2>
         <table class="references-table" border="0">
             <tr>

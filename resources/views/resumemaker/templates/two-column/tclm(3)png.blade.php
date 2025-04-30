@@ -7,6 +7,7 @@
     <style>
         @page {
             margin: 0;
+            size: A4;
         }
 
         * {
@@ -23,7 +24,7 @@
         }
 
         .container {
-            width: 100%;
+            /* width: 100%; */
             margin: 0 auto;
             padding: 20px;
         }
@@ -73,13 +74,14 @@
 
         .left {
             width: 30%;
-            padding-right: 20px;
+            /* padding-right: 20px; */
             border-right: 1px solid #000;
         }
 
         .right {
-            width: 70%;
+            width: 65%;
             padding: 0px 20px;
+            height: 85%;
         }
 
         .section-title {
@@ -129,71 +131,85 @@
             </div>
         </div>
 
-        <table>
+        <table >
             <tr>
                 <td class="left">
                     <div class="section-title">EDUCATION</div>
-                    <p><strong>Name of University</strong><br>
-                        Degree earned<br>
-                        Years attended<br>
-                        City, State
+                    <p><strong>New York University (NYU)</strong><br>
+                        Bachelor of Science in Computer Science<br>
+                        2015 – 2019<br>
+                        New York, NY
+                    </p>
+                    <p><strong>Massachusetts Institute of Technology (MIT)</strong><br>
+                        Master of Science in Data Science<br>
+                        2019 – 2021<br>
+                        Cambridge, MA
                     </p>
 
                     <div class="section-title">SKILLS</div>
                     <ul>
-                        <li>Communication</li>
-                        <li>Leadership</li>
-                        <li>Problem-solving</li>
-                        <li>Time Management</li>
-                        <li>Analytical Thinking</li>
-                        <li>MS Office (Word, Excel)</li>
-                        <li>Creativity</li>
-                        <li>Conflict Resolution</li>
-                        <li>Hardworking</li>
+                        <li><strong>Technical Skills:</strong> Python, JavaScript, PHP, SQL, HTML5, CSS3</li>
+                        <li><strong>Frameworks:</strong> React.js, Node.js, Laravel, Django</li>
+                        <li><strong>Tools:</strong> Git, Docker, AWS, Figma, JIRA</li>
+                        <li><strong>Soft Skills:</strong> Communication, Leadership, Team Collaboration</li>
+                        <li><strong>Problem-Solving:</strong> Analytical thinking, Critical reasoning</li>
+                        <li><strong>Time Management:</strong> Efficient multitasking and prioritization</li>
+                        <li><strong>Office Tools:</strong> Microsoft Word, Excel, PowerPoint, Outlook</li>
+                        <li><strong>Creativity:</strong> Innovative solution development, UX Design</li>
+                        <li><strong>Other:</strong> Conflict resolution, Hardworking, Adaptability</li>
                     </ul>
                 </td>
+
 
                 <td class="right">
                     <div class="section-title">OBJECTIVE/SUMMARY</div>
                     <p>
-                        A resume objective is an eye-catching statement of your career intent placed on top of your resume.
-                        It provides a 2–3 sentence snapshot of your professional experience, skills, and achievements.
+                        Highly motivated and detail-oriented Software Engineer with 4+ years of experience in web development, cloud solutions,
+                        and cross-functional team leadership. Skilled in designing scalable applications and driving innovation through
+                        collaboration and critical thinking. Seeking to leverage technical expertise and creativity to contribute to a dynamic tech environment.
                     </p>
 
                     <div class="section-title">WORK EXPERIENCE</div>
 
-                    <p class="job-title">Company, Location | Title</p>
-                    <p class="job-dates">MONTH 20XX - PRESENT</p>
+                    <p class="job-title">Google, Mountain View, CA | Front-End Developer</p>
+                    <p class="job-dates">June 2021 - Present</p>
                     <ul>
-                        <li>Grew digital marketing ROI by 14%.</li>
-                        <li>Started job descriptions with active verbs.</li>
+                        <li>Developed and maintained highly responsive web applications using React.js and Next.js.</li>
+                        <li>Collaborated with UX/UI teams to enhance the user experience, boosting user engagement by 22%.</li>
+                        <li>Optimized website performance, reducing load times by 35% using code-splitting and lazy loading strategies.</li>
+                        <li>Led a team of 5 developers in an Agile environment, delivering projects 15% ahead of schedule.</li>
                     </ul>
 
-                    <p class="job-title">Company, Location | Title</p>
-                    <p class="job-dates">MONTH 20XX - MONTH 20XX</p>
+                    <p class="job-title">Amazon, Seattle, WA | Software Engineer</p>
+                    <p class="job-dates">July 2019 - May 2021</p>
                     <ul>
-                        <li>Created training plans for 30+ clients.</li>
-                        <li>Used past tense for previous roles.</li>
+                        <li>Designed backend microservices using Node.js and AWS Lambda, improving API response time by 28%.</li>
+                        <li>Integrated third-party APIs and automated order processing workflows for Amazon Retail.</li>
+                        <li>Implemented unit and integration testing, achieving 90% code coverage and reducing bugs by 18%.</li>
+                        <li>Mentored 3 junior developers, fostering skill growth and increasing team productivity.</li>
                     </ul>
 
                     <div class="section-title">PROJECTS & OTHER ACTIVITIES</div>
 
-                    <p class="job-title">Organization | Title</p>
-                    <p class="job-dates">MONTH 20XX - PRESENT</p>
+                    <p class="job-title">Personal Project | Portfolio Website</p>
+                    <p class="job-dates">January 2023 - Present</p>
                     <ul>
-                        <li>Formatted like work experience.</li>
+                        <li>Designed and deployed a personal portfolio site using Next.js, TailwindCSS, and Vercel.</li>
+                        <li>Showcases projects in web development, machine learning, and UI/UX design.</li>
                     </ul>
 
-                    <p class="job-title">Organization | Title</p>
-                    <p class="job-dates">MONTH 20XX - PRESENT</p>
+                    <p class="job-title">Hackathon Winner | TechCrunch Disrupt</p>
+                    <p class="job-dates">October 2022</p>
                     <ul>
-                        <li>Formatted like work experience.</li>
+                        <li>Led a 4-person team to victory by developing a real-time AI-driven recommendation engine within 24 hours.</li>
+                        <li>Recognized for innovation, scalability, and technical excellence among 200+ participants.</li>
                     </ul>
                 </td>
+
             </tr>
         </table>
     </div>
-
+    {{-- @dd('helop'); --}}
 </body>
 
 </html>
