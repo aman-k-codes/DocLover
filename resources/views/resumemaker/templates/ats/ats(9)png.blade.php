@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Resume - First Last</title>
+    <title>ats(9)png</title>
     <style>
         @page {
             margin: 0;

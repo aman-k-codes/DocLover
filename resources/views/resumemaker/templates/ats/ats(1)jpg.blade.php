@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Resume - Seema Chaudhry</title>
+    <title>ats(1)jpg</title>
     <style>
         @page {
             margin: 0;
@@ -46,7 +46,7 @@
         }
 
         .section {
-            margin-top: 25px;
+            margin-top: 5px;
         }
 
         .section-title {
@@ -75,7 +75,7 @@
 
         .education,
         .work {
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
 
         .edu-entry,
@@ -293,7 +293,7 @@
             </div>
         </div>
     </div>
-
+    {{-- @dd('footer') --}}
 </body>
 
 </html>

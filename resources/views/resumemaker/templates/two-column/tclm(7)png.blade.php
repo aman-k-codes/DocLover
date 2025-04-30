@@ -2,6 +2,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>tclm(7)png</title>
     <style>
         @page {
             margin: 0;

@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Seema Chaudhry - Resume</title>
+    <title>smpl(10)png</title>
     <style>
          @page {
             margin: 0;

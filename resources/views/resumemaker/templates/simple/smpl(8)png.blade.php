@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Jasmine Tala Resume</title>
+    <title>smpl(8)png</title>
     <style>
         @page {
             margin: 0;

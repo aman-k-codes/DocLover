@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Senior Social Media Manager Resume</title>
+    <title>ats(10)png</title>
     <style>
         @page {
             margin: 0;

@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Executive Assistant Resume</title>
+    <title>smpl(5)png</title>
     <style>
         @page {
             margin: 0;

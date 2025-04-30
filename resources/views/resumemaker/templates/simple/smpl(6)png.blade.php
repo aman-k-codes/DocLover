@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Patricia Bowlin Resume</title>
+    <title>smpl(6)png</title>
     <style>
         @page {
             margin: 0;

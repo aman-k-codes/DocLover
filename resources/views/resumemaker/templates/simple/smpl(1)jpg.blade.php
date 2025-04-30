@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Resume</title>
+    <title>smpl(1)jpg</title>
     <style>
          @page {
             margin: 0;
