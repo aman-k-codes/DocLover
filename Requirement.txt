@@ -117,3 +117,23 @@ Unlock PDF - Pending
 Add Watermark - Pending
 PDF Metadata Editor - Pending
 PDF Form Filler - Pending
+
+
+
+
+
+
+
+
+
+
+
+
+
+restart flask :
+
+sudo systemctl daemon-reexec
+sudo systemctl daemon-reload
+sudo systemctl restart flaskapp
+sudo systemctl status flaskapp
+

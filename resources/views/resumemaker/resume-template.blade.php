@@ -48,10 +48,10 @@
                     data-category="all">
                     <i class="fas fa-file-alt"></i> All Templates
                 </button>
-                <button class="category-btn text-gray-700 hover:text-blue-600 px-4 py-2 transition duration-300"
+                {{-- <button class="category-btn text-gray-700 hover:text-blue-600 px-4 py-2 transition duration-300"
                     data-category="picture">
                     <i class="fas fa-image"></i> Picture
-                </button>
+                </button> --}}
                 <button class="category-btn text-gray-700 hover:text-blue-600 px-4 py-2 transition duration-300"
                     data-category="simple">
                     <i class="fas fa-magic"></i> Simple
@@ -64,10 +64,10 @@
                     data-category="two-column">
                     <i class="fas fa-columns"></i> Two-column
                 </button>
-                <button class="category-btn text-gray-700 hover:text-blue-600 px-4 py-2 transition duration-300"
+                {{-- <button class="category-btn text-gray-700 hover:text-blue-600 px-4 py-2 transition duration-300"
                     data-category="google-docs">
                     <i class="fab fa-google-drive"></i> Google Docs
-                </button>
+                </button> --}}
             </div>
 
             <!-- Templates -->
