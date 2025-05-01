@@ -1,8 +1,8 @@
 @extends('sw.layout.master')
 
-@section('title', 'DocLover - PDF Form Filler')
+@section('title', 'CraftMyDoc - PDF Form Filler')
 
-@section('meta_description', 'Fill PDF forms easily with DocLover.')
+@section('meta_description', 'Fill PDF forms easily with CraftMyDoc.')
 @section('meta_keywords', 'PDF Form Filler, Fill PDF, Document Conversion, Fillable PDFs')
 
 @section('content')

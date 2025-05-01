@@ -1,8 +1,8 @@
 @extends('sw.layout.master')
 
-@section('title', 'DocLover - PDF to HTML')
+@section('title', 'CraftMyDoc - PDF to HTML')
 
-@section('meta_description', 'Convert any PDF to clean HTML easily with DocLover.')
+@section('meta_description', 'Convert any PDF to clean HTML easily with CraftMyDoc.')
 @section('meta_keywords', 'PDF to HTML, PDF converter, HTML file, PDF extraction')
 
 @section('content')

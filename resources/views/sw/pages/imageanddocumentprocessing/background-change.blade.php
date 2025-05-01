@@ -1,8 +1,8 @@
 @extends('sw.layout.master')
 
-@section('title', 'DocLover - Background Remover')
+@section('title', 'CraftMyDoc - Background Remover')
 
-@section('meta_description', 'Remove image background quickly and securely with DocLover.')
+@section('meta_description', 'Remove image background quickly and securely with CraftMyDoc.')
 @section('meta_keywords', 'Background Remover, Image Background Removal, File Conversion')
 
 @section('content')

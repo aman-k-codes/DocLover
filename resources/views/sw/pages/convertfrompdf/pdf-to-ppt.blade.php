@@ -1,8 +1,8 @@
 @extends('sw.layout.master')
 
-@section('title', 'DocLover - PDF to PPT')
+@section('title', 'CraftMyDoc - PDF to PPT')
 
-@section('meta_description', 'Convert PDF files to PowerPoint (PPTX) format quickly and securely with DocLover.')
+@section('meta_description', 'Convert PDF files to PowerPoint (PPTX) format quickly and securely with CraftMyDoc.')
 @section('meta_keywords', 'PDF to PPT, PDF to PowerPoint, File Conversion, PPTX Converter')
 
 @section('content')

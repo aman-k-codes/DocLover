@@ -381,7 +381,7 @@ class DocsController extends Controller
     private function zipSplitFiles($outputDir)
     {
         $zip = new ZipArchive();
-        $zipFilePath = storage_path('app/pdfs/split_pages_doclover.zip');
+        $zipFilePath = storage_path('app/pdfs/split_pages_CraftMyDoc.zip');
 
         if ($zip->open($zipFilePath, ZipArchive::CREATE) === TRUE) {
             $files = glob(storage_path("app/{$outputDir}*.pdf"));

@@ -1,8 +1,8 @@
 @extends('sw.layout.master')
 
-@section('title', 'DocLover - Rotate PDF')
+@section('title', 'CraftMyDoc - Rotate PDF')
 
-@section('meta_description', 'Rotate pages in your PDF with DocLover’s easy-to-use tool.')
+@section('meta_description', 'Rotate pages in your PDF with CraftMyDoc’s easy-to-use tool.')
 @section('meta_keywords', 'Rotate PDF, PDF orientation, PDF tools')
 
 @section('content')
@@ -154,7 +154,7 @@
         if (rotatedPDFUrl) {
             const downloadLink = document.createElement("a");
             downloadLink.href = rotatedPDFUrl;
-            downloadLink.download = "rotated_doclover.pdf";
+            downloadLink.download = "rotated_CraftMyDoc.pdf";
             document.body.appendChild(downloadLink);
             downloadLink.click();
             document.body.removeChild(downloadLink);

@@ -1,7 +1,7 @@
 @extends('sw.layout.master')
 
-@section('title', 'DocLover - Free Resume Builder Online')
-@section('meta_description', 'Create professional resumes effortlessly with DocLover. Use our free resume builder to design, customize, and download your resume in minutes.')
+@section('title', 'CraftMyDoc - Free Resume Builder Online')
+@section('meta_description', 'Create professional resumes effortlessly with CraftMyDoc. Use our free resume builder to design, customize, and download your resume in minutes.')
 @section('meta_keywords', 'Resume Builder, Free Resume Maker, Online Resume Creator, CV Builder, Create Resume, Download Resume')
 
 @section('content')
@@ -105,7 +105,7 @@
 
     <section class="py-20 bg-gray-50">
         <div class="max-w-6xl mx-auto px-6 text-center">
-            <h2 class="text-4xl font-extrabold text-gray-900 mb-4">Why Choose DocLover?</h2>
+            <h2 class="text-4xl font-extrabold text-gray-900 mb-4">Why Choose CraftMyDoc?</h2>
             <p class="text-lg text-gray-600 mb-12">
                 Experience seamless PDF editing, conversion, and management with our industry-leading tools.
             </p>
@@ -128,7 +128,7 @@
                         <i class="fas fa-laptop"></i>
                     </div>
                     <h3 class="text-xl font-semibold text-gray-900 mb-2">Works on Any Device</h3>
-                    <p class="text-gray-600">Access DocLover tools effortlessly on desktops, tablets, and smartphones.</p>
+                    <p class="text-gray-600">Access CraftMyDoc tools effortlessly on desktops, tablets, and smartphones.</p>
                 </div>
 
                 <!-- Free to Use -->
@@ -169,13 +169,13 @@
 
             <div class="space-y-6">
                 <div class="p-6 border border-gray-300 rounded-lg shadow-sm transition hover:shadow-md">
-                    <h3 class="text-lg font-semibold text-gray-900">Is DocLover free to use?</h3>
+                    <h3 class="text-lg font-semibold text-gray-900">Is CraftMyDoc free to use?</h3>
                     <p class="text-gray-600 mt-2">Yes! You can access most of our tools for free with limited features.</p>
                 </div>
 
                 <div class="p-6 border border-gray-300 rounded-lg shadow-sm transition hover:shadow-md">
                     <h3 class="text-lg font-semibold text-gray-900">Do I need to install any software?</h3>
-                    <p class="text-gray-600 mt-2">No, DocLover works entirely online from your browser.</p>
+                    <p class="text-gray-600 mt-2">No, CraftMyDoc works entirely online from your browser.</p>
                 </div>
 
                 <div class="p-6 border border-gray-300 rounded-lg shadow-sm transition hover:shadow-md">

@@ -1,6 +1,6 @@
 @extends('sw.layout.master')
 
-@section('title', 'DocLover - Passport Size Photo Maker')
+@section('title', 'CraftMyDoc - Passport Size Photo Maker')
 @section('meta_description', 'Create passport size photos with background removal and printing options.')
 @section('meta_keywords', 'Passport Photo Maker, Background Remover, A4 Sheet, Photo Printing')
 

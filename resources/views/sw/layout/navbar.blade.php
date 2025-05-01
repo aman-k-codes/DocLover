@@ -2,7 +2,7 @@
     <div class="max-w-9xl mx-auto px-4 sm:px-6 py-2 flex justify-between items-center">
         <!-- Logo & Tools -->
         <div class="flex items-center space-x-4">
-            <h1 class="text-xl sm:text-2xl font-extrabold text-blue-600"><a href="{{ url('/') }}">DocLover</a></h1>
+            <h1 class="text-xl sm:text-2xl font-extrabold text-blue-600"><a href="{{ url('/') }}">CraftMyDoc</a></h1>
 
             <!-- Tools Dropdown -->
             <div class="relative hidden sm:block">

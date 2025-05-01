@@ -1,8 +1,8 @@
 @extends('sw.layout.master')
 
-@section('title', 'DocLover - Extract Pages from PDF')
-@section('meta_description', 'Easily extract pages from your PDF files with DocLover.')
-@section('meta_keywords', 'Extract PDF Pages, Split PDF, Edit PDF Files, DocLover')
+@section('title', 'CraftMyDoc - Extract Pages from PDF')
+@section('meta_description', 'Easily extract pages from your PDF files with CraftMyDoc.')
+@section('meta_keywords', 'Extract PDF Pages, Split PDF, Edit PDF Files, CraftMyDoc')
 
 @section('content')
 <section class="pt-12 px-4 bg-gray-50">

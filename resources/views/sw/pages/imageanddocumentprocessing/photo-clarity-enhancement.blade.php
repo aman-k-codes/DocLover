@@ -1,7 +1,7 @@
 @extends('sw.layout.master')
 
-@section('title', 'DocLover - Image Quality Enhancer')
-@section('meta_description', 'Enhance image quality instantly with DocLover.')
+@section('title', 'CraftMyDoc - Image Quality Enhancer')
+@section('meta_description', 'Enhance image quality instantly with CraftMyDoc.')
 @section('meta_keywords', 'Image Enhancer, Improve Image Quality, HD Image Converter')
 
 @section('content')

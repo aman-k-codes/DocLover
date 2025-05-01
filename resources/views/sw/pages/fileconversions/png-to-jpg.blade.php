@@ -1,8 +1,8 @@
 @extends('sw.layout.master')
 
-@section('title', 'DocLover - PNG to JPG')
+@section('title', 'CraftMyDoc - PNG to JPG')
 
-@section('meta_description', 'Convert PNG to JPG images quickly and securely with DocLover.')
+@section('meta_description', 'Convert PNG to JPG images quickly and securely with CraftMyDoc.')
 @section('meta_keywords', 'PNG to JPG, Image Converter, File Conversion, JPG Converter')
 
 @section('content')

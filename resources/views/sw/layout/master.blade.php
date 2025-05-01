@@ -6,24 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="{{ asset('public/assets/imgs/fav.png') }}">
     <!-- Primary Meta Tags -->
-    <title>@yield('title', 'DocLover - Document Conversion, Editing & Resume Maker')</title>
-    <meta name="description" content="@yield('meta_description', 'DocLover is an all-in-one platform for document conversion, editing, image processing, and resume creation. Convert PDFs, edit documents, process images, and build resumes effortlessly.')">
+    <title>@yield('title', 'CraftMyDoc - Document Conversion, Editing & Resume Maker')</title>
+    <meta name="description" content="@yield('meta_description', 'CraftMyDoc is an all-in-one platform for document conversion, editing, image processing, and resume creation. Convert PDFs, edit documents, process images, and build resumes effortlessly.')">
     <meta name="keywords" content="@yield('meta_keywords', 'document conversion, PDF to Word, Word to PDF, image processing, document editing, resume maker, file converter, online document editor, OCR tool')">
-    <meta name="author" content="DocLover">
+    <meta name="author" content="CraftMyDoc">
     <link rel="canonical" href="{{ url()->current() }}">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ url()->current() }}">
-    <meta property="og:title" content="@yield('og_title', 'DocLover - Convert, Edit, and Process Documents Easily')">
-    <meta property="og:description" content="@yield('og_description', 'DocLover is your go-to solution for document conversion, editing, image processing, and resume creation. Fast, secure, and easy to use.')">
+    <meta property="og:title" content="@yield('og_title', 'CraftMyDoc - Convert, Edit, and Process Documents Easily')">
+    <meta property="og:description" content="@yield('og_description', 'CraftMyDoc is your go-to solution for document conversion, editing, image processing, and resume creation. Fast, secure, and easy to use.')">
     <meta property="og:image" content="@yield('og_image', asset('default-image.jpg'))">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="{{ url()->current() }}">
-    <meta property="twitter:title" content="@yield('twitter_title', 'DocLover - Convert, Edit & Process Documents')">
-    <meta property="twitter:description" content="@yield('twitter_description', 'Easily convert, edit, and process documents with DocLover. From PDF conversions to resume creation, we make document handling seamless.')">
+    <meta property="twitter:title" content="@yield('twitter_title', 'CraftMyDoc - Convert, Edit & Process Documents')">
+    <meta property="twitter:description" content="@yield('twitter_description', 'Easily convert, edit, and process documents with CraftMyDoc. From PDF conversions to resume creation, we make document handling seamless.')">
     <meta property="twitter:image" content="@yield('twitter_image', asset('default-image.jpg'))">
 
 
@@ -41,9 +41,9 @@
         {
           "@context": "https://schema.org",
           "@type": "WebSite",
-          "name": "DocLover",
+          "name": "CraftMyDoc",
           "url": "{{ url()->current() }}",
-          "description": "@yield('meta_description', 'DocLover is a powerful platform for document conversion, editing, image processing, and resume making. Easily convert PDFs, edit documents, process images, and create professional resumes.')",
+          "description": "@yield('meta_description', 'CraftMyDoc is a powerful platform for document conversion, editing, image processing, and resume making. Easily convert PDFs, edit documents, process images, and create professional resumes.')",
           "potentialAction": {
             "@type": "SearchAction",
             "target": "{{ url()->current() }}/search?q={search_term_string}",

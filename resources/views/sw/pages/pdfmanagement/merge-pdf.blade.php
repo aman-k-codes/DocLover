@@ -1,8 +1,8 @@
 @extends('sw.layout.master')
 
-@section('title', 'DocLover - Merge PDFs')
-@section('meta_description', 'Easily combine multiple PDF files into a single document with DocLover.')
-@section('meta_keywords', 'Merge PDF, Combine PDFs, PDF Merger, Join PDF files, DocLover')
+@section('title', 'CraftMyDoc - Merge PDFs')
+@section('meta_description', 'Easily combine multiple PDF files into a single document with CraftMyDoc.')
+@section('meta_keywords', 'Merge PDF, Combine PDFs, PDF Merger, Join PDF files, CraftMyDoc')
 
 @section('content')
     <section class="pt-12 px-4 bg-gray-50">

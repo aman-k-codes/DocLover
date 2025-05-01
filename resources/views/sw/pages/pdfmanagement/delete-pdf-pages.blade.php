@@ -1,8 +1,8 @@
 @extends('sw.layout.master')
 
-@section('title', 'DocLover - Delete Pages from PDF')
-@section('meta_description', 'Easily delete pages from your PDF files with DocLover.')
-@section('meta_keywords', 'Delete PDF Pages, Remove PDF Pages, Edit PDF Files, DocLover')
+@section('title', 'CraftMyDoc - Delete Pages from PDF')
+@section('meta_description', 'Easily delete pages from your PDF files with CraftMyDoc.')
+@section('meta_keywords', 'Delete PDF Pages, Remove PDF Pages, Edit PDF Files, CraftMyDoc')
 
 @section('content')
 <section class="pt-12 px-4 bg-gray-50">

@@ -1,8 +1,8 @@
 @extends('sw.layout.master')
 
-@section('title', 'DocLover - PDF Metadata Editor')
+@section('title', 'CraftMyDoc - PDF Metadata Editor')
 
-@section('meta_description', 'Edit PDF metadata easily with DocLover.')
+@section('meta_description', 'Edit PDF metadata easily with CraftMyDoc.')
 @section('meta_keywords', 'PDF Metadata Editor, Edit PDF, Document Conversion, File Metadata')
 
 @section('content')

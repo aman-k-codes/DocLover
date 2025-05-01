@@ -1,10 +1,10 @@
 @extends('sw.layout.master')
 
-@section('title', 'Contact Us - DocLover')
+@section('title', 'Contact Us - CraftMyDoc')
 
-@section('meta_description', 'Get in touch with DocLover. Contact us for support, feedback, or partnership opportunities. We’re here to help with resumes, documents, images, and more.')
+@section('meta_description', 'Get in touch with CraftMyDoc. Contact us for support, feedback, or partnership opportunities. We’re here to help with resumes, documents, images, and more.')
 
-@section('meta_keywords', 'DocLover Contact, Support, Feedback, Get in Touch, Resume Help, Document Tools')
+@section('meta_keywords', 'CraftMyDoc Contact, Support, Feedback, Get in Touch, Resume Help, Document Tools')
 
 @section('content')
 <section class="bg-white py-24 px-6">

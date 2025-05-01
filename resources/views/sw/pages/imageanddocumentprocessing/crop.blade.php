@@ -1,7 +1,7 @@
 @extends('sw.layout.master')
 
-@section('title', 'DocLover - Image Cropper')
-@section('meta_description', 'Crop your images quickly and easily with DocLover.')
+@section('title', 'CraftMyDoc - Image Cropper')
+@section('meta_description', 'Crop your images quickly and easily with CraftMyDoc.')
 @section('meta_keywords', 'Image Cropper, Crop Image, Online Image Editing')
 
 @section('content')

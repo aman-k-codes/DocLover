@@ -1,7 +1,7 @@
 @extends('sw.layout.master')
 
-@section('title', 'DocLover - PDF to JPG')
-@section('meta_description', 'Convert any PDF file to high-quality JPG images instantly with DocLover.')
+@section('title', 'CraftMyDoc - PDF to JPG')
+@section('meta_description', 'Convert any PDF file to high-quality JPG images instantly with CraftMyDoc.')
 @section('meta_keywords', 'PDF to JPG, Convert PDF, Image from PDF, PDF converter, JPG extractor')
 
 @section('content')

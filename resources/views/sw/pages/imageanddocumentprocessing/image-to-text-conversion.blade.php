@@ -1,8 +1,8 @@
 @extends('sw.layout.master')
 
-@section('title', 'DocLover - Image to Text')
+@section('title', 'CraftMyDoc - Image to Text')
 
-@section('meta_description', 'Extract text from any image file using OCR with DocLover.')
+@section('meta_description', 'Extract text from any image file using OCR with CraftMyDoc.')
 @section('meta_keywords', 'Image to Text, OCR, Extract Text, JPG to Text, PNG to Text, Image converter')
 
 @section('content')

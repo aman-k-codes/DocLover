@@ -1,8 +1,8 @@
 @extends('sw.layout.master')
 
-@section('title', 'DocLover - PDF to ZIP')
+@section('title', 'CraftMyDoc - PDF to ZIP')
 
-@section('meta_description', 'Convert PDF to ZIP easily with DocLover.')
+@section('meta_description', 'Convert PDF to ZIP easily with CraftMyDoc.')
 @section('meta_keywords', 'PDF to ZIP, Document Conversion, File Conversion')
 
 @section('content')

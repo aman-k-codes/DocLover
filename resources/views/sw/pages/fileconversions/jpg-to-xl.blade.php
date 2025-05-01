@@ -1,8 +1,8 @@
 @extends('sw.layout.master')
 
-@section('title', 'DocLover - Image to Excel')
+@section('title', 'CraftMyDoc - Image to Excel')
 
-@section('meta_description', 'Convert any image to an Excel (.xlsx) file easily with DocLover.')
+@section('meta_description', 'Convert any image to an Excel (.xlsx) file easily with CraftMyDoc.')
 @section('meta_keywords', 'Image to Excel, JPG to Excel, PNG to Excel, Image to spreadsheet, Excel converter')
 
 @section('content')

@@ -1,7 +1,7 @@
 @extends('sw.layout.master')
 
-@section('title', 'DocLover - Image Compressor')
-@section('meta_description', 'Compress your images quickly and easily with DocLover.')
+@section('title', 'CraftMyDoc - Image Compressor')
+@section('meta_description', 'Compress your images quickly and easily with CraftMyDoc.')
 @section('meta_keywords', 'Image Compressor, Compress Image, Reduce Image Size')
 
 @section('content')

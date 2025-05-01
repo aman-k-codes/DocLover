@@ -1,19 +1,19 @@
 @extends('sw.layout.master')
 
-@section('title', 'About Us - DocLover')
+@section('title', 'About Us - CraftMyDoc')
 
-@section('meta_description', 'Learn about DocLover, owned by Nilesh Navrange and developed by Aman Sahu. Discover powerful tools for resumes, document editing, image conversion, and more — all in one place.')
+@section('meta_description', 'Learn about CraftMyDoc, owned by Nilesh Navrange and developed by Aman Sahu. Discover powerful tools for resumes, document editing, image conversion, and more — all in one place.')
 
-@section('meta_keywords', 'DocLover, Nilesh Navrange, Aman Sahu, Resume Builder, PDF Tools, Image Converter, Online Document Editor, All-in-One Software')
+@section('meta_keywords', 'CraftMyDoc, Nilesh Navrange, Aman Sahu, Resume Builder, PDF Tools, Image Converter, Online Document Editor, All-in-One Software')
 
 @section('content')
 <section class="bg-white py-24 px-6">
     <div class="max-w-6xl mx-auto text-center">
         <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            <i class="fas fa-info-circle text-blue-600 mr-2"></i> About <span class="text-blue-600">DocLover</span>
+            <i class="fas fa-info-circle text-blue-600 mr-2"></i> About <span class="text-blue-600">CraftMyDoc</span>
         </h1>
         <p class="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            <strong>DocLover</strong> is your ultimate digital productivity platform — resume building, document conversion, image editing, compression, and more — all in one place, accessible and user-friendly.
+            <strong>CraftMyDoc</strong> is your ultimate digital productivity platform — resume building, document conversion, image editing, compression, and more — all in one place, accessible and user-friendly.
         </p>
     </div>
 
@@ -25,7 +25,7 @@
                 <h2 class="text-2xl font-semibold text-gray-800">Nilesh Navrange</h2>
             </div>
             <p class="text-gray-600">
-                As the owner of DocLover, I’m passionate about providing a free, powerful, and distraction-free platform for digital productivity. Everyone deserves access to essential tools without barriers.
+                As the owner of CraftMyDoc, I’m passionate about providing a free, powerful, and distraction-free platform for digital productivity. Everyone deserves access to essential tools without barriers.
             </p>
         </div>
 
@@ -36,7 +36,7 @@
                 <h2 class="text-2xl font-semibold text-gray-800">Aman Sahu</h2>
             </div>
             <p class="text-gray-600">
-                I'm the developer behind DocLover. From smooth user experience to clean, responsive code — I’ve ensured this platform is fast, intuitive, and built to solve real-world file handling problems.
+                I'm the developer behind CraftMyDoc. From smooth user experience to clean, responsive code — I’ve ensured this platform is fast, intuitive, and built to solve real-world file handling problems.
             </p>
         </div>
 
@@ -63,7 +63,7 @@
                 <h2 class="text-2xl font-semibold text-gray-800">Our Mission</h2>
             </div>
             <p class="text-gray-600">
-                At DocLover, we aim to streamline document and image tasks for students, freelancers, and professionals alike. No ads, no complexity — just efficient tools to get things done, fast.
+                At CraftMyDoc, we aim to streamline document and image tasks for students, freelancers, and professionals alike. No ads, no complexity — just efficient tools to get things done, fast.
             </p>
         </div>
     </div>

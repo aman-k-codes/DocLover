@@ -1,8 +1,8 @@
 @extends('sw.layout.master')
 
-@section('title', 'DocLover - Unlock PDF')
+@section('title', 'CraftMyDoc - Unlock PDF')
 
-@section('meta_description', 'Unlock your PDF instantly with DocLover’s easy-to-use tool.')
+@section('meta_description', 'Unlock your PDF instantly with CraftMyDoc’s easy-to-use tool.')
 @section('meta_keywords', 'Unlock PDF, PDF tools')
 
 @section('content')
@@ -163,7 +163,7 @@
         if (unlockedPDFUrl) {
             const downloadLink = document.createElement("a");
             downloadLink.href = unlockedPDFUrl;
-            downloadLink.download = "unlocked_doclover.pdf";
+            downloadLink.download = "unlocked_CraftMyDoc.pdf";
             document.body.appendChild(downloadLink);
             downloadLink.click();
             document.body.removeChild(downloadLink);

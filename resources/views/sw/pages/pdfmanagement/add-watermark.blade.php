@@ -1,8 +1,8 @@
 @extends('sw.layout.master')
 
-@section('title', 'DocLover - Add Watermark')
+@section('title', 'CraftMyDoc - Add Watermark')
 
-@section('meta_description', 'Add watermark to your PDFs with DocLover.')
+@section('meta_description', 'Add watermark to your PDFs with CraftMyDoc.')
 @section('meta_keywords', 'Watermark, PDF Editing, Document Conversion')
 
 @section('content')

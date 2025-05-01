@@ -1,10 +1,10 @@
 @extends('sw.layout.master')
 
-@section('title', 'Privacy Policy - DocLover')
+@section('title', 'Privacy Policy - CraftMyDoc')
 
-@section('meta_description', 'Review DocLover’s privacy policy to understand how we collect, use, and protect your personal information.')
+@section('meta_description', 'Review CraftMyDoc’s privacy policy to understand how we collect, use, and protect your personal information.')
 
-@section('meta_keywords', 'Privacy Policy, DocLover, Data Protection, User Privacy, Personal Information')
+@section('meta_keywords', 'Privacy Policy, CraftMyDoc, Data Protection, User Privacy, Personal Information')
 
 @section('content')
 <section class="bg-white py-24 px-6">
@@ -13,7 +13,7 @@
             <i class="fas fa-user-shield text-blue-600 mr-2"></i> Privacy <span class="text-blue-600">Policy</span>
         </h1>
         <p class="text-lg text-gray-600 leading-relaxed">
-            Your privacy matters to us. This policy explains how DocLover collects, uses, and safeguards your data when you use our services.
+            Your privacy matters to us. This policy explains how CraftMyDoc collects, uses, and safeguards your data when you use our services.
         </p>
     </div>
 

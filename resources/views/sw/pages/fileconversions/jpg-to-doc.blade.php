@@ -1,8 +1,8 @@
 @extends('sw.layout.master')
 
-@section('title', 'DocLover - Image to Word')
+@section('title', 'CraftMyDoc - Image to Word')
 
-@section('meta_description', 'Convert any image to a Word (.docx) file easily with DocLover.')
+@section('meta_description', 'Convert any image to a Word (.docx) file easily with CraftMyDoc.')
 @section('meta_keywords', 'Image to Word, JPG to Word, PNG to Word, Image converter, Word file')
 
 @section('content')

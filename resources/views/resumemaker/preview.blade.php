@@ -1,7 +1,7 @@
 @extends('sw.layout.master')
 
-@section('title', 'Resume Preview & Download | DocLover')
-@section('meta_description', 'Preview and download your resume as a professional PDF with DocLover.')
+@section('title', 'Resume Preview & Download | CraftMyDoc')
+@section('meta_description', 'Preview and download your resume as a professional PDF with CraftMyDoc.')
 @section('meta_keywords', 'Resume Preview, Resume Download, Online Resume Maker, PDF Resume, Download Resume')
 
 @section('content')

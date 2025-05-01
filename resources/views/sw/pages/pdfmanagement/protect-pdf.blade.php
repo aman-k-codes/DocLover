@@ -1,7 +1,7 @@
 @extends('sw.layout.master')
 
-@section('title', 'DocLover - Protect PDF')
-@section('meta_description', 'Protect your PDF with DocLover’s easy-to-use tool.')
+@section('title', 'CraftMyDoc - Protect PDF')
+@section('meta_description', 'Protect your PDF with CraftMyDoc’s easy-to-use tool.')
 @section('meta_keywords', 'Protect PDF, PDF tools')
 
 @section('content')
@@ -141,7 +141,7 @@
         if (protectedPDFUrl) {
             const downloadLink = document.createElement("a");
             downloadLink.href = protectedPDFUrl;
-            downloadLink.download = "protected_doclover.pdf";
+            downloadLink.download = "protected_CraftMyDoc.pdf";
             document.body.appendChild(downloadLink);
             downloadLink.click();
             document.body.removeChild(downloadLink);

@@ -53,7 +53,7 @@ class ResumeTemplatesController extends Controller
             ->setOption('margin-left', 0)
             ->setOption('margin-right', 0);
 
-        return $pdf->download('doclover.pdf');
+        return $pdf->download('CraftMyDoc.pdf');
     }
 
     public function preview()

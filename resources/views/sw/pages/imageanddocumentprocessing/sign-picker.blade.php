@@ -1,6 +1,6 @@
 @extends('sw.layout.master')
 
-@section('title', 'DocLover - Sign Picker')
+@section('title', 'CraftMyDoc - Sign Picker')
 
 @section('meta_description', 'Easily extract signatures from any document or image using advanced processing.')
 @section('meta_keywords', 'Sign Picker, Extract Signature, Digital Signature Tool, Image to Signature, Signature Extraction')

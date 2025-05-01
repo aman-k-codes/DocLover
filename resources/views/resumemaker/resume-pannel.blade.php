@@ -1,6 +1,6 @@
 @extends('sw.layout.master')
 
-@section('title', 'Resume Builder Panel | DocLover')
+@section('title', 'Resume Builder Panel | CraftMyDoc')
 @section('meta_description',
     'Create your resume interactively with sections, input forms, and live PDF preview using
     our resume builder.')

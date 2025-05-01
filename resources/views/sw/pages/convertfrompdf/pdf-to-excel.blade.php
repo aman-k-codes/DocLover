@@ -1,8 +1,8 @@
 @extends('sw.layout.master')
 
-@section('title', 'DocLover - PDF to Excel')
+@section('title', 'CraftMyDoc - PDF to Excel')
 
-@section('meta_description', 'Convert PDF files to Excel (XLSX) format quickly and securely with DocLover.')
+@section('meta_description', 'Convert PDF files to Excel (XLSX) format quickly and securely with CraftMyDoc.')
 @section('meta_keywords', 'PDF to Excel, PDF Converter, File Conversion, XLSX Converter')
 
 @section('content')

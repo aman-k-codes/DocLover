@@ -1,8 +1,8 @@
 @extends('sw.layout.master')
 
-@section('title', 'DocLover - Split PDFs')
-@section('meta_description', 'Easily split PDF files into multiple pages with DocLover.')
-@section('meta_keywords', 'Split PDF, PDF Splitter, Split PDF files, DocLover')
+@section('title', 'CraftMyDoc - Split PDFs')
+@section('meta_description', 'Easily split PDF files into multiple pages with CraftMyDoc.')
+@section('meta_keywords', 'Split PDF, PDF Splitter, Split PDF files, CraftMyDoc')
 
 @section('content')
     <section class="pt-12 px-4 bg-gray-50">
@@ -127,7 +127,7 @@
         @include('sw.components.tools')
     </div>
 </section>
-    
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
 

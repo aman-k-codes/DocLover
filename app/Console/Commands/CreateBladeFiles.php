@@ -62,9 +62,9 @@ class CreateBladeFiles extends Command
                     $content = <<<HTML
                     @extends('sw.layout.master')
 
-                    @section('title', 'DocLover - {$file}')
+                    @section('title', 'CraftMyDoc - {$file}')
 
-                    @section('meta_description', 'Convert {$file} easily with DocLover.')
+                    @section('meta_description', 'Convert {$file} easily with CraftMyDoc.')
                     @section('meta_keywords', '{$file}, Document Conversion, File Conversion')
 
                     @section('content')

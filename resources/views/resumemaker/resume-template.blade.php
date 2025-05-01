@@ -1,9 +1,9 @@
 @extends('sw.layout.master')
 
-@section('title', 'DocLover - Free Resume Templates')
+@section('title', 'CraftMyDoc - Free Resume Templates')
 
 @section('meta_description',
-    'Build a standout resume in minutes with DocLover. Choose from modern, professional resume
+    'Build a standout resume in minutes with CraftMyDoc. Choose from modern, professional resume
     templates and download your resume instantly.')
 
 @section('meta_keywords',

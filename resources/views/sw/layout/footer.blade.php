@@ -6,7 +6,7 @@
                 <div class="w-8 h-8 bg-gradient-to-br rounded">
                     <img src="{{asset('public/assets/imgs/fav.png')}}" alt="">
                 </div>
-                <span class="text-xl font-bold">DocLover</span>
+                <span class="text-xl font-bold">CraftMyDoc</span>
             </div>
             <p class="mt-2 text-gray-600">Simplifying PDFs for everyone.</p>
         </div>
@@ -40,7 +40,7 @@
         <div>
             <h3 class="font-semibold mb-2 text-gray-800">Apps</h3>
             <ul class="space-y-1">
-                <li><a href="#" class="hover:text-yellow-600 transition">Download DocLover</a></li>
+                <li><a href="#" class="hover:text-yellow-600 transition">Download CraftMyDoc</a></li>
                 <li><a href="#" class="hover:text-yellow-600 transition">PDF Scanner</a></li>
                 <li><a href="#" class="hover:text-yellow-600 transition">Windows App</a></li>
             </ul>
@@ -60,7 +60,7 @@
 
     <!-- Copyright & Legal Links -->
     <div class="text-center py-4 text-xs text-gray-500 border-t">
-        © 2025 DocLover AG — Made with <span class="text-red-500">❤</span> for the internet community.
+        © 2025 CraftMyDoc AG — Made with <span class="text-red-500">❤</span> for the internet community.
         <div class="mt-2 space-x-4">
             <a href="#" class="hover:text-yellow-600 transition">Privacy Policy</a>
             <a href="#" class="hover:text-yellow-600 transition">Terms of Service</a>
@@ -78,7 +78,7 @@
         <div>
             <div class="flex items-center space-x-3">
                 <img src="{{ asset('public/assets/imgs/fav.png') }}" alt="Logo" class="w-10 h-10">
-                <span class="text-xl font-semibold">DocLover</span>
+                <span class="text-xl font-semibold">CraftMyDoc</span>
             </div>
             <p class="mt-3 text-gray-600">Built by an individual, for individuals. Simplifying PDFs, one file at a time.</p>
         </div>
@@ -108,7 +108,7 @@
 
     <!-- Bottom Note -->
     <div class="text-center py-4 text-xs text-gray-500 border-t">
-        © 2025 DocLover — Handcrafted with ❤️ by <span class="font-medium">Nilesh</span>
+        © 2025 CraftMyDoc — Handcrafted with ❤️ by <span class="font-medium">Nilesh</span>
     </div>
 </footer>
 
