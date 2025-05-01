@@ -64,6 +64,7 @@ class DocsController extends Controller
 
             $pdf = $request->file('pdf_file');
 
+            // dd(env('API_URL'));
             Log::debug('API URL', ['url' => env('API_URL')]);
 
             // Send the PDF to external API
