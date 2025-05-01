@@ -181,7 +181,7 @@
                     selectPagesContainer.innerHTML = "";
                     for (let i = 1; i <= pdf.numPages; i++) {
                         const page = await pdf.getPage(i);
-                        const scale = 0.7;
+                        const scale = 3;
                         const viewport = page.getViewport({
                             scale
                         });
