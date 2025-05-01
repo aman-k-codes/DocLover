@@ -250,10 +250,10 @@ class DocsController extends Controller
                 file_get_contents($image->getRealPath()), // Get the file contents safely
                 $image->getClientOriginalName()
             )->post(env('API_URL') . '/image-to-text');
-            // dd($response);
             // Log the API response for debugging purposes
             Log::debug('External API Response', ['status' => $response->status(), 'body' => $response->body()]);
 
+            // dd($response->status());
             // Check if the response from the Flask API is successful
             if ($response->successful()) {
                 // Return the extracted text from the API response
@@ -289,7 +289,7 @@ class DocsController extends Controller
             'file',
             file_get_contents($file->getRealPath()),
             $file->getClientOriginalName()
-        )->post('http://127.0.0.1:5000/api/image-to-word');
+        )->post(env('API_URL') . '/image-to-word');
 
 
         // Check if the request was successful
