@@ -1,0 +1,65 @@
+Configuration - /etc/nginx/sites-available/craftmydoc.com
+
+# Redirect all HTTP to HTTPS
+server {
+    listen 80;
+    server_name craftmydoc.com www.craftmydoc.com;
+    return 301 https://$host$request_uri;
+}
+
+# HTTPS configuration
+server {
+    listen 443 ssl;
+    server_name craftmydoc.com www.craftmydoc.com;
+
+    root /var/www/doclover/public;
+    index index.php;
+
+    access_log /var/log/nginx/doclover.access.log;
+    error_log  /var/log/nginx/doclover.error.log;
+
+    ssl_certificate /etc/letsencrypt/live/craftmydoc.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/craftmydoc.com/privkey.pem;
+
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_ciphers HIGH:!aNULL:!MD5;
+
+    client_max_body_size 25M;
+
+    location / {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+
+    location ~ \.php$ {
+        fastcgi_pass unix:/var/run/php/php8.3-fpm.sock;
+        fastcgi_index index.php;
+        include fastcgi_params;
+        fastcgi_split_path_info ^(.+\.php)(/.+)$;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+    }
+
+    location /api/ {
+        proxy_pass http://unix:/var/www/myapis/myapp.sock;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    location ~ /\.ht {
+        deny all;
+    }
+}
+
+
+Then : sudo nginx -t && sudo systemctl reload nginx
+
+
+For Flask:-
+
+restart flask :
+
+sudo systemctl daemon-reexec
+sudo systemctl daemon-reload
+sudo systemctl restart flaskapp
+sudo systemctl status flaskapp
