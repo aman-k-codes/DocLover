@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>503 Service Unavailable - CraftMyoc</title>
+    <title>503 Service Unavailable - CraftMyDoc</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         // Optional: You can customize Tailwind theme colors here if needed
@@ -32,7 +32,7 @@
         <div class="bg-white rounded-lg shadow-xl p-8 md:p-12 max-w-lg mx-auto text-center">
 
             <div class="mb-6 text-xl font-semibold text-indigo-600">
-                CraftMyoc
+                CraftMyDoc
             </div>
 
             <h1 class="text-8xl md:text-9xl font-bold text-indigo-500 mb-2">
