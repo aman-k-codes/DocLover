@@ -83,6 +83,15 @@
                     class="border-2 rounded px-2 py-1">
             </div>
 
+            <!-- DPI Setting -->
+            <div class="mt-6">
+                <label class="block text-gray-700 mb-2 font-semibold">Set DPI (Dots Per Inch):</label>
+                <input type="number" id="dpiInput" value="300" min="72" max="1200"
+                    class="border-2 rounded px-3 py-2 text-center w-28 font-semibold">
+                <p class="text-sm text-gray-500 mt-1">Recommended: 300 DPI</p>
+            </div>
+
+
             <!-- Size Options -->
             <div class="mt-6">
                 <label class="block text-gray-700 mb-2 font-semibold">Select Passport Size:</label>
@@ -218,35 +227,59 @@
         }
 
         function createSheet() {
-            const sizes = {
-                "2x2": [600, 600],
-                "35x45": [413, 531],
-                "51x51": [600, 600]
+            const dpi = parseInt(document.getElementById("dpiInput").value) || 300;
+
+            const sizeMap = {
+                "2x2": [2, 2],
+                "35x45": [35 / 25.4, 45 / 25.4],
+                "51x51": [51 / 25.4, 51 / 25.4]
             };
 
-            const sheets = {
-                "A4": [2480, 3508],
-                "4x6": [1200, 1800]
+            const sheetMap = {
+                "A4": [8.27, 11.69],
+                "4x6": [4, 6]
             };
 
-            const [photoWidth, photoHeight] = sizes[selectedPassportSize];
-            const [sheetWidth, sheetHeight] = sheets[selectedSheetSize];
+            const [photoInchW, photoInchH] = sizeMap[selectedPassportSize];
+            const [sheetInchW, sheetInchH] = sheetMap[selectedSheetSize];
 
-            let sheetCanvas = document.createElement("canvas");
+            const spacing = Math.round(0.15 * dpi); // 0.15 inch space between photos
+            const borderThickness = 1; // 1px border for thinner lines
+
+            const photoWidth = Math.round(photoInchW * dpi);
+            const photoHeight = Math.round(photoInchH * dpi);
+            const sheetWidth = Math.round(sheetInchW * dpi);
+            const sheetHeight = Math.round(sheetInchH * dpi);
+
+            const sheetCanvas = document.createElement("canvas");
             sheetCanvas.width = sheetWidth;
             sheetCanvas.height = sheetHeight;
-            let sheetCtx = sheetCanvas.getContext("2d");
+            const sheetCtx = sheetCanvas.getContext("2d");
 
-            sheetCtx.fillStyle = document.getElementById("bgColorPicker").value;
+            sheetCtx.fillStyle = '#ffffff';
             sheetCtx.fillRect(0, 0, sheetWidth, sheetHeight);
 
-            const columns = Math.floor(sheetWidth / photoWidth);
-            const rows = Math.floor(sheetHeight / photoHeight);
+            const totalPhotoWidth = photoWidth + spacing;
+            const totalPhotoHeight = photoHeight + spacing;
+
+            const columns = Math.floor((sheetWidth + spacing) / totalPhotoWidth);
+            const rows = Math.floor((sheetHeight + spacing) / totalPhotoHeight);
+
+            const offsetX = Math.floor((sheetWidth - (columns * totalPhotoWidth - spacing)) / 2);
+            const offsetY = Math.floor((sheetHeight - (rows * totalPhotoHeight - spacing)) / 2);
 
             for (let y = 0; y < rows; y++) {
                 for (let x = 0; x < columns; x++) {
-                    sheetCtx.drawImage(canvas, 0, 0, canvas.width, canvas.height, x * photoWidth, y * photoHeight,
-                        photoWidth, photoHeight);
+                    const dx = offsetX + x * totalPhotoWidth;
+                    const dy = offsetY + y * totalPhotoHeight;
+
+                    // Draw photo
+                    sheetCtx.drawImage(canvas, 0, 0, canvas.width, canvas.height, dx, dy, photoWidth, photoHeight);
+
+                    // Draw border
+                    sheetCtx.strokeStyle = "#000";
+                    sheetCtx.lineWidth = borderThickness;
+                    sheetCtx.strokeRect(dx, dy, photoWidth, photoHeight);
                 }
             }
 
