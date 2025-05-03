@@ -515,7 +515,7 @@
                     </div>
                 </div> --}}
 
-                <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
+                {{-- <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="two-column">
                     <img src="{{ asset('public/assets/temp-imgs/two-column/tclm (20).png') }}" alt="Two-column Template"
                         class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
@@ -527,7 +527,7 @@
                             class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Use
                             Template</button>
                     </div>
-                </div>
+                </div> --}}
 
                 {{-- <div style="display:none" class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="google-docs">
