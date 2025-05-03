@@ -48,6 +48,11 @@
             </button>
         </div>
 
+        <div id="loader" class="fixed inset-0 bg-white bg-opacity-75 z-50 hidden flex items-center justify-center">
+            <div class="animate-spin rounded-full h-16 w-16 border-t-4 border-indigo-600 border-opacity-50"></div>
+        </div>
+
+
         <!-- Download Section -->
         <div id="downloadSection"
             class="hidden mt-8 max-w-3xl mx-auto text-center bg-white shadow-lg rounded-2xl p-6 border border-gray-200">
@@ -91,6 +96,9 @@
                 return;
             }
 
+            // Show loader
+            document.getElementById("loader").classList.remove("hidden");
+
             const formData = new FormData();
             formData.append("image", fileInput.files[0]);
 
@@ -121,8 +129,11 @@
                 .catch(error => {
                     alert("Error removing background. Please try again.");
                     console.error(error);
+                })
+                .finally(() => {
+                    // Hide loader
+                    document.getElementById("loader").classList.add("hidden");
                 });
-
         }
     </script>
 
