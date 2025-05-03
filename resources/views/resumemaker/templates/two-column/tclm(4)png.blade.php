@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Resume - John Smith</title>
+  <title>tclm(4)png</title>
   <style>
     @page {
       margin: 0;
@@ -101,7 +101,7 @@
   <table class="container">
     <tr>
       <td class="left">
-        <h1>John Smith</h1>
+        <h1>Nilesh Navrang</h1>
         <div class="title">Chief Executive Officer</div>
         <div class="contact">
           <p><img src="path/to/email-icon.png" width="14" alt="Email Icon"> johnsmith@beamjobs.com</p>

@@ -109,7 +109,7 @@
                     <div class="left-panel">
                         <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
                             alt="Profile Image" class="profile-img">
-                        <h1>John Doe</h1>
+                        <h1>Nilesh Navrang</h1>
                         <p class="role">Software Developer</p>
 
                         <div class="contact-info">

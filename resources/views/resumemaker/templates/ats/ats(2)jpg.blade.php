@@ -65,7 +65,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>May Riley</h1>
+        <h1>Nilesh Navrang</h1>
         <hr>
         <div class="contact">
             4567 Main Street, Buffalo, New York 98052 | (716) 555-0100 |

@@ -89,7 +89,7 @@
 
 <body>
 
-    <h1>FIRST LAST</h1>
+    <h1>Nilesh Navrang</h1>
     <div class="contact">
         New York City, NY • first.last@resumeworded.com • (212) 123-4567 • linkedin.com/in/username
     </div>

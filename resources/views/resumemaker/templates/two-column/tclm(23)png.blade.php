@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>tclm(20)png</title>
+  <title>tclm(23)png</title>
   <style>
     @page {
       margin: 10;
@@ -101,7 +101,7 @@
 
     <div class="right">
       <div class="name-block">
-        <h1>WINSTON <strong>ROSENBERG</strong></h1>
+        <h1>NILESH <strong>NAVRANG</strong></h1>
         <p class="subheading">WEB DEVELOPER, WEB DESIGNER</p>
         <p>winstonrose@email.com &nbsp;&nbsp;&nbsp;&nbsp; (123) 456-7890<br>
         New York, NY &nbsp;&nbsp;&nbsp;&nbsp; <a href="#">LinkedIn</a></p>

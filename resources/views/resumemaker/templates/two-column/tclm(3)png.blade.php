@@ -121,7 +121,7 @@
 
     <div class="container">
         <div class="header">
-            <h1>SAUL GARZA</h1>
+            <h1>Nilesh Navrang</h1>
             <h2>Title of Job You’re Looking for</h2>
             <div class="contact">
                 <span>(123) 456-7890</span> |

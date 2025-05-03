@@ -85,7 +85,7 @@
 
 <body>
     <div class="header">
-        <h1>First Last</h1>
+        <h1>Nilesh Navrang</h1>
         <p>first.last@resumeworded.com | +1 (123) 456789 | San Francisco, CA</p>
     </div>
 

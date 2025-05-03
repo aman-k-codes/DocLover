@@ -104,7 +104,7 @@
         <table class="summary-table">
             <tr>
                 <td class="name-title">
-                    <h1 class="name">Barry Carpenter</h1>
+                    <h1 class="name">Nilesh Navrang</h1>
                     <p class="title">Project Manager</p>
                 </td>
                 <td class="contact">

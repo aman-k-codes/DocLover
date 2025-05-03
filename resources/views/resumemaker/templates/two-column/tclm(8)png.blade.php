@@ -86,7 +86,7 @@
 </head>
 <body>
     <div class="header">
-        <h1>Christopher Wilson</h1>
+        <h1>Nilesh Navrang</h1>
         <div class="title">College Applicant</div>
         <div class="contact">
             <span>📧 christopherwill70@gmail.com</span>

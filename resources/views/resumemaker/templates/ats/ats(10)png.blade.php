@@ -98,7 +98,7 @@
 
 <body>
 
-    <h1>FIRST LAST NAME</h1>
+    <h1>Nilesh Navrang</h1>
     <div class="contact">
         Senior Social Media Manager<br>
         New York City, NY 10000 • first.last@resumeworded.com • +1 (212) 123-4567

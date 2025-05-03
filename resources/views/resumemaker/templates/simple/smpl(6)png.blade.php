@@ -79,7 +79,7 @@
 
 <body>
 
-    <h1>PATRICIA BOWLIN</h1>
+    <h1>Nilesh Navrang</h1>
     <div style="height: 2px; background-color: #b30000; width: 100%; margin: 0 auto 5px auto;"></div>
     <div class="contact">
         + (0) 1 2345 555 | 422 Duff Avenue, Saint George, UT 84770 | name@email.com

@@ -78,7 +78,7 @@
 </head>
 <body>
 
-    <h1>CAROLINE BUCKLEY</h1>
+    <h1>Nilesh Navrang</h1>
     <h2>ADMINISTRATIVE ASSISTANT</h2>
 
     <div class="contact">

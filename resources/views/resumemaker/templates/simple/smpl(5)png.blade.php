@@ -71,7 +71,7 @@
     <table class="layout">
         <tr>
             <td class="main">
-                <h1>First Last</h1>
+                <h1>Nilesh Navrang</h1>
                 <p class="bold">Entry-Level Executive Assistant</p>
 
                 <h2>WORK EXPERIENCE</h2>

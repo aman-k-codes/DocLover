@@ -66,7 +66,7 @@
 <body>
 
     <div class="header">
-        <h1>John Doe</h1>
+        <h1>Nilesh Navrang</h1>
         <p>Web Designer</p>
     </div>
 

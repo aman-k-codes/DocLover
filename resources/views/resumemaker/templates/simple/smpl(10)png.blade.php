@@ -75,7 +75,7 @@
 </head>
 <body>
     <div class="header">
-        <div class="name">SEEMA CHAUDHRY</div>
+        <div class="name">Nilesh Navrang</div>
         <div class="title">Graphic Designer</div>
         <div class="contact">
             📞 +123-456-7890 &nbsp;&nbsp;📍 123 Anywhere St., Any City &nbsp;&nbsp;•&nbsp;&nbsp; 🌐 www.seemadesigns.com &nbsp;&nbsp;•&nbsp;&nbsp; ✉️ seemadesigns@email.com

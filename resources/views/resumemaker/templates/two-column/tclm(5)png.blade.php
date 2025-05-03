@@ -80,7 +80,7 @@
 </head>
 <body>
     <div class="header">
-        <h1>JOHN SMITH</h1>
+        <h1>Nilesh Navrang</h1>
         <div class="title">Chief Executive Officer</div>
         <div class="contact">
             <span>📧 johnsmith@beamjobs.com</span>

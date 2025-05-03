@@ -78,7 +78,7 @@
 </head>
 <body>
 
-    <h1>FIRST LAST</h1>
+    <h1>Nilesh Navrang</h1>
     <div class="contact">
         New York, NY | P: +44 123456789 | first.last@resumeworded.com
     </div>

@@ -91,7 +91,7 @@
 <body>
 
     <div class="header">
-        <div class="name">AARAV SHARMA</div>
+        <div class="name">Nilesh Navrang</div>
         <div class="contact">
             Bangalore, India • +91-9876543210 • aarav.sharma@email.com • linkedin.com/in/aaravsharma
         </div>

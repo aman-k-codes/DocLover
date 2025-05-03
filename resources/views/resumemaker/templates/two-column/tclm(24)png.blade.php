@@ -84,7 +84,7 @@
     <tr>
       <!-- Sidebar -->
       <td class="sidebar">
-        <h1>JOHN SMITH</h1>
+        <h1>Nilesh Navrang</h1>
         <p>Chief Executive Officer</p>
 
         <div class="section contact">

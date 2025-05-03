@@ -108,7 +108,7 @@
     <div class="container">
         <!-- LEFT CONTENT -->
         <div class="left">
-            <h1>First Last</h1>
+            <h1>Nilesh Navrang</h1>
             <p><strong>Data Scientist</strong></p>
             <p>
                 Data Scientist with three years of experience in analyzing large data sets and coming up with

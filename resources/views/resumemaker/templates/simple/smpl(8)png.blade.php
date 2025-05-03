@@ -99,7 +99,7 @@
         <table class="summary-table">
             <tr>
                 <td class="name-title">
-                    <h1>Jasmine Tala</h1>
+                    <h1>Nilesh Navrang</h1>
                     <h2>Frontend Developer</h2>
                 </td>
                 <td class="contact">

@@ -82,7 +82,7 @@
 <body>
 
 <div class="container">
-  <h1>JASMINE TALA</h1>
+  <h1>Nilesh Navrang</h1>
   <h2>Job Title</h2>
 
   <table class="resume-table">

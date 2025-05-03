@@ -124,7 +124,7 @@
 <div class="container">
   <!-- Sidebar -->
   <div class="sidebar">
-    <h1>Sandra Bell</h1>
+    <h1>Nilesh Navrang</h1>
     <p><strong>Emergency Room Nurse</strong></p>
 
     <div class="contact-info">

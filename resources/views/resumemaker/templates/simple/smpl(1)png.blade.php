@@ -87,7 +87,7 @@
 <body>
 
     <div class="header">
-        <h1>Jasmine Tala</h1>
+        <h1>Nilesh Navrang</h1>
         <h2>JOB TITLE</h2>
     </div>
 

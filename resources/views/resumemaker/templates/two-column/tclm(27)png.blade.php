@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Resume</title>
+  <title>tclm(27)png</title>
   <style>
     @page{
         margin: 0;
@@ -112,7 +112,7 @@
     <tr>
       <!-- LEFT COLUMN -->
       <td class="left">
-        <h1>ANAISHA PARVATI</h1>
+        <h1>Nilesh Navrang</h1>
         <p>Marketing Manager</p>
 
         <h2>CONTACT</h2>

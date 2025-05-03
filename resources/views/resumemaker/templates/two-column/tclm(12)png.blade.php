@@ -120,7 +120,7 @@
 
   <div class="wrapper">
     <div class="name">
-      <h1>ANAISHA PARVATI</h1>
+      <h1>Nilesh Navrang</h1>
       <h2>HEAD MANAGER</h2>
     </div>
 

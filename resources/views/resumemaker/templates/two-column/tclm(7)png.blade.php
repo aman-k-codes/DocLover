@@ -97,7 +97,7 @@
     </style>
 </head>
 <body>
-    <h1>First Last</h1>
+    <h1>Nilesh Navrang</h1>
     <h2>Data Scientist</h2>
 
     <p>Ex-Business Development and Product Marketer transitioning into a Data Scientist role after completing ABC Bootcamp. Over 5 years of experience managing global teams of 5-20 people and working with C-Suite Executives. Core skills include extrapolating data and providing actionable insights aligned with computer science, modeling and statistics.</p>

@@ -125,7 +125,7 @@
 <body>
 
     <div class="header">
-        <h1>SEEMA CHAUDHRY</h1>
+        <h1>Nilesh Navrang</h1>
         <p>Graphic Designer</p>
     </div>
 

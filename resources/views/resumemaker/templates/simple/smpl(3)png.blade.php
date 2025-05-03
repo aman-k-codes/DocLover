@@ -74,7 +74,7 @@
 </head>
 <body>
 
-    <h1>Eileen Telle</h1>
+    <h1>Nilesh Navrang</h1>
     <h2>Coffee Shop Worker</h2>
 
     <div class="contact">

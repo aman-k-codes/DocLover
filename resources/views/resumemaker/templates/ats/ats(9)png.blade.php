@@ -83,7 +83,7 @@
 
 <body>
 
-    <h1>First Last</h1>
+    <h1>Nilesh Navrang</h1>
     <div class="title">Software Engineering Lead</div>
     <div class="contact">
         Bay Area, California • +1-234-456-789 • professionalemail@resumeworded.com • linkedin.com/in/username

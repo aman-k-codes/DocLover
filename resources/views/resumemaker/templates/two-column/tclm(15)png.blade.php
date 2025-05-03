@@ -109,7 +109,7 @@
     <table width="100%">
         <tr>
             <td>
-                <h1>First Last</h1>
+                <h1>Nilesh Navrang</h1>
                 <h2 style="margin: 0; font-size: 16px;">Marketing Manager</h2>
                 <p style="max-width: 500px;">
                     Marketing Manager with five years of experience leading product development and distribution. Led

@@ -116,7 +116,7 @@
 
     <div class="container">
         <div class="left">
-            <div class="name-header">BAILEY HUFF</div>
+            <div class="name-header">Nilesh Navrang</div>
             <div class="job-title">Title of Job You’re Looking for</div>
 
             <div class="section-title">OBJECTIVE</div>

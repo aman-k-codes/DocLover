@@ -101,7 +101,7 @@
 <div class="container">
   <!-- LEFT COLUMN -->
   <div class="left-column">
-    <h1>JASMINE TALA</h1>
+    <h1>Nilesh Navrang</h1>
     <p class="subtitle">Title of Job You’re Looking For</p>
 
     <div class="contact-info">

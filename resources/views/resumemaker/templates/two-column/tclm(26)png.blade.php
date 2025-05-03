@@ -110,7 +110,7 @@
     <tr>
       <!-- Sidebar -->
       <td class="sidebar">
-        <h1>Scott Robison</h1>
+        <h1>Nilesh Navrang</h1>
         <p>ART DIRECTOR</p>
 
         <div class="section contact">

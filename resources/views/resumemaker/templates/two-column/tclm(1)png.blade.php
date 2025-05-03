@@ -100,7 +100,7 @@
     <div class="container">
         <div class="left">
             <div>
-                <h1>Jack William</h1>
+                <h1>Nilesh Navrang</h1>
                 <div class="subtitle">University Academic</div>
             </div>
 
