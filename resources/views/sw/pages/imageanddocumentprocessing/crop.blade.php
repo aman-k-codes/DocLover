@@ -18,7 +18,8 @@
             @foreach (['Upload Image', 'Crop the Image', 'Download Cropped Image'] as $i => $step)
                 <div class="flex items-center space-x-2">
                     <div class="w-8 h-8 flex items-center justify-center bg-indigo-700 text-white rounded-full font-bold">
-                        {{ $i + 1 }}</div>
+                        {{ $i + 1 }}
+                    </div>
                     <span class="text-gray-800 font-semibold">{{ $step }}</span>
                 </div>
             @endforeach
@@ -85,6 +86,46 @@
         </div>
     </section>
 
+    <!-- Features -->
+    <section class="py-18 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
+                @foreach([['✂️', 'Fast & Simple', 'Upload your image and crop it easily.'], ['🔒', 'Highly Secure', 'Your images are processed securely and never stored.'], ['💻', 'Cross-Device Access', 'Works perfectly on desktop, tablet, and mobile.']] as $feature)
+                    <div class="p-6 rounded-lg">
+                        <div class="text-4xl">{{ $feature[0] }}</div>
+                        <h3 class="text-xl font-bold text-gray-900 mt-4">{{ $feature[1] }}</h3>
+                        <p class="text-gray-600 mt-2">{{ $feature[2] }}</p>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Crop Image -->
+    <section class="bg-white py-16">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-3xl font-extrabold text-gray-900 mb-4">How to Crop Your Image</h2>
+            <p class="text-lg text-gray-600 mb-8">Follow these simple steps to crop your image with ease.</p>
+            <div class="text-left max-w-2xl mx-auto">
+                <ol class="space-y-6 list-none">
+                    @foreach([['Upload your image', 'Drag & drop or browse your device to upload an image.'], ['Select crop area', 'Choose the area you want to crop with the tool.'], ['Apply crop', 'Click the crop button to apply the changes to your image.']] as $index => $step)
+                        <li class="flex items-start space-x-4">
+                            <div
+                                class="flex-shrink-0 w-10 h-10 flex items-center justify-center bg-indigo-600 text-white font-bold rounded-full">
+                                {{ $index + 1 }}
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900">{{ $step[0] }}</h3>
+                                <p class="text-gray-600">{{ $step[1] }}</p>
+                            </div>
+                        </li>
+                    @endforeach
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQs -->
     <section class="py-12 bg-gray-100">
         <div class="bg-white p-6 md:p-12">
             <div class="text-center mb-8">
@@ -95,12 +136,14 @@
                     <i class="fas fa-star text-yellow-500"></i>
                     <i class="fas fa-star text-yellow-500"></i>
                     <i class="fas fa-star text-yellow-500"></i>
-                    <span class="text-gray-700 ml-2 font-medium">4.9 / 5 - 90,000+ users</span>
+                    <span class="text-gray-700 ml-2 font-medium">4.8 / 5 - 150,000+ users</span>
                 </div>
             </div>
+
             @include('sw.components.tools')
         </div>
     </section>
+
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>

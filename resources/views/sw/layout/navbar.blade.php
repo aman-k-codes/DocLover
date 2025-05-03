@@ -30,10 +30,6 @@
                                         href="{{ route('pdf-to-doc') }}"><span>PDF to DOC</span></a></li>
                                 <li><i class="fas fa-image text-yellow-600 mr-2"></i><a
                                         href="{{ route('pdf-to-jpg') }}"><span>PDF to JPG</span></a></li>
-                                <li><i class="fas fa-code text-green-600 mr-2"></i><a
-                                        href="{{ route('pdf-to-html') }}"><span>PDF to HTML</span></a></li>
-                                <li><i class="fas fa-file-excel text-green-700 mr-2"></i><a
-                                        href="{{ route('pdf-to-xl') }}"><span>PDF to XL</span></a></li>
                             </ul>
                         </div>
                         <div>
@@ -56,9 +52,6 @@
                             <ul class="space-y-2">
                                 <li><i class="fas fa-crop-alt text-yellow-700 mr-2"></i><a
                                         href="{{ route('crop') }}"><span>Crop</span></a></li>
-                                {{-- <li><i class="fas fa-th-large text-pink-600 mr-2"></i><a href="{{ route('collage') }}"><span>Collage</span></a></li> --}}
-                                {{-- <li><i class="fas fa-expand-arrows-alt text-green-700 mr-2"></i><a href="{{ route('resize') }}"><span>Resize</span></a></li> --}}
-                                {{-- <li><i class="fas fa-id-card text-purple-600 mr-2"></i><a href="{{ route('passport-size-photo') }}"><span>Passport-size Photo</span></a></li> --}}
                                 <li><i class="fas fa-magic text-indigo-600 mr-2"></i><a
                                         href="{{ route('photo-clarity-enhancement') }}"><span>Photo Clarity
                                             Enhancement</span></a></li>
@@ -94,8 +87,6 @@
         <nav class="hidden sm:flex items-center space-x-4 text-sm ">
             <a href="{{ route('home.index') }}" class="hover:text-yellow-600 transition">Home</a>
             <a href="{{ route('home.AllTools') }}" class="hover:text-yellow-600 transition">All Tools</a>
-            {{-- <a href="#" class="hover:text-yellow-600 transition">Edit</a>
-            <a href="#" class="hover:text-yellow-600 transition">Pricing</a> --}}
             <a href="{{ route('resume.index') }}"
                 class="bg-blue-600 text-white px-4 py-1.5 rounded hover:bg-blue-700 transition whitespace-nowrap">Make
                 Resume</a>

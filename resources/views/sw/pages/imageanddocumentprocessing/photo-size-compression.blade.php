@@ -21,7 +21,8 @@
             @foreach (['Upload Image', 'Compress the Image', 'Download Compressed Image'] as $i => $step)
                 <div class="flex items-center space-x-2">
                     <div class="w-8 h-8 flex items-center justify-center bg-indigo-700 text-white rounded-full font-bold">
-                        {{ $i + 1 }}</div>
+                        {{ $i + 1 }}
+                    </div>
                     <span class="text-gray-800 font-semibold">{{ $step }}</span>
                 </div>
             @endforeach
@@ -74,23 +75,65 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Features -->
+    <section class="py-18 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
+                @foreach([['⚡', 'Fast & Simple', 'Upload your image and compress it instantly without losing quality.'], ['🔒', 'Highly Secure', 'Your images are processed securely and never stored.'], ['💻', 'Cross-Device Access', 'Works perfectly on desktop, tablet, and mobile.']] as $feature)
+                    <div class="p-6 rounded-lg">
+                        <div class="text-4xl">{{ $feature[0] }}</div>
+                        <h3 class="text-xl font-bold text-gray-900 mt-4">{{ $feature[1] }}</h3>
+                        <p class="text-gray-600 mt-2">{{ $feature[2] }}</p>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Compress Your Image -->
+    <section class="bg-white py-16">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-3xl font-extrabold text-gray-900 mb-4">How to Compress Your Image</h2>
+            <p class="text-lg text-gray-600 mb-8">Follow these simple steps to compress your image quickly and efficiently.
+            </p>
+            <div class="text-left max-w-2xl mx-auto">
+                <ol class="space-y-6 list-none">
+                    @foreach([['Upload your image', 'Drag & drop or browse your device to upload an image.'], ['Select compression level', 'Choose the compression level (high, medium, low).'], ['Download your image', 'Click the download button to get your compressed image.']] as $index => $step)
+                        <li class="flex items-start space-x-4">
+                            <div
+                                class="flex-shrink-0 w-10 h-10 flex items-center justify-center bg-indigo-600 text-white font-bold rounded-full">
+                                {{ $index + 1 }}
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900">{{ $step[0] }}</h3>
+                                <p class="text-gray-600">{{ $step[1] }}</p>
+                            </div>
+                        </li>
+                    @endforeach
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQs -->
     <section class="py-12 bg-gray-100">
         <div class="bg-white p-6 md:p-12">
             <div class="text-center mb-8">
                 <h2 class="text-xl font-semibold text-gray-800">Rate this tool</h2>
                 <div class="flex items-center justify-center mt-2 space-x-1 text-yellow-500">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <span class="text-gray-700 ml-2 font-medium">4.9 / 5 - 90,000+ users</span>
+                    <i class="fas fa-star text-yellow-500"></i>
+                    <i class="fas fa-star text-yellow-500"></i>
+                    <i class="fas fa-star text-yellow-500"></i>
+                    <i class="fas fa-star text-yellow-500"></i>
+                    <i class="fas fa-star text-yellow-500"></i>
+                    <span class="text-gray-700 ml-2 font-medium">4.8 / 5 - 150,000+ users</span>
                 </div>
             </div>
+
             @include('sw.components.tools')
         </div>
     </section>
+
 
     <!-- Custom JS -->
     <script>
@@ -105,12 +148,12 @@
         let originalImage = null;
         let compressedBlobUrl = null;
 
-        imageInput.addEventListener("change", function(event) {
+        imageInput.addEventListener("change", function (event) {
             const file = event.target.files[0];
             if (!file || !file.type.startsWith("image/")) return;
 
             const reader = new FileReader();
-            reader.onload = function(e) {
+            reader.onload = function (e) {
                 originalImage = e.target.result;
                 imagePreview.src = originalImage;
                 compressorContainer.classList.remove("hidden");
@@ -118,7 +161,7 @@
             reader.readAsDataURL(file);
         });
 
-        compressButton.addEventListener("click", function() {
+        compressButton.addEventListener("click", function () {
             if (!originalImage) return;
 
             const targetSizeInput = document.getElementById("targetSize");
@@ -131,7 +174,7 @@
             const img = new Image();
             img.src = originalImage;
 
-            img.onload = function() {
+            img.onload = function () {
                 const canvas = document.createElement("canvas");
                 canvas.width = img.width;
                 canvas.height = img.height;
@@ -142,7 +185,7 @@
                 let quality = 0.9;
 
                 const compressLoop = () => {
-                    canvas.toBlob(function(blob) {
+                    canvas.toBlob(function (blob) {
                         const sizeKB = blob.size / 1024;
 
                         if (sizeKB <= targetSizeKB || quality <= 0.1) {
@@ -166,7 +209,7 @@
             };
         });
 
-        downloadButton.addEventListener("click", function() {
+        downloadButton.addEventListener("click", function () {
             if (!compressedBlobUrl) return;
 
             const link = document.createElement("a");
@@ -177,7 +220,7 @@
             document.body.removeChild(link);
         });
 
-        convertAgainButton.addEventListener("click", function() {
+        convertAgainButton.addEventListener("click", function () {
             // Reset everything
             document.getElementById("uploadSection").classList.remove("hidden");
             compressorContainer.classList.add("hidden");

@@ -61,18 +61,6 @@
                                 <span class="font-bold">PNG to JPG</span>
                             </a>
                         </li>
-                        <li class="cursor-pointer py-2 px-4 bg-gray-100 rounded-lg shadow-md flex items-center space-x-2">
-                            <i class="fas fa-file-word text-red-500"></i>
-                            <a href="{{ route('jpg-to-doc') }}">
-                                <span class="font-bold">JPG to DOC</span>
-                            </a>
-                        </li>
-                        <li class="cursor-pointer py-2 px-4 bg-gray-100 rounded-lg shadow-md flex items-center space-x-2">
-                            <i class="fas fa-file-excel text-green-500"></i>
-                            <a href="{{ route('jpg-to-xl') }}">
-                                <span class="font-bold">JPG to XL</span>
-                            </a>
-                        </li>
                     </ul>
                 </div>
 
@@ -89,27 +77,7 @@
                                     <span class="font-bold">Crop</span>
                                 </a>
                             </li>
-                            {{-- <li
-                                class="cursor-pointer py-2 px-4 bg-gray-100 rounded-lg shadow-md flex items-center space-x-2">
-                                <i class="fas fa-th text-pink-500"></i>
-                                <a href="{{ route('collage') }}">
-                                    <span class="font-bold">Collage</span>
-                                </a>
-                            </li>
-                            <li
-                                class="cursor-pointer py-2 px-4 bg-gray-100 rounded-lg shadow-md flex items-center space-x-2">
-                                <i class="fas fa-expand-arrows-alt text-blue-600"></i>
-                                <a href="{{ route('resize') }}">
-                                    <span class="font-bold">Resize</span>
-                                </a>
-                            </li> --}}
-                            {{-- <li
-                                class="cursor-pointer py-2 px-4 bg-gray-100 rounded-lg shadow-md flex items-center space-x-2">
-                                <i class="fas fa-id-card text-green-600"></i>
-                                <a href="{{ route('passport-size-photo') }}">
-                                    <span class="font-bold">Passport-size Photo</span>
-                                </a>
-                            </li> --}}
+
                             <li
                                 class="cursor-pointer py-2 px-4 bg-gray-100 rounded-lg shadow-md flex items-center space-x-2">
                                 <i class="fas fa-magic text-purple-500"></i>
@@ -155,118 +123,6 @@
                         </ul>
                     </div>
 
-
-                    <!-- Organize PDF -->
-                    {{-- <div>
-                        <h3 class="text-lg font-bold text-gray-900 mt-12 mb-5">Organize PDF</h3>
-                        <ul class="flex flex-wrap justify-center gap-4">
-                            <li
-                                class="cursor-pointer py-2 px-4 bg-gray-100 rounded-lg shadow-md flex items-center space-x-2">
-                                <i class="fas fa-paperclip text-orange-500"></i>
-                                <a href="{{ route('merge-pdf') }}">
-                                    <span class="font-bold">Merge PDF</span>
-                                </a>
-                            </li>
-                            <li
-                                class="cursor-pointer py-2 px-4 bg-gray-100 rounded-lg shadow-md flex items-center space-x-2">
-                                <i class="fas fa-cut text-pink-500"></i>
-                                <a href="{{ route('split-pdf') }}">
-                                    <span class="font-bold">Split PDF</span>
-                                </a>
-                            </li>
-                            <li
-                                class="cursor-pointer py-2 px-4 bg-gray-100 rounded-lg shadow-md flex items-center space-x-2">
-                                <i class="fas fa-sync-alt text-yellow-600"></i>
-                                <a href="{{ route('rotate-pdf') }}">
-                                    <span class="font-bold">Rotate PDF</span>
-                                </a>
-                            </li>
-                            <li
-                                class="cursor-pointer py-2 px-4 bg-gray-100 rounded-lg shadow-md flex items-center space-x-2">
-                                <i class="fas fa-trash-alt text-red-600"></i>
-                                <a href="{{ route('delete-pdf-pages') }}">
-                                    <span class="font-bold">Delete PDF Pages</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div> --}}
-
-                    <!-- Convert PDF -->
-                    {{-- <div>
-                        <h3 class="text-lg font-bold text-gray-900 mt-12 mb-5">Convert PDF</h3>
-                        <ul class="flex flex-wrap justify-center gap-4">
-                            <li
-                                class="cursor-pointer py-2 px-4 bg-gray-100 rounded-lg shadow-md flex items-center space-x-2">
-                                <i class="fas fa-file-word text-blue-600"></i>
-                                <a href="{{ route('pdf-to-word') }}">
-                                    <span class="font-bold">PDF to Word</span>
-                                </a>
-                            </li>
-                            <li
-                                class="cursor-pointer py-2 px-4 bg-gray-100 rounded-lg shadow-md flex items-center space-x-2">
-                                <i class="fas fa-file-excel text-green-600"></i>
-                                <a href="{{ route('pdf-to-excel') }}">
-                                    <span class="font-bold">PDF to Excel</span>
-                                </a>
-                            </li>
-                            <li
-                                class="cursor-pointer py-2 px-4 bg-gray-100 rounded-lg shadow-md flex items-center space-x-2">
-                                <i class="fas fa-file-powerpoint text-red-500"></i>
-                                <a href="{{ route('pdf-to-ppt') }}">
-                                    <span class="font-bold">PDF to PPT</span>
-                                </a>
-                            </li>
-                            <li
-                                class="cursor-pointer py-2 px-4 bg-gray-100 rounded-lg shadow-md flex items-center space-x-2">
-                                <i class="fas fa-file-alt text-gray-600"></i>
-                                <a href="{{ route('word-to-pdf') }}">
-                                    <span class="font-bold">Word to PDF</span>
-                                </a>
-                            </li>
-                            <li
-                                class="cursor-pointer py-2 px-4 bg-gray-100 rounded-lg shadow-md flex items-center space-x-2">
-                                <i class="fas fa-chart-line text-blue-600"></i>
-                                <a href="{{ route('excel-to-pdf') }}">
-                                    <span class="font-bold">Excel to PDF</span>
-                                </a>
-                            </li>
-                            <li
-                                class="cursor-pointer py-2 px-4 bg-gray-100 rounded-lg shadow-md flex items-center space-x-2">
-                                <i class="fas fa-file-powerpoint text-orange-600"></i>
-                                <a href="{{ route('ppt-to-pdf') }}">
-                                    <span class="font-bold">PPT to PDF</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div> --}}
-
-                    <!-- Sign & Secure -->
-                    {{-- <div>
-                        <h3 class="text-lg font-bold text-gray-900 mt-12 mb-5">Sign & Secure</h3>
-                        <ul class="flex flex-wrap justify-center gap-4">
-                            <li
-                                class="cursor-pointer py-2 px-4 bg-gray-100 rounded-lg shadow-md flex items-center space-x-2">
-                                <i class="fas fa-signature text-indigo-700"></i>
-                                <a href="{{ route('sign-pdf') }}">
-                                    <span class="font-bold">Sign PDF</span>
-                                </a>
-                            </li>
-                            <li
-                                class="cursor-pointer py-2 px-4 bg-gray-100 rounded-lg shadow-md flex items-center space-x-2">
-                                <i class="fas fa-lock text-red-600"></i>
-                                <a href="{{ route('protect-pdf') }}">
-                                    <span class="font-bold">Protect PDF</span>
-                                </a>
-                            </li>
-                            <li
-                                class="cursor-pointer py-2 px-4 bg-gray-100 rounded-lg shadow-md flex items-center space-x-2">
-                                <i class="fas fa-lock-open text-green-600"></i>
-                                <a href="{{ route('unlock-pdf') }}">
-                                    <span class="font-bold">Unlock PDF</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div> --}}
                 </div>
 
             </div>
