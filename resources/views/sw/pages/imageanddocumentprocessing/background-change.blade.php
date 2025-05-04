@@ -48,7 +48,7 @@
             </button>
         </div>
 
-        <div id="loader" class="fixed inset-0 bg-white bg-opacity-75 z-50 hidden flex items-center justify-center">
+        <div id="loader" class="hidden fixed inset-0 bg-white bg-opacity-75 z-50 flex items-center justify-center">
             <div class="animate-spin rounded-full h-16 w-16 border-t-4 border-indigo-600 border-opacity-50"></div>
         </div>
 

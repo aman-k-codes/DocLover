@@ -11,7 +11,7 @@
 
         body {
             margin: 0;
-            padding: 40px 50px;
+            padding: 20px;
             font-family: Arial, sans-serif;
             font-size: 12px;
             color: #000;

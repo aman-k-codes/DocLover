@@ -2,175 +2,201 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>tclm(24)png</title>
+  <title>Resume - Carter Rockwell</title>
   <style>
     @page {
-      margin: 0px;
-      size: A4;
+      margin: 5;
     }
     body {
       font-family: Arial, sans-serif;
       font-size: 12px;
-      color: #000;
       margin: 0;
+      padding: 0;
     }
-    table.container {
-      width: 100%;
-      /* border-collapse: collapse;
-      border: 5px solid #000; */
+    .header {
+      color: black;
+      padding: 10px;
     }
-    td.sidebar {
-      background-color: #1a1a1a;
-      color: white;
-      width: 30%;
-      vertical-align: top;
-      padding: 20px;
-      height: 96%;
+    .header h1 {
+      margin: 0;
+      font-size: 24px;
     }
-    td.main {
-      width: 70%;
-      vertical-align: top;
-      padding: 30px 20px 20px 20px;
-    }
-    h1 {
-      font-size: 20px;
-      margin-bottom: 5px;
-    }
-    h2 {
+    .header h2 {
+      margin: 0;
       font-size: 16px;
-      font-weight: bold;
-      margin-bottom: 10px;
+      font-weight: normal;
     }
-    h3 {
-      font-size: 14px;
-      font-weight: bold;
-      margin-top: 15px;
-    }
-    p {
-      font-size: 12px;
-      margin: 4px 0;
-      line-height: 1.4;
-    }
-    ul {
-      padding-left: 16px;
-      margin: 5px 0;
-    }
-    li {
-      margin-bottom: 5px;
-    }
-    .contact p {
+    .contact-bar {
+      background-color: #225d93;
+      color: white;
+      padding: 5px 10px;
       font-size: 11px;
-      margin: 4px 0;
     }
     .section {
-      margin-top: 20px;
+      padding: 10px;
     }
-    .job-title {
+    .section-title {
       font-weight: bold;
-      margin-bottom: 3px;
+      font-size: 14px;
+      color: #225d93;
+      border-bottom: 1px solid #999;
+      margin: 15px 0 5px;
     }
-    .org {
+    .subheading {
       font-weight: bold;
-      margin-bottom: 2px;
+      margin-top: 10px;
     }
-    .date-location {
-      font-style: italic;
-      margin-bottom: 6px;
+    ul {
+      margin: 5px 0 10px 20px;
+      padding: 0;
+    }
+    .skills-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .skills-table td {
+      vertical-align: top;
+      padding: 4px 8px;
+    }
+    .attributes, .accents {
+      font-size: 11px;
+      margin-top: 10px;
+    }
+    .attributes span, .accents span {
+      display: inline-block;
+      margin-right: 12px;
+      margin-bottom: 4px;
     }
   </style>
 </head>
 <body>
-  <table class="container">
-    <tr>
-      <!-- Sidebar -->
-      <td class="sidebar">
-        <h1>Nilesh Navrang</h1>
-        <p>Chief Executive Officer</p>
 
-        <div class="section contact">
-          <p>Email: johnsmith@beamjobs.com</p>
-          <p>Phone: (123) 456-7890</p>
-          <p>Location: Houston, TX</p>
-          <p>LinkedIn: linkedin.com/in/johnsmith</p>
-        </div>
+  <div class="header">
+    <h1>Carter Rockwell</h1>
+    <h2>Actor</h2>
+  </div>
 
-        <div class="section">
-          <h3>OBJECTIVE</h3>
-          <p>Resume objective is an eye-catching statement of your career intent. It provides a snapshot of your experience, skills, and achievements, and explains why you're the right candidate.</p>
-        </div>
+  <div class="contact-bar">
+    carter.rockwell3@gmail.com &nbsp;&nbsp; | &nbsp;&nbsp; (123) 456-7890 &nbsp;&nbsp; | &nbsp;&nbsp; LinkedIn &nbsp;&nbsp; | &nbsp;&nbsp; Nashville, TN
+  </div>
 
-        <div class="section">
-          <h3>EDUCATION</h3>
-          <p><strong>B.S.</strong> Statistics<br>
-          University of Maryland<br>
-          September 2006 – April 2010<br>
-          College Park, MD</p>
-        </div>
+  <div class="section">
+    <div class="section-title">EDUCATION/TRAINING</div>
+    <div class="subheading">ACTING</div>
+    UCLA School of Theater, Film, and Television – Los Angeles, California<br>
+    <div class="subheading">VOICE/SPEECH</div>
+    Pace University, Bachelor of Fine Arts in Acting<br>
+    <div class="subheading">MOVEMENT</div>
+    Method Acting – Method Acting Master Marlon Brando<br>
+    <div class="subheading">VOICE/SPEECH</div>
+    The King’s Theater – Ancient Roman Culture Review<br>
+    <div class="subheading">MOVEMENT</div>
+    Hip-hop Dancer – Dance Master Chaz Sanders
+  </div>
 
-        <div class="section">
-          <h3>SKILLS</h3>
-          <ul>
-            <li>Leadership</li>
-            <li>Product Strategy</li>
-            <li>Product Expansion</li>
-            <li>Agile Development</li>
-            <li>A/B Testing</li>
-          </ul>
-        </div>
+  <div class="section">
+    <div class="section-title">KEY SKILLS</div>
+    <ul>
+      <li>Versatility</li>
+      <li>Character Analysis</li>
+      <li>Voice Control</li>
+      <li>Emotional Range</li>
+      <li>Mimicry</li>
+    </ul>
 
-        <div class="section">
-          <h3>CERTIFICATIONS</h3>
-          <ul>
-            <li>PMP, IRN</li>
-            <li>Product Research</li>
-            <li>B2B Marketing</li>
-          </ul>
-        </div>
-      </td>
+    <div class="section-title">SPECIAL SKILLS</div>
+    <table class="skills-table">
+      <tr>
+        <td><strong>DANCE</strong></td>
+        <td>Ballet, Hip-hop, Tap, Ballroom, Krumping, Flamenco, Swing</td>
+      </tr>
+      <tr>
+        <td><strong>PAINTING</strong></td>
+        <td>Acrylic, Water, Tempera, Fauvism, Encaustic, Gouache, Pastel, Landscape, Portrait</td>
+      </tr>
+      <tr>
+        <td><strong>SPORTS</strong></td>
+        <td>Badminton, Wrestling, Boxing, Cycling, Skiing, Surfing</td>
+      </tr>
+      <tr>
+        <td><strong>VOICE</strong></td>
+        <td>Baritone</td>
+      </tr>
+      <tr>
+        <td><strong>LANGUAGES</strong></td>
+        <td>English, Spanish, German</td>
+      </tr>
+    </table>
 
-      <!-- Main content -->
-      <td class="main">
-        <h2>WORK EXPERIENCE</h2>
+    <div class="attributes">
+      <strong>ATTRIBUTES:</strong><br>
+      <span>Height: 6’1</span>
+      <span>Eyes: Blue</span>
+      <span>Union Membership: SAG-AFTRA</span>
+    </div>
+  </div>
 
-        <!-- Amazon -->
-        <div class="section">
-          <p class="job-title">Chief Executive Officer</p>
-          <p class="org">Amazon</p>
-          <p class="date-location">January 2017 – Current | Houston, TX</p>
-          <ul>
-            <li>Managed a portfolio generating $6M+ in annual revenue</li>
-            <li>Expanded the product team from 5 to 20+ members</li>
-            <li>Improved output by 18% YoY via direct management</li>
-            <li>Led expansion into virtual ticketing with 110% growth</li>
-          </ul>
-        </div>
+  <div class="section">
+    <div class="section-title">FILM</div>
+    THE AVIATOR | Lead – Whispering Pines Pictures<br>
+    THE LIVES OF OTHERS | Supporting – Eliza Monroe<br>
+    CRIMSON SECRETS | Supporting – Damien Fox<br>
+    LOST IN TIME | Lead – Obscura Films<br>
+    ETERNAL ECHOES | Lead – Midnight Mirage Films<br>
+    THE DEPARTED | Supporting – Starfall Studios<br>
+    SHADOWS OF THE FORGOTTEN | Lead – Gemma Langley
+  </div>
 
-        <!-- Shopify -->
-        <div class="section">
-          <p class="job-title">Department Head</p>
-          <p class="org">Shopify</p>
-          <p class="date-location">January 2013 – January 2017 | Houston, TX</p>
-          <ul>
-            <li>Identified revenue boost of $720K through pricing</li>
-            <li>Launched SaaS tool reaching 120K daily users</li>
-            <li>Drove $3.1M yearly gain via feature innovation</li>
-            <li>Managed 1 FTE and 3 contractors</li>
-          </ul>
-        </div>
+  <div class="section">
+    <div class="section-title">TELEVISION</div>
+    UNDERCOVER ENIGMA | Lead – WonderWorld Channel<br>
+    THE QUANTUM QUEST | Lead – Discovery Network<br>
+    LOST | Supporting – ABC
+  </div>
 
-        <!-- eBay -->
-        <div class="section">
-          <p class="job-title">Product Manager</p>
-          <p class="org">eBay</p>
-          <p class="date-location">April 2010 – January 2013 | Houston, TX</p>
-          <ul>
-            <li>Gained 27K users through a referral program</li>
-            <li>Increased customer LTV by 22% via experiments</li>
-            <li>Contributed to $4.1M Series B via growth tracking</li>
-          </ul>
-        </div>
-      </td>
-    </tr>
-  </table>
+  <div class="section">
+    <div class="section-title">THEATRE</div>
+    A DANCE WITH DESTINY | Lucius Everhart – The Velvet Vortex Playhouse<br>
+    ROSES | Felix – Starlight Whispers Playhouse<br>
+    REBELLION | Orion Tremaine – Celestial Rhapsody Playhouse<br>
+    THREADS OF TIME | Maximilian – Elysian Elegance Stage<br>
+    WHERE WE LIVED | Gabriel – The Starry Night Sonata Theatre<br>
+    DREAMS OF YESTERDAY | Augustus – Sapphire Secrets Stage<br>
+    LEFT BEHIND | Elijah – The Gershwin Theatre<br>
+    ASSEMBLE | Roderick – The Hartford Stage<br>
+    IF THEY DARE | Xenophon – The Mark Taper Forum<br>
+    MIDNIGHT | Lysander – The Pasadena Playhouse<br>
+    THE SECRETS OF SAPPHIRE | Mark – The Velvet Moonlit Stage<br>
+    CARRIAGE | Atticus – The Fox Theatre<br>
+    DESTINED TO SEPARATE | Alexander – The Goodman Theatre<br>
+    THE GERMAN FLAG | Heinz – The Alley Theatre<br>
+    WISHES OF THE PAST | Raphael – Ethereal Ensemble Stage<br>
+    SIREN | Narrator – The 5th Avenue Theatre<br>
+    THE NIGHTINGALE'S LAMENT | Valentin – The Paper Mill Playhouse<br>
+    A DOSE OF LAUGHTER | Little Lysander – The Dreamer's Den Theatre<br>
+    THE MYSTERY OF MIDNIGHT MANOR | Officer Benjamin – The Whimsical Attic Playhouse<br>
+    ECHOES OF YESTERDAY | Sebastian – The Moonbeam Theatre Project<br>
+    A POCKET FULL OF DREAMS | Tarquin – The Sycamore Theatre<br>
+    THE UNOPENED BOX | Jasper – The Hidden Haven Theatre
+  </div>
+
+  <div class="section">
+    <div class="section-title">ACCENTS</div>
+    <div class="accents">
+      <span>Irish</span>
+      <span>Canadian</span>
+      <span>Scottish</span>
+      <span>German</span>
+      <span>Russian</span>
+      <span>French</span>
+      <span>New Yorker</span>
+      <span>Mexican</span>
+      <span>Japanese</span>
+      <span>Caribbean</span>
+      <span>Welsh</span>
+      <span>Texan</span>
+    </div>
+  </div>
+
 </body>
 </html>

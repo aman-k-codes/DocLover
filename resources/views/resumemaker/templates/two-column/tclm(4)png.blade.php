@@ -1,23 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>tclm(4)png</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nilesh Navrang - Resume</title>
   <style>
-    @page {
-      margin: 0;
-      padding: 0;
-      size: A4;
-    }
-
+    @page { margin: 0; }
     body {
       font-family: Arial, sans-serif;
-      font-size: 12px;
+      font-size: 13px;
       margin: 0;
-      padding: 10px;
-      color: #000;
+      padding: 20px;
+      color: #111;
       line-height: 1.6;
     }
 
@@ -26,48 +20,56 @@
       border-collapse: collapse;
     }
 
-    td.left, td.right {
-      vertical-align: top;
-      padding: 10px;
-    }
-
     td.left {
       width: 35%;
-      border-right: 2px solid #000;
+      padding-right: 20px;
+      border-right: 2px solid #ccc;
+      vertical-align: top;
     }
 
     td.right {
       width: 65%;
       padding-left: 20px;
+      vertical-align: top;
     }
 
     h1 {
-      font-size: 22px;
-      margin-bottom: 10px;
-      text-transform: uppercase;
-      color: #333;
+      font-size: 24px;
+      margin: 0;
+      color: #222;
     }
 
     .title {
-      font-weight: bold;
-      margin-bottom: 10px;
-      font-size: 16px;
+      font-size: 15px;
+      font-weight: 600;
+      margin: 4px 0 20px;
+      color: #444;
     }
 
     .section-title {
-      font-weight: bold;
       font-size: 14px;
-      border-bottom: 2px solid black;
+      font-weight: bold;
       margin-top: 20px;
       margin-bottom: 10px;
-      padding-bottom: 2px;
+      border-bottom: 1px solid #999;
       text-transform: uppercase;
+    }
+
+    .contact p {
+      margin: 4px 0;
+      font-size: 12px;
+      color: #555;
+    }
+
+    .bold {
+      font-weight: bold;
+      margin-top: 10px;
       color: #000;
     }
 
     ul {
-      padding-left: 20px;
-      margin: 5px 0;
+      margin: 8px 0 0 20px;
+      padding: 0;
     }
 
     li {
@@ -76,104 +78,86 @@
 
     .small {
       font-size: 11px;
-      color: #555;
-    }
-
-    .contact p {
-      margin: 6px 0;
-      color: #555;
-    }
-
-    .contact img {
-      vertical-align: middle;
-      margin-right: 5px;
-    }
-
-    .bold {
-      font-weight: bold;
-      color: #000;
+      color: #777;
     }
   </style>
 </head>
-
 <body>
 
   <table class="container">
     <tr>
+      <!-- Left Column -->
       <td class="left">
         <h1>Nilesh Navrang</h1>
         <div class="title">Chief Executive Officer</div>
+
         <div class="contact">
-          <p><img src="path/to/email-icon.png" width="14" alt="Email Icon"> johnsmith@beamjobs.com</p>
-          <p><img src="path/to/phone-icon.png" width="14" alt="Phone Icon"> (123) 456-7890</p>
-          <p><img src="path/to/location-icon.png" width="14" alt="Location Icon"> Houston, TX, USA</p>
-          <p><img src="path/to/linkedin-icon.png" width="14" alt="LinkedIn Icon"> linkedin.com/in/johnsmith</p>
+          <p>Email: johnsmith@beamjobs.com</p>
+          <p>Phone: (123) 456-7890</p>
+          <p>Location: Houston, TX, USA</p>
+          <p>LinkedIn: linkedin.com/in/johnsmith</p>
         </div>
 
         <div class="section-title">Profile</div>
-        <p>Dynamic and result-driven CEO with over 15 years of leadership experience scaling startups into industry leaders. Proven expertise in corporate strategy, team leadership, and business development across tech and retail industries.</p>
+        <p>Visionary CEO with over 15 years of global leadership experience in scaling startups and Fortune 500 companies. Proven expertise in corporate strategy, M&A, digital transformation, and operational efficiency. Recognized for driving innovation, nurturing talent, and delivering sustainable growth.</p>
 
         <div class="section-title">Education</div>
-        <p class="bold">Master of Business Administration (MBA)</p>
-        <p>Harvard Business School<br />
-          <span class="small">Graduated: 2010 | Boston, MA</span>
-        </p>
-
-        <p class="bold">Bachelor of Science in Statistics</p>
-        <p>University of Maryland<br />
-          <span class="small">Graduated: 2006 | College Park, MD</span>
-        </p>
+        <p class="bold">MBA – Harvard Business School</p>
+        <p class="small">Graduated: 2010 | Boston, MA</p>
+        <p class="bold">BSc in Statistics – University of Maryland</p>
+        <p class="small">Graduated: 2006 | College Park, MD</p>
 
         <div class="section-title">Skills</div>
         <ul>
-          <li>Executive Leadership</li>
-          <li>Strategic Planning & Execution</li>
-          <li>Global Market Expansion</li>
-          <li>Financial Planning & Analysis</li>
-          <li>Data-Driven Decision Making</li>
-          <li>Organizational Development</li>
+          <li>Executive Strategy & Vision</li>
+          <li>Digital Transformation</li>
+          <li>Financial Modeling & Forecasting</li>
+          <li>Operational Excellence</li>
+          <li>Global Team Management</li>
+          <li>Stakeholder Engagement</li>
         </ul>
 
         <div class="section-title">Certifications</div>
         <ul>
           <li>Project Management Professional (PMP)</li>
           <li>Certified Scrum Product Owner (CSPO)</li>
-          <li>Advanced Executive Leadership Program – Stanford GSB</li>
+          <li>Advanced Executive Leadership – Stanford GSB</li>
         </ul>
+
       </td>
 
+      <!-- Right Column -->
       <td class="right">
         <div class="section-title">Work Experience</div>
 
         <p class="bold">Chief Executive Officer</p>
-        <p>Amazon Inc. — January 2017 - Present | Houston, TX</p>
+        <p class="small">Amazon Inc. | Jan 2017 – Present | Houston, TX</p>
         <ul>
-          <li>Directed corporate strategy, resulting in a 40% revenue increase over 3 years, reaching $8M annual revenue.</li>
-          <li>Expanded operations into 3 new international markets, boosting global presence by 25%.</li>
-          <li>Developed and implemented a company-wide agile transformation strategy, increasing product delivery speed by 30%.</li>
-          <li>Mentored 10+ directors across different departments, improving cross-functional collaboration by 20%.</li>
+          <li>Boosted annual revenue from $5.7M to $8M in 3 years via global expansion and operational efficiency.</li>
+          <li>Led M&A efforts resulting in 2 strategic acquisitions improving market share by 35%.</li>
+          <li>Championed diversity and inclusion programs, achieving 50% leadership representation across genders.</li>
+          <li>Rolled out AI-driven supply chain improvements, reducing delivery times by 28%.</li>
         </ul>
 
         <p class="bold">Director of Product Management</p>
-        <p>Shopify Inc. — January 2013 - January 2017 | Austin, TX</p>
+        <p class="small">Shopify Inc. | Jan 2013 – Jan 2017 | Austin, TX</p>
         <ul>
-          <li>Led product development for 5 SaaS products, resulting in $3.5M incremental revenue.</li>
-          <li>Introduced data-driven experimentation frameworks, reducing time-to-market by 22%.</li>
-          <li>Built and managed a cross-functional team of 15 engineers, designers, and marketers.</li>
-          <li>Grew enterprise client base by 18% year-over-year through tailored product innovations.</li>
+          <li>Launched 5 SaaS tools, generating $3.5M incremental revenue within 18 months.</li>
+          <li>Built agile teams, reducing feature cycle time by 35%.</li>
+          <li>Introduced customer success strategies, increasing retention rate by 22%.</li>
+          <li>Collaborated with enterprise clients for custom product solutions, increasing satisfaction scores to 93%.</li>
         </ul>
 
         <p class="bold">Product Manager</p>
-        <p>eBay Inc. — April 2010 - January 2013 | San Jose, CA</p>
+        <p class="small">eBay Inc. | Apr 2010 – Jan 2013 | San Jose, CA</p>
         <ul>
-          <li>Implemented a customer loyalty program, increasing repeat purchase rate by 12% within 6 months.</li>
-          <li>Designed and executed A/B tests on pricing models, driving a 9% lift in conversion rates.</li>
-          <li>Collaborated closely with executive leadership to define key performance metrics (KPIs) for new initiatives.</li>
+          <li>Created and scaled a loyalty rewards system used by over 1.2M customers.</li>
+          <li>Executed 30+ A/B test cycles, optimizing product pricing strategy and improving conversion by 9%.</li>
+          <li>Worked closely with data science to define KPIs for cross-functional teams and executive dashboards.</li>
         </ul>
       </td>
     </tr>
   </table>
 
 </body>
-
 </html>
