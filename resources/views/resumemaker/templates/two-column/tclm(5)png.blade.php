@@ -100,11 +100,14 @@
                 Houston, TX
             </span>
         </div>
-
     </div>
 
     <div class="section-title">CAREER OBJECTIVE</div>
-    <p>Balancing a job while attending classes as a full-time student is not easy. Only through relentless focus and prioritization is it made possible. I'd like to use those abilities to work with HashiCorp to streamline organization processes as an administrative assistant.</p>
+    <p>
+        Results-driven and adaptive executive with a proven track record of driving strategic growth and innovation.
+        Seeking to leverage extensive leadership experience and data-informed decision-making to optimize organizational
+        efficiency and product excellence at HashiCorp.
+    </p>
 
     <div class="columns">
         <div class="left">
@@ -112,24 +115,35 @@
             <div class="sub-section">
                 <h4>B.S. Statistics</h4>
                 <p><strong>University of Maryland</strong></p>
-                <p>📅 September 2006 – April 2010</p>
-                <p>📍 College Park, MD</p>
+                <p><img src="{{public_path('assets/resume-icon/date.svg')}}" style="height: 18px;width:18px; margin-right: 8px;" alt=""> September 2006 – April 2010</p>
+                <p><img src="{{public_path('assets/resume-icon/location.svg')}}" style="height: 18px;width:18px; margin-right: 8px;" alt=""> College Park, MD</p>
+                <p><strong>GPA:</strong> 3.8/4.0</p>
+                <p><strong>Relevant Coursework:</strong> Data Analysis, Probability Theory, Machine Learning, Regression Analysis</p>
             </div>
 
             <div class="section-title">SKILLS</div>
             <ul>
-                <li>Leadership</li>
-                <li>Product Strategy</li>
-                <li>Product Expansion</li>
-                <li>Agile Development</li>
-                <li>A/B testing and experimentation</li>
+                <li>Leadership & Team Building</li>
+                <li>Strategic Product Management</li>
+                <li>Market & Competitive Analysis</li>
+                <li>Agile & Scrum Methodologies</li>
+                <li>Product Lifecycle Management</li>
+                <li>Data Analytics (SQL, Tableau, Excel)</li>
+                <li>A/B Testing & User Research</li>
             </ul>
 
-            <div class="section-title">CERTS</div>
+            <div class="section-title">CERTIFICATIONS</div>
             <ul>
-                <li>PMP, IRN</li>
-                <li>Product Research</li>
-                <li>B2B Marketing</li>
+                <li>Project Management Professional (PMP) - PMI</li>
+                <li>Certified Product Manager (CPM) - AIPMM</li>
+                <li>Certificate in B2B Growth Marketing - Coursera</li>
+            </ul>
+
+            <div class="section-title">AWARDS & ACHIEVEMENTS</div>
+            <ul>
+                <li>Forbes 30 Under 30 in Enterprise Technology (2021)</li>
+                <li>Best Leadership in Innovation Award – Amazon Product Division (2020)</li>
+                <li>Top 10 Product Managers to Watch – TechInsider (2019)</li>
             </ul>
         </div>
 
@@ -141,10 +155,10 @@
                 <p><strong>Amazon</strong></p>
                 <p>📅 January 2017 – current | 📍 Houston, TX</p>
                 <ul>
-                    <li>Managed a portfolio of small, medium, and large product initiatives united under a clear product strategy that generated over $6M in annual revenue</li>
-                    <li>Played an active role in the recruitment process, leading the expansion of the product team from 5 PMs and engineers to over 20</li>
-                    <li>Directly managed 4 junior PMs and 6 mid-level PMs and provided regular job performance feedback to improve the team's output by 18% year over year</li>
-                    <li>Led expansion of the product into the virtual event ticketing space which grew over 110% from 2019 to 2020</li>
+                    <li>Managed a portfolio of initiatives generating $6M+ in annual revenue through focused product strategy and customer engagement.</li>
+                    <li>Led a cross-functional team of over 20, including PMs, designers, and engineers, improving delivery velocity by 35%.</li>
+                    <li>Launched a new customer analytics dashboard reducing churn by 12% through actionable insights.</li>
+                    <li>Established OKRs and KPI-driven culture increasing team alignment and strategic clarity.</li>
                 </ul>
             </div>
 
@@ -153,10 +167,10 @@
                 <p><strong>Shopify</strong></p>
                 <p>📅 January 2013 – January 2017 | 📍 Houston, TX</p>
                 <ul>
-                    <li>Performed cohort analysis that identified an opportunity to reduce pricing by 25% for a segment of users boosting yearly revenue by $720,000</li>
-                    <li>Led the development for a new B2C SaaS product to enable students to check their writing for grammar and plagiarism which grew to 120,000 daily active users in the first year</li>
-                    <li>Identified product gaps in Google Analytics and led design of new features across engineering and design resulting in a yearly revenue increase of $3.1M through increased engagement</li>
-                    <li>Led a team of one full-time employee and three contractors</li>
+                    <li>Performed cohort analysis that identified a 25% pricing optimization opportunity, boosting annual revenue by $720,000.</li>
+                    <li>Led the development of a B2C SaaS product with 120,000 daily active users in its first year.</li>
+                    <li>Drove feature innovation using Google Analytics insights, increasing annual revenue by $3.1M.</li>
+                    <li>Managed a hybrid team of full-time staff and contractors, ensuring timely delivery and high code quality.</li>
                 </ul>
             </div>
         </div>
