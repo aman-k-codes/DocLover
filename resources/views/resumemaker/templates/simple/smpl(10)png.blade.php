@@ -78,7 +78,7 @@
         <div class="name">Nilesh Navrang</div>
         <div class="title">Graphic Designer</div>
         <div class="contact">
-            📞 +123-456-7890 &nbsp;&nbsp;📍 123 Anywhere St., Any City &nbsp;&nbsp;•&nbsp;&nbsp; 🌐 www.seemadesigns.com &nbsp;&nbsp;•&nbsp;&nbsp; ✉️ seemadesigns@email.com
+            <img src="{{public_path('assets/resume-icon/call.svg')}}" style="height: 18px;width:18px; margin-right: 8px;" alt=""> +123-456-7890 &nbsp;&nbsp;<img src="{{public_path('assets/resume-icon/location.svg')}}" style="height: 18px;width:18px; margin-right: 8px;" alt=""> 123 Anywhere St., Any City &nbsp;&nbsp;•&nbsp;&nbsp; <img src="{{public_path('assets/resume-icon/website.svg')}}" style="height: 18px;width:18px; margin-right: 8px;" alt=""> www.seemadesigns.com &nbsp;&nbsp;•&nbsp;&nbsp; <img src="{{public_path('assets/resume-icon/mail.svg')}}" style="height: 18px;width:18px; margin-right: 8px;" alt=""> seemadesigns@email.com
         </div>
     </div>
 

@@ -79,27 +79,20 @@
         <!-- Left Column -->
         <div class="left">
             <div class="mb-10">
-                <p>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" style="vertical-align: middle; margin-right: 5px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M4 4h16v16H4z" stroke="none"/>
-                        <path d="M22 6l-10 7L2 6"></path>
-                    </svg>
+                <p class="contact-info" style="margin-bottom: 12px;">
+                    <img src="{{public_path('assets/resume-icon/mail.svg')}}" style="height: 18px;width:18px; margin-right: 8px; vertical-align: middle;" alt="">
                     jonathan.patterson@example.com
                 </p>
-                <p>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" style="vertical-align: middle; margin-right: 5px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M22 16.92V21a2 2 0 0 1-2.18 2A19.72 19.72 0 0 1 3 5.18 2 2 0 0 1 5 3h4.09a2 2 0 0 1 2 1.72 13.41 13.41 0 0 0 .57 2.83 2 2 0 0 1-.45 2.11L10 11a16 16 0 0 0 6 6l1.34-1.34a2 2 0 0 1 2.11-.45 13.41 13.41 0 0 0 2.83.57 2 2 0 0 1 1.72 2z"></path>
-                    </svg>
+                <p class="contact-info" style="margin-bottom: 12px;">
+                    <img src="{{public_path('assets/resume-icon/call.svg')}}" style="height: 18px;width:18px; margin-right: 8px; vertical-align: middle;" alt="">
                     +1-415-555-0135
                 </p>
-                <p>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" style="vertical-align: middle; margin-right: 5px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M21 10c0 6-9 13-9 13s-9-7-9-13a9 9 0 1 1 18 0z"></path>
-                        <circle cx="12" cy="10" r="3"></circle>
-                    </svg>
+                <p class="contact-info">
+                    <img src="{{public_path('assets/resume-icon/location.svg')}}" style="height: 18px;width:18px; margin-right: 8px; vertical-align: middle;" alt="">
                     742 Evergreen Terrace, Springfield
                 </p>
             </div>
+
 
 
             <div class="section-title">Education</div>

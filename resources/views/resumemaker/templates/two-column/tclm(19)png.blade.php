@@ -90,10 +90,10 @@
       <!-- LEFT COLUMN -->
       <td class="left-col">
         <div class="section-title">CONTACT</div>
-        <p>📞 (123) 456-7890</p>
-        <p>📧 jasminetala@email.com</p>
-        <p>📍 New York, NY</p>
-        <p>🔗 LinkedIn</p>
+        <p><img src="{{public_path('assets/resume-icon/call.svg')}}" style="height: 18px;width:18px; margin-right: 8px;" alt=""> (123) 456-7890</p>
+        <p><img src="{{public_path('assets/resume-icon/mail.svg')}}" style="height: 18px;width:18px; margin-right: 8px;" alt=""> jasminetala@email.com</p>
+        <p><img src="{{public_path('assets/resume-icon/location.svg')}}" style="height: 18px;width:18px; margin-right: 8px;" alt=""> New York, NY</p>
+        <p><img src="{{public_path('assets/resume-icon/linkedin.svg')}}" style="height: 18px;width:18px; margin-right: 8px;" alt=""> LinkedIn</p>
 
         <div class="section-title">EDUCATION</div>
         <p class="bold">Name of School:</p>

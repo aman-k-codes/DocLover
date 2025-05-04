@@ -105,16 +105,16 @@
     <p class="subtitle">Title of Job You’re Looking For</p>
 
     <div class="contact-info">
-      <p>📧 jasminetala@beamjobs.com</p>
-      <p>📞 (123) 456-7890</p>
-      <p>📍 New York, NY</p>
-      <p>🔗 LinkedIn</p>
+      <p><img src="{{public_path('assets/resume-icon/mail.svg')}}" style="height: 18px;width:18px; margin-right: 8px;" alt=""> jasminetala@beamjobs.com</p>
+      <p><img src="{{public_path('assets/resume-icon/call.svg')}}" style="height: 18px;width:18px; margin-right: 8px;" alt=""> (123) 456-7890</p>
+      <p><img src="{{public_path('assets/resume-icon/location.svg')}}" style="height: 18px;width:18px; margin-right: 8px;" alt=""> New York, NY</p>
+      <p><img src="{{public_path('assets/resume-icon/linkedin.svg')}}" style="height: 18px;width:18px; margin-right: 8px;" alt=""> LinkedIn</p>
     </div>
 
     <div class="section-title">Education</div>
     <p><span class="bold">Name of High School</span><br>
-      📅 September 2022 – Current<br>
-      📍 City, State</p>
+        <img src="{{public_path('assets/resume-icon/date.svg')}}" style="height: 18px;width:18px; margin-right: 8px;" alt=""> September 2022 – Current<br>
+        <img src="{{public_path('assets/resume-icon/location.svg')}}" style="height: 18px;width:18px; margin-right: 8px;" alt=""> City, State</p>
 
     <div class="section-title">Skills</div>
     <ul>
@@ -131,13 +131,13 @@
     <div class="item-block">
       <p class="bold">Who’s Who Award in English</p>
       <p>Name High School – Grade 9</p>
-      <p>📅 MONTH 20XX</p>
+      <p><img src="{{public_path('assets/resume-icon/date.svg')}}" style="height: 18px;width:18px; margin-right: 8px;" alt=""> MONTH 20XX</p>
     </div>
 
     <div class="item-block">
       <p class="bold">A-Honor Roll Student</p>
       <p>Borcelle High School – Grade 9</p>
-      <p>📅 MONTH 20XX</p>
+      <p><img src="{{public_path('assets/resume-icon/date.svg')}}" style="height: 18px;width:18px; margin-right: 8px;" alt=""> MONTH 20XX</p>
     </div>
   </div>
 

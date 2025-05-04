@@ -125,9 +125,9 @@
     </div>
 
     <div class="contact">
-      <span>📞 +123-456-7890</span>
-      <span>📍 123 Anywhere Street., Any City</span>
-      <span>✉️ hello@reallygreatsite.com</span>
+      <span><img src="{{public_path('assets/resume-icon/call.svg')}}" style="height: 18px;width:18px; margin-right: 8px;" alt=""> +123-456-7890</span>
+      <span><img src="{{public_path('assets/resume-icon/location.svg')}}" style="height: 18px;width:18px; margin-right: 8px;" alt=""> 123 Anywhere Street., Any City</span>
+      <span><img src="{{public_path('assets/resume-icon/mail.svg')}}" style="height: 18px;width:18px; margin-right: 8px;" alt=""> hello@reallygreatsite.com</span>
     </div>
 
     <div class="divider"></div>

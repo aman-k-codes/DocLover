@@ -83,11 +83,24 @@
         <h1>Nilesh Navrang</h1>
         <div class="title">Chief Executive Officer</div>
         <div class="contact">
-            <span>📧 johnsmith@beamjobs.com</span>
-            <span>📞 (123) 456-7890</span>
-            <span>/in/johnsmith</span>
-            <span>📍 Houston, TX</span>
+            <span>
+                <img src="{{public_path('assets/resume-icon/mail.svg')}}" style="height: 18px;width:18px; margin-right: 8px;" alt="">
+                johnsmith@beamjobs.com
+            </span>
+            <span>
+                <img src="{{public_path('assets/resume-icon/call.svg')}}" style="height: 18px;width:18px; margin-right: 8px;" alt="">
+                (123) 456-7890
+            </span>
+            <span>
+                <img src="{{public_path('assets/resume-icon/linkedin.svg')}}" style="height: 18px;width:18px; margin-right: 8px;" alt="">
+                /in/johnsmith
+            </span>
+            <span>
+                <img src="{{public_path('assets/resume-icon/location.svg')}}" style="height: 18px;width:18px; margin-right: 8px;" alt="">
+                Houston, TX
+            </span>
         </div>
+
     </div>
 
     <div class="section-title">CAREER OBJECTIVE</div>

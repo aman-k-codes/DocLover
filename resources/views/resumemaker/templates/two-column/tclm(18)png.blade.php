@@ -128,10 +128,10 @@
     <p><strong>Emergency Room Nurse</strong></p>
 
     <div class="contact-info">
-      <p>📧 sandrabell@email.com</p>
-      <p>📞 (123) 456-7890</p>
-      <p>📍 Austin, TX</p>
-      <p><a href="#">LinkedIn</a></p>
+      <p><img src="{{public_path('assets/resume-icon/mail.svg')}}" style="height: 18px;width:18px; margin-right: 8px;" alt=""> sandrabell@email.com</p>
+      <p><img src="{{public_path('assets/resume-icon/call.svg')}}" style="height: 18px;width:18px; margin-right: 8px;" alt=""> (123) 456-7890</p>
+      <p><img src="{{public_path('assets/resume-icon/location.svg')}}" style="height: 18px;width:18px; margin-right: 8px;" alt=""> Austin, TX</p>
+      <p><img src="{{public_path('assets/resume-icon/linkedin.svg')}}" style="height: 18px;width:18px; margin-right: 8px;" alt=""><a href="#">LinkedIn</a></p>
     </div>
 
     <h2>Education</h2>

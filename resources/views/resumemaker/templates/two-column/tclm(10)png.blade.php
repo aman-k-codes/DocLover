@@ -93,8 +93,8 @@
         }
         .circle-bar-inner {
             position: absolute;
-            top: 15px;
-            left: 10px;
+            top: 19px;
+            left: 17px;
             font-size: 10px;
             font-weight: bold;
         }
@@ -165,21 +165,21 @@
             <div class="edu-block">
                 <p class="bold">Master in Mathematics & Economics</p>
                 <p>Long Island, University</p>
-                <p>📅 September 2021 - April 2023</p>
-                <p>📍Brookville, NY</p>
+                <p><img src="{{public_path('assets/resume-icon/date.svg')}}" style="height: 18px;width:18px; margin-right: 8px;" alt=""> September 2021 - April 2023</p>
+                <p><img src="{{public_path('assets/resume-icon/location.svg')}}" style="height: 18px;width:18px; margin-right: 8px;" alt="">Brookville, NY</p>
             </div>
 
             <div class="edu-block">
                 <p class="bold">Bachelor of Science, Mathematics & Economics</p>
                 <p>Long Island University</p>
-                <p>📅 September 2017 - April 2021</p>
-                <p>📍Brookville, NY</p>
+                <p><img src="{{public_path('assets/resume-icon/date.svg')}}" style="height: 18px;width:18px; margin-right: 8px;" alt=""> September 2017 - April 2021</p>
+                <p><img src="{{public_path('assets/resume-icon/location.svg')}}" style="height: 18px;width:18px; margin-right: 8px;" alt="">Brookville, NY</p>
             </div>
 
             <h4>AWARDS</h4>
             <p class="bold">Dean’s List</p>
             <p>Long Island, University</p>
-            <p>📅 MONTH 20XX</p>
+            <p><img src="{{public_path('assets/resume-icon/date.svg')}}" style="height: 18px;width:18px; margin-right: 8px;" alt=""> MONTH 20XX</p>
 
             <h4>LANGUAGES</h4>
 
@@ -206,6 +206,6 @@
 
         </div>
     </div>
-
+    {{-- @dd('hslo') --}}
 </body>
 </html>
