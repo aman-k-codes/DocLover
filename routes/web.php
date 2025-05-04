@@ -79,8 +79,8 @@ Route::prefix('/')->group(function () {
             Route::post('/collect-data', [ResumeTemplatesController::class, 'collectAllData'])->name('resume.collectAllData');
             Route::get('/preview', [ResumeTemplatesController::class, 'preview'])->name('resume.preview');
             Route::get('/completed-resume', [ResumeTemplatesController::class, 'getResumeTemplate'])->name('resume.getResumeTemplate');
-            Route::get('/{id}', [ResumeTemplatesController::class, 'index'])->name('resumeTemp.index');
-            // Route::get('/download-pdf', [ResumeTemplatesController::class, 'downloadPDF'])->name('resumeTemp.download.PDF');
+            Route::get('/temp/{id}', [ResumeTemplatesController::class, 'index'])->name('resumeTemp.index');
+            Route::get('/download-pdf', [ResumeTemplatesController::class, 'downloadPDF'])->name('resumeTemp.download.PDF');
         });
     });
 });

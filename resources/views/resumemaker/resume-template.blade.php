@@ -663,7 +663,7 @@
     </script>
     <script>
         function gotoFillData(id) {
-            const url = "{{ url('/resume/template') }}/" + id;
+            const url = "{{ url('/resume/template/temp') }}/" + id;
             window.location.href = url;
         }
 

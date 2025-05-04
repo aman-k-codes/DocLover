@@ -35,10 +35,10 @@ class ResumeTemplatesController extends Controller
         Cache::put('template', $fileName, now()->addMinutes(60));
         // dd(Cache::get('folder') . '.' . Cache::get('template'));
 
-        $pdf = Pdf::loadView('resumemaker.templates.' . Cache::get('folder') . '.' . Cache::get('template')); // you can pass data as second param
-        return $pdf->stream(Cache::get('folder').'_'.Cache::get('template').'_resume.pdf');
+        // $pdf = Pdf::loadView('resumemaker.templates.' . Cache::get('folder') . '.' . Cache::get('template')); // you can pass data as second param
+        // return $pdf->stream(Cache::get('folder').'_'.Cache::get('template').'_resume.pdf');
         // return view('resumemaker.preview');
-        // return view('resumemaker.resume-pannel');
+        return view('resumemaker.resume-pannel');
     }
 
 
@@ -67,9 +67,9 @@ class ResumeTemplatesController extends Controller
         return view('resumemaker.templates.' . Cache::get('folder') . '.' . Cache::get('template'));
     }
 
-    // public function downloadPDF()
-    // {
-    //     $pdf = Pdf::loadView('resumemaker.templates.' . Cache::get('folder') . '.' . Cache::get('template')); // you can pass data as second param
-    //     return $pdf->stream('doc_lover_resume.pdf');
-    // }
+    public function downloadPDF()
+    {
+        $pdf = Pdf::loadView('resumemaker.templates.' . Cache::get('folder') . '.' . Cache::get('template')); // you can pass data as second param
+        return $pdf->stream('doc_lover_resume.pdf');
+    }
 }

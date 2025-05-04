@@ -12,7 +12,7 @@
 @section('content')
     <div class="flex">
         <!-- Sidebar Tabs -->
-        <div class="w-1/5 bg-white border-r p-6 shadow-sm">
+        <div class="hidden w-1/5 bg-white border-r p-6 shadow-sm">
             <h3 class="text-lg font-semibold mb-6 text-gray-800 flex items-center gap-2">
                 <i class="fas fa-edit text-blue-500"></i> Edit Sections
             </h3>
@@ -70,7 +70,7 @@
 
 
         <!-- Main Content -->
-        <div class="w-4/5 mx-auto p-10 bg-white">
+        <div class="w-full md:w-4/5 mx-auto p-2 md:p-10 bg-white">
             <form method="POST" action="{{ route('resume.collectAllData') }}" enctype="multipart/form-data">
                 @csrf
                 <!-- Personal Info -->
@@ -702,7 +702,7 @@
 
 
                 <!-- Buttons -->
-                <div class="flex justify-end space-x-3 pt-6 border-t mt-6">
+                <div class="flex justify-center md:justify-end space-x-3 pt-6 border-t mt-6">
                     <button type="button"
                         class="px-6 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-100">Cancel</button>
                     <button type="submit"
