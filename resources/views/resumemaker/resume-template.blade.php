@@ -48,10 +48,6 @@
                     data-category="all">
                     <i class="fas fa-file-alt"></i> All Templates
                 </button>
-                {{-- <button class="category-btn text-gray-700 hover:text-blue-600 px-4 py-2 transition duration-300"
-                    data-category="picture">
-                    <i class="fas fa-image"></i> Picture
-                </button> --}}
                 <button class="category-btn text-gray-700 hover:text-blue-600 px-4 py-2 transition duration-300"
                     data-category="simple">
                     <i class="fas fa-magic"></i> Simple
@@ -64,10 +60,6 @@
                     data-category="two-column">
                     <i class="fas fa-columns"></i> Two-column
                 </button>
-                {{-- <button class="category-btn text-gray-700 hover:text-blue-600 px-4 py-2 transition duration-300"
-                    data-category="google-docs">
-                    <i class="fab fa-google-drive"></i> Google Docs
-                </button> --}}
             </div>
 
             <!-- Templates -->
@@ -113,19 +105,6 @@
                     </div>
                 </div>
 
-                {{-- <div style="display:none" class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
-                    data-category="google-docs">
-                    <img src="{{ asset('public/assets/temp-imgs/google-docs/gd (2).png') }}" alt="Google Docs Template"
-                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
-                    <!-- Overlay -->
-                    <div
-                        class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
-                        <button
-                            onclick="gotoFillData(base64encoded('.{{ asset('public/assets/temp-imgs/google-docs/gd (2).png') }}.'));"
-                            class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Use
-                            Template</button>
-                    </div>
-                </div> --}}
 
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="two-column">
@@ -167,20 +146,6 @@
                     </div>
                 </div>
 
-                {{-- <div style="display:none" class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
-                    data-category="google-docs">
-                    <img src="{{ asset('public/assets/temp-imgs/google-docs/gd (2).jpg') }}" alt="Google Docs Template"
-                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
-                    <!-- Overlay -->
-                    <div
-                        class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
-                        <button
-                            onclick="gotoFillData(base64encoded('.{{ asset('public/assets/temp-imgs/google-docs/gd (2).jpg') }}.'));"
-                            class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Use
-                            Template</button>
-                    </div>
-                </div> --}}
-
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="two-column">
                     <img src="{{ asset('public/assets/temp-imgs/two-column/tclm (4).png') }}" alt="Two-column Template"
@@ -195,21 +160,6 @@
                     </div>
                 </div>
 
-                {{-- <div style="display:none" class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
-                    data-category="picture">
-                    <!-- Image -->
-                    <img src="{{ asset('public/assets/temp-imgs/pitcher/ptr (2).jpg') }}" alt="Picture Template"
-                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
-
-                    <!-- Overlay -->
-                    <div
-                        class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
-                        <button
-                            onclick="gotoFillData(base64encoded('.{{ asset('public/assets/temp-imgs/pitcher/ptr (2).jpg') }}.'));"
-                            class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Use
-                            Template</button>
-                    </div>
-                </div> --}}
 
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="two-column">
@@ -225,19 +175,6 @@
                     </div>
                 </div>
 
-                {{-- <div style="display:none" class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
-                    data-category="google-docs">
-                    <img src="{{ asset('public/assets/temp-imgs/google-docs/gd (3).png') }}" alt="Google Docs Template"
-                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
-                    <!-- Overlay -->
-                    <div
-                        class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
-                        <button
-                            onclick="gotoFillData(base64encoded('.{{ asset('public/assets/temp-imgs/google-docs/gd (3).png') }}.'));"
-                            class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Use
-                            Template</button>
-                    </div>
-                </div> --}}
 
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="ats">
@@ -266,20 +203,6 @@
                     </div>
                 </div>
 
-                {{-- <div style="display:none" class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
-                    data-category="google-docs">
-                    <img src="{{ asset('public/assets/temp-imgs/google-docs/gd (4).png') }}" alt="Google Docs Template"
-                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
-                    <!-- Overlay -->
-                    <div
-                        class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
-                        <button
-                            onclick="gotoFillData(base64encoded('.{{ asset('public/assets/temp-imgs/google-docs/gd (4).png') }}.'));"
-                            class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Use
-                            Template</button>
-                    </div>
-                </div> --}}
-
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="two-column">
                     <img src="{{ asset('public/assets/temp-imgs/two-column/tclm (8).png') }}" alt="Two-column Template"
@@ -307,19 +230,6 @@
                     </div>
                 </div>
 
-                {{-- <div style="display:none" class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
-                    data-category="google-docs">
-                    <img src="{{ asset('public/assets/temp-imgs/google-docs/gd (5).png') }}" alt="Google Docs Template"
-                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
-                    <!-- Overlay -->
-                    <div
-                        class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
-                        <button
-                            onclick="gotoFillData(base64encoded('.{{ asset('public/assets/temp-imgs/google-docs/gd (5).png') }}.'));"
-                            class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Use
-                            Template</button>
-                    </div>
-                </div> --}}
 
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="two-column">
@@ -375,21 +285,6 @@
                     </div>
                 </div>
 
-                {{-- <div style="display:none" class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
-                    data-category="picture">
-                    <!-- Image -->
-                    <img src="{{ asset('public/assets/temp-imgs/pitcher/ptr (3).jpg') }}" alt="Picture Template"
-                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
-
-                    <!-- Overlay -->
-                    <div
-                        class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
-                        <button
-                            onclick="gotoFillData(base64encoded('.{{ asset('public/assets/temp-imgs/pitcher/ptr (3).jpg') }}.'));"
-                            class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Use
-                            Template</button>
-                    </div>
-                </div> --}}
 
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="two-column">
@@ -499,50 +394,6 @@
                     </div>
                 </div>
 
-                {{-- <div style="display:none" class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
-                    data-category="picture">
-                    <!-- Image -->
-                    <img src="{{ asset('public/assets/temp-imgs/pitcher/ptr (4).jpg') }}" alt="Picture Template"
-                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
-
-                    <!-- Overlay -->
-                    <div
-                        class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
-                        <button
-                            onclick="gotoFillData(base64encoded('.{{ asset('public/assets/temp-imgs/pitcher/ptr (4).jpg') }}.'));"
-                            class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Use
-                            Template</button>
-                    </div>
-                </div> --}}
-
-                {{-- <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
-                    data-category="two-column">
-                    <img src="{{ asset('public/assets/temp-imgs/two-column/tclm (20).png') }}" alt="Two-column Template"
-                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
-                    <!-- Overlay -->
-                    <div
-                        class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
-                        <button
-                            onclick="gotoFillData(base64encoded('.{{ asset('public/assets/temp-imgs/two-column/tclm (20).png') }}.'));"
-                            class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Use
-                            Template</button>
-                    </div>
-                </div> --}}
-
-                {{-- <div style="display:none" class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
-                    data-category="google-docs">
-                    <img src="{{ asset('public/assets/temp-imgs/google-docs/gd (11).png') }}" alt="Google Docs Template"
-                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
-                    <!-- Overlay -->
-                    <div
-                        class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
-                        <button
-                            onclick="gotoFillData(base64encoded('.{{ asset('public/assets/temp-imgs/google-docs/gd (11).png') }}.'));"
-                            class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Use
-                            Template</button>
-                    </div>
-                </div> --}}
-
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="two-column">
                     <img src="{{ asset('public/assets/temp-imgs/two-column/tclm (22).png') }}" alt="Two-column Template"
@@ -583,20 +434,6 @@
                     </div>
                 </div>
 
-                {{-- <div style="display:none" class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
-                    data-category="google-docs">
-                    <img src="{{ asset('public/assets/temp-imgs/google-docs/gd (13).png') }}" alt="Google Docs Template"
-                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
-                    <!-- Overlay -->
-                    <div
-                        class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
-                        <button
-                            onclick="gotoFillData(base64encoded('.{{ asset('public/assets/temp-imgs/google-docs/gd (13).png') }}.'));"
-                            class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Use
-                            Template</button>
-                    </div>
-                </div> --}}
-
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="two-column">
                     <img src="{{ asset('public/assets/temp-imgs/two-column/tclm (24).png') }}" alt="Two-column Template"
@@ -623,20 +460,6 @@
                             Template</button>
                     </div>
                 </div>
-
-                {{-- <div style="display:none" class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
-                    data-category="google-docs">
-                    <img src="{{ asset('public/assets/temp-imgs/google-docs/gd (14).png') }}" alt="Google Docs Template"
-                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
-                    <!-- Overlay -->
-                    <div
-                        class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
-                        <button
-                            onclick="gotoFillData(base64encoded('.{{ asset('public/assets/temp-imgs/google-docs/gd (14).png') }}.'));"
-                            class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Use
-                            Template</button>
-                    </div>
-                </div> --}}
 
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="two-column">
@@ -678,20 +501,6 @@
                     </div>
                 </div>
 
-                {{-- <div style="display:none" class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
-                    data-category="google-docs">
-                    <img src="{{ asset('public/assets/temp-imgs/google-docs/gd (15).png') }}" alt="Google Docs Template"
-                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
-                    <!-- Overlay -->
-                    <div
-                        class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
-                        <button
-                            onclick="gotoFillData(base64encoded('.{{ asset('public/assets/temp-imgs/google-docs/gd (15).png') }}.'));"
-                            class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Use
-                            Template</button>
-                    </div>
-                </div> --}}
-
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="two-column">
                     <img src="{{ asset('public/assets/temp-imgs/two-column/tclm (27).png') }}" alt="Two-column Template"
@@ -705,36 +514,6 @@
                             Template</button>
                     </div>
                 </div>
-
-                {{-- <div style="display:none" class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
-                    data-category="picture">
-                    <!-- Image -->
-                    <img src="{{ asset('public/assets/temp-imgs/pitcher/ptr (5).jpg') }}" alt="Picture Template"
-                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
-
-                    <!-- Overlay -->
-                    <div
-                        class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
-                        <button
-                            onclick="gotoFillData(base64encoded('.{{ asset('public/assets/temp-imgs/pitcher/ptr (5).jpg') }}.'));"
-                            class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Use
-                            Template</button>
-                    </div>
-                </div> --}}
-
-                {{-- <div style="display:none" class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
-                    data-category="google-docs">
-                    <img src="{{ asset('public/assets/temp-imgs/google-docs/gd (16).png') }}" alt="Google Docs Template"
-                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
-                    <!-- Overlay -->
-                    <div
-                        class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
-                        <button
-                            onclick="gotoFillData(base64encoded('.{{ asset('public/assets/temp-imgs/google-docs/gd (16).png') }}.'));"
-                            class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Use
-                            Template</button>
-                    </div>
-                </div> --}}
 
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="ats">
@@ -750,19 +529,6 @@
                     </div>
                 </div>
 
-                {{-- <div style="display:none" class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
-                    data-category="google-docs">
-                    <img src="{{ asset('public/assets/temp-imgs/google-docs/gd (17).png') }}" alt="Google Docs Template"
-                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
-                    <!-- Overlay -->
-                    <div
-                        class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
-                        <button
-                            onclick="gotoFillData(base64encoded('.{{ asset('public/assets/temp-imgs/google-docs/gd (17).png') }}.'));"
-                            class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Use
-                            Template</button>
-                    </div>
-                </div> --}}
 
 
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
@@ -778,22 +544,6 @@
                             Template</button>
                     </div>
                 </div>
-
-                {{-- <div style="display:none" class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
-                    data-category="picture">
-                    <!-- Image -->
-                    <img src="{{ asset('public/assets/temp-imgs/pitcher/ptr (6).jpg') }}" alt="Picture Template"
-                        class="p-3  w-full h-full object-cover transition duration-300 group-hover:blur-sm" />
-
-                    <!-- Overlay -->
-                    <div
-                        class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
-                        <button
-                            onclick="gotoFillData(base64encoded('.{{ asset('public/assets/temp-imgs/pitcher/ptr (6).jpg') }}.'));"
-                            class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Use
-                            Template</button>
-                    </div>
-                </div> --}}
 
                 <div class="template-item relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
                     data-category="ats">
