@@ -75,6 +75,15 @@
                 </div>
             </div>
         </div>
+
+        <!-- Loader (hidden by default) -->
+        <div id="loaderSection" class="hidden fixed inset-0 bg-white bg-opacity-75 flex items-center justify-center z-50">
+            <div class="text-center">
+                <div class="w-16 h-16 border-4 border-blue-500 border-dashed rounded-full animate-spin mx-auto mb-4"></div>
+                <p class="text-gray-700 font-semibold text-lg">Merging your PDFs, please wait...</p>
+            </div>
+        </div>
+
     </section>
 
     <!-- Features -->
@@ -138,70 +147,80 @@
 
     <script>
         let files = [];
-const pdfInput = document.getElementById("pdfInput");
-const previewContainer = document.getElementById("previewContainer");
-const fileList = document.getElementById("fileList");
-const mergeBtn = document.getElementById("mergeBtn");
-const downloadSection = document.getElementById("downloadSection");
-const downloadMergedBtn = document.getElementById("downloadMergedBtn");
+        const pdfInput = document.getElementById("pdfInput");
+        const previewContainer = document.getElementById("previewContainer");
+        const fileList = document.getElementById("fileList");
+        const mergeBtn = document.getElementById("mergeBtn");
+        const downloadSection = document.getElementById("downloadSection");
+        const downloadMergedBtn = document.getElementById("downloadMergedBtn");
 
-pdfInput.addEventListener("change", function() {
-    files = Array.from(this.files);
-    if (files.length === 0) return alert("Please select at least one PDF file.");
+        pdfInput.addEventListener("change", function () {
+            files = Array.from(this.files);
+            if (files.length === 0) return alert("Please select at least one PDF file.");
 
-    fileList.innerHTML = '';
-    files.forEach((file, index) => {
-        const div = document.createElement("div");
-        div.className = "p-2 bg-gray-100 rounded w-full flex items-center justify-between";
-        div.draggable = true;
-        div.dataset.index = index;
-        div.innerHTML =
-            `<span>${file.name}</span> <span class="text-xs text-gray-500">Drag to reorder</span>`;
-        fileList.appendChild(div);
-    });
+            fileList.innerHTML = '';
+            files.forEach((file, index) => {
+                const div = document.createElement("div");
+                div.className = "p-2 bg-gray-100 rounded w-full flex items-center justify-between";
+                div.draggable = true;
+                div.dataset.index = index;
+                div.innerHTML =
+                    `<span>${file.name}</span> <span class="text-xs text-gray-500">Drag to reorder</span>`;
+                fileList.appendChild(div);
+            });
 
-    previewContainer.classList.remove("hidden");
-    mergeBtn.classList.remove("hidden");
-});
+            previewContainer.classList.remove("hidden");
+            mergeBtn.classList.remove("hidden");
+        });
 
-mergeBtn.addEventListener("click", async function() {
-    if (files.length < 2) return alert("Please select at least two PDF files to merge.");
+        mergeBtn.addEventListener("click", async function () {
+            if (files.length < 2) return alert("Please select at least two PDF files to merge.");
 
-    const mergedPdf = await PDFLib.PDFDocument.create();
+            const mergedPdf = await PDFLib.PDFDocument.create();
 
-    for (let file of files) {
-        const bytes = await file.arrayBuffer();
+            // Show loader
+            document.getElementById("loaderSection").classList.remove("hidden");
 
-        let pdf;
-        try {
-            pdf = await PDFLib.PDFDocument.load(bytes);
-        } catch (e) {
-            if (e.message.includes('encrypted')) {
-                const password = prompt("This PDF is encrypted. Please enter the password:");
+            for (let file of files) {
+                const bytes = await file.arrayBuffer();
+
+                let pdf;
                 try {
-                    pdf = await PDFLib.PDFDocument.load(bytes, { password });
+                    pdf = await PDFLib.PDFDocument.load(bytes);
                 } catch (e) {
-                    alert("Failed to decrypt the PDF. Please check the password.");
-                    return;
+                    if (e.message.includes('encrypted')) {
+                        const password = prompt("This PDF is encrypted. Please enter the password:");
+                        try {
+                            pdf = await PDFLib.PDFDocument.load(bytes, { password });
+                        } catch (e) {
+                            alert("Failed to decrypt the PDF. Please check the password.");
+                            return;
+                        }
+                    } else {
+                        alert("An error occurred while loading the PDF.");
+                        return;
+                    }
                 }
-            } else {
-                alert("An error occurred while loading the PDF.");
-                return;
+
+                const copiedPages = await mergedPdf.copyPages(pdf, pdf.getPageIndices());
+                copiedPages.forEach((page) => mergedPdf.addPage(page));
             }
-        }
 
-        const copiedPages = await mergedPdf.copyPages(pdf, pdf.getPageIndices());
-        copiedPages.forEach((page) => mergedPdf.addPage(page));
-    }
+            const mergedBytes = await mergedPdf.save();
+            const blob = new Blob([mergedBytes], { type: 'application/pdf' });
+            const url = URL.createObjectURL(blob);
 
-    const mergedBytes = await mergedPdf.save();
-    const blob = new Blob([mergedBytes], { type: 'application/pdf' });
-    const url = URL.createObjectURL(blob);
+            downloadMergedBtn.href = url;
 
-    downloadMergedBtn.href = url;
-    downloadSection.classList.remove("hidden");
-    mergeBtn.classList.add("hidden");
-});
+            previewContainer.classList.add("hidden");
+            mergeBtn.classList.add("hidden");
+            setTimeout(() => {
+                downloadSection.classList.remove("hidden");
+                mergeBtn.classList.add("hidden");
+                document.getElementById("loaderSection").classList.add("hidden"); // Hide loader
+            }, 2000); // Smooth scroll to download section
+
+        });
 
     </script>
 @endsection
