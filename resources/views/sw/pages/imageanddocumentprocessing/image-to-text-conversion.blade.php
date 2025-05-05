@@ -179,12 +179,12 @@
 
             // Call your controller's route first
             fetch("{{ route('convert.imageToText') }}", {
-                method: 'POST',
-                headers: {
-                    "X-CSRF-TOKEN": "{{ csrf_token() }}"
-                },
-                body: formData
-            })
+                    method: 'POST',
+                    headers: {
+                        "X-CSRF-TOKEN": "{{ csrf_token() }}"
+                    },
+                    body: formData
+                })
                 .then(response => {
                     if (!response.ok) {
                         throw new Error('Failed to call controller function.');
@@ -194,16 +194,23 @@
                 .then(data => {
                     extractedTextContent = data.extracted_text.trim();
                     document.getElementById("extractedText").value = extractedTextContent;
-                    document.getElementById("downloadSection").classList.remove("hidden");
-                    document.getElementById("convertBtn").innerText = "Extract Text";
-                    document.getElementById("convertBtn").disabled = false;
-                    document.getElementById("downloadSection").classList.remove("hidden");
+
+                    setTimeout(() => {
+                        document.getElementById("downloadSection").classList.remove("hidden");
+                        document.getElementById("convertBtn").innerText = "Extract Text";
+                        document.getElementById("convertBtn").disabled = false;
+                        document.getElementById("downloadSection").classList.remove("hidden");
+                        document.getElementById("loaderSection").classList.add("hidden");
+                    }, 500);
                 })
                 .catch(error => {
                     console.error(error);
-                    alert("Text extraction failed. Please try again.");
-                    document.getElementById("convertBtn").innerText = "Extract Text";
-                    document.getElementById("convertBtn").disabled = false;
+                    setTimeout(() => {
+                        alert("Text extraction failed. Please try again.");
+                        document.getElementById("convertBtn").innerText = "Extract Text";
+                        document.getElementById("convertBtn").disabled = false;
+                        document.getElementById("loaderSection").classList.add("hidden");
+                    }, 500);
                 });
         }
 
