@@ -17,7 +17,8 @@
         <div
             class="flex flex-col sm:flex-row sm:justify-center sm:space-x-8 space-y-4 sm:space-y-0 bg-indigo-50 rounded-2xl p-6 max-w-2xl mx-auto mb-8 shadow">
             <div class="flex items-center space-x-2">
-                <div class="w-8 h-8 flex items-center justify-center bg-indigo-700 text-white rounded-full font-bold">1</div>
+                <div class="w-8 h-8 flex items-center justify-center bg-indigo-700 text-white rounded-full font-bold">1
+                </div>
                 <span class="text-gray-800 font-semibold">Upload Image</span>
             </div>
             <div class="flex items-center space-x-2">
@@ -80,6 +81,15 @@
                 </button>
             </div>
         </div>
+
+        <!-- Loader (hidden by default) -->
+        <div id="loaderSection" class="hidden fixed inset-0 bg-white bg-opacity-75 flex items-center justify-center z-50">
+            <div class="text-center">
+                <div class="w-16 h-16 border-4 border-blue-500 border-dashed rounded-full animate-spin mx-auto mb-4"></div>
+                <p class="text-gray-700 font-semibold text-lg">Converting Image to Text, please wait...</p>
+            </div>
+        </div>
+
     </section>
 
     <!-- Features -->
@@ -157,6 +167,8 @@
                 return;
             }
 
+            document.getElementById("loaderSection").classList.remove("hidden");
+
             const imageFile = fileInput.files[0];
 
             const formData = new FormData();
@@ -167,12 +179,12 @@
 
             // Call your controller's route first
             fetch("{{ route('convert.imageToText') }}", {
-                    method: 'POST',
-                    headers: {
-                        "X-CSRF-TOKEN": "{{ csrf_token() }}"
-                    },
-                    body: formData
-                })
+                method: 'POST',
+                headers: {
+                    "X-CSRF-TOKEN": "{{ csrf_token() }}"
+                },
+                body: formData
+            })
                 .then(response => {
                     if (!response.ok) {
                         throw new Error('Failed to call controller function.');
@@ -185,6 +197,7 @@
                     document.getElementById("downloadSection").classList.remove("hidden");
                     document.getElementById("convertBtn").innerText = "Extract Text";
                     document.getElementById("convertBtn").disabled = false;
+                    document.getElementById("downloadSection").classList.remove("hidden");
                 })
                 .catch(error => {
                     console.error(error);

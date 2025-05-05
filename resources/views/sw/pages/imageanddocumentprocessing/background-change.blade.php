@@ -48,11 +48,6 @@
             </button>
         </div>
 
-        <div id="loader" class="hidden fixed inset-0 bg-white bg-opacity-75 z-50 flex items-center justify-center">
-            <div class="animate-spin rounded-full h-16 w-16 border-t-4 border-indigo-600 border-opacity-50"></div>
-        </div>
-
-
         <!-- Download Section -->
         <div id="downloadSection"
             class="hidden mt-8 max-w-3xl mx-auto text-center bg-white shadow-lg rounded-2xl p-6 border border-gray-200">
@@ -76,6 +71,13 @@
                 </div>
             </div>
         </div>
+
+        <div id="loaderSection" class="hidden fixed inset-0 bg-white bg-opacity-75 flex items-center justify-center z-50">
+            <div class="text-center">
+                <div class="w-16 h-16 border-4 border-blue-500 border-dashed rounded-full animate-spin mx-auto mb-4"></div>
+                <p class="text-gray-700 font-semibold text-lg">Converting Image to Word, please wait...</p>
+            </div>
+        </div>
     </section>
 
     <script>
@@ -97,7 +99,7 @@
             }
 
             // Show loader
-            document.getElementById("loader").classList.remove("hidden");
+            document.getElementById("loaderSection").classList.remove("hidden");
 
             const formData = new FormData();
             formData.append("image", fileInput.files[0]);
@@ -131,8 +133,7 @@
                     console.error(error);
                 })
                 .finally(() => {
-                    // Hide loader
-                    document.getElementById("loader").classList.add("hidden");
+                    document.getElementById("loaderSection").classList.add("hidden");
                 });
         }
     </script>

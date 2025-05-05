@@ -18,7 +18,8 @@
             @foreach (['Upload PDF', 'Convert to JPG', 'Download Images'] as $i => $step)
                 <div class="flex items-center space-x-2">
                     <div class="w-8 h-8 flex items-center justify-center bg-indigo-700 text-white rounded-full font-bold">
-                        {{ $i + 1 }}</div>
+                        {{ $i + 1 }}
+                    </div>
                     <span class="text-gray-800 font-semibold">{{ $step }}</span>
                 </div>
             @endforeach
@@ -85,6 +86,14 @@
                         Convert Again
                     </button>
                 </div>
+            </div>
+        </div>
+
+        <!-- Loader (hidden by default) -->
+        <div id="loaderSection" class="hidden fixed inset-0 bg-white bg-opacity-75 flex items-center justify-center z-50">
+            <div class="text-center">
+                <div class="w-16 h-16 border-4 border-blue-500 border-dashed rounded-full animate-spin mx-auto mb-4"></div>
+                <p class="text-gray-700 font-semibold text-lg">Converting PDF to JPGE, please wait...</p>
             </div>
         </div>
     </section>
@@ -167,13 +176,13 @@
         const zip = new JSZip();
         let allImages = [];
 
-        pdfInput.addEventListener("change", async function() {
+        pdfInput.addEventListener("change", async function () {
             const file = this.files[0];
             if (!file || file.type !== "application/pdf") return alert("Please upload a valid PDF.");
             fileNameBase = file.name.replace(/\.[^/.]+$/, "").replace(/\s+/g, "_");
 
             const reader = new FileReader();
-            reader.onload = function() {
+            reader.onload = function () {
                 const typedarray = new Uint8Array(this.result);
                 pdfjsLib.getDocument(typedarray).promise.then(async pdf => {
                     pdfDoc = pdf;
@@ -225,10 +234,11 @@
             reader.readAsArrayBuffer(file);
         });
 
-        convertBtn.addEventListener("click", async function() {
+        convertBtn.addEventListener("click", async function () {
             imageDownloads.innerHTML = "";
             zip.remove("images");
             const folder = zip.folder("images");
+            document.getElementById("loaderSection").classList.remove("hidden");
 
             for (let img of allImages) {
                 const imgBlob = await (await fetch(img.dataURL)).blob();
@@ -247,13 +257,20 @@
                 folder.file(fileName, imgBlob);
             }
 
-            downloadAllBtn.classList.remove("hidden");
-            downloadSelectedBtn.classList.remove("hidden");
-            downloadSection.classList.remove("hidden");
-            convertBtn.classList.add("hidden");
+
+
+            setTimeout(() => {
+                previewContainer.classList.add("hidden");
+                convertBtn.classList.add("hidden");
+                downloadAllBtn.classList.remove("hidden");
+                downloadSelectedBtn.classList.remove("hidden");
+                downloadSection.classList.remove("hidden");
+                convertBtn.classList.add("hidden");
+                document.getElementById("loaderSection").classList.add("hidden"); // Hide loader
+            }, 2000); // Smooth scroll to download section
         });
 
-        downloadAllBtn.addEventListener("click", function() {
+        downloadAllBtn.addEventListener("click", function () {
             zip.generateAsync({
                 type: "blob"
             }).then(blob => {
@@ -265,7 +282,7 @@
             });
         });
 
-        downloadSelectedBtn.addEventListener("click", async function() {
+        downloadSelectedBtn.addEventListener("click", async function () {
             const selectedPages = Array.from(selectPagesContainer.querySelectorAll(
                 "input[type=checkbox]:checked")).map(c => parseInt(c.value));
             if (selectedPages.length === 0) return alert("Please select at least one page.");

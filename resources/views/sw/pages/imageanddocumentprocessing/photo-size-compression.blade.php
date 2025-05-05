@@ -71,8 +71,16 @@
                     Convert Again
                 </button>
             </div>
-
         </div>
+
+        <!-- Loader (hidden by default) -->
+        <div id="loaderSection" class="hidden fixed inset-0 bg-white bg-opacity-75 flex items-center justify-center z-50">
+            <div class="text-center">
+                <div class="w-16 h-16 border-4 border-blue-500 border-dashed rounded-full animate-spin mx-auto mb-4"></div>
+                <p class="text-gray-700 font-semibold text-lg">Compressing you photo size, please wait...</p>
+            </div>
+        </div>
+
     </section>
 
     <!-- Features -->
@@ -164,6 +172,8 @@
         compressButton.addEventListener("click", function () {
             if (!originalImage) return;
 
+            document.getElementById("loaderSection").classList.remove("hidden");
+
             const targetSizeInput = document.getElementById("targetSize");
             const targetSizeKB = parseInt(targetSizeInput.value, 10);
             if (isNaN(targetSizeKB) || targetSizeKB <= 0) {
@@ -202,6 +212,14 @@
                             quality -= 0.05;
                             compressLoop();
                         }
+
+                        setTimeout(() => {
+                            document.getElementById("loaderSection").classList.add("hidden"); // Hide loader
+                            document.getElementById("downloadSection").scrollIntoView({ behavior: "smooth" });
+                            document.getElementById("downloadSection").classList.remove("hidden"); // Show download
+                        }, 2000); // Smooth scroll to download section
+
+
                     }, "image/jpeg", quality);
                 };
 

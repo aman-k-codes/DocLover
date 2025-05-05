@@ -100,6 +100,15 @@
             </div>
         </div>
 
+        <!-- Loader (hidden by default) -->
+        <div id="loaderSection" class="hidden fixed inset-0 bg-white bg-opacity-75 flex items-center justify-center z-50">
+            <div class="text-center">
+                <div class="w-16 h-16 border-4 border-blue-500 border-dashed rounded-full animate-spin mx-auto mb-4"></div>
+                <p class="text-gray-700 font-semibold text-lg">Converting PDF to ZIP, please wait...</p>
+            </div>
+        </div>
+
+
     </section>
 
     <script>
@@ -122,9 +131,12 @@
                 return;
             }
 
-            // Hide upload, preview & convert sections, show loading message
+            // Show loader
+            document.getElementById("loaderSection").classList.remove("hidden");
+
+            // Hide other sections
             document.getElementById("uploadSection").classList.add("hidden");
-            document.getElementById("pdfPreviewContainer").classList.add("hidden"); // Hide preview section
+            document.getElementById("pdfPreviewContainer").classList.add("hidden");
             document.getElementById("convertBtn").classList.add("hidden");
 
             const csrfToken = CSRF;
@@ -147,16 +159,24 @@
                 })
                 .then(blob => {
                     zipBlobUrl = URL.createObjectURL(blob);
-                    document.getElementById("downloadSection").classList.remove("hidden"); // Show download section
+                    setTimeout(() => {
+                        document.getElementById("loaderSection").classList.add("hidden"); // Hide loader
+                        document.getElementById("downloadSection").scrollIntoView({ behavior: "smooth" });
+                        document.getElementById("downloadSection").classList.remove("hidden"); // Show download
+                    }, 2000); // Smooth scroll to download section
                 })
                 .catch(error => {
                     console.error("Error:", error);
                     alert("An error occurred while converting the file.");
+
+                    // Restore previous UI
+                    document.getElementById("loaderSection").classList.add("hidden");
                     document.getElementById("uploadSection").classList.remove("hidden");
-                    document.getElementById("pdfPreviewContainer").classList.remove("hidden"); // Restore preview section
+                    document.getElementById("pdfPreviewContainer").classList.remove("hidden");
                     document.getElementById("convertBtn").classList.remove("hidden");
                 });
         }
+
 
 
         function downloadZIP() {

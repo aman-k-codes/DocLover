@@ -17,7 +17,8 @@
         <div
             class="flex flex-col sm:flex-row sm:justify-center sm:space-x-8 space-y-4 sm:space-y-0 bg-indigo-50 rounded-2xl p-6 max-w-2xl mx-auto mb-8 shadow">
             <div class="flex items-center space-x-2">
-                <div class="w-8 h-8 flex items-center justify-center bg-indigo-700 text-white rounded-full font-bold">1</div>
+                <div class="w-8 h-8 flex items-center justify-center bg-indigo-700 text-white rounded-full font-bold">1
+                </div>
                 <span class="text-gray-800 font-semibold">Upload PDF</span>
             </div>
             <div class="flex items-center space-x-2">
@@ -55,21 +56,36 @@
 
         <div id="downloadSection"
             class="hidden mt-8 max-w-3xl mx-auto text-center bg-white shadow-lg rounded-2xl p-6 border border-gray-200">
-            <h3 class="text-xl font-bold text-gray-900">Conversion Successful!</h3>
-            <p class="text-gray-600 mt-2">Your Word (.docx) file is ready for download.</p>
-            <div class="flex flex-wrap justify-center mt-6 space-x-4">
-                <button id="downloadBtn"
-                    class="mt-4 bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700"
-                    onclick="downloadWord()">
-                    <i class="fas fa-download mr-2"></i>
-                    Download Word
-                </button>
-                <button id="convertAgainBtn"
-                    class="mt-4 bg-gray-700 text-white font-semibold px-6 py-3 rounded-lg hover:bg-gray-800"
-                    onclick="convertAgain()">
-                    <i class="fas fa-sync-alt mr-2"></i>
-                    Convert Again
-                </button>
+
+            <div class="flex flex-col items-center">
+                <div class="w-16 h-16 flex items-center justify-center bg-green-100 text-green-600 rounded-full mb-4">
+                    <i class="fas fa-check-circle text-4xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900">Conversion Successful!</h3>
+                <p class="text-gray-600 mt-2">Your Word (.docx) file is ready for download.</p>
+                <div class="flex flex-wrap justify-center mt-6 space-x-4">
+                    <button id="downloadBtn"
+                        class="mt-4 bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700"
+                        onclick="downloadWord()">
+                        <i class="fas fa-download mr-2"></i>
+                        Download Word
+                    </button>
+                    <button id="convertAgainBtn"
+                        class="mt-4 bg-gray-700 text-white font-semibold px-6 py-3 rounded-lg hover:bg-gray-800"
+                        onclick="convertAgain()">
+                        <i class="fas fa-sync-alt mr-2"></i>
+                        Convert Again
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Loader (hidden by default) -->
+        <div id="loaderSection" class="hidden fixed inset-0 bg-white bg-opacity-75 flex items-center justify-center z-50">
+            <div class="text-center">
+                <div class="w-16 h-16 border-4 border-blue-500 border-dashed rounded-full animate-spin mx-auto mb-4"></div>
+                <p class="text-gray-700 font-semibold text-lg">Converting PDF to Doc, please wait...</p>
             </div>
         </div>
     </section>
@@ -152,6 +168,9 @@
                 return;
             }
 
+            // Show loader
+            document.getElementById("loaderSection").classList.remove("hidden");
+
             const pdfFile = fileInput.files[0];
             const formData = new FormData();
             formData.append('pdf_file', pdfFile);
@@ -160,25 +179,30 @@
             document.getElementById("convertBtn").disabled = true;
 
             fetch("{{ route('convert.convertPDFtoWord') }}", {
-                    method: "POST",
-                    headers: {
-                        'X-CSRF-TOKEN': "{{ csrf_token() }}"
-                    },
-                    body: formData
-                })
+                method: "POST",
+                headers: {
+                    'X-CSRF-TOKEN': "{{ csrf_token() }}"
+                },
+                body: formData
+            })
                 .then(response => {
                     if (!response.ok) throw new Error("Conversion failed");
                     return response.blob();
                 })
                 .then(blob => {
                     docBlobUrl = URL.createObjectURL(blob);
-                    document.getElementById("downloadSection").classList.remove("hidden");
-                    document.getElementById("uploadSection").classList.add("hidden");
-                    document.getElementById("convertBtn").classList.add("hidden");
+
+                    setTimeout(() => {
+                        document.getElementById("downloadSection").classList.remove("hidden");
+                        document.getElementById("uploadSection").classList.add("hidden");
+                        document.getElementById("convertBtn").classList.add("hidden");
+                        document.getElementById("loaderSection").classList.add("hidden"); // Hide loader
+                    }, 2000); // Smooth scroll to download section
                 })
                 .catch(error => {
                     alert("Error during conversion. Please try again.");
                     console.error(error);
+                    document.getElementById("loaderSection").classList.add("hidden"); // Hide loader
                     document.getElementById("convertBtn").innerText = "Convert to Word";
                     document.getElementById("convertBtn").disabled = false;
                 });
