@@ -68,58 +68,79 @@
         </div>
 
         <div id="cropperContainer"
-            class="hidden mt-8 max-w-6xl mx-auto bg-white shadow-lg rounded-2xl p-6 flex flex-col md:flex-row gap-6">
-            <div class="md:w-1/4 space-y-3">
+            class=" hidden mt-8 max-w-6xl mx-auto bg-white shadow-lg rounded-2xl p-4 sm:p-6 flex flex-col lg:flex-row gap-6">
+
+            <!-- Left Panel (Crop Sizes) -->
+            <div class="w-full lg:w-1/4 space-y-3">
                 <h3 class="text-lg font-semibold mb-2">Crop Sizes</h3>
+                <!-- Standard Sizes -->
                 <button data-size="free"
-                    class="aspect-btn w-full bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-md">Free</button>
-                <button data-size="1" class="aspect-btn w-full bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-md">1:1
+                    class="aspect-btn bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-md">Free</button>
+                <button data-size="1" class="aspect-btn bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-md">1:1
                     (Square)</button>
                 <button data-size="4:3"
-                    class="aspect-btn w-full bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-md">4:3</button>
+                    class="aspect-btn bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-md">4:3</button>
                 <button data-size="16:9"
-                    class="aspect-btn w-full bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-md">16:9</button>
+                    class="aspect-btn bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-md">16:9</button>
                 <button data-size="3:2"
-                    class="aspect-btn w-full bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-md">3:2</button>
+                    class="aspect-btn bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-md">3:2</button>
                 <button data-size="2:3"
-                    class="aspect-btn w-full bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-md">2:3</button>
+                    class="aspect-btn bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-md">2:3</button>
                 <button data-size="21:9"
-                    class="aspect-btn w-full bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-md">21:9</button>
+                    class="aspect-btn bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-md">21:9</button>
 
-                {{-- Custom Sizes --}}
+                <!-- Custom Sizes -->
                 <h4 class="text-md font-semibold pt-4 border-t border-gray-200">Custom Sizes</h4>
                 <button data-px="413x531"
-                    class="px-btn w-full bg-indigo-100 hover:bg-indigo-200 px-4 py-2 rounded-md">Passport Size
-                    (413x531)</button>
+                    class="px-btn w-full bg-indigo-100 hover:bg-indigo-200 px-4 py-2 rounded-md">Passport (413x531)</button>
                 <button data-px="826x1062"
-                    class="px-btn w-full bg-indigo-100 hover:bg-indigo-200 px-4 py-2 rounded-md">Aadhar Card
-                    (826x1062)</button>
+                    class="px-btn w-full bg-indigo-100 hover:bg-indigo-200 px-4 py-2 rounded-md">Aadhar (826x1062)</button>
                 <button data-px="1010x630" class="px-btn w-full bg-indigo-100 hover:bg-indigo-200 px-4 py-2 rounded-md">PAN
-                    Card (1010x630)</button>
+                    (1010x630)</button>
                 <button data-px="150x150"
                     class="px-btn w-full bg-indigo-100 hover:bg-indigo-200 px-4 py-2 rounded-md">Thumbnail
                     (150x150)</button>
             </div>
 
-            <div class="md:w-3/4">
-                <div class="overflow-hidden border rounded-lg w-full max-h-[500px]">
-                    <img id="imagePreview" class="mx-auto max-w-full h-auto" />
+            <!-- Right Panel (Preview + Transform) -->
+            <div class="w-full lg:w-3/4">
+                <!-- Transform Buttons -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-4">
+                    <button id="rotateLeft" class="w-full bg-yellow-100 hover:bg-yellow-200 px-4 py-2 rounded-md">
+                        <i class="fas fa-undo-alt mr-2"></i>Rotate Left
+                    </button>
+                    <button id="rotateRight" class="w-full bg-yellow-100 hover:bg-yellow-200 px-4 py-2 rounded-md">
+                        <i class="fas fa-redo-alt mr-2"></i>Rotate Right
+                    </button>
+                    <button id="flipHorizontal" class="w-full bg-pink-100 hover:bg-pink-200 px-4 py-2 rounded-md">
+                        <i class="fas fa-arrows-alt-h mr-2"></i>Flip Horizontal
+                    </button>
+                    <button id="flipVertical" class="w-full bg-pink-100 hover:bg-pink-200 px-4 py-2 rounded-md">
+                        <i class="fas fa-arrows-alt-v mr-2"></i>Flip Vertical
+                    </button>
                 </div>
-                <div class="mt-6 flex justify-center">
+
+                <!-- Image Preview -->
+                <div class="overflow-hidden border rounded-lg w-full max-h-[500px]">
+                    <img id="imagePreview" src="{{ asset('public/assets/imgs/resume-hero.svg') }}"
+                        class="mx-auto max-w-full h-auto" />
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="mt-6 flex flex-col sm:flex-row justify-center gap-4">
                     <button id="cropButton"
                         class="bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-lg shadow transition-all">
                         Crop & Proceed
                     </button>
                     <button id="convertAgainBtn"
-                        class=" mx-2 bg-gray-700 text-white font-semibold px-6 py-3 rounded-lg hover:bg-gray-800 shadow-md transition duration-200"
+                        class="bg-gray-700 text-white font-semibold px-6 py-3 rounded-lg hover:bg-gray-800 shadow-md transition duration-200"
                         onclick="location.reload();">
-                        <i class="fas fa-sync-alt mr-2"></i>
-                        Upload Again
+                        <i class="fas fa-sync-alt mr-2"></i>Upload Again
                     </button>
                 </div>
             </div>
-
         </div>
+
     </section>
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css" rel="stylesheet" />
@@ -219,6 +240,32 @@
             }, "image/png");
 
         });
+
+        let scaleX = 1;
+        let scaleY = 1;
+
+        document.getElementById('rotateLeft').addEventListener('click', () => {
+            if (cropper) cropper.rotate(-90);
+        });
+
+        document.getElementById('rotateRight').addEventListener('click', () => {
+            if (cropper) cropper.rotate(90);
+        });
+
+        document.getElementById('flipHorizontal').addEventListener('click', () => {
+            if (cropper) {
+                scaleX = -scaleX;
+                cropper.scaleX(scaleX);
+            }
+        });
+
+        document.getElementById('flipVertical').addEventListener('click', () => {
+            if (cropper) {
+                scaleY = -scaleY;
+                cropper.scaleY(scaleY);
+            }
+        });
+
     </script>
 
     <!-- Upload Section -->
