@@ -280,7 +280,8 @@
         </div>
 
         <!-- Preview Section -->
-        <div id="imagePreviewContainer" class="hidden mt-8 max-w-3xl mx-auto text-center bg-white shadow-lg rounded-2xl p-6">
+        <div id="imagePreviewContainer"
+            class="hidden mt-8 max-w-3xl mx-auto text-center bg-white shadow-lg rounded-2xl p-6">
             <h3 class="text-xl font-bold text-gray-900 mb-4">Image Preview</h3>
             <div class="flex justify-center">
                 <div
@@ -310,15 +311,15 @@
                 <label class="block text-gray-700 mb-2 font-semibold">Select Passport Size:</label>
                 <div class="flex flex-wrap gap-4 justify-center mt-2">
                     <button class="size-button" onclick="selectPassportSize('2x2')">2x2 inch</button>
-                    <button class="size-button" onclick="selectPassportSize('35x45')">35x45 mm</button>
-                    <button class="size-button" onclick="selectPassportSize('51x51')">51x51 mm</button>
-                    <button class="size-button" onclick="selectPassportSize('45x35')">45x35 mm</button>
-                    <button class="size-button" onclick="selectPassportSize('50x50')">50x50 mm</button>
-                    <button class="size-button" onclick="selectPassportSize('33x48')">33x48 mm</button>
-                    <button class="size-button" onclick="selectPassportSize('40x60')">40x60 mm</button>
-
+                    <button class="size-button" onclick="selectPassportSize('35x45')">1.38x1.77 inch</button>
+                    <button class="size-button" onclick="selectPassportSize('51x51')">2x2 inch</button>
+                    <button class="size-button" onclick="selectPassportSize('45x35')">1.77x1.38 inch</button>
+                    <button class="size-button" onclick="selectPassportSize('50x50')">1.97x1.97 inch</button>
+                    <button class="size-button" onclick="selectPassportSize('33x48')">1.30x1.89 inch</button>
+                    <button class="size-button" onclick="selectPassportSize('40x60')">1.57x2.36 inch</button>
                 </div>
             </div>
+
 
             <!-- Sheet Size Options -->
             <div class="mt-6">
@@ -345,7 +346,7 @@
         <!-- Download Section -->
 
         <div id="downloadSection"
-            class="hidden mt-8 max-w-3xl mx-auto text-center bg-white shadow-lg rounded-2xl p-6 border border-gray-200">
+            class=" mt-8 max-w-3xl mx-auto text-center bg-white shadow-lg rounded-2xl p-6 border border-gray-200">
             <div class="flex flex-col items-center">
                 <!-- Success Icon -->
                 <div class="w-16 h-16 flex items-center justify-center bg-green-100 text-green-600 rounded-full mb-4">
@@ -357,21 +358,22 @@
                 <p class="text-gray-600 mt-2">Your Passport Photo file is ready for download.</p>
 
                 <!-- Buttons -->
-                <div class="flex flex-wrap justify-center mt-6 space-x-4">
+                <div class="flex flex-col sm:flex-row sm:space-x-4 justify-center mt-6 w-full">
                     <a id="downloadLink"
-                        class=" cursor-pointer bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 shadow-md transition duration-200">
-                        <i class="fas fa-download mr-2"></i>
+                        class="cursor-pointer bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 shadow-md transition duration-200 w-full sm:w-auto mb-4 sm:mb-0">
+                        <i class="fas fa-download md:mr-2"></i>
                         Download Sheet
                     </a>
                     <button id="convertAgainBtn"
-                        class="bg-gray-700 text-white font-semibold px-6 py-3 rounded-lg hover:bg-gray-800 shadow-md transition duration-200"
-                        onclick="location.reload();">
-                        <i class="fas fa-sync-alt mr-2"></i>
+                        class="bg-gray-700 text-white font-semibold px-6 py-3 rounded-lg hover:bg-gray-800 shadow-md transition duration-200 w-full sm:w-auto">
+                        <i class="fas fa-sync-alt md:mr-2"></i>
                         Convert Again
                     </button>
                 </div>
+
             </div>
         </div>
+
     </section>
 
     <script>
