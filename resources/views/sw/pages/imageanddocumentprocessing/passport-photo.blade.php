@@ -305,6 +305,30 @@
                 <p class="text-sm text-gray-500 mt-1">Recommended: 300 DPI</p>
             </div>
 
+            <!-- Sheet Customization Options -->
+            <div class="mt-6 grid gap-4 grid-cols-1 sm:grid-cols-3">
+                <!-- Spacing -->
+                <div>
+                    <label class="block text-gray-700 mb-1 font-semibold">Spacing (inches):</label>
+                    <input type="number" id="spacingInput" value="0.15" step="0.05" min="0"
+                        class="border rounded px-3 py-2 w-full">
+                </div>
+
+                <!-- Border Thickness -->
+                <div>
+                    <label class="block text-gray-700 mb-1 font-semibold">Border Thickness (px):</label>
+                    <input type="number" id="borderThickness" value="1" step="1" min="0"
+                        class="border rounded px-3 py-2 w-full">
+                </div>
+
+                <!-- Border Color -->
+                <div>
+                    <label class="block text-gray-700 mb-1 font-semibold">Border Color:</label>
+                    <input type="color" id="borderColor" value="#000000" class="border rounded px-3 py-2 w-full">
+                </div>
+            </div>
+
+
 
             <!-- Size Options -->
             <div class="mt-6">
@@ -346,7 +370,7 @@
         <!-- Download Section -->
 
         <div id="downloadSection"
-            class=" mt-8 max-w-3xl mx-auto text-center bg-white shadow-lg rounded-2xl p-6 border border-gray-200">
+            class="hidden mt-8 max-w-3xl mx-auto text-center bg-white shadow-lg rounded-2xl p-6 border border-gray-200">
             <div class="flex flex-col items-center">
                 <!-- Success Icon -->
                 <div class="w-16 h-16 flex items-center justify-center bg-green-100 text-green-600 rounded-full mb-4">
@@ -470,8 +494,12 @@
             const [photoInchW, photoInchH] = sizeMap[selectedPassportSize];
             const [sheetInchW, sheetInchH] = sheetMap[selectedSheetSize];
 
-            const spacing = Math.round(0.15 * dpi); // 0.15 inch space between photos
-            const borderThickness = 1; // 1px border for thinner lines
+            const spacingInput = parseFloat(document.getElementById("spacingInput").value) || 0.15;
+            const spacing = Math.round(spacingInput * dpi);
+
+            const borderThickness = parseInt(document.getElementById("borderThickness").value) || 1;
+            const borderColor = document.getElementById("borderColor").value || "#000";
+
 
             const photoWidth = Math.round(photoInchW * dpi);
             const photoHeight = Math.round(photoInchH * dpi);
@@ -504,7 +532,7 @@
                     sheetCtx.drawImage(canvas, 0, 0, canvas.width, canvas.height, dx, dy, photoWidth, photoHeight);
 
                     // Draw border
-                    sheetCtx.strokeStyle = "#000";
+                    sheetCtx.strokeStyle = borderColor;
                     sheetCtx.lineWidth = borderThickness;
                     sheetCtx.strokeRect(dx, dy, photoWidth, photoHeight);
                 }
