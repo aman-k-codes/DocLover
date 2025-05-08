@@ -172,7 +172,7 @@ class DocsController extends Controller
             'file', // <- your Flask expects 'file', not 'image'
             $request->file('image')->get(),
             $request->file('image')->getClientOriginalName()
-        )->post('http://127.0.0.1:5000/api/enhance-photo'); // <- correct Flask API URL
+        )->post(env('API_URL') . '/enhance-photo'); // <- correct Flask API URL
 
         if ($response->successful()) {
             return response($response->body(), 200)
