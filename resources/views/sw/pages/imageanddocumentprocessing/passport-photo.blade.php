@@ -74,20 +74,14 @@
             <div class="w-full lg:w-1/4 space-y-3">
                 <h3 class="text-lg font-semibold mb-2">Crop Sizes</h3>
                 <!-- Standard Sizes -->
-                <button data-size="free"
-                    class="aspect-btn bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-md">Free</button>
+                <button data-size="free" class="aspect-btn bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-md">Free</button>
                 <button data-size="1" class="aspect-btn bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-md">1:1
                     (Square)</button>
-                <button data-size="4:3"
-                    class="aspect-btn bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-md">4:3</button>
-                <button data-size="16:9"
-                    class="aspect-btn bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-md">16:9</button>
-                <button data-size="3:2"
-                    class="aspect-btn bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-md">3:2</button>
-                <button data-size="2:3"
-                    class="aspect-btn bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-md">2:3</button>
-                <button data-size="21:9"
-                    class="aspect-btn bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-md">21:9</button>
+                <button data-size="4:3" class="aspect-btn bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-md">4:3</button>
+                <button data-size="16:9" class="aspect-btn bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-md">16:9</button>
+                <button data-size="3:2" class="aspect-btn bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-md">3:2</button>
+                <button data-size="2:3" class="aspect-btn bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-md">2:3</button>
+                <button data-size="21:9" class="aspect-btn bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-md">21:9</button>
 
                 <!-- Custom Sizes -->
                 <h4 class="text-md font-semibold pt-4 border-t border-gray-200">Custom Sizes</h4>
@@ -286,8 +280,7 @@
         </div>
 
         <!-- Preview Section -->
-        <div id="imagePreviewContainer"
-            class="hidden mt-8 max-w-3xl mx-auto text-center bg-white shadow-lg rounded-2xl p-6">
+        <div id="imagePreviewContainer" class="hidden mt-8 max-w-3xl mx-auto text-center bg-white shadow-lg rounded-2xl p-6">
             <h3 class="text-xl font-bold text-gray-900 mb-4">Image Preview</h3>
             <div class="flex justify-center">
                 <div
@@ -316,9 +309,14 @@
             <div class="mt-6">
                 <label class="block text-gray-700 mb-2 font-semibold">Select Passport Size:</label>
                 <div class="flex flex-wrap gap-4 justify-center mt-2">
-                    <button class="w-20 h-20 size-button" onclick="selectPassportSize('2x2')">2x2 inch</button>
-                    <button class="w-[94px] h-[106px] size-button" onclick="selectPassportSize('35x45')">35x45 mm</button>
-                    <button class="w-[120px] h-[120px] size-button" onclick="selectPassportSize('51x51')">51x51 mm</button>
+                    <button class="size-button" onclick="selectPassportSize('2x2')">2x2 inch</button>
+                    <button class="size-button" onclick="selectPassportSize('35x45')">35x45 mm</button>
+                    <button class="size-button" onclick="selectPassportSize('51x51')">51x51 mm</button>
+                    <button class="size-button" onclick="selectPassportSize('45x35')">45x35 mm</button>
+                    <button class="size-button" onclick="selectPassportSize('50x50')">50x50 mm</button>
+                    <button class="size-button" onclick="selectPassportSize('33x48')">33x48 mm</button>
+                    <button class="size-button" onclick="selectPassportSize('40x60')">40x60 mm</button>
+
                 </div>
             </div>
 
@@ -328,6 +326,10 @@
                 <div class="flex flex-wrap gap-4 justify-center mt-2">
                     <button class="sheet-button" onclick="selectSheetSize('A4')">A4 (8.3x11.7 inch)</button>
                     <button class="sheet-button" onclick="selectSheetSize('4x6')">4x6 inch</button>
+                    <button class="sheet-button" onclick="selectSheetSize('5x7')">5x7 inch</button>
+                    <button class="sheet-button" onclick="selectSheetSize('8x10')">8x10 inch</button>
+                    <button class="sheet-button" onclick="selectSheetSize('Letter')">Letter (8.5x11 inch)</button>
+
                 </div>
             </div>
 
@@ -372,12 +374,158 @@
         </div>
     </section>
 
+    <script>
+        let originalImage = null;
+        let selectedPassportSize = '2x2';
+        let selectedSheetSize = 'A4';
+        let canvas = document.getElementById("canvasPreview");
+        let ctx = canvas.getContext("2d");
+
+        function previewImage(event) {
+            const file = event.target.files[0];
+            if (file) {
+                document.getElementById("uploadLoader").classList.remove("hidden"); // Show loader
+
+                const formData = new FormData();
+                formData.append("image", file);
+
+                fetch("{{ route('remove.background') }}", {
+                    method: "POST",
+                    headers: {
+                        "X-CSRF-TOKEN": "{{ csrf_token() }}"
+                    },
+                    body: formData
+                })
+                    .then(response => response.blob())
+                    .then(blob => {
+                        const img = new Image();
+                        img.onload = function () {
+                            canvas.width = img.width;
+                            canvas.height = img.height;
+                            ctx.fillStyle = document.getElementById("bgColorPicker").value;
+                            ctx.fillRect(0, 0, canvas.width, canvas.height);
+                            ctx.drawImage(img, 0, 0);
+                            originalImage = img;
+
+                            document.getElementById("imagePreviewContainer").classList.remove("hidden");
+                            document.getElementById("createSheetBtn").classList.remove("hidden");
+                            document.getElementById("stepEdit").classList.add("active");
+                            document.getElementById("uploadLoader").classList.add("hidden"); // Hide loader
+                        }
+                        img.src = URL.createObjectURL(blob);
+                    })
+                    .catch(error => {
+                        alert("Error removing background.");
+                        console.error(error);
+                        document.getElementById("uploadLoader").classList.add("hidden"); // Hide loader on error
+                    });
+            }
+        }
+
+
+        function changeBackgroundColor() {
+            if (!originalImage) return;
+            ctx.fillStyle = document.getElementById("bgColorPicker").value;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.drawImage(originalImage, 0, 0);
+        }
+
+        function selectPassportSize(size) {
+            selectedPassportSize = size;
+            document.querySelectorAll('.size-button').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+
+        function selectSheetSize(size) {
+            selectedSheetSize = size;
+            document.querySelectorAll('.sheet-button').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+
+        function createSheet() {
+            const dpi = parseInt(document.getElementById("dpiInput").value) || 300;
+
+            const sizeMap = {
+                "2x2": [2, 2],
+                "35x45": [35 / 25.4, 45 / 25.4],
+                "45x35": [45 / 25.4, 35 / 25.4],
+                "51x51": [51 / 25.4, 51 / 25.4],
+                "50x50": [50 / 25.4, 50 / 25.4],
+                "33x48": [33 / 25.4, 48 / 25.4],
+                "40x60": [40 / 25.4, 60 / 25.4],
+            };
+
+
+            const sheetMap = {
+                "A4": [8.27, 11.69],
+                "4x6": [4, 6],
+                "5x7": [5, 7],
+                "8x10": [8, 10],
+                "Letter": [8.5, 11],
+            };
+
+
+            const [photoInchW, photoInchH] = sizeMap[selectedPassportSize];
+            const [sheetInchW, sheetInchH] = sheetMap[selectedSheetSize];
+
+            const spacing = Math.round(0.15 * dpi); // 0.15 inch space between photos
+            const borderThickness = 1; // 1px border for thinner lines
+
+            const photoWidth = Math.round(photoInchW * dpi);
+            const photoHeight = Math.round(photoInchH * dpi);
+            const sheetWidth = Math.round(sheetInchW * dpi);
+            const sheetHeight = Math.round(sheetInchH * dpi);
+
+            const sheetCanvas = document.createElement("canvas");
+            sheetCanvas.width = sheetWidth;
+            sheetCanvas.height = sheetHeight;
+            const sheetCtx = sheetCanvas.getContext("2d");
+
+            sheetCtx.fillStyle = '#ffffff';
+            sheetCtx.fillRect(0, 0, sheetWidth, sheetHeight);
+
+            const totalPhotoWidth = photoWidth + spacing;
+            const totalPhotoHeight = photoHeight + spacing;
+
+            const columns = Math.floor((sheetWidth + spacing) / totalPhotoWidth);
+            const rows = Math.floor((sheetHeight + spacing) / totalPhotoHeight);
+
+            const offsetX = Math.floor((sheetWidth - (columns * totalPhotoWidth - spacing)) / 2);
+            const offsetY = Math.floor((sheetHeight - (rows * totalPhotoHeight - spacing)) / 2);
+
+            for (let y = 0; y < rows; y++) {
+                for (let x = 0; x < columns; x++) {
+                    const dx = offsetX + x * totalPhotoWidth;
+                    const dy = offsetY + y * totalPhotoHeight;
+
+                    // Draw photo
+                    sheetCtx.drawImage(canvas, 0, 0, canvas.width, canvas.height, dx, dy, photoWidth, photoHeight);
+
+                    // Draw border
+                    sheetCtx.strokeStyle = "#000";
+                    sheetCtx.lineWidth = borderThickness;
+                    sheetCtx.strokeRect(dx, dy, photoWidth, photoHeight);
+                }
+            }
+
+            const finalImage = sheetCanvas.toDataURL("image/png");
+            const downloadLink = document.getElementById("downloadLink");
+            downloadLink.href = finalImage;
+            downloadLink.download = "passport_photos_sheet.png";
+            document.getElementById("imagePreviewContainer").classList.add("hidden");
+            document.getElementById("downloadSection").classList.remove("hidden");
+            document.getElementById("stepSheet").classList.add("active");
+            document.getElementById("stepDownload").classList.add("active");
+
+        }
+    </script>
+
     <!-- Custom Style for Buttons -->
     <style>
         .size-button,
         .sheet-button {
             background-color: #f3f4f6;
-            padding: 10px 20px;
+            padding: 5px 10px;
             border: 2px solid transparent;
             border-radius: 8px;
             font-weight: 600;
@@ -456,143 +604,5 @@
             @include('sw.components.tools')
         </div>
     </section>
-
-
-    <script>
-        let originalImage = null;
-        let selectedPassportSize = '2x2';
-        let selectedSheetSize = 'A4';
-        let canvas = document.getElementById("canvasPreview");
-        let ctx = canvas.getContext("2d");
-
-        function previewImage(event) {
-            const file = event.target.files[0];
-            if (file) {
-                document.getElementById("uploadLoader").classList.remove("hidden"); // Show loader
-
-                const formData = new FormData();
-                formData.append("image", file);
-
-                fetch("{{ route('remove.background') }}", {
-                    method: "POST",
-                    headers: {
-                        "X-CSRF-TOKEN": "{{ csrf_token() }}"
-                    },
-                    body: formData
-                })
-                    .then(response => response.blob())
-                    .then(blob => {
-                        const img = new Image();
-                        img.onload = function () {
-                            canvas.width = img.width;
-                            canvas.height = img.height;
-                            ctx.fillStyle = document.getElementById("bgColorPicker").value;
-                            ctx.fillRect(0, 0, canvas.width, canvas.height);
-                            ctx.drawImage(img, 0, 0);
-                            originalImage = img;
-
-                            document.getElementById("imagePreviewContainer").classList.remove("hidden");
-                            document.getElementById("createSheetBtn").classList.remove("hidden");
-                            document.getElementById("stepEdit").classList.add("active");
-                            document.getElementById("uploadLoader").classList.add("hidden"); // Hide loader
-                        }
-                        img.src = URL.createObjectURL(blob);
-                    })
-                    .catch(error => {
-                        alert("Error removing background.");
-                        console.error(error);
-                        document.getElementById("uploadLoader").classList.add("hidden"); // Hide loader on error
-                    });
-            }
-        }
-
-
-        function changeBackgroundColor() {
-            if (!originalImage) return;
-            ctx.fillStyle = document.getElementById("bgColorPicker").value;
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-            ctx.drawImage(originalImage, 0, 0);
-        }
-
-        function selectPassportSize(size) {
-            selectedPassportSize = size;
-            document.querySelectorAll('.size-button').forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
-        }
-
-        function selectSheetSize(size) {
-            selectedSheetSize = size;
-            document.querySelectorAll('.sheet-button').forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
-        }
-
-        function createSheet() {
-            const dpi = parseInt(document.getElementById("dpiInput").value) || 300;
-
-            const sizeMap = {
-                "2x2": [2, 2],
-                "35x45": [35 / 25.4, 45 / 25.4],
-                "51x51": [51 / 25.4, 51 / 25.4]
-            };
-
-            const sheetMap = {
-                "A4": [8.27, 11.69],
-                "4x6": [4, 6]
-            };
-
-            const [photoInchW, photoInchH] = sizeMap[selectedPassportSize];
-            const [sheetInchW, sheetInchH] = sheetMap[selectedSheetSize];
-
-            const spacing = Math.round(0.15 * dpi); // 0.15 inch space between photos
-            const borderThickness = 1; // 1px border for thinner lines
-
-            const photoWidth = Math.round(photoInchW * dpi);
-            const photoHeight = Math.round(photoInchH * dpi);
-            const sheetWidth = Math.round(sheetInchW * dpi);
-            const sheetHeight = Math.round(sheetInchH * dpi);
-
-            const sheetCanvas = document.createElement("canvas");
-            sheetCanvas.width = sheetWidth;
-            sheetCanvas.height = sheetHeight;
-            const sheetCtx = sheetCanvas.getContext("2d");
-
-            sheetCtx.fillStyle = '#ffffff';
-            sheetCtx.fillRect(0, 0, sheetWidth, sheetHeight);
-
-            const totalPhotoWidth = photoWidth + spacing;
-            const totalPhotoHeight = photoHeight + spacing;
-
-            const columns = Math.floor((sheetWidth + spacing) / totalPhotoWidth);
-            const rows = Math.floor((sheetHeight + spacing) / totalPhotoHeight);
-
-            const offsetX = Math.floor((sheetWidth - (columns * totalPhotoWidth - spacing)) / 2);
-            const offsetY = Math.floor((sheetHeight - (rows * totalPhotoHeight - spacing)) / 2);
-
-            for (let y = 0; y < rows; y++) {
-                for (let x = 0; x < columns; x++) {
-                    const dx = offsetX + x * totalPhotoWidth;
-                    const dy = offsetY + y * totalPhotoHeight;
-
-                    // Draw photo
-                    sheetCtx.drawImage(canvas, 0, 0, canvas.width, canvas.height, dx, dy, photoWidth, photoHeight);
-
-                    // Draw border
-                    sheetCtx.strokeStyle = "#000";
-                    sheetCtx.lineWidth = borderThickness;
-                    sheetCtx.strokeRect(dx, dy, photoWidth, photoHeight);
-                }
-            }
-
-            const finalImage = sheetCanvas.toDataURL("image/png");
-            const downloadLink = document.getElementById("downloadLink");
-            downloadLink.href = finalImage;
-            downloadLink.download = "passport_photos_sheet.png";
-            document.getElementById("imagePreviewContainer").classList.add("hidden");
-            document.getElementById("downloadSection").classList.remove("hidden");
-            document.getElementById("stepSheet").classList.add("active");
-            document.getElementById("stepDownload").classList.add("active");
-
-        }
-    </script>
 
 @endsection
