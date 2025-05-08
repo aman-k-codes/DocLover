@@ -63,3 +63,6 @@ sudo systemctl daemon-reexec
 sudo systemctl daemon-reload
 sudo systemctl restart flaskapp
 sudo systemctl status flaskapp
+
+
+<meta name="google-adsense-account" content="ca-pub-1623922509742047">
