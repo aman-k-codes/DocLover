@@ -94,6 +94,13 @@
                             </li>
                             <li
                                 class="cursor-pointer py-2 px-4 bg-gray-100 rounded-lg shadow-md flex items-center space-x-2">
+                                <i class="fas fa-passport text-indigo-600"></i>
+                                <a href="{{ route('passport-photo') }}">
+                                    <span class="font-bold">Passport-Photo</span>
+                                </a>
+                            </li>
+                            <li
+                                class="cursor-pointer py-2 px-4 bg-gray-100 rounded-lg shadow-md flex items-center space-x-2">
                                 <i class="fas fa-file-alt text-gray-600"></i>
                                 <a href="{{ route('resume.index') }}">
                                     <span class="font-bold">Resume Maker</span>
@@ -124,6 +131,43 @@
                     </div>
 
                 </div>
+
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-lg font-bold text-gray-900 mt-12 mb-5">PDF Tools</h3>
+                        <ul class="flex flex-wrap justify-center gap-4">
+                            <li
+                                class="cursor-pointer py-2 px-4 bg-gray-100 rounded-lg shadow-md flex items-center space-x-2">
+                                <i class="fas fa-copy text-blue-600"></i>
+                                <a href="{{ route('merge-pdf') }}">
+                                    <span class="font-bold">Merge PDF</span>
+                                </a>
+                            </li>
+                            <li
+                                class="cursor-pointer py-2 px-4 bg-gray-100 rounded-lg shadow-md flex items-center space-x-2">
+                                <i class="fas fa-cut text-yellow-500"></i>
+                                <a href="{{ route('split-pdf') }}">
+                                    <span class="font-bold">Split PDF</span>
+                                </a>
+                            </li>
+                            <li
+                                class="cursor-pointer py-2 px-4 bg-gray-100 rounded-lg shadow-md flex items-center space-x-2">
+                                <i class="fas fa-trash-alt text-red-500"></i>
+                                <a href="{{ route('delete-pdf-pages') }}">
+                                    <span class="font-bold">Delete PDF Pages</span>
+                                </a>
+                            </li>
+                            <li
+                                class="cursor-pointer py-2 px-4 bg-gray-100 rounded-lg shadow-md flex items-center space-x-2">
+                                <i class="fas fa-file-export text-blue-500"></i>
+                                <a href="{{ route('extract-pdf-pages') }}">
+                                    <span class="font-bold">Extract PDF Pages</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
 
             </div>
         </div>
