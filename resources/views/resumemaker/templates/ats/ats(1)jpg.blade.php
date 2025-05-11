@@ -125,47 +125,43 @@
 <body>
 
     <div class="header">
-        <h1>Nilesh Navrang</h1>
-        <p>Graphic Designer</p>
+        <h1>{{ (Cache::get('resume_data', 'default')['first_name'] ?? '') . ' ' . (Cache::get('resume_data', 'default')['last_name'] ?? '') }}
+        </h1>
+        <p>{{ Cache::get('resume_data', 'default')['designation'] ?? '' }}</p>
     </div>
 
     <div class="contact-bar">
-        <span>+91-9876543210</span>
-        <span>New Delhi, India</span>
-        <span>www.seemachaudhry.com</span>
-        <span>seema.designs@gmail.com</span>
+        <span>+91-{{ Cache::get('resume_data', 'default')['phone'] ?? '' }}</span>
+        <span>{{ Cache::get('resume_data', 'default')['location'] ?? '' }}</span>
+        <span>{{ Cache::get('resume_data', 'default')['website'] ?? '' }}</span>
+        <span>{{ Cache::get('resume_data', 'default')['email'] ?? '' }}</span>
     </div>
 
     <div class="section">
         <div class="section-title">About Me</div>
-        <p>Creative and detail-oriented graphic designer with over 6 years of experience in visual storytelling, brand
-            identity, and digital content creation. Skilled in Adobe Creative Suite and experienced in working with
-            cross-functional teams to deliver high-impact designs that drive engagement and visibility.</p>
+        <p>{{ Cache::get('resume_data', 'default')['summary'] ?? '' }}</p>
     </div>
 
     <div class="section">
         <div class="section-title">Education</div>
         <div class="education">
-            <div class="edu-entry">
-                <table class="summary-table">
-                    <tr>
-                        <td class="bold">Delhi College of Arts</td>
-                        <td class="bold">2015–2019</td>
-                    </tr>
-                </table>
-                <p>Bachelor of Fine Arts – Graphic Design</p>
-            </div>
-            <div class="edu-entry">
-                <table class="summary-table">
-                    <tr>
-                        <td class="bold">National Institute of Design</td>
-                        <td class="bold">2019–2020</td>
-                    </tr>
-                </table>
-                <div class="info">
-                    <p>Postgraduate Certificate in User Experience Design</p>
-                </div>
-            </div>
+            @if (!blank(Cache::get('resume_data', [])))
+                @foreach (Cache::get('resume_data', 'default')['institute'] as $key => $item)
+                    @if ($item)
+                        <div class="edu-entry">
+                            <table class="summary-table">
+                                <tr>
+                                    <td class="bold">{{ Cache::get('resume_data', 'default')['institute'][$key] }}</td>
+                                    <td class="bold">{{ (Cache::get('resume_data', 'default')['start_year'][$key] ?? '') . '-' . (Cache::get('resume_data', 'default')['end_year'][$key] ?? '') }}</td>
+                                </tr>
+                            </table>
+                            <div class="info">
+                                <p>{{ Cache::get('resume_data', 'default')['degree'][$key] }}</p>
+                            </div>
+                        </div>
+                    @endif
+                @endforeach
+            @endif
         </div>
     </div>
     <style>

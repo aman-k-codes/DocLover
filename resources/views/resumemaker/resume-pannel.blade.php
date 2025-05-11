@@ -106,11 +106,20 @@
                         <input type="text" name="last_name" placeholder="Last Name"
                             value="{{ Cache::get('resume_data', 'default')['last_name'] ?? '' }}"
                             class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800" />
+                        <input type="text" name="designation" placeholder="Designation"
+                            value="{{ Cache::get('resume_data', 'default')['designation'] ?? '' }}"
+                            class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800" />
                         <input type="text" name="location" placeholder="e.g. Houston, TX"
                             value="{{ Cache::get('resume_data', 'default')['location'] ?? '' }}"
                             class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800" />
                         <input type="email" name="email" placeholder="you@example.com"
                             value="{{ Cache::get('resume_data', 'default')['email'] ?? '' }}"
+                            class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800" />
+                        <input type="text" name="phone" placeholder="+91-123456789"
+                            value="{{ Cache::get('resume_data', 'default')['phone'] ?? '' }}"
+                            class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800" />
+                        <input type="text" name="website" placeholder="www.example.com"
+                            value="{{ Cache::get('resume_data', 'default')['website'] ?? '' }}"
                             class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800" />
                     </div>
                 </section>
@@ -272,8 +281,8 @@
                         @if (!blank(Cache::get('resume_data', [])))
                             @foreach (Cache::get('resume_data', 'default')['company'] as $key => $item)
                                 @if ($item)
-                                    <div class="border border-blue-100 rounded-lg p-6 bg-blue-50/10 shadow-sm relative">
-                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
+                                    <div class="border border-blue-100 rounded-lg bg-blue-50/10 shadow-sm relative">
+                                        <div class="grid grid-cols-1 md:grid-cols-2 mb-4">
                                             <div>
                                                 <label class="text-sm font-medium text-gray-700">Company</label>
                                                 <input type="text" name="company[]" placeholder="Company Name"
@@ -397,7 +406,7 @@
                         @if (!blank(Cache::get('resume_data', [])))
                             @foreach (Cache::get('resume_data', 'default')['institute'] as $key => $item)
                                 @if ($item)
-                                    <div class="border border-blue-100 rounded-lg p-6 bg-blue-50/10 shadow-sm relative">
+                                    <div class="bg-blue-50/10 shadow-sm relative">
                                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
                                             <div>
                                                 <label class="text-sm font-medium text-gray-700">Institute /
