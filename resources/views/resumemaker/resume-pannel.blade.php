@@ -281,8 +281,8 @@
                         @if (!blank(Cache::get('resume_data', [])))
                             @foreach (Cache::get('resume_data', 'default')['company'] as $key => $item)
                                 @if ($item)
-                                    <div class="border border-blue-100 rounded-lg bg-blue-50/10 shadow-sm relative">
-                                        <div class="grid grid-cols-1 md:grid-cols-2 mb-4">
+                                    <div class="border border-blue-100 rounded-lg p-6 bg-blue-50/10 shadow-sm relative">
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
                                             <div>
                                                 <label class="text-sm font-medium text-gray-700">Company</label>
                                                 <input type="text" name="company[]" placeholder="Company Name"
@@ -406,7 +406,7 @@
                         @if (!blank(Cache::get('resume_data', [])))
                             @foreach (Cache::get('resume_data', 'default')['institute'] as $key => $item)
                                 @if ($item)
-                                    <div class="bg-blue-50/10 shadow-sm relative">
+                                    <div class="border border-blue-100 rounded-lg p-6 bg-blue-50/10 shadow-sm relative">
                                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
                                             <div>
                                                 <label class="text-sm font-medium text-gray-700">Institute /
