@@ -100,27 +100,61 @@
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <input type="text" name="first_name" placeholder="First Name"
-                            value="{{ Cache::get('resume_data', 'default')['first_name'] ?? '' }}"
-                            class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800" />
-                        <input type="text" name="last_name" placeholder="Last Name"
-                            value="{{ Cache::get('resume_data', 'default')['last_name'] ?? '' }}"
-                            class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800" />
-                        <input type="text" name="designation" placeholder="Designation"
-                            value="{{ Cache::get('resume_data', 'default')['designation'] ?? '' }}"
-                            class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800" />
-                        <input type="text" name="location" placeholder="e.g. Houston, TX"
-                            value="{{ Cache::get('resume_data', 'default')['location'] ?? '' }}"
-                            class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800" />
-                        <input type="email" name="email" placeholder="you@example.com"
-                            value="{{ Cache::get('resume_data', 'default')['email'] ?? '' }}"
-                            class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800" />
-                        <input type="text" name="phone" placeholder="+91-123456789"
-                            value="{{ Cache::get('resume_data', 'default')['phone'] ?? '' }}"
-                            class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800" />
-                        <input type="text" name="website" placeholder="www.example.com"
-                            value="{{ Cache::get('resume_data', 'default')['website'] ?? '' }}"
-                            class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800" />
+                        <!-- First Name -->
+                        <div class="relative">
+                            <i class="fa fa-user absolute left-3 top-3.5 text-gray-500"></i>
+                            <input type="text" name="first_name" placeholder="First Name"
+                                value="{{ Cache::get('resume_data', 'default')['first_name'] ?? '' }}"
+                                class="w-full pl-10 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800" />
+                        </div>
+
+                        <!-- Last Name -->
+                        <div class="relative">
+                            <i class="fa fa-user absolute left-3 top-3.5 text-gray-500"></i>
+                            <input type="text" name="last_name" placeholder="Last Name"
+                                value="{{ Cache::get('resume_data', 'default')['last_name'] ?? '' }}"
+                                class="w-full pl-10 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800" />
+                        </div>
+
+                        <!-- Designation -->
+                        <div class="relative">
+                            <i class="fa fa-briefcase absolute left-3 top-3.5 text-gray-500"></i>
+                            <input type="text" name="designation" placeholder="Designation"
+                                value="{{ Cache::get('resume_data', 'default')['designation'] ?? '' }}"
+                                class="w-full pl-10 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800" />
+                        </div>
+
+                        <!-- Location -->
+                        <div class="relative">
+                            <i class="fa fa-location-dot absolute left-3 top-3.5 text-gray-500"></i>
+                            <input type="text" name="location" placeholder="e.g. Houston, TX"
+                                value="{{ Cache::get('resume_data', 'default')['location'] ?? '' }}"
+                                class="w-full pl-10 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800" />
+                        </div>
+
+                        <!-- Email -->
+                        <div class="relative">
+                            <i class="fa fa-envelope absolute left-3 top-3.5 text-gray-500"></i>
+                            <input type="email" name="email" placeholder="you@example.com"
+                                value="{{ Cache::get('resume_data', 'default')['email'] ?? '' }}"
+                                class="w-full pl-10 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800" />
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="relative">
+                            <i class="fa fa-phone absolute left-3 top-3.5 text-gray-500"></i>
+                            <input type="text" name="phone" placeholder="+91-123456789"
+                                value="{{ Cache::get('resume_data', 'default')['phone'] ?? '' }}"
+                                class="w-full pl-10 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800" />
+                        </div>
+
+                        <!-- Website -->
+                        <div class="relative">
+                            <i class="fa fa-globe absolute left-3 top-3.5 text-gray-500"></i>
+                            <input type="text" name="website" placeholder="www.example.com"
+                                value="{{ Cache::get('resume_data', 'default')['website'] ?? '' }}"
+                                class="w-full pl-10 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800" />
+                        </div>
                     </div>
                 </section>
 

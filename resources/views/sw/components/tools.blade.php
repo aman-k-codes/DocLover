@@ -36,8 +36,8 @@
                 <li class="flex items-center space-x-2"><i class="fas fa-crop text-orange-500"></i><a
                         href="{{ route('crop') }}"><span>Crop</span></a></li>
 
-                <li class="flex items-center space-x-2"><i class="fas fa-magic text-purple-500"></i><a
-                        href="{{ route('photo-clarity-enhancement') }}"><span>Photo Clarity Enhancement</span></a></li>
+                {{-- <li class="flex items-center space-x-2"><i class="fas fa-magic text-purple-500"></i><a
+                        href="{{ route('photo-clarity-enhancement') }}"><span>Photo Clarity Enhancement</span></a></li> --}}
                 <li class="flex items-center space-x-2">
                     <i class="fas fa-passport text-indigo-600"></i>
                     <a href="{{ route('passport-photo') }}">

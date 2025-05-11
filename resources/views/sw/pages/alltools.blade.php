@@ -78,13 +78,13 @@
                                 </a>
                             </li>
 
-                            <li
+                            {{-- <li
                                 class="cursor-pointer py-2 px-4 bg-gray-100 rounded-lg shadow-md flex items-center space-x-2">
                                 <i class="fas fa-magic text-purple-500"></i>
                                 <a href="{{ route('photo-clarity-enhancement') }}">
                                     <span class="font-bold">Photo Clarity Enhancement</span>
                                 </a>
-                            </li>
+                            </li> --}}
                             <li
                                 class="cursor-pointer py-2 px-4 bg-gray-100 rounded-lg shadow-md flex items-center space-x-2">
                                 <i class="fas fa-image text-indigo-600"></i>
