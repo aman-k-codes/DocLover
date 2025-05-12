@@ -75,7 +75,7 @@
         <div id="loaderSection" class="hidden fixed inset-0 bg-white bg-opacity-75 flex items-center justify-center z-50">
             <div class="text-center">
                 <div class="w-16 h-16 border-4 border-blue-500 border-dashed rounded-full animate-spin mx-auto mb-4"></div>
-                <p class="text-gray-700 font-semibold text-lg">Converting Image to Word, please wait...</p>
+                <p class="text-gray-700 font-semibold text-lg">Removing Your Image's Background, please wait...</p>
             </div>
         </div>
     </section>
