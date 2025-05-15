@@ -1,9 +1,7 @@
 @extends('sw.layout.master')
 
 @section('title', 'Resume Builder Panel | CraftMyDoc')
-@section('meta_description',
-    'Create your resume interactively with sections, input forms, and live PDF preview using
-    our resume builder.')
+@section('meta_description', 'Create your resume interactively with sections, input forms, and live PDF preview using our resume builder.')
 @section('meta_keywords', 'Resume Builder, Online Resume Maker, Interactive Resume Panel, Build Resume, Resume Preview')
 @php
     // dd(Cache::get('resume_data', 'default'));
@@ -11,62 +9,7 @@
 @endphp
 @section('content')
     <div class="flex">
-        <!-- Sidebar Tabs -->
-        <div class="hidden w-1/5 bg-white border-r p-6 shadow-sm">
-            <h3 class="text-lg font-semibold mb-6 text-gray-800 flex items-center gap-2">
-                <i class="fas fa-edit text-blue-500"></i> Edit Sections
-            </h3>
-            <ul class="space-y-2 text-sm text-gray-700">
-                <li>
-                    <a href="#personal-info"
-                        class="flex items-center gap-2 p-2 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition">
-                        <i class="fas fa-user text-gray-400 w-4"></i> Personal Details
-                    </a>
-                </li>
-                <li>
-                    <a href="#summary"
-                        class="flex items-center gap-2 p-2 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition">
-                        <i class="fas fa-align-left text-gray-400 w-4"></i> Summary
-                    </a>
-                </li>
-                <li>
-                    <a href="#job-preferences"
-                        class="flex items-center gap-2 p-2 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition">
-                        <i class="fas fa-briefcase text-gray-400 w-4"></i> Job Preferences
-                    </a>
-                </li>
-                <li>
-                    <a href="#experience"
-                        class="flex items-center gap-2 p-2 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition">
-                        <i class="fas fa-building text-gray-400 w-4"></i> Work Experience
-                    </a>
-                </li>
-                <li>
-                    <a href="#education"
-                        class="flex items-center gap-2 p-2 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition">
-                        <i class="fas fa-graduation-cap text-gray-400 w-4"></i> Education
-                    </a>
-                </li>
-                <li>
-                    <a href="#skills"
-                        class="flex items-center gap-2 p-2 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition">
-                        <i class="fas fa-tools text-gray-400 w-4"></i> Skills
-                    </a>
-                </li>
-                <li>
-                    <a href="#courses"
-                        class="flex items-center gap-2 p-2 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition">
-                        <i class="fas fa-book text-gray-400 w-4"></i> Courses
-                    </a>
-                </li>
-                <li>
-                    <a href="#social-media"
-                        class="flex items-center gap-2 p-2 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition">
-                        <i class="fas fa-share-alt text-gray-400 w-4"></i> Social Media Links
-                    </a>
-                </li>
-            </ul>
-        </div>
+
 
 
         <!-- Main Content -->
@@ -166,7 +109,7 @@
                         const icon = document.getElementById('defaultIcon');
 
                         if (file) {
-                            reader.onload = function(e) {
+                            reader.onload = function (e) {
                                 preview.src = e.target.result;
                                 preview.classList.remove('hidden');
                                 icon.classList.add('hidden');
@@ -192,7 +135,7 @@
                             const preview = document.getElementById('photoPreview');
                             const icon = document.getElementById('defaultIcon');
 
-                            reader.onload = function(e) {
+                            reader.onload = function (e) {
                                 preview.src = e.target.result;
                                 preview.classList.remove('hidden');
                                 icon.classList.add('hidden');
@@ -227,17 +170,15 @@
                         @if (!blank(Cache::get('resume_data', [])))
                             @foreach (Cache::get('resume_data', 'default')['target_role'] as $role)
                                 @if ($role)
-                                    <div id="targetRolesContainer" class="space-y-4">
-                                        <input type="text" name="target_role[]" placeholder="Job Title"
-                                            value="{{ $role }}"
+                                    <div id="targetRolesContainer" class="space-y-4 mt-2">
+                                        <input type="text" name="target_role[]" placeholder="Job Title" value="{{ $role }}"
                                             class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700" />
                                     </div>
                                 @endif
                             @endforeach
                         @endif
-                        <div id="targetRolesContainer"
-                            class="space-y-4 w-full py-2
-                            focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700 mt-2">
+                        <div id="targetRolesContainer" class="space-y-4 w-full py-2
+                                                focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700 mt-2">
                             <input type="text" name="target_role[]" placeholder="Job Title"
                                 class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700" />
                         </div>
@@ -256,17 +197,15 @@
                         @if (!blank(Cache::get('resume_data', [])))
                             @foreach (Cache::get('resume_data', 'default')['preferred_location'] as $location)
                                 @if ($location)
-                                    <div id="preferredLocationsContainer" class="space-y-4">
-                                        <input type="text" name="preferred_location[]" placeholder="e.g. London"
-                                            value="{{ $location }}"
+                                    <div id="preferredLocationsContainer" class="space-y-4 mt-2">
+                                        <input type="text" name="preferred_location[]" placeholder="e.g. London" value="{{ $location }}"
                                             class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700" />
                                     </div>
                                 @endif
                             @endforeach
                         @endif
-                        <div id="preferredLocationsContainer"
-                            class="space-y-4 w-full py-2
-                            focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700 mt-2">
+                        <div id="preferredLocationsContainer" class="space-y-4 w-full py-2
+                                                focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700 mt-2">
                             <input type="text" name="preferred_location[]" placeholder="e.g. London"
                                 class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700" />
                         </div>
@@ -315,7 +254,7 @@
                         @if (!blank(Cache::get('resume_data', [])))
                             @foreach (Cache::get('resume_data', 'default')['company'] as $key => $item)
                                 @if ($item)
-                                    <div class="border border-blue-100 rounded-lg p-6 bg-blue-50/10 shadow-sm relative">
+                                    <div class="rounded-lg bg-blue-50/10 shadow-sm relative">
                                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
                                             <div>
                                                 <label class="text-sm font-medium text-gray-700">Company</label>
@@ -352,7 +291,7 @@
                                 @endif
                             @endforeach
                         @endif
-                        <div class="border border-blue-100 rounded-lg p-6 bg-blue-50/10 shadow-sm relative">
+                        <div class="rounded-lg bg-blue-50/10 shadow-sm relative">
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
                                 <div>
                                     <label class="text-sm font-medium text-gray-700">Company</label>
@@ -398,32 +337,32 @@
                         }
 
                         const block = document.createElement('div');
-                        block.className = 'border border-blue-100 rounded-lg p-6 bg-blue-50/10 shadow-sm relative';
+                        block.className = 'rounded-lg bg-blue-50/10 shadow-sm relative';
 
                         block.innerHTML = `
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
-                                <div>
-                                    <label class="text-sm font-medium text-gray-700">Company</label>
-                                    <input type="text" name="company[]" placeholder="Company Name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700" />
-                                </div>
-                                <div>
-                                    <label class="text-sm font-medium text-gray-700">Job Title</label>
-                                    <input type="text" name="role[]" placeholder="Job Title" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700" />
-                                </div>
-                                <div>
-                                    <label class="text-sm font-medium text-gray-700">Start Date</label>
-                                    <input type="text" name="start_date[]" placeholder="e.g. Jan 2020" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700" />
-                                </div>
-                                <div>
-                                    <label class="text-sm font-medium text-gray-700">End Date</label>
-                                    <input type="text" name="end_date[]" placeholder="e.g. Present" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700" />
-                                </div>
-                            </div>
-                            <div>
-                                <label class="text-sm font-medium text-gray-700">Responsibilities / Achievements</label>
-                                <textarea name="description[]" rows="3" placeholder="Describe your role..." class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700 mt-2"></textarea>
-                            </div>
-                        `;
+                                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
+                                                    <div>
+                                                        <label class="text-sm font-medium text-gray-700">Company</label>
+                                                        <input type="text" name="company[]" placeholder="Company Name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700" />
+                                                    </div>
+                                                    <div>
+                                                        <label class="text-sm font-medium text-gray-700">Job Title</label>
+                                                        <input type="text" name="role[]" placeholder="Job Title" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700" />
+                                                    </div>
+                                                    <div>
+                                                        <label class="text-sm font-medium text-gray-700">Start Date</label>
+                                                        <input type="text" name="start_date[]" placeholder="e.g. Jan 2020" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700" />
+                                                    </div>
+                                                    <div>
+                                                        <label class="text-sm font-medium text-gray-700">End Date</label>
+                                                        <input type="text" name="end_date[]" placeholder="e.g. Present" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700" />
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <label class="text-sm font-medium text-gray-700">Responsibilities / Achievements</label>
+                                                    <textarea name="description[]" rows="3" placeholder="Describe your role..." class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700 mt-2"></textarea>
+                                                </div>
+                                            `;
 
                         container.appendChild(block);
                     }
@@ -440,20 +379,18 @@
                         @if (!blank(Cache::get('resume_data', [])))
                             @foreach (Cache::get('resume_data', 'default')['institute'] as $key => $item)
                                 @if ($item)
-                                    <div class="border border-blue-100 rounded-lg p-6 bg-blue-50/10 shadow-sm relative">
+                                    <div class="rounded-lg bg-blue-50/10 shadow-sm relative">
                                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
                                             <div>
                                                 <label class="text-sm font-medium text-gray-700">Institute /
                                                     University</label>
-                                                <input type="text" name="institute[]"
-                                                    placeholder="e.g. ABC University"
+                                                <input type="text" name="institute[]" placeholder="e.g. ABC University"
                                                     value="{{ Cache::get('resume_data', 'default')['institute'][$key] }}"
                                                     class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700" />
                                             </div>
                                             <div>
                                                 <label class="text-sm font-medium text-gray-700">Degree / Program</label>
-                                                <input type="text" name="degree[]"
-                                                    placeholder="e.g. B.Sc. Computer Science"
+                                                <input type="text" name="degree[]" placeholder="e.g. B.Sc. Computer Science"
                                                     value="{{ Cache::get('resume_data', 'default')['degree'][$key] }}"
                                                     class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700" />
                                             </div>
@@ -474,14 +411,13 @@
                                             <label class="text-sm font-medium text-gray-700">Coursework /
                                                 Highlights</label>
                                             <textarea name="edu_description[]" rows="3" placeholder="Mention honors, GPA, etc."
-                                                value="{{ Cache::get('resume_data', 'default')['edu_description'][$key] }}"
-                                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700 mt-2"></textarea>
+                                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700 mt-2">{{ Cache::get('resume_data', 'default')['edu_description'][$key] }}</textarea>
                                         </div>
                                     </div>
                                 @endif
                             @endforeach
                         @endif
-                        <div class="border border-blue-100 rounded-lg p-6 bg-blue-50/10 shadow-sm relative">
+                        <div class="rounded-lg bg-blue-50/10 shadow-sm relative">
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
                                 <div>
                                     <label class="text-sm font-medium text-gray-700">Institute / University</label>
@@ -527,32 +463,32 @@
                         }
 
                         const block = document.createElement('div');
-                        block.className = 'border border-blue-100 rounded-lg p-6 bg-blue-50/10 shadow-sm relative';
+                        block.className = 'rounded-lg bg-blue-50/10 shadow-sm relative';
 
                         block.innerHTML = `
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
-                                <div>
-                                    <label class="text-sm font-medium text-gray-700">Institute / University</label>
-                                    <input type="text" name="institute[]" placeholder="e.g. ABC University" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700" />
-                                </div>
-                                <div>
-                                    <label class="text-sm font-medium text-gray-700">Degree / Program</label>
-                                    <input type="text" name="degree[]" placeholder="e.g. B.Sc. Computer Science" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700" />
-                                </div>
-                                <div>
-                                    <label class="text-sm font-medium text-gray-700">Start Year</label>
-                                    <input type="number" name="start_year[]" placeholder="e.g. 2018" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700" />
-                                </div>
-                                <div>
-                                    <label class="text-sm font-medium text-gray-700">End Year</label>
-                                    <input type="number" name="end_year[]" placeholder="e.g. 2022" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700" />
-                                </div>
-                            </div>
-                            <div>
-                                <label class="text-sm font-medium text-gray-700">Coursework / Highlights</label>
-                                <textarea name="edu_description[]" rows="3" placeholder="Mention honors, GPA, etc." class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700 mt-2"></textarea>
-                            </div>
-                        `;
+                                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
+                                                    <div>
+                                                        <label class="text-sm font-medium text-gray-700">Institute / University</label>
+                                                        <input type="text" name="institute[]" placeholder="e.g. ABC University" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700" />
+                                                    </div>
+                                                    <div>
+                                                        <label class="text-sm font-medium text-gray-700">Degree / Program</label>
+                                                        <input type="text" name="degree[]" placeholder="e.g. B.Sc. Computer Science" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700" />
+                                                    </div>
+                                                    <div>
+                                                        <label class="text-sm font-medium text-gray-700">Start Year</label>
+                                                        <input type="number" name="start_year[]" placeholder="e.g. 2018" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700" />
+                                                    </div>
+                                                    <div>
+                                                        <label class="text-sm font-medium text-gray-700">End Year</label>
+                                                        <input type="number" name="end_year[]" placeholder="e.g. 2022" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700" />
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <label class="text-sm font-medium text-gray-700">Coursework / Highlights</label>
+                                                    <textarea name="edu_description[]" rows="3" placeholder="Mention honors, GPA, etc." class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700 mt-2"></textarea>
+                                                </div>
+                                            `;
 
                         container.appendChild(block);
                     }
@@ -608,10 +544,10 @@
                         span.className =
                             'bg-blue-50 text-sm px-4 py-1.5 rounded-full text-blue-800 border border-blue-200 flex items-center gap-2 shadow-sm hover transition';
                         span.innerHTML = `<i class="fas fa-check-circle text-blue-400 text-xs"></i> ${value}
-                            <button type="button" onclick="this.parentElement.remove()" class="text-blue-400 hover:text-red-500 focus:outline-none">
-                                <i class="fas fa-times-circle"></i>
-                            </button>
-                            <input type="text" name="skills[]" value="${value}" hidden>`;
+                                                <button type="button" onclick="this.parentElement.remove()" class="text-blue-400 hover:text-red-500 focus:outline-none">
+                                                    <i class="fas fa-times-circle"></i>
+                                                </button>
+                                                <input type="text" name="skills[]" value="${value}" hidden>`;
 
                         container.appendChild(span);
                         input.value = '';
@@ -626,13 +562,34 @@
 
                     <div id="coursesContainer" class="space-y-4 mt-2">
                         <!-- Course entries will be appended here -->
+
+                        @if (!blank(Cache::get('resume_data', [])))
+                            @foreach (Cache::get('resume_data', 'default')['courseTitle'] as $key => $item)
+                                @if ($item)
+                                    <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-4 shadow-sm transition space-y-1">
+                                        <div class="flex justify-between items-center">
+                                            <span class="text-sm font-semibold text-indigo-800">{{ Cache::get('resume_data', 'default')['courseTitle'][$key] }}</span>
+                                            <input type="text" id="" name="courseTitle[]" value="{{ Cache::get('resume_data', 'default')['courseTitle'][$key] }}" hidden>
+                                            <button type="button" onclick="this.closest('div').remove()"
+                                                class="text-indigo-400 hover:text-red-500 transition text-sm focus:outline-none">
+                                                <i class="fas fa-times-circle"></i>
+                                            </button>
+                                        </div>
+                                        <div class="text-xs text-gray-600"><input type="text" id="" name="coursePlatform[]" value="{{ Cache::get('resume_data', 'default')['coursePlatform'][$key] }}" hidden><strong>Platform:</strong>{{ Cache::get('resume_data', 'default')['coursePlatform'][$key] }}</div>
+                                        <div class="text-xs text-gray-600"><input type="text" id="" name="courseDuration[]" value="{{ Cache::get('resume_data', 'default')['courseDuration'][$key] }}" hidden><strong>Duration:</strong>{{ Cache::get('resume_data', 'default')['courseDuration'][$key] }}</div>
+                                        <div class="text-xs text-gray-600"><input type="text" id="" name="courseDescription[]" value="{{ Cache::get('resume_data', 'default')['courseDescription'][$key] }}" hidden><strong>Description:</strong>{{ Cache::get('resume_data', 'default')['courseDescription'][$key] }}</div>
+                                    </div>
+                                @endif
+                            @endforeach
+                        @endif
                     </div>
 
                     <!-- Input Fields -->
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
                         <input type="text" id="courseTitle" placeholder="Course Title"
                             class="form-input text-sm px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700" />
-                        <input type="text" id="coursePlatform" placeholder="Platform (e.g., Coursera, Udemy)"
+                        <input type="text" id="coursePlatform"
+                            placeholder="Platform (e.g., Coursera, Udemy)"
                             class="form-input text-sm px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700" />
                         <input type="text" id="courseDuration" placeholder="Duration (e.g., 6 weeks)"
                             class="form-input text-sm px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700" />
@@ -671,16 +628,17 @@
                         div.className = 'bg-indigo-50 border border-indigo-200 rounded-lg p-4 shadow-sm transition space-y-1';
 
                         div.innerHTML = `
-            <div class="flex justify-between items-center">
-                <span class="text-sm font-semibold text-indigo-800">${title}</span>
-                <button type="button" onclick="this.closest('div').remove()" class="text-indigo-400 hover:text-red-500 transition text-sm focus:outline-none">
-                    <i class="fas fa-times-circle"></i>
-                </button>
-            </div>
-            ${platform ? `<div class="text-xs text-gray-600"><strong>Platform:</strong> ${platform}</div>` : ''}
-            ${duration ? `<div class="text-xs text-gray-600"><strong>Duration:</strong> ${duration}</div>` : ''}
-            ${description ? `<div class="text-xs text-gray-600"><strong>Description:</strong> ${description}</div>` : ''}
-        `;
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm font-semibold text-indigo-800">${title}</span>
+                                    <input type="text" id="" name="courseTitle[]" value="${title}" hidden>
+                                    <button type="button" onclick="this.closest('div').remove()" class="text-indigo-400 hover:text-red-500 transition text-sm focus:outline-none">
+                                        <i class="fas fa-times-circle"></i>
+                                    </button>
+                                </div>
+                                ${platform ? `<div class="text-xs text-gray-600"><input type="text" id="" name="coursePlatform[]" value="${platform}" hidden><strong>Platform:</strong> ${platform}</div>` : ''}
+                                ${duration ? `<div class="text-xs text-gray-600"><input type="text" id="" name="courseDuration[]" value="${duration}" hidden><strong>Duration:</strong> ${duration}</div>` : ''}
+                                ${description ? `<div class="text-xs text-gray-600"><input type="text" id="" name="courseDescription[]" value="${description}" hidden><strong>Description:</strong> ${description}</div>` : ''}
+                            `;
 
                         container.appendChild(div);
 
@@ -772,7 +730,7 @@
 
     <script>
         document.querySelectorAll('a[href^="#"]').forEach(link => {
-            link.addEventListener('click', function(e) {
+            link.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
