@@ -10,8 +10,6 @@
 @section('content')
     <div class="flex">
 
-
-
         <!-- Main Content -->
         <div class="w-full md:w-4/5 mx-auto p-2 md:p-10 bg-white">
             <form method="POST" action="{{ route('resume.collectAllData') }}" enctype="multipart/form-data">
@@ -43,62 +41,77 @@
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <!-- First Name -->
-                        <div class="relative">
-                            <i class="fa fa-user absolute left-3 top-3.5 text-gray-500"></i>
-                            <input type="text" name="first_name" placeholder="First Name"
-                                value="{{ Cache::get('resume_data', 'default')['first_name'] ?? '' }}"
-                                class="w-full pl-10 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800" />
-                        </div>
+    <!-- First Name -->
+    <div>
+        <label for="first_name" class="text-sm font-medium text-gray-600 flex items-center gap-2">
+            <i class="fas fa-user text-gray-500"></i> First Name
+        </label>
+        <input type="text" name="first_name" id="first_name" placeholder="First Name"
+            value="{{ Cache::get('resume_data', 'default')['first_name'] ?? '' }}"
+            class="w-full mt-2 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800" />
+    </div>
 
-                        <!-- Last Name -->
-                        <div class="relative">
-                            <i class="fa fa-user absolute left-3 top-3.5 text-gray-500"></i>
-                            <input type="text" name="last_name" placeholder="Last Name"
-                                value="{{ Cache::get('resume_data', 'default')['last_name'] ?? '' }}"
-                                class="w-full pl-10 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800" />
-                        </div>
+    <!-- Last Name -->
+    <div>
+        <label for="last_name" class="text-sm font-medium text-gray-600 flex items-center gap-2">
+            <i class="fas fa-user text-gray-500"></i> Last Name
+        </label>
+        <input type="text" name="last_name" id="last_name" placeholder="Last Name"
+            value="{{ Cache::get('resume_data', 'default')['last_name'] ?? '' }}"
+            class="w-full mt-2 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800" />
+    </div>
 
-                        <!-- Designation -->
-                        <div class="relative">
-                            <i class="fa fa-briefcase absolute left-3 top-3.5 text-gray-500"></i>
-                            <input type="text" name="designation" placeholder="Designation"
-                                value="{{ Cache::get('resume_data', 'default')['designation'] ?? '' }}"
-                                class="w-full pl-10 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800" />
-                        </div>
+    <!-- Designation -->
+    <div>
+        <label for="designation" class="text-sm font-medium text-gray-600 flex items-center gap-2">
+            <i class="fas fa-briefcase text-gray-500"></i> Designation
+        </label>
+        <input type="text" name="designation" id="designation" placeholder="Designation"
+            value="{{ Cache::get('resume_data', 'default')['designation'] ?? '' }}"
+            class="w-full mt-2 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800" />
+    </div>
 
-                        <!-- Location -->
-                        <div class="relative">
-                            <i class="fa fa-location-dot absolute left-3 top-3.5 text-gray-500"></i>
-                            <input type="text" name="location" placeholder="e.g. Houston, TX"
-                                value="{{ Cache::get('resume_data', 'default')['location'] ?? '' }}"
-                                class="w-full pl-10 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800" />
-                        </div>
+    <!-- Location -->
+    <div>
+        <label for="location" class="text-sm font-medium text-gray-600 flex items-center gap-2">
+            <i class="fas fa-location-dot text-gray-500"></i> Location
+        </label>
+        <input type="text" name="location" id="location" placeholder="e.g. Houston, TX"
+            value="{{ Cache::get('resume_data', 'default')['location'] ?? '' }}"
+            class="w-full mt-2 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800" />
+    </div>
 
-                        <!-- Email -->
-                        <div class="relative">
-                            <i class="fa fa-envelope absolute left-3 top-3.5 text-gray-500"></i>
-                            <input type="email" name="email" placeholder="you@example.com"
-                                value="{{ Cache::get('resume_data', 'default')['email'] ?? '' }}"
-                                class="w-full pl-10 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800" />
-                        </div>
+    <!-- Email -->
+    <div>
+        <label for="email" class="text-sm font-medium text-gray-600 flex items-center gap-2">
+            <i class="fas fa-envelope text-gray-500"></i> Email
+        </label>
+        <input type="email" name="email" id="email" placeholder="you@example.com"
+            value="{{ Cache::get('resume_data', 'default')['email'] ?? '' }}"
+            class="w-full mt-2 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800" />
+    </div>
 
-                        <!-- Phone -->
-                        <div class="relative">
-                            <i class="fa fa-phone absolute left-3 top-3.5 text-gray-500"></i>
-                            <input type="text" name="phone" placeholder="+91-123456789"
-                                value="{{ Cache::get('resume_data', 'default')['phone'] ?? '' }}"
-                                class="w-full pl-10 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800" />
-                        </div>
+    <!-- Phone -->
+    <div>
+        <label for="phone" class="text-sm font-medium text-gray-600 flex items-center gap-2">
+            <i class="fas fa-phone text-gray-500"></i> Phone
+        </label>
+        <input type="text" name="phone" id="phone" placeholder="+91-123456789"
+            value="{{ Cache::get('resume_data', 'default')['phone'] ?? '' }}"
+            class="w-full mt-2 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800" />
+    </div>
 
-                        <!-- Website -->
-                        <div class="relative">
-                            <i class="fa fa-globe absolute left-3 top-3.5 text-gray-500"></i>
-                            <input type="text" name="website" placeholder="www.example.com"
-                                value="{{ Cache::get('resume_data', 'default')['website'] ?? '' }}"
-                                class="w-full pl-10 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800" />
-                        </div>
-                    </div>
+    <!-- Website -->
+    <div>
+        <label for="website" class="text-sm font-medium text-gray-600 flex items-center gap-2">
+            <i class="fas fa-globe text-gray-500"></i> Website
+        </label>
+        <input type="text" name="website" id="website" placeholder="www.example.com"
+            value="{{ Cache::get('resume_data', 'default')['website'] ?? '' }}"
+            class="w-full mt-2 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800" />
+    </div>
+</div>
+
                 </section>
 
                 <script>
@@ -660,39 +673,53 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <!-- LinkedIn URL -->
                         <div>
-                            <label for="linkedin" class="text-sm font-medium text-gray-600">LinkedIn</label>
+                            <label for="linkedin" class="text-sm font-medium text-gray-600 flex items-center gap-2">
+                                <i class="fab fa-linkedin text-blue-700"></i> LinkedIn
+                            </label>
                             <input type="url" name="linkedin" id="linkedin"
                                 value="{{ !blank(Cache::get('resume_data', [])) ? Cache::get('resume_data', 'default')['linkedin'] : '' }}"
                                 placeholder="https://www.linkedin.com/in/yourname"
                                 class="w-full mt-2 px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800 shadow-sm transition-all hover:border-blue-300" />
                         </div>
+
                         <!-- Twitter URL -->
                         <div>
-                            <label for="twitter" class="text-sm font-medium text-gray-600">Twitter</label>
+                            <label for="twitter" class="text-sm font-medium text-gray-600 flex items-center gap-2">
+                                <i class="fab fa-twitter text-sky-500"></i> Twitter
+                            </label>
                             <input type="url" name="twitter" id="twitter"
                                 value="{{ Cache::get('resume_data', []) ? Cache::get('resume_data', 'default')['twitter'] : '' }}"
                                 placeholder="https://twitter.com/yourhandle"
                                 class="w-full mt-2 px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800 shadow-sm transition-all hover:border-blue-300" />
                         </div>
+
                         <!-- Facebook URL -->
                         <div>
-                            <label for="facebook" class="text-sm font-medium text-gray-600">Facebook</label>
+                            <label for="facebook" class="text-sm font-medium text-gray-600 flex items-center gap-2">
+                                <i class="fab fa-facebook text-blue-600"></i> Facebook
+                            </label>
                             <input type="url" name="facebook" id="facebook"
                                 value="{{ Cache::get('resume_data', []) ? Cache::get('resume_data', 'default')['facebook'] : '' }}"
                                 placeholder="https://facebook.com/yourprofile"
                                 class="w-full mt-2 px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800 shadow-sm transition-all hover:border-blue-300" />
                         </div>
+
                         <!-- Instagram URL -->
                         <div>
-                            <label for="instagram" class="text-sm font-medium text-gray-600">Instagram</label>
+                            <label for="instagram" class="text-sm font-medium text-gray-600 flex items-center gap-2">
+                                <i class="fab fa-instagram text-pink-500"></i> Instagram
+                            </label>
                             <input type="url" name="instagram" id="instagram"
                                 value="{{ Cache::get('resume_data', []) ? Cache::get('resume_data', 'default')['instagram'] : '' }}"
                                 placeholder="https://www.instagram.com/yourhandle"
                                 class="w-full mt-2 px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800 shadow-sm transition-all hover:border-blue-300" />
                         </div>
+
                         <!-- GitHub URL -->
                         <div>
-                            <label for="github" class="text-sm font-medium text-gray-600">GitHub</label>
+                            <label for="github" class="text-sm font-medium text-gray-600 flex items-center gap-2">
+                                <i class="fab fa-github text-gray-800"></i> GitHub
+                            </label>
                             <input type="url" name="github" id="github"
                                 value="{{ Cache::get('resume_data', []) ? Cache::get('resume_data', 'default')['github'] : '' }}"
                                 placeholder="https://github.com/yourusername"
@@ -700,6 +727,7 @@
                         </div>
                     </div>
                 </section>
+
 
 
                 <!-- Buttons -->
