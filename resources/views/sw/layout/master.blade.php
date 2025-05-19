@@ -19,18 +19,18 @@
     <meta property="og:url" content="{{ url()->current() }}">
     <meta property="og:title" content="@yield('og_title', 'CraftMyDoc - Convert, Edit, and Process Documents Easily')">
     <meta property="og:description" content="@yield('og_description', 'CraftMyDoc is your go-to solution for document conversion, editing, image processing, and resume creation. Fast, secure, and easy to use.')">
-    <meta property="og:image" content="@yield('og_image', asset('default-image.jpg'))">
+    <meta property="og:image" content="@yield('og_image', asset('public/default-image.jpg'))">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="{{ url()->current() }}">
     <meta property="twitter:title" content="@yield('twitter_title', 'CraftMyDoc - Convert, Edit & Process Documents')">
     <meta property="twitter:description" content="@yield('twitter_description', 'Easily convert, edit, and process documents with CraftMyDoc. From PDF conversions to resume creation, we make document handling seamless.')">
-    <meta property="twitter:image" content="@yield('twitter_image', asset('default-image.jpg'))">
+    <meta property="twitter:image" content="@yield('twitter_image', asset('public/default-image.jpg'))">
 
 
     <!-- Favicons -->
-    <link rel="icon" type="image/png" href="{{ asset('favicon.ico') }}">
+    <link rel="icon" type="image/png" href="{{ asset('public/favicon.ico') }}">
 
     <!-- Preconnect & Preload (Performance Optimization) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -62,7 +62,7 @@
 
 <body class="bg-gray-50 text-gray-800">
     <script>
-        var localUrl = '{{ asset('') }}';
+        var localUrl = '{{ asset('public/') }}';
         var CSRF = '{{ csrf_token() }}';
         var routeName = '{{ Route::currentRouteName() }}';
         var pagination  = '';
