@@ -1,7 +1,9 @@
 @extends('sw.layout.master')
 
 @section('title', 'Resume Builder Panel | CraftMyDoc')
-@section('meta_description', 'Create your resume interactively with sections, input forms, and live PDF preview using our resume builder.')
+@section('meta_description',
+    'Create your resume interactively with sections, input forms, and live PDF preview using
+    our resume builder.')
 @section('meta_keywords', 'Resume Builder, Online Resume Maker, Interactive Resume Panel, Build Resume, Resume Preview')
 @php
     // dd(Cache::get('resume_data', 'default'));
@@ -41,76 +43,76 @@
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-    <!-- First Name -->
-    <div>
-        <label for="first_name" class="text-sm font-medium text-gray-600 flex items-center gap-2">
-            <i class="fas fa-user text-gray-500"></i> First Name
-        </label>
-        <input type="text" name="first_name" id="first_name" placeholder="First Name"
-            value="{{ Cache::get('resume_data', 'default')['first_name'] ?? '' }}"
-            class="w-full mt-2 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800" />
-    </div>
+                        <!-- First Name -->
+                        <div>
+                            <label for="first_name" class="text-sm font-medium text-gray-600 flex items-center gap-2">
+                                <i class="fas fa-user text-gray-500"></i> First Name
+                            </label>
+                            <input type="text" name="first_name" id="first_name" placeholder="First Name"
+                                value="{{ Cache::get('resume_data', 'default')['first_name'] ?? '' }}"
+                                class="w-full mt-2 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800" />
+                        </div>
 
-    <!-- Last Name -->
-    <div>
-        <label for="last_name" class="text-sm font-medium text-gray-600 flex items-center gap-2">
-            <i class="fas fa-user text-gray-500"></i> Last Name
-        </label>
-        <input type="text" name="last_name" id="last_name" placeholder="Last Name"
-            value="{{ Cache::get('resume_data', 'default')['last_name'] ?? '' }}"
-            class="w-full mt-2 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800" />
-    </div>
+                        <!-- Last Name -->
+                        <div>
+                            <label for="last_name" class="text-sm font-medium text-gray-600 flex items-center gap-2">
+                                <i class="fas fa-user text-gray-500"></i> Last Name
+                            </label>
+                            <input type="text" name="last_name" id="last_name" placeholder="Last Name"
+                                value="{{ Cache::get('resume_data', 'default')['last_name'] ?? '' }}"
+                                class="w-full mt-2 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800" />
+                        </div>
 
-    <!-- Designation -->
-    <div>
-        <label for="designation" class="text-sm font-medium text-gray-600 flex items-center gap-2">
-            <i class="fas fa-briefcase text-gray-500"></i> Designation
-        </label>
-        <input type="text" name="designation" id="designation" placeholder="Designation"
-            value="{{ Cache::get('resume_data', 'default')['designation'] ?? '' }}"
-            class="w-full mt-2 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800" />
-    </div>
+                        <!-- Designation -->
+                        <div>
+                            <label for="designation" class="text-sm font-medium text-gray-600 flex items-center gap-2">
+                                <i class="fas fa-briefcase text-gray-500"></i> Designation
+                            </label>
+                            <input type="text" name="designation" id="designation" placeholder="Designation"
+                                value="{{ Cache::get('resume_data', 'default')['designation'] ?? '' }}"
+                                class="w-full mt-2 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800" />
+                        </div>
 
-    <!-- Location -->
-    <div>
-        <label for="location" class="text-sm font-medium text-gray-600 flex items-center gap-2">
-            <i class="fas fa-location-dot text-gray-500"></i> Location
-        </label>
-        <input type="text" name="location" id="location" placeholder="e.g. Houston, TX"
-            value="{{ Cache::get('resume_data', 'default')['location'] ?? '' }}"
-            class="w-full mt-2 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800" />
-    </div>
+                        <!-- Location -->
+                        <div>
+                            <label for="location" class="text-sm font-medium text-gray-600 flex items-center gap-2">
+                                <i class="fas fa-location-dot text-gray-500"></i> Location
+                            </label>
+                            <input type="text" name="location" id="location" placeholder="e.g. Houston, TX"
+                                value="{{ Cache::get('resume_data', 'default')['location'] ?? '' }}"
+                                class="w-full mt-2 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800" />
+                        </div>
 
-    <!-- Email -->
-    <div>
-        <label for="email" class="text-sm font-medium text-gray-600 flex items-center gap-2">
-            <i class="fas fa-envelope text-gray-500"></i> Email
-        </label>
-        <input type="email" name="email" id="email" placeholder="you@example.com"
-            value="{{ Cache::get('resume_data', 'default')['email'] ?? '' }}"
-            class="w-full mt-2 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800" />
-    </div>
+                        <!-- Email -->
+                        <div>
+                            <label for="email" class="text-sm font-medium text-gray-600 flex items-center gap-2">
+                                <i class="fas fa-envelope text-gray-500"></i> Email
+                            </label>
+                            <input type="email" name="email" id="email" placeholder="you@example.com"
+                                value="{{ Cache::get('resume_data', 'default')['email'] ?? '' }}"
+                                class="w-full mt-2 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800" />
+                        </div>
 
-    <!-- Phone -->
-    <div>
-        <label for="phone" class="text-sm font-medium text-gray-600 flex items-center gap-2">
-            <i class="fas fa-phone text-gray-500"></i> Phone
-        </label>
-        <input type="text" name="phone" id="phone" placeholder="+91-123456789"
-            value="{{ Cache::get('resume_data', 'default')['phone'] ?? '' }}"
-            class="w-full mt-2 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800" />
-    </div>
+                        <!-- Phone -->
+                        <div>
+                            <label for="phone" class="text-sm font-medium text-gray-600 flex items-center gap-2">
+                                <i class="fas fa-phone text-gray-500"></i> Phone
+                            </label>
+                            <input type="text" name="phone" id="phone" placeholder="+91-123456789"
+                                value="{{ Cache::get('resume_data', 'default')['phone'] ?? '' }}"
+                                class="w-full mt-2 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800" />
+                        </div>
 
-    <!-- Website -->
-    <div>
-        <label for="website" class="text-sm font-medium text-gray-600 flex items-center gap-2">
-            <i class="fas fa-globe text-gray-500"></i> Website
-        </label>
-        <input type="text" name="website" id="website" placeholder="www.example.com"
-            value="{{ Cache::get('resume_data', 'default')['website'] ?? '' }}"
-            class="w-full mt-2 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800" />
-    </div>
-</div>
+                        <!-- Website -->
+                        <div>
+                            <label for="website" class="text-sm font-medium text-gray-600 flex items-center gap-2">
+                                <i class="fas fa-globe text-gray-500"></i> Website
+                            </label>
+                            <input type="text" name="website" id="website" placeholder="www.example.com"
+                                value="{{ Cache::get('resume_data', 'default')['website'] ?? '' }}"
+                                class="w-full mt-2 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800" />
+                        </div>
+                    </div>
 
                 </section>
 
@@ -122,7 +124,7 @@
                         const icon = document.getElementById('defaultIcon');
 
                         if (file) {
-                            reader.onload = function (e) {
+                            reader.onload = function(e) {
                                 preview.src = e.target.result;
                                 preview.classList.remove('hidden');
                                 icon.classList.add('hidden');
@@ -148,7 +150,7 @@
                             const preview = document.getElementById('photoPreview');
                             const icon = document.getElementById('defaultIcon');
 
-                            reader.onload = function (e) {
+                            reader.onload = function(e) {
                                 preview.src = e.target.result;
                                 preview.classList.remove('hidden');
                                 icon.classList.add('hidden');
@@ -184,13 +186,15 @@
                             @foreach (Cache::get('resume_data', 'default')['target_role'] as $role)
                                 @if ($role)
                                     <div id="targetRolesContainer" class="space-y-4 mt-2">
-                                        <input type="text" name="target_role[]" placeholder="Job Title" value="{{ $role }}"
+                                        <input type="text" name="target_role[]" placeholder="Job Title"
+                                            value="{{ $role }}"
                                             class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700" />
                                     </div>
                                 @endif
                             @endforeach
                         @endif
-                        <div id="targetRolesContainer" class="space-y-4 w-full py-2
+                        <div id="targetRolesContainer"
+                            class="space-y-4 w-full py-2
                                                 focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700 mt-2">
                             <input type="text" name="target_role[]" placeholder="Job Title"
                                 class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700" />
@@ -211,13 +215,15 @@
                             @foreach (Cache::get('resume_data', 'default')['preferred_location'] as $location)
                                 @if ($location)
                                     <div id="preferredLocationsContainer" class="space-y-4 mt-2">
-                                        <input type="text" name="preferred_location[]" placeholder="e.g. London" value="{{ $location }}"
+                                        <input type="text" name="preferred_location[]" placeholder="e.g. London"
+                                            value="{{ $location }}"
                                             class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700" />
                                     </div>
                                 @endif
                             @endforeach
                         @endif
-                        <div id="preferredLocationsContainer" class="space-y-4 w-full py-2
+                        <div id="preferredLocationsContainer"
+                            class="space-y-4 w-full py-2
                                                 focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700 mt-2">
                             <input type="text" name="preferred_location[]" placeholder="e.g. London"
                                 class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700" />
@@ -397,13 +403,15 @@
                                             <div>
                                                 <label class="text-sm font-medium text-gray-700">Institute /
                                                     University</label>
-                                                <input type="text" name="institute[]" placeholder="e.g. ABC University"
+                                                <input type="text" name="institute[]"
+                                                    placeholder="e.g. ABC University"
                                                     value="{{ Cache::get('resume_data', 'default')['institute'][$key] }}"
                                                     class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700" />
                                             </div>
                                             <div>
                                                 <label class="text-sm font-medium text-gray-700">Degree / Program</label>
-                                                <input type="text" name="degree[]" placeholder="e.g. B.Sc. Computer Science"
+                                                <input type="text" name="degree[]"
+                                                    placeholder="e.g. B.Sc. Computer Science"
                                                     value="{{ Cache::get('resume_data', 'default')['degree'][$key] }}"
                                                     class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700" />
                                             </div>
@@ -567,6 +575,109 @@
                     }
                 </script>
 
+
+                <!-- Projects -->
+                <section id="projects" class="mb-12 bg-white p-8 rounded-xl border border-gray-200">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-2">
+                        <i class="fas fa-project-diagram text-blue-600"></i> Projects
+                    </h3>
+                    <p class="text-sm text-gray-600 mb-6">
+                        Share key projects you’ve worked on. Focus on objectives, technologies, and impact.
+                    </p>
+
+                    <div id="projectsContainer" class="space-y-6">
+                        @if (!blank(Cache::get('resume_data', [])))
+                            @foreach (Cache::get('resume_data', 'default')['project_title'] as $key => $item)
+                                @if ($item)
+                                    <div class="rounded-lg bg-blue-50/10 shadow-sm relative">
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
+                                            <div>
+                                                <label class="text-sm font-medium text-gray-700">Project Title</label>
+                                                <input type="text" name="project_title[]" placeholder="Project Title"
+                                                    value="{{ Cache::get('resume_data', 'default')['project_title'][$key] }}"
+                                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700" />
+                                            </div>
+                                            <div>
+                                                <label class="text-sm font-medium text-gray-700">Tech Stack</label>
+                                                <input type="text" name="tech_stack[]"
+                                                    placeholder="e.g. Laravel, React, MySQL"
+                                                    value="{{ Cache::get('resume_data', 'default')['tech_stack'][$key] }}"
+                                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700" />
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <label class="text-sm font-medium text-gray-700">Project Description</label>
+                                            <textarea name="project_description[]" rows="3" placeholder="Briefly describe the project..."
+                                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700 mt-2">{{ Cache::get('resume_data', 'default')['project_description'][$key] }}</textarea>
+                                        </div>
+                                    </div>
+                                @endif
+                            @endforeach
+                        @endif
+
+                        <div class="rounded-lg bg-blue-50/10 shadow-sm relative">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
+                                <div>
+                                    <label class="text-sm font-medium text-gray-700">Project Title</label>
+                                    <input type="text" name="project_title[]" placeholder="Project Title"
+                                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700" />
+                                </div>
+                                <div>
+                                    <label class="text-sm font-medium text-gray-700">Tech Stack</label>
+                                    <input type="text" name="tech_stack[]" placeholder="e.g. Laravel, React, MySQL"
+                                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700" />
+                                </div>
+                            </div>
+                            <div>
+                                <label class="text-sm font-medium text-gray-700">Project Description</label>
+                                <textarea name="project_description[]" rows="3" placeholder="Briefly describe the project..."
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700 mt-2"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="button" onclick="addProject()"
+                        class="mt-4 inline-block text-sm text-blue-600 hover:underline focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        + Add another project
+                    </button>
+                </section>
+
+                <script>
+                    function addProject() {
+                        const container = document.getElementById('projectsContainer');
+                        if (container.children.length >= 5) {
+                            alert('You can only add up to 5 projects.');
+                            return;
+                        }
+
+                        const block = document.createElement('div');
+                        block.className = 'rounded-lg bg-blue-50/10 shadow-sm relative';
+
+                        block.innerHTML = `
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
+                <div>
+                    <label class="text-sm font-medium text-gray-700">Project Title</label>
+                    <input type="text" name="project_title[]" placeholder="Project Title"
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700" />
+                </div>
+                <div>
+                    <label class="text-sm font-medium text-gray-700">Tech Stack</label>
+                    <input type="text" name="tech_stack[]" placeholder="e.g. Laravel, React, MySQL"
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700" />
+                </div>
+            </div>
+            <div>
+                <label class="text-sm font-medium text-gray-700">Project Description</label>
+                <textarea name="project_description[]" rows="3" placeholder="Briefly describe the project..."
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700 mt-2"></textarea>
+            </div>
+        `;
+
+                        container.appendChild(block);
+                    }
+                </script>
+
+
                 <!-- Courses -->
                 <section id="courses" class="mb-12 bg-white p-6 rounded-2xl border border-gray-200">
                     <h3 class="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
@@ -579,18 +690,34 @@
                         @if (!blank(Cache::get('resume_data', [])))
                             @foreach (Cache::get('resume_data', 'default')['courseTitle'] as $key => $item)
                                 @if ($item)
-                                    <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-4 shadow-sm transition space-y-1">
+                                    <div
+                                        class="bg-indigo-50 border border-indigo-200 rounded-lg p-4 shadow-sm transition space-y-1">
                                         <div class="flex justify-between items-center">
-                                            <span class="text-sm font-semibold text-indigo-800">{{ Cache::get('resume_data', 'default')['courseTitle'][$key] }}</span>
-                                            <input type="text" id="" name="courseTitle[]" value="{{ Cache::get('resume_data', 'default')['courseTitle'][$key] }}" hidden>
+                                            <span
+                                                class="text-sm font-semibold text-indigo-800">{{ Cache::get('resume_data', 'default')['courseTitle'][$key] }}</span>
+                                            <input type="text" id="" name="courseTitle[]"
+                                                value="{{ Cache::get('resume_data', 'default')['courseTitle'][$key] }}"
+                                                hidden>
                                             <button type="button" onclick="this.closest('div').remove()"
                                                 class="text-indigo-400 hover:text-red-500 transition text-sm focus:outline-none">
                                                 <i class="fas fa-times-circle"></i>
                                             </button>
                                         </div>
-                                        <div class="text-xs text-gray-600"><input type="text" id="" name="coursePlatform[]" value="{{ Cache::get('resume_data', 'default')['coursePlatform'][$key] }}" hidden><strong>Platform:</strong>{{ Cache::get('resume_data', 'default')['coursePlatform'][$key] }}</div>
-                                        <div class="text-xs text-gray-600"><input type="text" id="" name="courseDuration[]" value="{{ Cache::get('resume_data', 'default')['courseDuration'][$key] }}" hidden><strong>Duration:</strong>{{ Cache::get('resume_data', 'default')['courseDuration'][$key] }}</div>
-                                        <div class="text-xs text-gray-600"><input type="text" id="" name="courseDescription[]" value="{{ Cache::get('resume_data', 'default')['courseDescription'][$key] }}" hidden><strong>Description:</strong>{{ Cache::get('resume_data', 'default')['courseDescription'][$key] }}</div>
+                                        <div class="text-xs text-gray-600"><input type="text" id=""
+                                                name="coursePlatform[]"
+                                                value="{{ Cache::get('resume_data', 'default')['coursePlatform'][$key] }}"
+                                                hidden><strong>Platform:</strong>{{ Cache::get('resume_data', 'default')['coursePlatform'][$key] }}
+                                        </div>
+                                        <div class="text-xs text-gray-600"><input type="text" id=""
+                                                name="courseDuration[]"
+                                                value="{{ Cache::get('resume_data', 'default')['courseDuration'][$key] }}"
+                                                hidden><strong>Duration:</strong>{{ Cache::get('resume_data', 'default')['courseDuration'][$key] }}
+                                        </div>
+                                        <div class="text-xs text-gray-600"><input type="text" id=""
+                                                name="courseDescription[]"
+                                                value="{{ Cache::get('resume_data', 'default')['courseDescription'][$key] }}"
+                                                hidden><strong>Description:</strong>{{ Cache::get('resume_data', 'default')['courseDescription'][$key] }}
+                                        </div>
                                     </div>
                                 @endif
                             @endforeach
@@ -601,8 +728,7 @@
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
                         <input type="text" id="courseTitle" placeholder="Course Title"
                             class="form-input text-sm px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700" />
-                        <input type="text" id="coursePlatform"
-                            placeholder="Platform (e.g., Coursera, Udemy)"
+                        <input type="text" id="coursePlatform" placeholder="Platform (e.g., Coursera, Udemy)"
                             class="form-input text-sm px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700" />
                         <input type="text" id="courseDuration" placeholder="Duration (e.g., 6 weeks)"
                             class="form-input text-sm px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700" />
@@ -660,6 +786,107 @@
                         document.getElementById('coursePlatform').value = '';
                         document.getElementById('courseDuration').value = '';
                         document.getElementById('courseDescription').value = '';
+                    }
+                </script>
+
+                <!-- Awards -->
+                <section id="awards" class="mb-12 bg-white p-6 rounded-2xl border border-gray-200">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                        <i class="fas fa-trophy text-yellow-500"></i> Awards
+                    </h3>
+
+                    <div id="awardsContainer" class="space-y-4 mt-2">
+                        @if (!blank(Cache::get('resume_data', [])))
+                            @foreach (Cache::get('resume_data', 'default')['awardTitle'] ?? [] as $key => $item)
+                                @if ($item)
+                                    <div
+                                        class="bg-yellow-50 border border-yellow-200 rounded-lg p-4 shadow-sm transition space-y-1">
+                                        <div class="flex justify-between items-center">
+                                            <span class="text-sm font-semibold text-yellow-800">
+                                                {{ $item }}
+                                            </span>
+                                            <input type="text" name="awardTitle[]" value="{{ $item }}"
+                                                hidden>
+                                            <button type="button" onclick="this.closest('div').remove()"
+                                                class="text-yellow-400 hover:text-red-500 transition text-sm focus:outline-none">
+                                                <i class="fas fa-times-circle"></i>
+                                            </button>
+                                        </div>
+                                        <div class="text-xs text-gray-600">
+                                            <input type="text" name="awardInstitute[]"
+                                                value="{{ Cache::get('resume_data')['awardInstitute'][$key] ?? '' }}"
+                                                hidden>
+                                            <strong>Institute:</strong>
+                                            {{ Cache::get('resume_data')['awardInstitute'][$key] ?? '' }}
+                                        </div>
+                                        <div class="text-xs text-gray-600">
+                                            <input type="text" name="awardDate[]"
+                                                value="{{ Cache::get('resume_data')['awardDate'][$key] ?? '' }}" hidden>
+                                            <strong>Date:</strong> {{ Cache::get('resume_data')['awardDate'][$key] ?? '' }}
+                                        </div>
+                                    </div>
+                                @endif
+                            @endforeach
+                        @endif
+                    </div>
+
+                    <!-- Input Fields -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6">
+                        <input type="text" id="awardTitle" placeholder="Award Title"
+                            class="form-input text-sm px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 text-gray-700" />
+                        <input type="text" id="awardInstitute" placeholder="Institute"
+                            class="form-input text-sm px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 text-gray-700" />
+                        <input type="text" id="awardDate" placeholder="Date (e.g., June 2023)"
+                            class="form-input text-sm px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 text-gray-700" />
+                    </div>
+
+                    <!-- Add Button -->
+                    <div class="mt-4">
+                        <button type="button" onclick="addAward()"
+                            class="bg-yellow-500 hover:bg-yellow-600 text-white text-sm px-5 py-2 rounded-lg transition shadow-sm">
+                            <i class="fas fa-plus mr-1"></i> Add Award
+                        </button>
+                    </div>
+                </section>
+
+                <script>
+                    function addAward() {
+                        const title = document.getElementById('awardTitle').value.trim();
+                        const institute = document.getElementById('awardInstitute').value.trim();
+                        const date = document.getElementById('awardDate').value.trim();
+
+                        if (!title) {
+                            alert("Award title is required.");
+                            return;
+                        }
+
+                        const container = document.getElementById('awardsContainer');
+                        if (container.children.length >= 5) {
+                            alert('You can only add up to 5 awards.');
+                            return;
+                        }
+
+                        const div = document.createElement('div');
+                        div.className = 'bg-yellow-50 border border-yellow-200 rounded-lg p-4 shadow-sm transition space-y-1';
+
+                        div.innerHTML = `
+            <div class="flex justify-between items-center">
+                <span class="text-sm font-semibold text-yellow-800">${title}</span>
+                <input type="text" name="awardTitle[]" value="${title}" hidden>
+                <button type="button" onclick="this.closest('div').remove()" class="text-yellow-400 hover:text-red-500 transition text-sm focus:outline-none">
+                    <i class="fas fa-times-circle"></i>
+                </button>
+            </div>
+            ${institute ? `<div class="text-xs text-gray-600"><input type="text" name="awardInstitute[]" value="${institute}" hidden><strong>Institute:</strong> ${institute}</div>` : ''}
+            ${date ? `<div class="text-xs text-gray-600"><input type="text" name="awardDate[]" value="${date}" hidden><strong>Date:</strong> ${date}</div>` : ''}
+        `;
+
+                        container.appendChild(div);
+
+                        // Clear inputs
+                        document.getElementById('awardTitle').value = '';
+                        document.getElementById('awardInstitute').value = '';
+                        document.getElementById('awardDate').value = '';
                     }
                 </script>
 
@@ -758,7 +985,7 @@
 
     <script>
         document.querySelectorAll('a[href^="#"]').forEach(link => {
-            link.addEventListener('click', function (e) {
+            link.addEventListener('click', function(e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {

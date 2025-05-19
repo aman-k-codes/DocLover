@@ -151,8 +151,11 @@
                         <div class="edu-entry">
                             <table class="summary-table">
                                 <tr>
-                                    <td class="bold">{{ Cache::get('resume_data', 'default')['institute'][$key] }}</td>
-                                    <td class="bold">{{ (Cache::get('resume_data', 'default')['start_year'][$key] ?? '') . '-' . (Cache::get('resume_data', 'default')['end_year'][$key] ?? '') }}</td>
+                                    <td class="bold">{{ Cache::get('resume_data', 'default')['institute'][$key] }}
+                                    </td>
+                                    <td class="bold">
+                                        {{ (Cache::get('resume_data', 'default')['start_year'][$key] ?? '') . '-' . (Cache::get('resume_data', 'default')['end_year'][$key] ?? '') }}
+                                    </td>
                                 </tr>
                             </table>
                             <div class="info">
@@ -185,16 +188,14 @@
     <div class="section">
         <div class="section-title">Skill</div>
         <ul class="skills-inline">
-            <li>Adobe Photoshop</li>
-            <li>Adobe Illustrator</li>
-            <li>UI/UX Design</li>
-            <li>Figma & Sketch</li>
-            <li>Branding & Identity</li>
-            <li>Typography & Layout</li>
-            <li>Typography & Layout</li>
-            <li>Typography & Layout</li>
-            <li>Typography & Layout</li>
-            <li>Typography & Layout</li>
+            {{-- @dd(Cache::get('resume_data', [])); --}}
+            @if (!blank(Cache::get('resume_data', [])))
+                @foreach (Cache::get('resume_data', 'default')['skills'] as $key => $item)
+                    @if ($item)
+                        <li>{{ Cache::get('resume_data', 'default')['skills'][$key] }}</li>
+                    @endif
+                @endforeach
+            @endif
         </ul>
     </div>
 
@@ -204,33 +205,24 @@
     <div class="section">
         <div class="section-title">Training & Certification</div>
         <div class="education">
-            <div class="edu-entry">
-                <table class="summary-table">
-                    <tr>
-                        <td class="bold">Adobe Certified Expert (ACE) – Photoshop</td>
-                        <td class="bold">2022</td>
-                    </tr>
-                </table>
-                <p>Credential earned for advanced proficiency in Adobe Photoshop CC.</p>
-            </div>
-            <div class="edu-entry">
-                <table class="summary-table">
-                    <tr>
-                        <td class="bold">Google UX Design Professional Certificate</td>
-                        <td class="bold">2021</td>
-                    </tr>
-                </table>
-                <p>Completed through Coursera, focusing on UX principles, prototyping, and user research.</p>
-            </div>
-            <div class="edu-entry">
-                <table class="summary-table">
-                    <tr>
-                        <td class="bold">Skillshare – Branding for Designers</td>
-                        <td class="bold">2020</td>
-                    </tr>
-                </table>
-                <p>Trained in crafting compelling brand identities and visual storytelling.</p>
-            </div>
+            @if (!blank(Cache::get('resume_data', [])))
+                @foreach (Cache::get('resume_data', 'default')['courseTitle'] as $key => $item)
+                    @if ($item)
+                        <div class="edu-entry">
+                            <table class="summary-table">
+                                <tr>
+                                    <td class="bold">
+                                        {{ Cache::get('resume_data', 'default')['coursePlatform'][$key] . ' - ' . Cache::get('resume_data', 'default')['coursePlatform'][$key] }}
+                                    </td>
+                                    <td class="bold">
+                                        {{ Cache::get('resume_data', 'default')['courseDuration'][$key] }}</td>
+                                </tr>
+                            </table>
+                            <p>{{ Cache::get('resume_data', 'default')['courseDescription'][$key] }}</p>
+                        </div>
+                    @endif
+                @endforeach
+            @endif
         </div>
     </div>
 
@@ -239,57 +231,25 @@
         <div class="section-title">Work Experience</div>
 
         <div class="work">
-            <div class="work-entry">
-                <table class="summary-table">
-                    <tr>
-                        <td class="bold">Thynk Unlimited – Senior Graphic Designer</td>
-                        <td class="bold">2020–Present</td>
-                    </tr>
-                </table>
-                <div class="info">
-                    <p>Led creative projects for digital campaigns, brand development, and UI design.</p>
-                    <ul class="job-points">
-                        <li>Designed marketing assets for over 25 successful campaigns.</li>
-                        <li>Collaborated with developers and marketers to optimize visuals across platforms.</li>
-                    </ul>
-                </div>
-                {{-- <div class="date">2020–Now</div> --}}
-            </div>
-
-            <div class="work-entry">
-                <table class="summary-table">
-                    <tr>
-                        <td class="bold">Creative Pixels – Graphic Designer</td>
-                        <td class="bold">2018–2020</td>
-                    </tr>
-                </table>
-                <div class="info">
-                    <p>Worked on a variety of design projects ranging from brochures to web mockups.</p>
-                    <ul class="job-points">
-                        <li>Contributed to UI revamp projects for multiple clients.</li>
-                        <li>Produced digital assets for social media and web platforms.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="work-entry">
-                <table class="summary-table">
-                    <tr>
-                        <td class="bold">Wardiere Inc – Junior Graphic Designer</td>
-                        <td class="bold">2017–2018</td>
-                    </tr>
-                </table>
-                <div class="info">
-                    <p>Assisted the design team in producing graphics for print and digital use.</p>
-                    <ul class="job-points">
-                        <li>Created infographics, flyers, and internal newsletters.</li>
-                        <li>Maintained consistency with brand guidelines across all designs.</li>
-                    </ul>
-                </div>
-            </div>
+            @if (!blank(Cache::get('resume_data', [])))
+                @foreach (Cache::get('resume_data', 'default')['company'] as $key => $item)
+                    @if ($item)
+                        <div class="work-entry">
+                            <table class="summary-table">
+                                <tr>
+                                    <td class="bold">{{ Cache::get('resume_data', 'default')['company'][$key] .' - '. Cache::get('resume_data', 'default')['role'][$key]}}</td>
+                                    <td class="bold">{{ Cache::get('resume_data', 'default')['start_date'][$key] .' - '. Cache::get('resume_data', 'default')['end_date'][$key]}}</td>
+                                </tr>
+                            </table>
+                            <div class="info">
+                                <p>{{ Cache::get('resume_data', 'default')['description'][$key]}}</p>
+                            </div>
+                        </div>
+                    @endif
+                @endforeach
+            @endif
         </div>
     </div>
-    {{-- @dd('footer') --}}
 </body>
 
 </html>
