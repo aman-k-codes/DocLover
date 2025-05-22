@@ -168,7 +168,7 @@
                     </div>
                 </div>
 
-
+                @include('ads.ad1')
             </div>
         </div>
     </section>

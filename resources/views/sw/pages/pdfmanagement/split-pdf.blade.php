@@ -125,7 +125,7 @@
         </div>
     </section>
 
-    <!-- FAQs -->
+    <!-- FAQs --> @include('ads.ad1')
     <section class="py-12 bg-gray-100">
         <div class="bg-white p-6 md:p-12">
             <div class="text-center mb-8">

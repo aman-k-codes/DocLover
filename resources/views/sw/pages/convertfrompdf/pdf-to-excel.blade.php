@@ -31,7 +31,7 @@
             </div>
         </div>
 
-        <!-- Upload area -->
+        <!-- Upload Area -->@include('ads.ad1')
         <div class="border-2 border-dashed border-gray-300 rounded-2xl p-10 max-w-3xl mx-auto text-center bg-white shadow-md">
             <p class="text-lg font-medium mb-4">Drop your PDF file here <span class="text-gray-500">or</span></p>
             <label class="inline-flex items-center bg-indigo-700 text-white font-semibold px-6 py-3 rounded-md cursor-pointer hover:bg-indigo-800">
@@ -92,7 +92,7 @@
         </div>
     </section>
 
-    <!-- FAQs -->
+    <!-- FAQs --> @include('ads.ad1')
     <section class="py-12 bg-gray-100">
         <div class="bg-white p-6 md:p-12">
             <div class="text-center mb-8">

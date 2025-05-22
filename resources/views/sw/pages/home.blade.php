@@ -270,4 +270,5 @@
             </div>
         </div>
     </section>
+    @include('ads.ad1')
 @endsection

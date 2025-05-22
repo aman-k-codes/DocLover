@@ -35,8 +35,7 @@
                 <span class="text-gray-800 font-semibold">Download ZIP File</span>
             </div>
         </div>
-
-        <!-- Upload Area -->
+        <!-- Upload Area -->@include('ads.ad1')
         <div id="uploadSection"
             class="border-2 border-dashed border-gray-300 rounded-2xl p-10 max-w-3xl mx-auto text-center bg-white shadow-md">
             <p class="text-lg font-medium mb-4">Drop your PDF file here <span class="text-gray-500">or</span></p>
@@ -145,12 +144,12 @@
             formData.append("pdf", fileInput.files[0]);
 
             fetch("{{ route('convert.PDFtoZIP') }}", {
-                method: "POST",
-                headers: {
-                    "X-CSRF-TOKEN": csrfToken
-                },
-                body: formData
-            })
+                    method: "POST",
+                    headers: {
+                        "X-CSRF-TOKEN": csrfToken
+                    },
+                    body: formData
+                })
                 .then(response => {
                     if (!response.ok) {
                         throw new Error("Conversion failed. Please try again.");
@@ -161,7 +160,9 @@
                     zipBlobUrl = URL.createObjectURL(blob);
                     setTimeout(() => {
                         document.getElementById("loaderSection").classList.add("hidden"); // Hide loader
-                        document.getElementById("downloadSection").scrollIntoView({ behavior: "smooth" });
+                        document.getElementById("downloadSection").scrollIntoView({
+                            behavior: "smooth"
+                        });
                         document.getElementById("downloadSection").classList.remove("hidden"); // Show download
                     }, 2000); // Smooth scroll to download section
                 })
@@ -210,7 +211,6 @@
             const fileInput = document.getElementById("pdfInput");
             fileInput.value = "";
         }
-
     </script>
 
 
@@ -219,7 +219,7 @@
     <section class="py-18 bg-gray-50">
         <div class="max-w-6xl mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
-                @foreach([['🚀', 'Fast & Simple', 'Upload your PDF and get a ZIP file instantly.'], ['🔒', 'Highly Secure', 'Your files are encrypted and never stored.'], ['💻', 'Cross-Device Access', 'Works perfectly on desktop, tablet, and mobile.']] as $feature)
+                @foreach ([['🚀', 'Fast & Simple', 'Upload your PDF and get a ZIP file instantly.'], ['🔒', 'Highly Secure', 'Your files are encrypted and never stored.'], ['💻', 'Cross-Device Access', 'Works perfectly on desktop, tablet, and mobile.']] as $feature)
                     <div class="p-6 rounded-lg">
                         <div class="text-4xl">{{ $feature[0] }}</div>
                         <h3 class="text-xl font-bold text-gray-900 mt-4">{{ $feature[1] }}</h3>
@@ -236,7 +236,7 @@
             <p class="text-lg text-gray-600 mb-8">Follow these easy steps to compress your PDF into a ZIP archive.</p>
             <div class="text-left max-w-2xl mx-auto">
                 <ol class="space-y-6 list-none">
-                    @foreach([['Upload your PDF file', 'Drag & drop or browse your device to upload.'], ['Start conversion', 'Click the convert button to zip your file.'], ['Download the ZIP', 'Get your compressed ZIP file instantly.']] as $index => $step)
+                    @foreach ([['Upload your PDF file', 'Drag & drop or browse your device to upload.'], ['Start conversion', 'Click the convert button to zip your file.'], ['Download the ZIP', 'Get your compressed ZIP file instantly.']] as $index => $step)
                         <li class="flex items-start space-x-4">
                             <div
                                 class="flex-shrink-0 w-10 h-10 flex items-center justify-center bg-indigo-600 text-white font-bold rounded-full">
@@ -252,7 +252,8 @@
             </div>
         </div>
     </section>
-    <!-- FAQs -->
+    <!-- FAQs --> @include('ads.ad1')
+
     <section class="py-12 bg-gray-100">
         <div class="bg-white p-6 md:p-12">
             <div class="text-center mb-8">

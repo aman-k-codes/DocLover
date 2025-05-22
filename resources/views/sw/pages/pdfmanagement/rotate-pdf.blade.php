@@ -32,7 +32,7 @@
         </div>
     </div>
 
-    <!-- Upload Area -->
+    <!-- Upload Area -->@include('ads.ad1')
     <div id="uploadSection"
         class="border-2 border-dashed border-gray-300 rounded-2xl p-10 max-w-3xl mx-auto text-center bg-white shadow-md">
         <p class="text-lg font-medium mb-4">Drop your PDF here <span class="text-gray-500">or</span></p>
