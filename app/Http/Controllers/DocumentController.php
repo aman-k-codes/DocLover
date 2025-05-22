@@ -121,4 +121,8 @@ class DocumentController extends Controller
     {
         return view('sw.pages.pdfmanagement.pdf-form-filler');
     }
+
+    public function pdf_size_compress(){
+        return view('sw.pages.pdfmanagement.pdf-size-compress');
+    }
 }

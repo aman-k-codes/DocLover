@@ -72,7 +72,12 @@
                         href="{{ route('delete-pdf-pages') }}"><span>Delete PDF Pages</span></a></li>
                 <li class="flex items-center space-x-2"><i class="fas fa-file-export text-blue-500"></i><a
                         href="{{ route('extract-pdf-pages') }}"><span>Extract PDF Pages</span></a></li>
-
+                <li class="flex items-center space-x-2">
+                    <i class="fas fa-compress text-blue-500"></i>
+                    <a href="{{ route('pdf-size-compress') }}">
+                        <span>Compress PDF Size</span>
+                    </a>
+                </li>
             </ul>
         </div>
 

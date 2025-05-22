@@ -59,6 +59,7 @@ Route::prefix('/')->group(function () {
         Route::get('/add-watermark', [DocumentController::class, 'add_watermark'])->name('add-watermark');
         Route::get('/pdf-metadata-editor', [DocumentController::class, 'pdf_metadata_editor'])->name('pdf-metadata-editor');
         Route::get('/pdf-form-filler', [DocumentController::class, 'pdf_form_filler'])->name('pdf-form-filler');
+        Route::get('/pdf-size-compress', [DocumentController::class, 'pdf_size_compress'])->name('pdf-size-compress');
     });
     Route::prefix('/convert')->group(function () {
         Route::post('/pdf-to-zip', [DocsController::class, 'PDFtoZIP'])->name('convert.PDFtoZIP');
