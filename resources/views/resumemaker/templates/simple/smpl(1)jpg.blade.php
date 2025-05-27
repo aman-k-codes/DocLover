@@ -66,81 +66,111 @@
 <body>
 
     <div class="header">
-        <h1>Nilesh Navrang</h1>
-        <p>Web Designer</p>
+        <h1>{{ (Cache::get('resume_data', 'default')['first_name'] ?? '') . ' ' . (Cache::get('resume_data', 'default')['last_name'] ?? '') }}</h1>
+        <p>{{ Cache::get('resume_data', 'default')['designation'] ?? '' }}</p>
     </div>
 
     <div class="contact-info">
-        Phone: +123-456-7890 | Email: hello@reallygreatsite.com | Website: www.reallygreatsite.com
+        Phone: +91-{{ Cache::get('resume_data', 'default')['phone'] ?? '' }} | Email: {{ Cache::get('resume_data', 'default')['email'] ?? '' }} | Website: {{ Cache::get('resume_data', 'default')['website'] ?? '' }}
     </div>
 
     <div class="section">
         <h2>ABOUT ME</h2>
-        <p>Creative and detail-oriented web designer with 5+ years of experience in building responsive and user-friendly websites. Adept at using modern web tools and design principles to deliver exceptional user experiences.</p>
+        <p>{{ Cache::get('resume_data', 'default')['summary'] ?? '' }}</p>
     </div>
 
     <div class="section">
-        <h2>EDUCATION</h2>
-        <div class="education-entry">
-            <strong>2020 - 2023</strong><br>
-            Master of IT Management, Wardiere University
-        </div>
-        <div class="education-entry">
-            <strong>2016 - 2020</strong><br>
-            Bachelor of Art and Design, Borcelle University
-        </div>
-        <div class="education-entry">
-            <strong>2012 - 2016</strong><br>
-            High School Diploma, Wardiere High School
-        </div>
-    </div>
+    <h2>EDUCATION</h2>
+    @php
+        $data = Cache::get('resume_data', 'default');
+    @endphp
+
+    @if (!blank($data) && !empty($data['institute']))
+        @foreach ($data['institute'] as $key => $institute)
+            @if (!empty($institute))
+                <div class="education-entry">
+                    <strong>{{ ($data['start_year'][$key] ?? '') }} - {{ ($data['end_year'][$key] ?? '') }}</strong><br>
+                    {{ $data['degree'][$key] ?? '' }} - {{ $institute }}
+                    {{-- @if (!empty($data['edu_description'][$key]))
+                        <div>{{ $data['edu_description'][$key] }}</div>
+                    @endif --}}
+                </div>
+            @endif
+        @endforeach
+    @endif
+</div>
+
 
     <div class="section">
-        <h2>EXPERIENCE</h2>
-        <div class="experience-entry">
-            <strong>2020 - 2023</strong><br>
-            Web Designer, Wardiere Company<br>
-            Designed and maintained over 30 websites using HTML, CSS, and JavaScript. Collaborated with UX teams to improve usability by 25%.
-        </div>
-        <div class="experience-entry">
-            <strong>2016 - 2020</strong><br>
-            Web Designer, Borcelle Studio<br>
-            Developed responsive layouts and improved web accessibility standards, contributing to a 40% increase in client satisfaction.
-        </div>
-    </div>
+    <h2>EXPERIENCE</h2>
+    @php
+        $resumeData = Cache::get('resume_data', 'default');
+    @endphp
+
+    @if (!blank($resumeData['company']))
+        @foreach ($resumeData['company'] as $key => $company)
+            @if (!empty($company))
+                <div class="experience-entry">
+                    <strong>{{ $resumeData['start_date'][$key] ?? '' }} – {{ $resumeData['end_date'][$key] ?? '' }}</strong><br>
+                    {{ $resumeData['role'][$key] ?? '' }}, {{ $company }}<br>
+                    @if (!empty($resumeData['description'][$key]))
+                        @foreach (explode("\n", $resumeData['description'][$key]) as $point)
+                            @if (!empty(trim($point)))
+                                • {{ trim($point) }}<br>
+                            @endif
+                        @endforeach
+                    @endif
+                </div>
+            @endif
+        @endforeach
+    @endif
+</div>
+
 
     <div class="section skills">
-        <h2>SKILLS</h2>
-        <ul style="list-style: none; padding: 0; margin: 0;">
-            <li style="display: inline-block; padding: 6px 12px; margin: 5px; background-color: #5f9ea0; color: white; border-radius: 20px;">HTML5 / CSS3</li>
-            <li style="display: inline-block; padding: 6px 12px; margin: 5px; background-color: #5f9ea0; color: white; border-radius: 20px;">JavaScript / jQuery</li>
-            <li style="display: inline-block; padding: 6px 12px; margin: 5px; background-color: #5f9ea0; color: white; border-radius: 20px;">UI/UX Design</li>
-            <li style="display: inline-block; padding: 6px 12px; margin: 5px; background-color: #5f9ea0; color: white; border-radius: 20px;">Responsive Web Design</li>
-            <li style="display: inline-block; padding: 6px 12px; margin: 5px; background-color: #5f9ea0; color: white; border-radius: 20px;">SEO Fundamentals</li>
-            <li style="display: inline-block; padding: 6px 12px; margin: 5px; background-color: #5f9ea0; color: white; border-radius: 20px;">Figma / Adobe XD</li>
-            <li style="display: inline-block; padding: 6px 12px; margin: 5px; background-color: #5f9ea0; color: white; border-radius: 20px;">Version Control (Git)</li>
-            <li style="display: inline-block; padding: 6px 12px; margin: 5px; background-color: #5f9ea0; color: white; border-radius: 20px;">Accessibility Standards</li>
-        </ul>
-    </div>
+    <h2>SKILLS</h2>
+    <ul style="list-style: none; padding: 0; margin: 0;">
+        @php
+            $skills = Cache::get('resume_data', 'default')['skills'] ?? [];
+        @endphp
+
+        @foreach ($skills as $skill)
+            @if (!empty($skill))
+                <li style="display: inline-block; padding: 6px 12px; margin: 5px; background-color: #5f9ea0; color: white; border-radius: 20px;">
+                    {{ $skill }}
+                </li>
+            @endif
+        @endforeach
+    </ul>
+</div>
+
 
     <div class="section">
-        <h2>PROJECTS</h2>
-        <div class="project-entry">
-            <strong>2023</strong><br>
-            Portfolio Website<br>
-            Created a fully responsive personal portfolio website using HTML5, CSS3, and JavaScript. Integrated smooth animations and SEO best practices to boost visibility.
-        </div>
-        <div class="project-entry">
-            <strong>2022</strong><br>
-            E-commerce Platform<br>
-            Developed an e-commerce website with dynamic product listings, user authentication, and a custom shopping cart using JavaScript and Firebase.
-        </div>
-        <div class="project-entry">
-            <strong>2021</strong><br>
-            Blog CMS<br>
-            Built a lightweight content management system (CMS) for blogging with custom admin panel, markdown support, and RESTful APIs.
-        </div>
-    </div>
+    <h2>PROJECTS</h2>
+
+    @php
+        $projects = Cache::get('resume_data', 'default');
+    @endphp
+
+    @if (!empty($projects['project_title']))
+        @foreach ($projects['project_title'] as $key => $title)
+            @if (!empty($title))
+                <div class="project-entry">
+                    <strong>{{ $projects['tech_stack'][$key] ?? '' }}</strong><br>
+                    {{ $title }}<br>
+                    @if (!empty($projects['project_description'][$key]))
+                        @foreach (explode("\n", $projects['project_description'][$key]) as $point)
+                            @if (!empty(trim($point)))
+                                • {{ trim($point) }}<br>
+                            @endif
+                        @endforeach
+                    @endif
+                </div>
+            @endif
+        @endforeach
+    @endif
+</div>
+
 
 
     <div class="section">

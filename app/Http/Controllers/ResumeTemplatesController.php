@@ -64,7 +64,10 @@ class ResumeTemplatesController extends Controller
 
     public function getResumeTemplate()
     {
-        return view('resumemaker.templates.' . Cache::get('folder') . '.' . Cache::get('template'));
+        // dd(Cache::get('resume_data'));
+        $pdf = Pdf::loadView('resumemaker.templates.' . Cache::get('folder') . '.' . Cache::get('template')); // you can pass data as second param
+        return $pdf->stream('doc_lover_resume.pdf');
+        // return view('resumemaker.templates.' . Cache::get('folder') . '.' . Cache::get('template'));
     }
 
     public function downloadPDF()
