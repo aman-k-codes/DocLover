@@ -143,30 +143,32 @@
     </div>
 
     <div class="section">
-        <div class="section-title">Education</div>
-        <div class="education">
-            @if (!blank(Cache::get('resume_data', [])))
-                @foreach (Cache::get('resume_data', 'default')['institute'] as $key => $item)
-                    @if ($item)
-                        <div class="edu-entry">
-                            <table class="summary-table">
-                                <tr>
-                                    <td class="bold">{{ Cache::get('resume_data', 'default')['institute'][$key] }}
-                                    </td>
-                                    <td class="bold">
-                                        {{ (Cache::get('resume_data', 'default')['start_year'][$key] ?? '') . '-' . (Cache::get('resume_data', 'default')['end_year'][$key] ?? '') }}
-                                    </td>
-                                </tr>
-                            </table>
-                            <div class="info">
-                                <p>{{ Cache::get('resume_data', 'default')['degree'][$key] }}</p>
-                            </div>
+    <div class="section-title">Education</div>
+    <div class="education">
+        @if (!blank(Cache::get('resume_data', [])))
+            @foreach (Cache::get('resume_data', 'default')['institute'] as $key => $item)
+                @if ($item)
+                    <div class="edu-entry">
+                        <table class="summary-table">
+                            <tr>
+                                <td class="bold">{{ Cache::get('resume_data', 'default')['institute'][$key] }}</td>
+                                <td class="bold">
+                                    {{ (Cache::get('resume_data', 'default')['start_year'][$key] ?? '') . '-' . (Cache::get('resume_data', 'default')['end_year'][$key] ?? '') }}
+                                </td>
+                            </tr>
+                        </table>
+                        <div class="info">
+                            <p>{{ Cache::get('resume_data', 'default')['degree'][$key] ?? '' }}</p>
+                            @if (!empty(Cache::get('resume_data', 'default')['edu_description'][$key]))
+                                <p>{{ Cache::get('resume_data', 'default')['edu_description'][$key] }}</p>
+                            @endif
                         </div>
-                    @endif
-                @endforeach
-            @endif
-        </div>
+                    </div>
+                @endif
+            @endforeach
+        @endif
     </div>
+</div>
     <style>
         ul.skills-inline {
             padding-left: 0;
@@ -190,7 +192,7 @@
         <ul class="skills-inline">
             {{-- @dd(Cache::get('resume_data', [])); --}}
             @if (!blank(Cache::get('resume_data', [])))
-                @foreach (Cache::get('resume_data', 'default')['skills'] as $key => $item)
+                @foreach (Cache::get('resume_data', 'default')['skills'] ?? [] as $key => $item)
                     @if ($item)
                         <li>{{ Cache::get('resume_data', 'default')['skills'][$key] }}</li>
                     @endif
@@ -206,7 +208,7 @@
         <div class="section-title">Training & Certification</div>
         <div class="education">
             @if (!blank(Cache::get('resume_data', [])))
-                @foreach (Cache::get('resume_data', 'default')['courseTitle'] as $key => $item)
+                @foreach (Cache::get('resume_data', 'default')['courseTitle'] ?? [] as $key => $item)
                     @if ($item)
                         <div class="edu-entry">
                             <table class="summary-table">
@@ -250,6 +252,33 @@
             @endif
         </div>
     </div>
+    <div class="section">
+    <div class="section-title">Projects</div>
+    <div class="project">
+        @if (!blank(Cache::get('resume_data', [])))
+            @foreach (Cache::get('resume_data', 'default')['project_title'] ?? [] as $key => $item)
+                @if ($item)
+                    <div class="work-entry">
+                        <table class="summary-table">
+                            <tr>
+                                <td class="bold">{{ Cache::get('resume_data', 'default')['project_title'][$key] }}</td>
+                                <td class="bold">
+                                    {{ Cache::get('resume_data', 'default')['tech_stack'][$key] ?? '' }}
+                                </td>
+                            </tr>
+                        </table>
+                        <div class="info">
+                            @if (!empty(Cache::get('resume_data', 'default')['project_description'][$key]))
+                                <p>{{ Cache::get('resume_data', 'default')['project_description'][$key] }}</p>
+                            @endif
+                        </div>
+                    </div>
+                @endif
+            @endforeach
+        @endif
+    </div>
+</div>
+
 </body>
 
 </html>

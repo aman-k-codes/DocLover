@@ -171,101 +171,156 @@
                         @if ($item)
                             <div class="award">
                                 <div class="job-date">{{ Cache::get('resume_data', 'default')['awardDate'][$key] }}</div>
-                                <div><span class="bold">{{ Cache::get('resume_data', 'default')['awardTitle'][$key] }}</span> | {{ Cache::get('resume_data', 'default')['awardInstitute'][$key] }}</div>
+                                <div><span class="bold">{{ Cache::get('resume_data', 'default')['awardTitle'][$key] }}</span> |
+                                    {{ Cache::get('resume_data', 'default')['awardInstitute'][$key] }}
+                                </div>
                             </div>
                         @endif
                     @endforeach
                 @endif
             </div>
+
+            <div class="section">
+                <div class="section-title">Preferences</div>
+                @php
+                    $resumeData = Cache::get('resume_data', []);
+                    $roles = $resumeData['target_role'] ?? [];
+                    $locations = $resumeData['preferred_location'] ?? [];
+                @endphp
+
+                <div class="preferences-container" style="display: flex; gap: 40px;">
+                    <div class="preference-jobs" style="flex: 1;">
+                        <div class="bold" style="margin-bottom: 10px;">Preferred Job Roles</div>
+                        @if (!empty($roles))
+                            <ul>
+                                @foreach ($roles as $role)
+                                    @if ($role)
+                                        <li>{{ $role }}</li>
+                                    @endif
+                                @endforeach
+                            </ul>
+                        @else
+                            <p>No preferred roles listed.</p>
+                        @endif
+                    </div>
+
+                    <div class="preference-locations" style="flex: 1;">
+                        <div class="bold" style="margin-bottom: 10px;">Preferred Locations</div>
+                        @if (!empty($locations))
+                            <ul>
+                                @foreach ($locations as $location)
+                                    @if ($location)
+                                        <li>{{ $location }}</li>
+                                    @endif
+                                @endforeach
+                            </ul>
+                        @else
+                            <p>No preferred locations listed.</p>
+                        @endif
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="section-title">Social Links</div>
+
+                @php
+                    $data = Cache::get('resume_data', 'default');
+                    $socials = [
+                        'LinkedIn' => $data['linkedin'] ?? '',
+                        'Twitter' => $data['twitter'] ?? '',
+                        'Facebook' => $data['facebook'] ?? '',
+                        'Instagram' => $data['instagram'] ?? '',
+                        'GitHub' => $data['github'] ?? '',
+                    ];
+                @endphp
+
+                <ul>
+                    @foreach ($socials as $platform => $url)
+                        @if (!empty($url))
+                            <li>
+                                <a href="{{ $url }}" target="_blank" rel="noopener noreferrer" style="color: #0073b1;">
+                                    {{ $platform }}
+                                </a>
+                            </li>
+                        @endif
+                    @endforeach
+                </ul>
+            </div>
+
         </div>
 
         <div class="right">
             <div class="section">
                 <div class="section-title">Career Objective</div>
-                <p>Motivated and results-driven academic professional seeking to leverage strong research, data
-                    analysis, and project management skills within a reputable university setting. Dedicated to
-                    fostering a collaborative learning environment and contributing to innovative research projects.</p>
+                @php
+                    $summary = Cache::get('resume_data', 'default')['summary'] ?? null;
+                @endphp
+
+                @if (!empty($summary))
+                    <p>{{ $summary }}</p>
+                @endif
             </div>
+
 
             <div class="section">
                 <div class="section-title">Experience</div>
 
-                <div class="job-title">Research Assistant | University of Washington</div>
-                <div class="job-date">August 2022 – Present</div>
-                <ul>
-                    <li>Assisted in developing and implementing machine learning algorithms for predictive analysis
-                        projects.</li>
-                    <li>Compiled, processed, and analyzed large datasets, improving research accuracy by 15%.</li>
-                    <li>Presented research findings at two academic conferences attended by 500+ professionals.</li>
-                </ul>
+                @php
+                    $data = Cache::get('resume_data', 'default');
+                @endphp
 
-                <div class="job-title">Lab Engineer Intern | TechLab Seattle</div>
-                <div class="job-date">June 2021 – August 2021</div>
-                <ul>
-                    <li>Supported senior engineers in experimental setups, data collection, and reporting for technology
-                        innovation projects.</li>
-                    <li>Contributed to lab safety improvements, reducing incidents by 25% over the summer term.</li>
-                </ul>
-
-                <div class="job-title">Data Analyst Intern | DataSolve Inc.</div>
-                <div class="job-date">January 2021 – May 2021</div>
-                <ul>
-                    <li>Cleaned, transformed, and visualized large datasets to support business decision-making
-                        processes.</li>
-                    <li>Optimized data pipelines, resulting in a 20% faster data processing time.</li>
-                </ul>
-
-                <div class="job-title">Teaching Assistant | Seattle Central College</div>
-                <div class="job-date">September 2020 – December 2020</div>
-                <ul>
-                    <li>Assisted professors in grading assignments, preparing lab materials, and mentoring students in
-                        computer science courses.</li>
-                    <li>Held weekly tutoring sessions, improving average student grades by 12%.</li>
-                </ul>
-
-                <div class="job-title">IT Support Intern | Northbridge Tech Solutions</div>
-                <div class="job-date">May 2020 – August 2020</div>
-                <ul>
-                    <li>Provided technical support for hardware and software issues across 200+ employee workstations.
-                    </li>
-                    <li>Streamlined troubleshooting documentation, reducing ticket resolution time by 18%.</li>
-                </ul>
+                @if (!empty($data['company']))
+                    @foreach ($data['company'] as $key => $company)
+                        @if (!empty($company))
+                            <div class="job-title">
+                                {{ $company }}{{ !empty($data['role'][$key]) ? ' | ' . $data['role'][$key] : '' }}
+                            </div>
+                            <div class="job-date">
+                                {{ ($data['start_date'][$key] ?? '') . ' – ' . ($data['end_date'][$key] ?? '') }}
+                            </div>
+                            @if (!empty($data['description'][$key]))
+                                <ul>
+                                    @foreach (explode("\n", $data['description'][$key]) as $point)
+                                        @if (!empty(trim($point)))
+                                            <li>{{ trim($point) }}</li>
+                                        @endif
+                                    @endforeach
+                                </ul>
+                            @endif
+                        @endif
+                    @endforeach
+                @endif
             </div>
+
 
             <div class="section">
                 <div class="section-title">Projects</div>
 
-                <div class="job-title">AI-Powered Student Portal</div>
-                <div class="job-date">January 2023 – April 2023</div>
-                <ul>
-                    <li>Designed and developed an AI-integrated portal to assist students in managing coursework and
-                        schedules.</li>
-                    <li>Achieved a 90% positive feedback rate from the pilot user group of 100 students.</li>
-                </ul>
+                @php
+                    $data = Cache::get('resume_data', 'default');
+                @endphp
 
-                <div class="job-title">Data Visualization Dashboard</div>
-                <div class="job-date">September 2022 – December 2022</div>
-                <ul>
-                    <li>Built interactive dashboards using Tableau and Python for research data reporting.</li>
-                    <li>Reduced data interpretation time for faculty members by approximately 30%.</li>
-                </ul>
-
-                <div class="job-title">Smart Attendance System</div>
-                <div class="job-date">May 2022 – August 2022</div>
-                <ul>
-                    <li>Developed a face-recognition-based attendance system using Python and OpenCV libraries.</li>
-                    <li>Improved attendance accuracy and reduced manual errors by 40% across pilot departments.</li>
-                </ul>
-
-                <div class="job-title">Research Paper Management Tool</div>
-                <div class="job-date">January 2022 – April 2022</div>
-                <ul>
-                    <li>Created a web application for organizing, annotating, and referencing academic research papers
-                        efficiently.</li>
-                    <li>Enhanced research productivity for students and faculty members by providing smart search and
-                        auto-citation features.</li>
-                </ul>
+                @if (!empty($data['project_title']))
+                    @foreach ($data['project_title'] as $key => $title)
+                        @if (!empty($title))
+                            <div class="job-title">{{ $title }}</div>
+                            <div class="job-date">
+                                {{ $data['tech_stack'][$key] ?? '' }}
+                            </div>
+                            @if (!empty($data['project_description'][$key]))
+                                <ul>
+                                    @foreach (explode("\n", $data['project_description'][$key]) as $point)
+                                        @if (!empty(trim($point)))
+                                            <li>{{ trim($point) }}</li>
+                                        @endif
+                                    @endforeach
+                                </ul>
+                            @endif
+                        @endif
+                    @endforeach
+                @endif
             </div>
+
 
         </div>
     </div>

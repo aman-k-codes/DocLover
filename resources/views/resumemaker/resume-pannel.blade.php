@@ -687,8 +687,8 @@
                     <div id="coursesContainer" class="space-y-4 mt-2">
                         <!-- Course entries will be appended here -->
 
-                        @if (!blank(Cache::get('resume_data', [])))
-                            @foreach (Cache::get('resume_data', 'default')['courseTitle'] as $key => $item)
+                        @if (!blank(Cache::get('resume_data', [])) )
+                            @foreach (Cache::get('resume_data', 'default')['courseTitle'] ?? [] as $key => $item)
                                 @if ($item)
                                     <div
                                         class="bg-indigo-50 border border-indigo-200 rounded-lg p-4 shadow-sm transition space-y-1">
