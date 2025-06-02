@@ -7,6 +7,7 @@ use App\Http\Controllers\DocsController;
 use App\Http\Controllers\DocumentController;
 use App\Http\Controllers\ResumeController;
 use App\Http\Controllers\ResumeTemplatesController;
+use App\Http\Controllers\TransferFileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,11 @@ Route::prefix('/')->group(function () {
         Route::get('/privacy-policy', [HomeController::class, 'privacy'])->name('home.privacy');
         Route::get('/terms-and-conditions', [HomeController::class, 'terms'])->name('home.terms');
         Route::get('/all-tools', [HomeController::class, 'AllTools'])->name('home.AllTools');
+    });
+    Route::prefix('/transfer-file')->group(function () {
+        Route::get('/', [TransferFileController::class, 'index'])->name('transfer-file.index');
+        Route::post('/upload', [TransferFileController::class, 'uploadForTransfer'])->name('transfer-file.send');
+        Route::get('/download-transfer/{filename}', [TransferFileController::class, 'downloadTransfer'])->name('transfer.download');
     });
     Route::prefix('/docs')->group(function () {
         Route::get('/pdf-to-zip', [DocumentController::class, 'pdf_to_zip'])->name('pdf-to-zip');
