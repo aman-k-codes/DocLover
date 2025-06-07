@@ -74,6 +74,8 @@
         @yield('content')
     </div>
 
+    @include('ads.ad3')
+    @include('ads.ad4')
     <!-- Footer -->
     @include('sw.layout.footer')
 
