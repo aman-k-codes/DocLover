@@ -48,8 +48,8 @@
                         href="{{ route('background-change') }}"><span>Background Remover</span></a></li>
                 <li class="flex items-center space-x-2"><i class="fas fa-file-alt text-gray-600"></i><a
                         href="{{ route('resume.index') }}"><span>Resume Maker</span></a></li>
-                <li class="flex items-center space-x-2"><i class="fas fa-compress text-red-500"></i><a
-                        href="{{ route('photo-size-compression') }}"><span>Photo Size Compression</span></a></li>
+                {{-- <li class="flex items-center space-x-2"><i class="fas fa-compress text-red-500"></i><a
+                        href="{{ route('photo-size-compression') }}"><span>Photo Size Compression</span></a></li> --}}
                 <li class="flex items-center space-x-2"><i class="fas fa-text-height text-blue-600"></i><a
                         href="{{ route('image-to-text-conversion') }}"><span>Image to Text Conversion</span></a></li>
                 <li class="flex items-center space-x-2"><i class="fas fa-signature text-green-600"></i><a
