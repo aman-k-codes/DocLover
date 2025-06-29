@@ -1,66 +1,67 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 📝 DocLover (CraftMyDoc)
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+**All‑in‑one online document and image processing suite — fast, secure, and free.**
 
-## About Laravel
+Visit: [https://craftmydoc.com](https://craftmydoc.com)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🚀 Features
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### 🔄 File Conversions
+- PDF → DOC, JPG, ZIP  
+- JPG ↔ PNG, JPG → DOC, JPG → XL (spreadsheets) :contentReference[oaicite:1]{index=1}
 
-## Learning Laravel
+### 📄 Document Tools
+- PDF merge, split, delete/extract pages, compress :contentReference[oaicite:2]{index=2}
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### 🖼️ Image Processing
+- Crop, enhance clarity, background remover, photo resizing, OCR (image‑to‑text) :contentReference[oaicite:3]{index=3}
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### ✨ Specialty Tools
+- **Resume Maker** – create professional CVs online :contentReference[oaicite:4]{index=4}  
+- **Sign Picker** – extract clean signature images from documents :contentReference[oaicite:5]{index=5}
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+## 🛠️ Tech Stack
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+- Built with Laravel & JavaScript (Vue.js/Alpine.js)  
+- OCR & image processing backed by Python (e.g., Tesseract/OpenCV)  
+- Secure upload/download flow with encrypted HTTPS operations
 
-### Premium Partners
+---
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+## 🔐 Why Use DocLover?
 
-## Contributing
+- **Fast & No Install** – fully browser‑based, responsive and mobile-friendly :contentReference[oaicite:6]{index=6}  
+- **Secure** – encrypted uploads, no file retention post-processing :contentReference[oaicite:7]{index=7}  
+- **Free with Premium Options** – core features accessible to all users :contentReference[oaicite:8]{index=8}
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+---
 
-## Code of Conduct
+## 🧪 Demo
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+- Check out the live version at [https://craftmydoc.com](https://craftmydoc.com)  
+- Example: Convert **PDF → DOC** or **JPG → DOC** in seconds
 
-## Security Vulnerabilities
+---
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## 💻 Local Development
 
-## License
+```bash
+git clone https://github.com/yourusername/doclover.git
+cd doclover
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+# Install PHP dependencies
+composer install
+
+# Install JavaScript dependencies
+npm install && npm run dev
+
+# Set up .env (DB, storage paths, OCR service keys)
+cp .env.example .env
+php artisan key:generate
+
+# Run local server
+php artisan serve
